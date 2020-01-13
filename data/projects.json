@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Catch of the Day",
+    "slug": "project-1",
+    "url": "https://catch-of-the-day-by-dhausser.netlify.com/",
+    "image": "./images/getting-fishy.png",
+    "description": "React app with Firebase backend",
+    "tags": [
+      "React",
+      "Firebase",
+      "JavaScript"
+    ]
+  },
+  {
+    "title": "Sick Fits",
+    "slug": "project-2",
+    "url": "https://github.com/dhausser/sick-fits/",
+    "image": "./images/sick-fits.png",
+    "description": "Next.js app with GraphQL backend",
+    "tags": [
+      "React",
+      "GraphQL",
+      "JavaScript",
+      "Node"
+    ]
+  }
+]

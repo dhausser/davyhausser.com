@@ -1,26 +1,41 @@
 import React from "react"
-
+import { graphql } from 'gatsby';
 import Layout from "../components/layout"
-import FishImage from "../components/image-fish"
-import SickImage from "../components/image-sick"
-import SEO from "../components/seo"
+import ProjectPreview from '../components/project-preview'
 
-const IndexPage = () => (
+export const query = graphql`
+  {
+    allProjectsJson {
+      edges {
+        node {
+          title
+          description
+          slug
+          image {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+export default ({ data }) => (
   <Layout>
-    <SEO title="Home" />
-    <div style={{ maxWidth: `600px`, marginBottom: `1.45rem` }}>
-      <h2>Catch of the Day</h2>
-      <a href="https://catch-of-the-day-by-dhausser.netlify.com/">
-        <FishImage />
-      </a>
-    </div>
-    <div style={{ maxWidth: `600px`, marginBottom: `1.45rem` }}>
-      <h2>Sick Fits</h2>
-      <a href="https://github.com/dhausser/sick-fits">
-        <SickImage />
-      </a>
-    </div>
+    {data.allProjectsJson.edges.map(({ node: project }) => {
+      return (
+        <ProjectPreview
+          key={`preview-${project.slug.current}`}
+          title={project.title}
+          description={project.description}
+          imageData={project.image.childImageSharp.fluid}
+          slug={project.slug}
+        />
+      );
+    })}
   </Layout>
-)
-
-export default IndexPage
+);
