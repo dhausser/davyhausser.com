@@ -36,7 +36,7 @@
   {
     "title": "Sick Fits",
     "slug": "sick-fits",
-    "url": "https://github.com/dhausser/sick-fits/",
+    "url": "https://frontend.dhausser.now.sh/",
     "image": "./images/sick-fits.png",
     "description": "Next.js app with GraphQL backend",
     "tags": [
