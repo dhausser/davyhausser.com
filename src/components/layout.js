@@ -1,15 +1,9 @@
-import './layout.css';
-
-import React from 'react';
-import { Link } from 'gatsby';
-
-const Layout = ({ children }) => (
-  <React.Fragment>
-    <header className="header">
-      <Link to="/">My Portfolio</Link>
-    </header>
-    <main className="content">{children}</main>
-  </React.Fragment>
-);
-
-export default Layout;
+import React from "react";
+import styled from "styled-components";
+import "./layout.css";
+const Container = styled.div`
+  margin: 3rem auto;
+  max-width: 650px;
+  padding: 0 1rem;
+`
+export default ({ children }) => <Container>{children}</Container>
