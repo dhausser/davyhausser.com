@@ -1,23 +1,26 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "gatsby-portfolio",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "Davy Hausser portfolio site",
+  "version": "1.0.0",
+  "author": "Davy Hausser <davy.hausser@gmail.com>",
   "dependencies": {
-    "babel-plugin-styled-components": "^1.10.6",
+    "@emotion/core": "^10.0.27",
     "gatsby": "^2.18.12",
     "gatsby-image": "^2.2.34",
+    "gatsby-plugin-emotion": "^4.1.21",
+    "gatsby-plugin-manifest": "^2.2.37",
+    "gatsby-plugin-offline": "^3.0.32",
+    "gatsby-plugin-react-helmet": "^3.1.21",
     "gatsby-plugin-sharp": "^2.3.5",
-    "gatsby-plugin-styled-components": "^3.1.17",
     "gatsby-plugin-typography": "^2.3.21",
     "gatsby-source-filesystem": "^2.1.40",
     "gatsby-transformer-json": "^2.2.25",
     "gatsby-transformer-sharp": "^2.3.7",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-helmet": "^5.2.1",
     "react-typography": "^0.16.19",
-    "styled-components": "^5.0.0",
     "typography": "^0.16.19",
     "typography-theme-fairy-gates": "^0.16.19"
   },
@@ -39,9 +42,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/dhausser/davyhausser.com"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/dhausser/davyhausser.com/issues"
   }
 }
