@@ -1,48 +1,77 @@
 import "./layout.css"
-
 import React from "react"
-// import { Link } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import { css } from "@emotion/core"
-// import { useStaticQuery, graphql } from "gatsby"
-import { rhythm } from "../utils/typography"
 
-// const Header = ({ title }) => (
-//   <Link to={`/`}>
-//     <h3
-//       css={css`
-//         margin-bottom: ${rhythm(2)};
-//         display: inline-block;
-//         font-style: normal;
-//       `}
-//     >
-//       {title}
-//     </h3>
-//   </Link>
-// )
+const ListLink = props => (
+  <li
+    css={css`
+      display: inline-block;
+      margin-right: 1rem;
+    `}
+  >
+    <Link to={props.to}>{props.children}</Link>
+  </li>
+)
+
+const Header = ({ title }) => (
+  <div
+    css={css`
+      overflow: hidden;
+    `}
+  >
+    <Link
+      to={`/`}
+      css={css`
+        text-decoration: none;
+      `}
+    >
+      {title}
+    </Link>
+    <ul
+      css={css`
+        list-style: none;
+        float: right;
+        text-decoration: none;
+      `}
+    >
+      <ListLink to="/blog">Blog</ListLink>
+      <ListLink to="/about/">About</ListLink>
+      <ListLink to="/contact/">Contact</ListLink>
+    </ul>
+  </div>
+)
 
 export default ({ children }) => {
-  // const data = useStaticQuery(
-  //   graphql`
-  //     query {
-  //       site {
-  //         siteMetadata {
-  //           title
-  //         }
-  //       }
-  //     }
-  //   `
-  // )
+  const data = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `
+  )
   return (
     <div
       css={css`
-        margin: 0 auto;
-        max-width: 700px;
-        padding: ${rhythm(2)};
-        padding-top: ${rhythm(1.5)};
+        margin: 5rem auto;
+        max-width: 90%;
+        width: 57ch;
       `}
     >
-      {/* <Header title={data.site.siteMetadata.title} /> */}
-      {children}
+      <Header title={data.site.siteMetadata.title} />
+      <div
+        css={css`
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        `}
+      >
+        {children}
+      </div>
     </div>
   )
 }

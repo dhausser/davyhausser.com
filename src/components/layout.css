@@ -5,6 +5,30 @@
   margin: 0;
 }
 
+body {
+  font-size: 22px;
+}
+
+.header {
+  background-color: blue;
+  padding: 1rem;
+}
+
+.header a {
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 5rem auto;
+  max-width: 90%;
+  width: 57ch;
+}
+
 .project-preview {
   margin-bottom: 2rem;
   width: 100%;
