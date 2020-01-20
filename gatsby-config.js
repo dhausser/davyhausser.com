@@ -8,13 +8,6 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `pages`,
-        path: `${__dirname}/src/pages/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         name: `project`,
         path: `${__dirname}/data/`,
       },
@@ -29,6 +22,7 @@ module.exports = {
     `gatsby-plugin-emotion`,
     `gatsby-transformer-sharp`,
     `gatsby-transformer-json`,
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
