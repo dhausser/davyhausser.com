@@ -7,7 +7,7 @@ const ListLink = props => (
   <li
     css={css`
       display: inline-block;
-      margin-right: 1rem;
+      margin-left: 1rem;
     `}
   >
     <Link to={props.to}>{props.children}</Link>
