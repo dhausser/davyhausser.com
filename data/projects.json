@@ -1,5 +1,13 @@
 [
   {
+    "title": "Space Explorer",
+    "slug": "space-explorer",
+    "url": "https://space-explorer-dhausser.herokuapp.com//",
+    "image": "./images/now-thats-delicious.jpg",
+    "description": "Apollo GraphQL server with React",
+    "tags": ["Apollo", "Express", "GraphQL", "React"]
+  },
+  {
     "title": "Now that's Delicious",
     "slug": "now-that's-delicious",
     "url": "https://now-thats-delicious-dhausser.herokuapp.com/",
