@@ -1,5 +1,19 @@
 [
   {
+    "title": "Mflix",
+    "slug": "mflix",
+    "url": " https://mflix-js-dhausser.herokuapp.com/",
+    "image": "./images/mflix.jpg",
+    "description": "Movies list with MongoDB Node JS driver",
+    "tags": [
+      "MongoDB",
+      "MongoDB Atlas",
+      "MongoDB Node JS Driver",
+      "Node",
+      "Express"
+    ]
+  },
+  {
     "title": "Reduxtagram",
     "slug": "reduxtagram",
     "url": "https://reduxtagram-dhausser.herokuapp.com/",
