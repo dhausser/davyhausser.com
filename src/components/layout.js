@@ -35,6 +35,7 @@ const Header = ({ title }) => (
         text-decoration: none;
       `}
     >
+      <ListLink to="/store">Store</ListLink>
       <ListLink to="/blog">Blog</ListLink>
       <ListLink to="/about/">About</ListLink>
       <ListLink to="/contact/">Contact</ListLink>
