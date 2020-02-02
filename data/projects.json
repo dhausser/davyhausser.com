@@ -1,5 +1,21 @@
 [
   {
+    "title": "Sick Fits",
+    "slug": "sick-fits",
+    "url": "https://sick-fits-next-js.herokuapp.com/",
+    "image": "./images/sick-fits.jpg",
+    "description": "Next.js app with GraphQL backend",
+    "tags": [
+      "Next JS",
+      "Apollo Client",
+      "Apollo Server",
+      "GraphQL",
+      "JavaScript",
+      "React",
+      "Node"
+    ]
+  },
+  {
     "title": "Mflix",
     "slug": "mflix",
     "url": " https://mflix-js-dhausser.herokuapp.com/",
@@ -49,19 +65,6 @@
       "Node",
       "Express",
       "MongoDB"
-    ]
-  },
-  {
-    "title": "Sick Fits",
-    "slug": "sick-fits",
-    "url": "https://frontend.dhausser.now.sh/",
-    "image": "./images/sick-fits.jpg",
-    "description": "Next.js app with GraphQL backend",
-    "tags": [
-      "React",
-      "GraphQL",
-      "JavaScript",
-      "Node"
     ]
   },
   {
