@@ -4,12 +4,30 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 export default ({ data }) => {
-  const description =
-    "I'm a Game Producer and Software Developer, I build app using React, Node and GraphQL. MongoDB avocado. Travel enthusiast"
+  const description = (
+    <div>
+      <p>
+        <span role="img" aria-label="laptop"> 💻 </span>
+        I'm a Program Manager and Software Developer
+      </p>
+      <p> 
+        <span role="img" aria-label="laptop"> ⚛️ </span>
+        I build app using React, Node and GraphQL
+      </p>
+      <p>
+        <span role="img" aria-label="laptop"> 🥑 </span>
+        MongoDB avocado
+      </p>
+      <p>
+        <span role="img" aria-label="laptop"> 🌴 </span>
+        Travel enthusiast
+      </p>
+    </div>
+  );
   return (
     <Layout>
       <SEO title={data.site.siteMetadata.title} description={description} />
-      <p>{description}</p>
+      {description}
     </Layout>
   )
 }

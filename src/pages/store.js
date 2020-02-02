@@ -8,8 +8,10 @@ export default ({ data }) => {
   return (
     <Layout>
       <SEO title={data.site.siteMetadata.title} />
-      <p>Buy my new book!</p>
-      <Checkout />
+      <div>
+        <p>📕 Check out my new book!</p>
+        <Checkout />
+      </div>
     </Layout>
   )
 }
