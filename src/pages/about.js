@@ -10,7 +10,7 @@ export default ({ data }) => {
         <span role="img" aria-label="laptop"> 💻 </span>
         I'm a Program Manager and Software Developer
       </p>
-      <p> 
+      <p>
         <span role="img" aria-label="laptop"> ⚛️ </span>
         I build app using React, Node and GraphQL
       </p>

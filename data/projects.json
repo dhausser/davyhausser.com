@@ -16,6 +16,14 @@
     ]
   },
   {
+    "title": "Reduxtagram",
+    "slug": "reduxtagram",
+    "url": "https://reduxtagram-dhausser.herokuapp.com/",
+    "image": "./images/reduxtagram.jpg",
+    "description": "Instagram with React and Redux",
+    "tags": ["React", "Redux", "Node", "Express"]
+  },
+  {
     "title": "Mflix",
     "slug": "mflix-js",
     "url": " https://mflix-js-dhausser.herokuapp.com/",
@@ -30,20 +38,12 @@
     ]
   },
   {
-    "title": "Reduxtagram",
-    "slug": "reduxtagram",
-    "url": "https://reduxtagram-dhausser.herokuapp.com/",
-    "image": "./images/reduxtagram.jpg",
-    "description": "Instagram with React and Redux",
-    "tags": ["React", "Redux", "Node", "Express"]
-  },
-  {
-    "title": "Space Explorer",
-    "slug": "space-explorer",
-    "url": "https://space-explorer-dhausser.herokuapp.com/",
-    "image": "./images/space-explorer.jpg",
-    "description": "Apollo GraphQL server with React",
-    "tags": ["Apollo", "Express", "GraphQL", "React"]
+    "title": "Catch of the Day",
+    "slug": "catch-of-the-day",
+    "url": "https://catch-of-the-day-by-dhausser.netlify.com/",
+    "image": "./images/getting-fishy.jpg",
+    "description": "React app with Firebase backend",
+    "tags": ["React", "Firebase", "JavaScript"]
   },
   {
     "title": "Dang that's Delicious",
@@ -54,11 +54,11 @@
     "tags": ["Node", "Express", "MongoDB"]
   },
   {
-    "title": "Catch of the Day",
-    "slug": "catch-of-the-day",
-    "url": "https://catch-of-the-day-by-dhausser.netlify.com/",
-    "image": "./images/getting-fishy.jpg",
-    "description": "React app with Firebase backend",
-    "tags": ["React", "Firebase", "JavaScript"]
+    "title": "Space Explorer",
+    "slug": "space-explorer",
+    "url": "https://space-explorer-dhausser.herokuapp.com/",
+    "image": "./images/space-explorer.jpg",
+    "description": "Apollo GraphQL server with React",
+    "tags": ["Apollo", "Express", "GraphQL", "React"]
   }
 ]

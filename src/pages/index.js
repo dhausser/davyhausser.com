@@ -10,18 +10,20 @@ export default ({ data }) => {
   return (
     <Layout>
       <SEO title={data.site.siteMetadata.title} description={description} />
-      {data.allProjectsJson.edges.map(({ node: project }, index) => {
-        return (
-          <ProjectPreview
-            key={`preview-${project.slug.current}`}
-            title={project.title}
-            description={project.description}
-            imageData={project.image.childImageSharp.fluid}
-            slug={project.slug}
-            index={index}
-          />
-        )
-      })}
+      <section className="tiles">
+        {data.allProjectsJson.edges.map(({ node: project }, index) => {
+          return (
+            <ProjectPreview
+              key={`preview-${project.slug.current}`}
+              title={project.title}
+              description={project.description}
+              imageData={project.image.childImageSharp.fluid}
+              slug={project.slug}
+              index={index}
+            />
+          )
+        })}
+      </section>
     </Layout>
   )
 }
@@ -47,6 +49,7 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+        description
       }
     }
   }

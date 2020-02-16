@@ -1,7 +1,6 @@
 import "../styles/fontawesome-all.min.css"
 import "../styles/main.css"
 import "../styles/noscript.css"
-// import "../styles/layout.css"
 
 import React, { useEffect } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
@@ -19,7 +18,7 @@ const ListLink = props => (
   </li>
 )
 
-const Header = ({ title }) => (
+const Header = ({ title, description }) => (
   <header
     css={css`
       overflow: hidden;
@@ -32,16 +31,16 @@ const Header = ({ title }) => (
       `}
       className="logo"
     >
-      <span class="symbol"><img src="images/logo.svg" alt="" /></span>
+      <span class="symbol"><img src="logo.svg" alt="" /></span>
       <span class="title">
         {title}
       </span>
     </Link>
     <ul
       css={css`
-        list-style: none;
-        float: right;
-        text-decoration: none;
+      list-style: none;
+      float: right;
+      text-decoration: none;
       `}
     >
       <ListLink to="/store">Store</ListLink>
@@ -49,10 +48,23 @@ const Header = ({ title }) => (
       <ListLink to="/about/">About</ListLink>
       <ListLink to="/contact/">Contact</ListLink>
     </ul>
+    <h5>{description}</h5>
   </header>
 )
 
 export default ({ children }) => {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+            description
+          }
+        }
+      }
+    `
+  )
   useEffect(() => {
     window.fbAsyncInit = function () {
       window.FB.init({
@@ -68,17 +80,6 @@ export default ({ children }) => {
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'))
   })
-  const data = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `
-  )
   return (
     <>
       <Helmet>
@@ -87,11 +88,6 @@ export default ({ children }) => {
           name="viewport"
           content="width=device-width, initial-scale=1, user-scalable=no"
         />
-        <link rel="stylesheet" href="assets/css/main.css" />
-        <noscript>
-          {`<link rel="stylesheet" href="assets/css/noscript.css" />`}
-        </noscript>
-        <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/browser.min.js"></script>
         <script src="assets/js/breakpoints.min.js"></script>
@@ -108,17 +104,18 @@ export default ({ children }) => {
 
         <div id="wrapper">
 
-          <div id="header">
+          <header id="header">
             <div className="inner">
-              <Header title={data.site.siteMetadata.title} />
+              <Header
+                title={data.site.siteMetadata.title}
+                description={data.site.siteMetadata.description}
+              />
             </div>
-          </div>
+          </header>
 
           <div id="main">
             <div className="inner">
-              <section className="tiles">
-                {children}
-              </section>
+              {children}
             </div>
           </div>
 

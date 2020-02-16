@@ -1,5 +1,6 @@
 @import url(fontawesome-all.min.css);
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,900");
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+/* @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,900"); */
 
 /*
 	Phantom by HTML5 UP
@@ -242,12 +243,11 @@ a {
   transition: border-bottom-color 0.2s ease, color 0.2s ease;
   text-decoration: none;
   color: #585858;
-  border-bottom: dotted 1px rgba(88, 88, 88, 0.5);
 }
 
 a:hover {
   border-bottom-color: transparent;
-  color: #f2849e !important;
+  color: #7646ff !important;
 }
 
 strong,
@@ -1952,8 +1952,8 @@ header p {
 }
 
 .icon.style2:hover {
-  color: #f2849e;
-  border-color: #f2849e;
+  color: #7646ff;
+  border-color: #7646ff;
 }
 
 .icon.style2:active {
@@ -2262,8 +2262,8 @@ input[type="email"]:focus,
 input[type="tel"]:focus,
 select:focus,
 textarea:focus {
-  border-bottom-color: #f2849e;
-  box-shadow: inset 0 -1px 0 0 #f2849e;
+  border-bottom-color: #7646ff;
+  box-shadow: inset 0 -1px 0 0 #7646ff;
 }
 
 select {
@@ -2367,8 +2367,8 @@ input[type="radio"]:checked + label:before {
 
 input[type="checkbox"]:focus + label:before,
 input[type="radio"]:focus + label:before {
-  border-color: #f2849e;
-  box-shadow: 0 0 0 1px #f2849e;
+  border-color: #7646ff;
+  box-shadow: 0 0 0 1px #7646ff;
 }
 
 input[type="checkbox"] + label:before {
@@ -2590,8 +2590,8 @@ input[type="reset"]:hover,
 input[type="button"]:hover,
 button:hover,
 .button:hover {
-  color: #f2849e !important;
-  box-shadow: inset 0 0 0 2px #f2849e;
+  color: #7646ff !important;
+  box-shadow: inset 0 0 0 2px #7646ff;
 }
 
 input[type="submit"]:active,
@@ -2633,7 +2633,7 @@ input[type="reset"].primary:hover,
 input[type="button"].primary:hover,
 button.primary:hover,
 .button.primary:hover {
-  background-color: #f2849e;
+  background-color: #7646ff;
 }
 
 input[type="submit"].primary:active,
@@ -2669,7 +2669,7 @@ button:disabled,
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  postiion: relative;
+  position: relative;
   margin: -2.5em 0 0 -2.5em;
 }
 
