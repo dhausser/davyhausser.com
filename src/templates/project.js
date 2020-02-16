@@ -8,6 +8,7 @@ export const query = graphql`
     projectsJson(slug: { eq: $slug }) {
       title
       description
+      slug
       url
       tags
       image {
@@ -29,6 +30,7 @@ const ProjectPage = ({ data: { projectsJson: project } }) => (
       description={project.description}
       tags={project.tags}
       url={project.url}
+      slug={project.slug}
     />
   </Layout>
 );

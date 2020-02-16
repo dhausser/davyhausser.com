@@ -17,7 +17,7 @@
   },
   {
     "title": "Mflix",
-    "slug": "mflix",
+    "slug": "mflix-js",
     "url": " https://mflix-js-dhausser.herokuapp.com/",
     "image": "./images/mflix.jpg",
     "description": "Movies list with MongoDB Node JS driver",
@@ -35,12 +35,7 @@
     "url": "https://reduxtagram-dhausser.herokuapp.com/",
     "image": "./images/reduxtagram.jpg",
     "description": "Instagram with React and Redux",
-    "tags": [
-      "React",
-      "Redux",
-      "Node",
-      "Express"
-    ]
+    "tags": ["React", "Redux", "Node", "Express"]
   },
   {
     "title": "Space Explorer",
@@ -48,24 +43,15 @@
     "url": "https://space-explorer-dhausser.herokuapp.com/",
     "image": "./images/space-explorer.jpg",
     "description": "Apollo GraphQL server with React",
-    "tags": [
-      "Apollo",
-      "Express",
-      "GraphQL",
-      "React"
-    ]
+    "tags": ["Apollo", "Express", "GraphQL", "React"]
   },
   {
-    "title": "Now that's Delicious",
-    "slug": "now-that's-delicious",
+    "title": "Dang that's Delicious",
+    "slug": "dang-thats-delicious",
     "url": "https://now-thats-delicious-dhausser.herokuapp.com/",
     "image": "./images/now-thats-delicious.jpg",
     "description": "Node Express app with MongoDB",
-    "tags": [
-      "Node",
-      "Express",
-      "MongoDB"
-    ]
+    "tags": ["Node", "Express", "MongoDB"]
   },
   {
     "title": "Catch of the Day",
@@ -73,10 +59,6 @@
     "url": "https://catch-of-the-day-by-dhausser.netlify.com/",
     "image": "./images/getting-fishy.jpg",
     "description": "React app with Firebase backend",
-    "tags": [
-      "React",
-      "Firebase",
-      "JavaScript"
-    ]
+    "tags": ["React", "Firebase", "JavaScript"]
   }
 ]

@@ -9,7 +9,7 @@ export default ({ data }) => {
     <Layout>
       <SEO title={data.site.siteMetadata.title} />
       <div>
-        <p>📕 Check out my new book!</p>
+        <p><span role="img" aria-label="book">📕</span> Check out my new book!</p>
         <Checkout />
       </div>
     </Layout>

@@ -10,8 +10,7 @@ export default ({ data }) => {
   return (
     <Layout>
       <SEO title={data.site.siteMetadata.title} description={description} />
-      {/* <p>{description}</p> */}
-      {data.allProjectsJson.edges.map(({ node: project }) => {
+      {data.allProjectsJson.edges.map(({ node: project }, index) => {
         return (
           <ProjectPreview
             key={`preview-${project.slug.current}`}
@@ -19,6 +18,7 @@ export default ({ data }) => {
             description={project.description}
             imageData={project.image.childImageSharp.fluid}
             slug={project.slug}
+            index={index}
           />
         )
       })}
