@@ -1,6 +1,6 @@
-import "../styles/fontawesome-all.min.css"
+// import "../styles/fontawesome-all.min.css"
 import "../styles/main.css"
-import "../styles/noscript.css"
+// import "../styles/noscript.css"
 
 import React, { useEffect } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"

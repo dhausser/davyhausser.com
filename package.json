@@ -6,6 +6,7 @@
   "author": "Davy Hausser <davy.hausser@gmail.com>",
   "dependencies": {
     "@emotion/core": "^10.0.27",
+    "framer-motion": "^1.8.4",
     "gatsby": "^2.18.12",
     "gatsby-image": "^2.2.34",
     "gatsby-plugin-emotion": "^4.1.21",
