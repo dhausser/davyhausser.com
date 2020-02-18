@@ -6,6 +6,7 @@ import React, { useEffect } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Helmet from "react-helmet"
 import { css } from "@emotion/core"
+import Logo from "../images/logo.svg"
 
 const ListLink = props => (
   <li
@@ -31,7 +32,7 @@ const Header = ({ title, description }) => (
       `}
       className="logo"
     >
-      <span class="symbol"><img src="logo.svg" alt="" /></span>
+      <span class="symbol"><img src={Logo} alt="Diamond shaped logo" /></span>
       <span class="title">
         {title}
       </span>
