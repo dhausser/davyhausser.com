@@ -1,7 +1,11 @@
-import React, { useRef } from "react"
+import React, { useEffect, useRef } from "react"
 
 const Checkout = () => {
-  const stripe = useRef(window.Stripe("pk_test_zywrqZUXI6crPwbzolFxAyF100AF2Wh0HA"))
+  const stripe = useRef()
+
+  useEffect(() => {
+    stripe.current = window.Stripe("pk_test_zywrqZUXI6crPwbzolFxAyF100AF2Wh0HA")
+  })
 
   const redirectToCheckout = async (event) => {
     event.preventDefault()
