@@ -7,10 +7,6 @@ import '../assets/sass/main.scss';
 import Footer from './footer';
 import Sidebar from './sidebar';
 
-// import React, { useEffect } from "react"
-// import { useStaticQuery, graphql, Link } from "gatsby"
-// import Helmet from "react-helmet"
-
 class Layout extends Component {
   constructor(props) {
     super(props);
@@ -25,7 +21,7 @@ class Layout extends Component {
     }, 100);
 
     window.fbAsyncInit = function () {
-      FB.init({
+      window.FB.init({
         xfbml: true,
         version: 'v6.0'
       });
@@ -62,14 +58,6 @@ class Layout extends Component {
         `}
         render={data => (
           <>
-            <div id="fb-root"></div>
-            <div class="fb-customerchat"
-              attribution="setup_tool"
-              page_id="102517684675518"
-              theme_color="#7646ff"
-              logged_in_greeting="Hi! How can I help?"
-              logged_out_greeting="Hi! How can I help?">
-            </div>
             <Helmet
               title={data.site.siteMetadata.title}
               meta={[
@@ -80,6 +68,14 @@ class Layout extends Component {
               <html lang="en" />
             </Helmet>
             <div className={isPreloaded ? 'main-body is-preload' : 'main-body'}>
+              <div id="fb-root"></div>
+              <div class="fb-customerchat"
+                attribution="setup_tool"
+                page_id="102517684675518"
+                theme_color="#7646ff"
+                logged_in_greeting="Hi! How can I help?"
+                logged_out_greeting="Hi! How can I help?">
+              </div>
               <div id="wrapper">
                 <Sidebar />
                 <div id="main">

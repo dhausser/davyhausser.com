@@ -6,17 +6,16 @@
   "author": "Davy Hausser <davy.hausser@gmail.com>",
   "dependencies": {
     "@emotion/core": "^10.0.27",
-    "framer-motion": "^1.8.4",
-    "gatsby": "^2.18.12",
+    "@emotion/styled": "^10.0.27",
+    "gatsby": "^2.19.18",
     "gatsby-image": "^2.2.34",
-    "gatsby-plugin-emotion": "^4.1.21",
+    "gatsby-plugin-emotion": "^4.1.22",
     "gatsby-plugin-manifest": "^2.2.37",
     "gatsby-plugin-offline": "^3.0.32",
     "gatsby-plugin-react-helmet": "^3.1.21",
     "gatsby-plugin-sass": "^2.1.28",
     "gatsby-plugin-sharp": "^2.3.5",
     "gatsby-plugin-stripe": "^1.2.3",
-    "gatsby-plugin-typography": "^2.3.21",
     "gatsby-source-filesystem": "^2.1.40",
     "gatsby-transformer-json": "^2.2.25",
     "gatsby-transformer-remark": "^2.6.48",
@@ -24,9 +23,7 @@
     "node-sass": "^4.13.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1",
-    "react-typography": "^0.16.19",
-    "typography": "^0.16.19"
+    "react-helmet": "^5.2.1"
   },
   "devDependencies": {
     "prettier": "^1.19.1"
