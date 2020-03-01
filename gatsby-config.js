@@ -12,14 +12,7 @@ module.exports = {
         path: `${__dirname}/data/`,
       },
     },
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-emotion`,
     `gatsby-transformer-sharp`,
     `gatsby-transformer-json`,
     `gatsby-transformer-remark`,
@@ -40,6 +33,7 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-stripe`,
-    'gatsby-plugin-sass'
+    'gatsby-plugin-sass',
+    `gatsby-plugin-emotion`,
   ],
 }

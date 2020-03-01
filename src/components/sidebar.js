@@ -1,19 +1,20 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import logo from '../assets/img/website-icon.svg';
+import styled from "@emotion/styled"
 
-const ListLink = props => (
-  <li
-    css={{
-      display: "inline-block",
-      marginLeft: "1rem"
-    }}
-  >
-    <Link to={props.to}>{props.children}</Link>
-  </li>
-)
+const Nav = styled.ul`
+  list-style: none;
+  float: right;
+  text-decoration: none;
+`
 
-export default function SideBar({ sections = [] }) {
+const NavLink = styled.li`
+  display: inline-block;
+  margin-left: 1rem;
+`
+
+export default function SideBar() {
   const data = useStaticQuery(
     graphql`
     query {
@@ -36,18 +37,12 @@ export default function SideBar({ sections = [] }) {
             </span>
             <span className="title">{data.site.siteMetadata.title}</span>
           </Link>
-          <ul
-            css={{
-              listStyle: "none",
-              float: "right",
-              textDecoration: "none"
-            }}
-          >
-            <ListLink to="/store">Store</ListLink>
-            <ListLink to="/blog">Blog</ListLink>
-            <ListLink to="/about/">About</ListLink>
-            <ListLink to="/contact/">Contact</ListLink>
-          </ul>
+          <Nav>
+            <NavLink><Link to="/store/">Store</Link></NavLink>
+            <NavLink><Link to="/blog/">Blog</Link></NavLink>
+            <NavLink><Link to="/about/">About</Link></NavLink>
+            <NavLink><Link to="/contact/">Contact</Link></NavLink>
+          </Nav>
           <h5>{data.site.siteMetadata.description}</h5>
         </div>
       </header>
