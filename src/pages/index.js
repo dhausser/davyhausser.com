@@ -4,10 +4,12 @@ import { graphql } from "gatsby"
 import { Box, Text, Heading, Flex, SimpleGrid } from "@chakra-ui/core"
 
 import ProjectCard from "../components/project-card"
-import Instagram from "../components/instagram"
+import IntagramCard from "../components/instagram-card"
+import useInstagram from "../components/instagram"
 import Card from "../components/card"
 
 export default function Index({ data }) {
+  const gramz = useInstagram()
   return (
     <Flex
       flexDirection="column"
@@ -35,6 +37,11 @@ export default function Index({ data }) {
             url={project.url}
           />
         ))}
+        {gramz.map(gram => (
+          <a href={gram.url} key={gram.id}>
+            <IntagramCard imageUrl={gram.thumbnail} imageAlt={gram.caption} />
+          </a>
+        ))}
         <Card />
         <Card />
         <Card />
@@ -44,8 +51,6 @@ export default function Index({ data }) {
         <Card />
         <Card />
         <Card />
-        <Card />
-        <Instagram />
       </SimpleGrid>
     </Flex>
   )

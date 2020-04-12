@@ -3,8 +3,8 @@ import { Badge, Box, Image } from "@chakra-ui/core"
 
 export default function Card({ imageUrl, imageAlt }) {
   const property = {
-    imageUrl: `https://bit.ly/2Z4KKcF`,
-    imageAlt: `Rear view of modern home with pool`,
+    imageUrl,
+    imageAlt,
     beds: 3,
     baths: 2,
     title: `Modern home in city center in the heart of historic Los Angeles`,
@@ -15,10 +15,7 @@ export default function Card({ imageUrl, imageAlt }) {
 
   return (
     <Box maxW="sm" borderWidth="1px" rounded="lg" overflow="hidden">
-      <Image
-        src={property.imageUrl || imageUrl}
-        alt={property.imageAlt || imageAlt}
-      />
+      <Image src={property.imageUrl} alt={property.imageAlt} />
 
       <Box p="6">
         <Box d="flex" alignItems="baseline">

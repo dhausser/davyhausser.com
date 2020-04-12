@@ -1,8 +1,10 @@
 import React from "react"
 import { Box, Text, Heading, Flex, SimpleGrid } from "@chakra-ui/core"
-import Instagram from "../components/instagram"
+import useInstagram from "../components/instagram"
+import IntagramCard from "../components/instagram-card"
 
 export default function Index({ data }) {
+  const gramz = useInstagram()
   return (
     <Flex
       flexDirection="column"
@@ -19,7 +21,11 @@ export default function Index({ data }) {
         </Text>
       </Box>
       <SimpleGrid columns="3" spacing="4" mb="4">
-        <Instagram />
+        {gramz.map(gram => (
+          <a href={gram.url} key={gram.id}>
+            <IntagramCard imageUrl={gram.thumbnail} imageAlt={gram.caption} />
+          </a>
+        ))}
       </SimpleGrid>
     </Flex>
   )
