@@ -1,34 +1,57 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import ProjectPreview from "../components/project-preview"
-import SEO from "../components/seo"
 
-export default ({ data }) => {
-  const description =
-    "What do I like to do? Lots of course but definitely enjoy building websites."
+import { Box, Text, Heading, Flex, SimpleGrid } from "@chakra-ui/core"
+
+import ProjectCard from "../components/project-card"
+import Instagram from "../components/instagram"
+import Card from "../components/card"
+
+export default function Index({ data }) {
   return (
-    <Layout>
-      <SEO title={data.site.siteMetadata.title} description={description} />
-      <section className="tiles">
-        {data.allProjectsJson.edges.map(({ node: project }, index) => {
-          return (
-            <ProjectPreview
-              key={`preview-${project.slug.current}`}
-              title={project.title}
-              description={project.description}
-              imageData={project.image.childImageSharp.fluid}
-              slug={project.slug}
-              index={index}
-            />
-          )
-        })}
-      </section>
-    </Layout>
+    <Flex
+      flexDirection="column"
+      justifyContent="flex-start"
+      alignItems="flex-start"
+    >
+      <Box mb="6">
+        <Heading mb="4">Showcase</Heading>
+        <Text fontSize="xl">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus earum sapiente, suscipit consequatur animi quam quo
+          explicabo adipisci natus vero, dolor quaerat. Et cum distinctio
+          provident facere dolorem voluptas non.
+        </Text>
+      </Box>
+      <SimpleGrid columns="3" spacing="4" mb="4">
+        {data.allProjectsJson.edges.map(({ node: project }) => (
+          <ProjectCard
+            key={project.slug}
+            title={project.title}
+            description={project.description}
+            image={project.image}
+            slug={project.slug}
+            tags={project.tags}
+            url={project.url}
+          />
+        ))}
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Instagram />
+      </SimpleGrid>
+    </Flex>
   )
 }
 
-export const query = graphql`
+export const allProjectsQuery = graphql`
   query {
     allProjectsJson {
       edges {
@@ -36,6 +59,8 @@ export const query = graphql`
           title
           description
           slug
+          tags
+          url
           image {
             childImageSharp {
               fluid {
@@ -44,12 +69,6 @@ export const query = graphql`
             }
           }
         }
-      }
-    }
-    site {
-      siteMetadata {
-        title
-        description
       }
     }
   }

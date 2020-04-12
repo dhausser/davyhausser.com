@@ -1,51 +1,96 @@
 {
-  "name": "gatsby-portfolio",
+  "name": "gatsbygram",
   "private": true,
-  "description": "Davy Hausser portfolio site",
-  "version": "1.0.0",
+  "description": "A simplified bare-bones starter for Gatsby",
+  "version": "0.1.0",
+  "license": "MIT",
   "author": "Davy Hausser <davy.hausser@gmail.com>",
   "dependencies": {
-    "@emotion/core": "^10.0.27",
+    "@chakra-ui/core": "^0.7.0",
+    "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
-    "gatsby": "^2.19.18",
-    "gatsby-image": "^2.2.34",
-    "gatsby-plugin-emotion": "^4.1.22",
-    "gatsby-plugin-manifest": "^2.2.37",
-    "gatsby-plugin-offline": "^3.0.32",
-    "gatsby-plugin-react-helmet": "^3.1.21",
-    "gatsby-plugin-sass": "^2.1.28",
-    "gatsby-plugin-sharp": "^2.3.5",
-    "gatsby-plugin-stripe": "^1.2.3",
-    "gatsby-source-filesystem": "^2.1.40",
-    "gatsby-transformer-json": "^2.2.25",
-    "gatsby-transformer-remark": "^2.6.48",
-    "gatsby-transformer-sharp": "^2.3.7",
-    "node-sass": "^4.13.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1"
+    "emotion-theming": "^10.0.27",
+    "eslint": "^6.8.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-filenames": "^1.3.2",
+    "eslint-plugin-flowtype": "^4.7.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^3.0.0",
+    "gatsby": "^2.20.12",
+    "gatsby-image": "^2.3.1",
+    "gatsby-plugin-chakra-ui": "^0.1.4",
+    "gatsby-plugin-emotion": "^4.2.1",
+    "gatsby-plugin-manifest": "^2.3.3",
+    "gatsby-plugin-offline": "^3.1.2",
+    "gatsby-plugin-react-helmet": "^3.2.1",
+    "gatsby-plugin-sharp": "^2.5.4",
+    "gatsby-source-filesystem": "^2.2.2",
+    "gatsby-transformer-json": "^2.3.1",
+    "gatsby-transformer-remark": "^2.7.1",
+    "gatsby-transformer-sharp": "^2.4.4",
+    "husky": "^4.2.3",
+    "isomorphic-unfetch": "^3.0.0",
+    "lint-staged": "^10.1.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-helmet": "^5.2.1",
+    "react-icons": "^3.9.0"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "prettier": "^2.0.2",
+    "typescript": "^3.8.3"
   },
+  "homepage": "https://davyhausser.com",
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "davyhausser"
   ],
-  "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
-  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dhausser/davyhausser.com"
+    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
   },
   "bugs": {
-    "url": "https://github.com/dhausser/davyhausser.com/issues"
-  }
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "engines": {
+    "node": ">=13.12.0"
+  },
+  "eslintIgnore": [
+    "interfaces",
+    "**/__tests__/fixtures/"
+  ],
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --cache --ext .js,.jsx,.ts,.tsx --fix",
+      "git add"
+    ],
+    "*.{md,css,scss,yaml,yml}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.svg": [
+      "svgo --pretty --indent=2 --config=svgo.yml --multipass",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged || node scripts/on-lint-error.js"
+    }
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "dev": "netlify dev",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "gatsby develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "peerDependencies": {}
 }

@@ -1,20 +1,30 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+
+import { Heading, Flex, Box, Text } from "@chakra-ui/core"
+
 import Checkout from "../components/checkout"
 
-export default ({ data }) => {
-  return (
-    <Layout>
-      <SEO title={data.site.siteMetadata.title} />
-      <div>
-        <p><span role="img" aria-label="book">📕</span> Check out my new book!</p>
+export default ({ data }) => (
+  <Flex
+    flexDirection="column"
+    justifyContent="flex-start"
+    alignItems="flex-start"
+  >
+    <Box mb="6">
+      <Heading mb={4}>Modern online payments with Stripe Checkout</Heading>
+      <Text fontSize="xl">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
+        earum sapiente, suscipit consequatur animi quam quo explicabo adipisci
+        natus vero, dolor quaerat. Et cum distinctio provident facere dolorem
+        voluptas non.
+      </Text>
+      <Flex flexDirection="row" justifyContent="center">
         <Checkout />
-      </div>
-    </Layout>
-  )
-}
+      </Flex>
+    </Box>
+  </Flex>
+)
 
 export const query = graphql`
   query {

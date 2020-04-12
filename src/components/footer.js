@@ -1,33 +1,49 @@
-import React from 'react';
-import ContactForm from './contact-form';
-import config from '../../config';
-export default function Footer() {
-  return (
-    <footer id="footer">
-      <div className="inner">
-        <ContactForm />
-        <section>
-          <h2>Follow</h2>
-          <ul className="icons">
-            {config.socialLinks.map(social => {
-              const { icon, name, url } = social;
-              return (
-                <li key={url}>
-                  <a href={url} className={`icon ${icon}`}>
-                    <span className="label">{name}</span>
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-        </section>
-        <ul className="copyright">
-          <li>&copy; Phantom. All rights reserved</li>
-          <li>
-            Design: <a href="http://html5up.net">HTML5 UP</a>
-          </li>
-        </ul>
-      </div>
-    </footer>
-  );
-}
+import React from "react"
+import { Flex, Link, IconButton } from "@chakra-ui/core"
+
+const Footer = () => (
+  <Flex justify="center" mb={4}>
+    <Link href="https://twitter.com/davyhausser" title="Twitter" isExternal>
+      <IconButton
+        aria-label="Twitter"
+        icon="twitter"
+        size="lg"
+        color="gray.500"
+        variant="ghost"
+      />
+    </Link>
+    <Link href="https://github.com/dhausser" title="GitHub" isExternal>
+      <IconButton
+        aria-label="GitHub"
+        icon="github"
+        size="lg"
+        color="gray.500"
+        variant="ghost"
+      />
+    </Link>
+    <Link
+      href="https://www.linkedin.com/in/davyhausser/"
+      title="LinkedIn"
+      isExternal
+    >
+      <IconButton
+        aria-label="LinkedIn"
+        icon="linkedin"
+        size="lg"
+        color="gray.500"
+        variant="ghost"
+      />
+    </Link>
+    <Link href="mailto:davy.hausser@gmail.com" title="Email" isExternal>
+      <IconButton
+        aria-label="Email"
+        icon="mail"
+        size="lg"
+        color="gray.500"
+        variant="ghost"
+      />
+    </Link>
+  </Flex>
+)
+
+export default Footer

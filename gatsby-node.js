@@ -33,13 +33,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   `)
   if (result.error) {
-    reporter.panic("There was a problem loading your projects!")
+    reporter.panic(`There was a problem loading your projects!`)
     return
   }
   result.data.allProjectsJson.edges.forEach(({ node: { slug } }) => {
     actions.createPage({
       path: `/${slug}/`,
-      component: require.resolve("./src/templates/project.js"),
+      component: require.resolve(`./src/templates/project.js`),
       context: { slug },
     })
   })

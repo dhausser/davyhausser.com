@@ -1,24 +1,39 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import { Box, Text, Heading, Flex, SimpleGrid } from "@chakra-ui/core"
+import BlogCard from "../components/blog-card"
 
-export default ({ data }) => (
-  <Layout>
-    <SEO />
-    <div>
-      <h3>{data.allMarkdownRemark.totalCount} Posts</h3>
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-        <div key={node.id}>
-          <Link to={node.fields.slug}>
-            <h4>{node.frontmatter.title} – {node.frontmatter.date}</h4>
-            <p>{node.excerpt}</p>
+export default function Index({ data }) {
+  return (
+    <Flex
+      flexDirection="column"
+      justifyContent="flex-start"
+      alignItems="flex-start"
+    >
+      <Box mb="6">
+        <Heading mb={4}>Blog</Heading>
+        <Text fontSize="xl">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus earum sapiente, suscipit consequatur animi quam quo
+          explicabo adipisci natus vero, dolor quaerat. Et cum distinctio
+          provident facere dolorem voluptas non.
+        </Text>
+      </Box>
+      <Heading size="lg">{data.allMarkdownRemark.totalCount} Posts</Heading>
+      <SimpleGrid columns="3" spacing={4} mb={4}>
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+          <Link to={node.fields.slug} key={node.id}>
+            <BlogCard
+              title={node.frontmatter.title}
+              date={node.frontmatter.date}
+              excerpt={node.excerpt}
+            ></BlogCard>
           </Link>
-        </div>
-      ))}
-    </div>
-  </Layout>
-)
+        ))}
+      </SimpleGrid>
+    </Flex>
+  )
+}
 export const query = graphql`
   query {
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
