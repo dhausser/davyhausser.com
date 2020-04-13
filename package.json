@@ -64,16 +64,13 @@
   ],
   "lint-staged": {
     "*.{js,jsx}": [
-      "eslint --cache --ext .js,.jsx,.ts,.tsx --fix",
-      "git add"
+      "eslint --cache --ext .js,.jsx,.ts,.tsx --fix"
     ],
     "*.{md,css,scss,yaml,yml}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ],
     "*.svg": [
-      "svgo --pretty --indent=2 --config=svgo.yml --multipass",
-      "git add"
+      "svgo --pretty --indent=2 --config=svgo.yml --multipass"
     ]
   },
   "husky": {
