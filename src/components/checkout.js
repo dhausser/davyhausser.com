@@ -1,17 +1,21 @@
-import React, { useEffect, useRef } from "react"
+import React, { useState, useEffect } from "react"
+import { loadStripe } from "@stripe/stripe-js"
+
 import { Button } from "@chakra-ui/core"
 
 const Checkout = () => {
-  const stripe = useRef()
+  const [stripe, setStripe] = useState()
 
   useEffect(() => {
-    // eslint-disable-next-line new-cap
-    // stripe.current = window.Stripe(`pk_test_zywrqZUXI6crPwbzolFxAyF100AF2Wh0HA`)
-  })
+    const load = async () => {
+      setStripe(await loadStripe(`pk_test_zywrqZUXI6crPwbzolFxAyF100AF2Wh0HA`))
+    }
+    load()
+  }, [])
 
-  const redirectToCheckout = async event => {
-    event.preventDefault()
-    const { error } = await stripe.current.redirectToCheckout({
+  const redirectToCheckout = async e => {
+    e.preventDefault()
+    const { error } = await stripe.redirectToCheckout({
       items: [{ sku: `sku_Gf7RpLG0bzzbWo`, quantity: 1 }],
       successUrl: `http://davyhausser.com/`,
       cancelUrl: `http://davyhausser.com/store`,
@@ -27,7 +31,7 @@ const Checkout = () => {
       size="lg"
       variantColor="green"
       mt="24px"
-      onClick={event => redirectToCheckout(event)}
+      onClick={redirectToCheckout}
     >
       Try Mock Payment
     </Button>

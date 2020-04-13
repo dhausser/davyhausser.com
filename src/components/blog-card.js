@@ -1,21 +1,18 @@
 import React from "react"
+import { Link } from "gatsby"
 import { Badge, Box, Image } from "@chakra-ui/core"
 
-export default function Card({ title, date, excerpt }) {
+export default function Card({ title, date, excerpt, slug }) {
   const property = {
     imageUrl: `https://bit.ly/2Z4KKcF`,
     imageAlt: `Rear view of modern home with pool`,
-    beds: 3,
-    baths: 2,
-    title: `Modern home in city center in the heart of historic Los Angeles`,
-    formattedPrice: `$1,900.00`,
-    reviewCount: 34,
-    rating: 4,
   }
 
   return (
-    <Box maxW="sm" borderWidth="1px" rounded="lg" overflow="hidden">
-      <Image src={property.imageUrl} alt={property.imageAlt} />
+    <Box borderWidth="1px" rounded="lg" overflow="hidden" minwW="300px">
+      <Link to={slug}>
+        <Image src={property.imageUrl} alt={property.imageAlt} />
+      </Link>
 
       <Box p="6">
         <Box d="flex" alignItems="baseline">
@@ -30,7 +27,7 @@ export default function Card({ title, date, excerpt }) {
             textTransform="uppercase"
             ml="2"
           >
-            5 min read
+            {date}
           </Box>
         </Box>
 
@@ -41,18 +38,10 @@ export default function Card({ title, date, excerpt }) {
           lineHeight="tight"
           isTruncated
         >
-          {property.title}
+          <Link to={slug}>{title}</Link>
         </Box>
 
         <Box d="flex" mt="2" alignItems="center">
-          {/* {Array(5)
-            .fill(``)
-            .map((_, i) => (
-              <StarIcon
-                key={i}
-                color={i < property.rating ? `teal.500` : `gray.300`}
-              />
-            ))} */}
           <Box as="span" color="gray.600" fontSize="sm" isTruncated>
             {excerpt}
           </Box>

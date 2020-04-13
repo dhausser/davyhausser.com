@@ -6,11 +6,7 @@ import { Heading, Flex, Box, Text } from "@chakra-ui/core"
 import Checkout from "../components/checkout"
 
 export default ({ data }) => (
-  <Flex
-    flexDirection="column"
-    justifyContent="flex-start"
-    alignItems="flex-start"
-  >
+  <>
     <Box mb="6">
       <Heading mb={4}>Modern online payments with Stripe Checkout</Heading>
       <Text fontSize="xl">
@@ -23,7 +19,7 @@ export default ({ data }) => (
         <Checkout />
       </Flex>
     </Box>
-  </Flex>
+  </>
 )
 
 export const query = graphql`

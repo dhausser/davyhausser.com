@@ -2,8 +2,8 @@ import React from "react"
 import { graphql } from "gatsby"
 import { Link } from "gatsby"
 import Image from "gatsby-image"
-
 import {
+  Text,
   Badge,
   Heading,
   Flex,
@@ -17,10 +17,9 @@ const ProjectPage = ({ data }) => {
   const { title, image, description, tags, url, slug } = data.projectsJson
 
   return (
-    <Flex flexDirection="column" width="100%" minWidth="700px">
+    <Box width="700px">
       <Heading>{title}</Heading>
-
-      <Box>
+      <Box width="100%">
         <Image fluid={image.childImageSharp.fluid} alt={title} />
       </Box>
 
@@ -34,7 +33,6 @@ const ProjectPage = ({ data }) => {
             </Box>
           ))}
         </Flex>
-
         <Flex justifyContent="flex-end" alignItems="baseline">
           <a href={`https://github.com/dhausser/${slug}`}>
             <IconButton
@@ -54,26 +52,13 @@ const ProjectPage = ({ data }) => {
           </a>
         </Flex>
       </Flex>
-
-      <Flex
-        color="gray.500"
-        fontWeight="semibold"
-        letterSpacing="wide"
-        fontSize="xs"
-        textTransform="uppercase"
-        pb="6"
-        m="2"
-        // ml="2"
-        // pt="6"
-        // pb="6"
-      >
-        {description}
-      </Flex>
-
+      <Box mb="6">
+        <Text fontSize="xl">{description}</Text>
+      </Box>
       <Link to="/">
         <Button>&larr; Back to all projects</Button>
       </Link>
-    </Flex>
+    </Box>
   )
 }
 

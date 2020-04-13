@@ -2,10 +2,10 @@ import React from "react"
 import { Link } from "gatsby"
 import Image from "gatsby-image"
 
-import { Button, Badge, Box, Flex, IconButton, Icon } from "@chakra-ui/core"
+import { Badge, Box, Flex, IconButton, Icon } from "@chakra-ui/core"
 
 const ProjectCard = ({ slug, title, description, image, tags, url }) => (
-  <Box maxW="sm" borderWidth="1px" rounded="lg" overflow="hidden">
+  <Box borderWidth="1px" rounded="lg" overflow="hidden" minW="300px">
     <Link to={`/${slug}`}>
       <Image fluid={image.childImageSharp.fluid} alt={title} />
     </Link>
@@ -28,11 +28,7 @@ const ProjectCard = ({ slug, title, description, image, tags, url }) => (
       </Box>
 
       <Flex justifyContent="space-between" alignItems="baseline">
-        <Link to={`/${slug}`}>
-          <Button as="a" variant="ghost" p={[1, 4]}>
-            {title}
-          </Button>
-        </Link>
+        <Link to={`/${slug}`}>{title}</Link>
         <Box>
           <a
             href={`https://github.com/dhausser/${slug}`}

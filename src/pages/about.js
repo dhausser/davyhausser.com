@@ -1,16 +1,13 @@
 import React from "react"
-import { Box, Text, Heading, Flex, SimpleGrid } from "@chakra-ui/core"
+import { Box, Text, Heading } from "@chakra-ui/core"
 import useInstagram from "../components/instagram"
 import IntagramCard from "../components/instagram-card"
+import CardGrid from "../components/card-grid"
 
 export default function Index({ data }) {
   const gramz = useInstagram()
   return (
-    <Flex
-      flexDirection="column"
-      justifyContent="flex-start"
-      alignItems="flex-start"
-    >
+    <>
       <Box mb="6">
         <Heading mb={4}>About</Heading>
         <Text fontSize="xl">
@@ -20,13 +17,13 @@ export default function Index({ data }) {
           provident facere dolorem voluptas non.
         </Text>
       </Box>
-      <SimpleGrid columns="3" spacing="4" mb="4">
+      <CardGrid columns={[1, 1, 2]} spacing={4} mb={4}>
         {gramz.map(gram => (
           <a href={gram.url} key={gram.id}>
             <IntagramCard imageUrl={gram.thumbnail} imageAlt={gram.caption} />
           </a>
         ))}
-      </SimpleGrid>
-    </Flex>
+      </CardGrid>
+    </>
   )
 }

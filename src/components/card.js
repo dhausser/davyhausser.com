@@ -14,7 +14,7 @@ export default function Card({ imageUrl, imageAlt }) {
   }
 
   return (
-    <Box maxW="sm" borderWidth="1px" rounded="lg" overflow="hidden">
+    <Box borderWidth="1px" rounded="lg" overflow="hidden" minW="300px">
       <Image
         src={property.imageUrl || imageUrl}
         alt={property.imageAlt || imageAlt}

@@ -1,21 +1,17 @@
 import React from "react"
 import { graphql } from "gatsby"
-
-import { Box, Text, Heading, Flex, SimpleGrid } from "@chakra-ui/core"
+import { Box, Text, Heading } from "@chakra-ui/core"
 
 import ProjectCard from "../components/project-card"
 import IntagramCard from "../components/instagram-card"
 import useInstagram from "../components/instagram"
+import CardGrid from "../components/card-grid"
 import Card from "../components/card"
 
 export default function Index({ data }) {
   const gramz = useInstagram()
   return (
-    <Flex
-      flexDirection="column"
-      justifyContent="flex-start"
-      alignItems="flex-start"
-    >
+    <>
       <Box mb="6">
         <Heading mb="4">Showcase</Heading>
         <Text fontSize="xl">
@@ -25,7 +21,7 @@ export default function Index({ data }) {
           provident facere dolorem voluptas non.
         </Text>
       </Box>
-      <SimpleGrid columns="3" spacing="4" mb="4">
+      <CardGrid>
         {data.allProjectsJson.edges.map(({ node: project }) => (
           <ProjectCard
             key={project.slug}
@@ -44,15 +40,8 @@ export default function Index({ data }) {
         ))}
         <Card />
         <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </SimpleGrid>
-    </Flex>
+      </CardGrid>
+    </>
   )
 }
 

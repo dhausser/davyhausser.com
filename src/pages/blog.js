@@ -1,15 +1,12 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-import { Box, Text, Heading, Flex, SimpleGrid } from "@chakra-ui/core"
+import { graphql } from "gatsby"
+import { Box, Text, Heading } from "@chakra-ui/core"
+import CardGrid from "../components/card-grid"
 import BlogCard from "../components/blog-card"
 
 export default function Index({ data }) {
   return (
-    <Flex
-      flexDirection="column"
-      justifyContent="flex-start"
-      alignItems="flex-start"
-    >
+    <>
       <Box mb="6">
         <Heading mb={4}>Blog</Heading>
         <Text fontSize="xl">
@@ -20,18 +17,18 @@ export default function Index({ data }) {
         </Text>
       </Box>
       <Heading size="lg">{data.allMarkdownRemark.totalCount} Posts</Heading>
-      <SimpleGrid columns="3" spacing={4} mb={4}>
+      <CardGrid columns={[1, 1, 2]} spacing={4} mb={4}>
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <Link to={node.fields.slug} key={node.id}>
-            <BlogCard
-              title={node.frontmatter.title}
-              date={node.frontmatter.date}
-              excerpt={node.excerpt}
-            ></BlogCard>
-          </Link>
+          <BlogCard
+            key={node.id}
+            slug={node.fields.slug}
+            title={node.frontmatter.title}
+            date={node.frontmatter.date}
+            excerpt={node.excerpt}
+          ></BlogCard>
         ))}
-      </SimpleGrid>
-    </Flex>
+      </CardGrid>
+    </>
   )
 }
 export const query = graphql`

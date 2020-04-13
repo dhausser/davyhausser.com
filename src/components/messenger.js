@@ -45,10 +45,12 @@ export default class Messenger extends Component {
           className="fb-customerchat"
           attribution="setup_tool"
           page_id="102517684675518"
-          theme_color="#7646ff"
-          logged_in_greeting="Hi! How can I help?"
-          logged_out_greeting="Hi! How can I help?"
-        ></div>
+          theme_color="#212C35"
+          logged_in_greeting="Hi! Thanks for getting in touch. Please send me any questions you may have."
+          logged_out_greeting="Hi! Thanks for getting in touch. Please send me any questions you may have."
+        >
+          >
+        </div>
         {children}
       </div>
     )
