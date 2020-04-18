@@ -1,35 +1,66 @@
 import React from "react"
+import { css } from "@emotion/core"
 import { Link } from "gatsby"
 import Image from "gatsby-image"
 
-import { Badge, Box, Flex, IconButton, Icon } from "@chakra-ui/core"
+import { Badge, Flex, IconButton, Icon } from "@chakra-ui/core"
 
 const ProjectCard = ({ slug, title, description, image, tags, url }) => (
-  <Box borderWidth="1px" rounded="lg" overflow="hidden" minW="300px">
-    <Link to={`/${slug}`}>
+  <div
+    css={css`
+      display: grid;
+      background: #fff;
+      border-radius: 9px;
+      border: 1px solid #eee;
+      box-shadow: 0 0 30px #d5d5d5;
+      overflow: hidden;
+      line-height: 1.5;
+      margin-top: 0;
+    `}
+  >
+    <Link
+      to={`/${slug}`}
+      css={css`
+        color: #381696;
+        text-decoration: none;
+        margin-top: 0;
+        cursor: pointer;
+      `}
+    >
       <Image fluid={image.childImageSharp.fluid} alt={title} />
     </Link>
 
-    <Box p="6">
-      <Box d="flex" alignItems="baseline">
+    <div
+      css={css`
+        padding: "6xp";
+      `}
+    >
+      <div
+        css={css`
+          display: flex;
+          align-items: baseline;
+        `}
+      >
         <Badge rounded="full" px="2" variantColor="teal">
           {tags[0]}
         </Badge>
-        <Box
-          color="gray.500"
-          fontWeight="semibold"
-          letterSpacing="wide"
-          fontSize="xs"
-          textTransform="uppercase"
-          ml="2"
+        <div
+          css={css`
+            color: "gray";
+            font-weight: "semibold";
+            letter-spacing: "wide";
+            text-transform: "uppercase";
+            font-size: "20px";
+            margin-left: "2px";
+          `}
         >
           {tags[1]} &bull; {tags[2]}
-        </Box>
-      </Box>
+        </div>
+      </div>
 
       <Flex justifyContent="space-between" alignItems="baseline">
         <Link to={`/${slug}`}>{title}</Link>
-        <Box>
+        <div>
           <a
             href={`https://github.com/dhausser/${slug}`}
             title="GitHub"
@@ -46,16 +77,16 @@ const ProjectCard = ({ slug, title, description, image, tags, url }) => (
           <a href={url}>
             <Icon name="external-link" mx={2} />
           </a>
-        </Box>
+        </div>
       </Flex>
 
-      <Box>
-        <Box as="span" color="gray.600" fontSize="sm">
+      <div>
+        <div as="span" color="gray.600" fontSize="sm">
           {description}
-        </Box>
-      </Box>
-    </Box>
-  </Box>
+        </div>
+      </div>
+    </div>
+  </div>
 )
 
 export default ProjectCard

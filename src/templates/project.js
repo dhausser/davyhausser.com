@@ -1,7 +1,8 @@
 import React from "react"
-import { graphql } from "gatsby"
-import { Link } from "gatsby"
+import { graphql, Link } from "gatsby"
+import { css } from "@emotion/core"
 import Image from "gatsby-image"
+
 import {
   Text,
   Badge,
@@ -17,7 +18,11 @@ const ProjectPage = ({ data }) => {
   const { title, image, description, tags, url, slug } = data.projectsJson
 
   return (
-    <Box width="700px">
+    <div
+      css={css`
+        display: "block";
+      `}
+    >
       <Heading>{title}</Heading>
       <Box width="100%">
         <Image fluid={image.childImageSharp.fluid} alt={title} />
@@ -58,7 +63,7 @@ const ProjectPage = ({ data }) => {
       <Link to="/">
         <Button>&larr; Back to all projects</Button>
       </Link>
-    </Box>
+    </div>
   )
 }
 

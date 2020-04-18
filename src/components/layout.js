@@ -1,24 +1,24 @@
 import React from "react"
-import { Stack } from "@chakra-ui/core"
+import { css } from "@emotion/core"
 
 import SEO from "../components/seo"
-import Container from "../components/container"
+import Nav from "./nav"
+import Footer from "./footer"
 
 export default function Layout({ children }) {
   return (
-    <Container>
+    <div
+      css={css`
+        display: block;
+        padding: 32px;
+        max-width: 1140px;
+        margin: 0 auto;
+      `}
+    >
       <SEO />
-      <Stack
-        as="article"
-        spacing={8}
-        justifyContent="center"
-        alignItems="flex-start"
-        m="0 auto 4rem auto"
-        maxWidth="700px"
-        w="100%"
-      >
-        {children}
-      </Stack>
-    </Container>
+      <Nav />
+      {children}
+      <Footer />
+    </div>
   )
 }

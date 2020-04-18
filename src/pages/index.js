@@ -1,27 +1,44 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Box, Text, Heading } from "@chakra-ui/core"
+import { css } from "@emotion/core"
 
 import ProjectCard from "../components/project-card"
 import IntagramCard from "../components/instagram-card"
 import useInstagram from "../components/instagram"
-import CardGrid from "../components/card-grid"
-import Card from "../components/card"
 
 export default function Index({ data }) {
   const gramz = useInstagram()
   return (
     <>
-      <Box mb="6">
-        <Heading mb="4">Showcase</Heading>
-        <Text fontSize="xl">
+      <div
+        css={css`
+          display: block;
+        `}
+      >
+        <heading>Showcase</heading>
+        <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
           Necessitatibus earum sapiente, suscipit consequatur animi quam quo
           explicabo adipisci natus vero, dolor quaerat. Et cum distinctio
           provident facere dolorem voluptas non.
-        </Text>
-      </Box>
-      <CardGrid>
+        </p>
+      </div>
+      <div
+        css={css`
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-gap: 32px;
+          margin-top: 32px;
+
+          @media only screen and (min-width: 768px) {
+            grid-template-columns: 1fr 1fr;
+          }
+
+          @media only screen and (min-width: 1024px) {
+            grid-template-columns: 1fr 1fr 1fr;
+          }
+        `}
+      >
         {data.allProjectsJson.edges.map(({ node: project }) => (
           <ProjectCard
             key={project.slug}
@@ -38,9 +55,7 @@ export default function Index({ data }) {
             <IntagramCard imageUrl={gram.thumbnail} imageAlt={gram.caption} />
           </a>
         ))}
-        <Card />
-        <Card />
-      </CardGrid>
+      </div>
     </>
   )
 }

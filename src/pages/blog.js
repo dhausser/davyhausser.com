@@ -1,23 +1,40 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Box, Text, Heading } from "@chakra-ui/core"
-import CardGrid from "../components/card-grid"
+import { css } from "@emotion/core"
+
 import BlogCard from "../components/blog-card"
 
 export default function Index({ data }) {
   return (
-    <>
-      <Box mb="6">
-        <Heading mb={4}>Blog</Heading>
-        <Text fontSize="xl">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Necessitatibus earum sapiente, suscipit consequatur animi quam quo
-          explicabo adipisci natus vero, dolor quaerat. Et cum distinctio
-          provident facere dolorem voluptas non.
-        </Text>
-      </Box>
-      <Heading size="lg">{data.allMarkdownRemark.totalCount} Posts</Heading>
-      <CardGrid columns={[1, 1, 2]} spacing={4} mb={4}>
+    <div
+      css={css`
+        display: block;
+      `}
+    >
+      <heading>Blog</heading>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
+        earum sapiente, suscipit consequatur animi quam quo explicabo adipisci
+        natus vero, dolor quaerat. Et cum distinctio provident facere dolorem
+        voluptas non.
+      </p>
+      <heading>{data.allMarkdownRemark.totalCount} Posts</heading>
+      <div
+        css={css`
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-gap: 32px;
+          margin-top: 32px;
+
+          @media only screen and (min-width: 768px) {
+            grid-template-columns: 1fr 1fr;
+          }
+
+          @media only screen and (min-width: 1024px) {
+            grid-template-columns: 1fr 1fr 1fr;
+          }
+        `}
+      >
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <BlogCard
             key={node.id}
@@ -27,8 +44,8 @@ export default function Index({ data }) {
             excerpt={node.excerpt}
           ></BlogCard>
         ))}
-      </CardGrid>
-    </>
+      </div>
+    </div>
   )
 }
 export const query = graphql`

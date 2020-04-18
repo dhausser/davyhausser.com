@@ -1,8 +1,9 @@
 import React from "react"
+import { css } from "@emotion/core"
 import { Box, Text, Heading } from "@chakra-ui/core"
+
 import useInstagram from "../components/instagram"
 import IntagramCard from "../components/instagram-card"
-import CardGrid from "../components/card-grid"
 
 export default function Index({ data }) {
   const gramz = useInstagram()
@@ -17,13 +18,28 @@ export default function Index({ data }) {
           provident facere dolorem voluptas non.
         </Text>
       </Box>
-      <CardGrid columns={[1, 1, 2]} spacing={4} mb={4}>
+      <div
+        css={css`
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-gap: 32px;
+          margin-top: 32px;
+
+          @media only screen and (min-width: 768px) {
+            grid-template-columns: 1fr 1fr;
+          }
+
+          @media only screen and (min-width: 1024px) {
+            grid-template-columns: 1fr 1fr 1fr;
+          }
+        `}
+      >
         {gramz.map(gram => (
           <a href={gram.url} key={gram.id}>
             <IntagramCard imageUrl={gram.thumbnail} imageAlt={gram.caption} />
           </a>
         ))}
-      </CardGrid>
+      </div>
     </>
   )
 }
