@@ -34,9 +34,9 @@ export default function Index({ data }) {
             grid-template-columns: 1fr 1fr;
           }
 
-          @media only screen and (min-width: 1024px) {
+          /* @media only screen and (min-width: 1024px) {
             grid-template-columns: 1fr 1fr 1fr;
-          }
+          } */
         `}
       >
         {data.allProjectsJson.edges.map(({ node: project }) => (

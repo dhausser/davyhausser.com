@@ -1,9 +1,9 @@
 [
   {
-    "title": "Ecommerce",
-    "slug": "sick-fits",
-    "url": "https://sick-fits-next-js.herokuapp.com/",
-    "image": "./images/sick-fits.jpg",
+    "title": "Wanderlost",
+    "slug": "wanderlost",
+    "url": "https://ecommerce-nextjs-apollo-prod.herokuapp.com/",
+    "image": "./images/wanderlost.jpg",
     "description": "Next.js app with GraphQL backend",
     "tags": [
       "Next.js",
@@ -12,30 +12,6 @@
       "JavaScript",
       "React",
       "Node.js"
-    ]
-  },
-  {
-    "title": "Space Explorer",
-    "slug": "space-explorer",
-    "url": "https://space-explorer-dhausser.herokuapp.com/",
-    "image": "./images/space-explorer.jpg",
-    "description": "Apollo GraphQL server with React",
-    "tags": [
-      "Apollo",
-      "GraphQL",
-      "React"
-    ]
-  },
-  {
-    "title": "Store Finder",
-    "slug": "dang-thats-delicious",
-    "url": "https://now-thats-delicious-dhausser.herokuapp.com/",
-    "image": "./images/now-thats-delicious.jpg",
-    "description": "Node Express app with MongoDB",
-    "tags": [
-      "Node",
-      "Express",
-      "MongoDB"
     ]
   },
   {
@@ -51,6 +27,18 @@
     ]
   },
   {
+    "title": "Store Finder",
+    "slug": "dang-thats-delicious",
+    "url": "https://now-thats-delicious-dhausser.herokuapp.com/",
+    "image": "./images/now-thats-delicious.jpg",
+    "description": "Node Express app with MongoDB",
+    "tags": [
+      "Node",
+      "Express",
+      "MongoDB"
+    ]
+  },
+  {
     "title": "Fish Market",
     "slug": "catch-of-the-day",
     "url": "https://catch-of-the-day-by-dhausser.netlify.com/",
@@ -60,18 +48,6 @@
       "React",
       "Firebase",
       "JavaScript"
-    ]
-  },
-  {
-    "title": "Mongo Movies",
-    "slug": "mflix-js",
-    "url": " https://mflix-js-dhausser.herokuapp.com/",
-    "image": "./images/mflix.jpg",
-    "description": "Movies list with MongoDB Node JS driver",
-    "tags": [
-      "Express",
-      "Node.js",
-      "MongoDB"
     ]
   }
 ]
