@@ -2,7 +2,7 @@
   {
     "title": "Wanderlost",
     "slug": "wanderlost",
-    "url": "https://ecommerce-nextjs-apollo-prod.herokuapp.com/",
+    "url": "https://ecommerce-nextjs-apollo-client.now.sh/",
     "image": "./images/wanderlost.jpg",
     "description": "Next.js app with GraphQL backend",
     "tags": [
