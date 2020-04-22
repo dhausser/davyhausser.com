@@ -3,10 +3,10 @@ import Helmet from 'react-helmet';
 import { graphql } from 'gatsby'
 import Layout from "../components/layout"
 import PostLink from "../components/post-link"
-import GramLink from "../components/gram-link"
+// import GramLink from "../components/gram-link"
 import HeroHeader from "../components/heroHeader"
 import Messenger from '../components/messenger'
-import { useInstagram } from "../components/instagram"
+// import { useInstagram } from "../components/instagram"
 
 const IndexPage = ({
   data: {
@@ -14,8 +14,8 @@ const IndexPage = ({
     allMarkdownRemark: { edges },
   },
 }) => {
-  const instagram = useInstagram();
-  const Posts = instagram.map(gram => <GramLink key={gram.id} post={gram.thumbnail} caption={gram.caption} />)
+  // const instagram = useInstagram();
+  // const Posts = instagram.map(gram => <GramLink key={gram.id} post={gram.thumbnail} caption={gram.caption} />)
 
   const Projects = edges
     .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
