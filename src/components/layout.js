@@ -1,24 +1,37 @@
 import React from "react"
-import { css } from "@emotion/core"
+import { Link, useStaticQuery, graphql } from "gatsby"
+import Navigation from "../components/navigation"
+import 'prismjs/themes/prism-okaidia.css';
 
-import SEO from "../components/seo"
-import Nav from "./nav"
-import Footer from "./footer"
-
-export default function Layout({ children }) {
+export default ({ children }) => {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `
+  )
   return (
-    <div
-      css={css`
-        display: block;
-        padding: 32px;
-        max-width: 1140px;
-        margin: 0 auto;
-      `}
-    >
-      <SEO />
-      <Nav />
+    <div className="site-wrapper">
+      <header className="site-header">
+        <div className="site-title">
+          <Link to="/">{data.site.siteMetadata.title}</Link>
+        </div>
+        <Navigation />
+      </header>
       {children}
-      <Footer />
+      <footer className="site-footer">
+        <div style={{ margin: '20px', padding: '20px' }}>
+          <Link to='/contact' className="button -primary">Get in touch &rarr;</Link>
+        </div>
+        <div style={{ margin: '20px', padding: '20px' }}>
+          <p>&copy; 2020 Davy Hausser &bull; Crafted with <span role="img" aria-label="love">⚡</span> @ <a href="https://github/dhausser.com">GitHub</a> | <a href="https://www.linkedin.com/in/davyhausser/">LinkedIn</a></p>
+        </div>
+      </footer>
     </div>
   )
 }

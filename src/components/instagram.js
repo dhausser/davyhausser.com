@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 
-function useInstagram() {
+export function useInstagram() {
   const [posts, setPosts] = useState([])
   useEffect(() => {
     fetch(`/.netlify/functions/instagram`)
@@ -9,10 +9,5 @@ function useInstagram() {
         setPosts(data)
       })
   }, [])
-  return posts
-}
-
-export default function Instagram() {
-  const gramz = useInstagram()
-  return Array.isArray(gramz) ? gramz : []
+  return Array.isArray(posts) ? posts : []
 }

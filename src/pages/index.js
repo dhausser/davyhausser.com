@@ -1,81 +1,61 @@
 import React from "react"
-import { graphql } from "gatsby"
-import { css } from "@emotion/core"
+import Helmet from 'react-helmet';
+import { graphql } from 'gatsby'
+import Layout from "../components/layout"
+import PostLink from "../components/post-link"
+import GramLink from "../components/gram-link"
+import HeroHeader from "../components/heroHeader"
+import Messenger from '../components/messenger'
+import { useInstagram } from "../components/instagram"
 
-import ProjectCard from "../components/project-card"
-import IntagramCard from "../components/instagram-card"
-import useInstagram from "../components/instagram"
+const IndexPage = ({
+  data: {
+    site,
+    allMarkdownRemark: { edges },
+  },
+}) => {
+  const instagram = useInstagram();
+  const Posts = instagram.map(gram => <GramLink key={gram.id} post={gram.thumbnail} caption={gram.caption} />)
 
-export default function Index({ data }) {
-  const gramz = useInstagram()
+  const Projects = edges
+    .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
+    .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
+
   return (
-    <>
-      <div
-        css={css`
-          display: block;
-        `}
-      >
-        <heading>Showcase</heading>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Necessitatibus earum sapiente, suscipit consequatur animi quam quo
-          explicabo adipisci natus vero, dolor quaerat. Et cum distinctio
-          provident facere dolorem voluptas non.
-        </p>
-      </div>
-      <div
-        css={css`
-          display: grid;
-          grid-template-columns: 1fr;
-          grid-gap: 32px;
-          margin-top: 32px;
-
-          @media only screen and (min-width: 768px) {
-            grid-template-columns: 1fr 1fr;
-          }
-
-          /* @media only screen and (min-width: 1024px) {
-            grid-template-columns: 1fr 1fr 1fr;
-          } */
-        `}
-      >
-        {data.allProjectsJson.edges.map(({ node: project }) => (
-          <ProjectCard
-            key={project.slug}
-            title={project.title}
-            description={project.description}
-            image={project.image}
-            slug={project.slug}
-            tags={project.tags}
-            url={project.url}
-          />
-        ))}
-        {gramz.map(gram => (
-          <a href={gram.url} key={gram.id}>
-            <IntagramCard imageUrl={gram.thumbnail} imageAlt={gram.caption} />
-          </a>
-        ))}
-      </div>
-    </>
+    <Layout>
+      <Helmet>
+        <title>{site.siteMetadata.title}</title>
+        <meta name="description" content={site.siteMetadata.description} />
+      </Helmet>
+      <Messenger>
+        <HeroHeader />
+        <div className="grids">
+          {[...Projects, ...Posts]}
+        </div>
+      </Messenger>
+    </Layout>
   )
 }
 
-export const allProjectsQuery = graphql`
-  query {
-    allProjectsJson {
+export default IndexPage
+export const pageQuery = graphql`
+  query indexPageQuery {
+    site {
+      siteMetadata {
+        title
+        description
+      }
+    }
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
-          title
-          description
-          slug
-          tags
-          url
-          image {
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
-            }
+          id
+          excerpt(pruneLength: 250)
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            path
+            title
+            thumbnail
           }
         }
       }
