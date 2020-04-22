@@ -29,7 +29,7 @@ export default ({ children }) => {
           <Link to='/contact' className="button -primary">Get in touch &rarr;</Link>
         </div>
         <div style={{ margin: '20px', padding: '20px' }}>
-          <p>&copy; 2020 Davy Hausser &bull; Crafted with <span role="img" aria-label="love">⚡</span> @ <a href="https://github/dhausser.com">GitHub</a> | <a href="https://www.linkedin.com/in/davyhausser/">LinkedIn</a></p>
+          <p>&copy; 2020 Davy Hausser &bull; Crafted with <span role="img" aria-label="love">⚡</span> @ <a href="https://github.com/dhausser.com">GitHub</a> | <a href="https://www.linkedin.com/in/davyhausser/">LinkedIn</a></p>
         </div>
       </footer>
     </div>
