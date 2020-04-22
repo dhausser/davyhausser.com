@@ -17,7 +17,7 @@ const IndexPage = ({
   // const instagram = useInstagram();
   // const Posts = instagram.map(gram => <GramLink key={gram.id} post={gram.thumbnail} caption={gram.caption} />)
 
-  const Projects = edges
+  const Posts = edges
     .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
     .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
 
@@ -30,7 +30,7 @@ const IndexPage = ({
       <Messenger>
         <HeroHeader />
         <div className="grids">
-          {[...Projects, ...Posts]}
+          {Posts}
         </div>
       </Messenger>
     </Layout>
