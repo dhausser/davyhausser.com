@@ -14,8 +14,8 @@ const SuccessPage = ({ data: { site }}) => {
       </Helmet>
       <Messenger>
         <HeroHeader />
-        <div style={{ margin: '20px', padding: '20px', justifyContent: "center" }}>
-          Thanks for getting in touch! You just received an update shortly.
+        <div style={{ margin: '20px', padding: '20px', display: "flex", justifyContent: "center" }}>
+          <p>Thanks for getting in touch! You just received an update shortly.</p>
           <Link to='/' className="button -primary">Return to the Homepage &rarr;</Link>
         </div>
       </Messenger>
