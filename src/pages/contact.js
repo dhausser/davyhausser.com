@@ -21,7 +21,7 @@ const ContactPage = ({ data: { site } }) => (
           className="form-container"
           name="contact"
           method="post"
-          data-netlify="true"
+          netlify="true"
         >
           <div>
             <label htmlFor="name">Name</label>
