@@ -3,7 +3,7 @@ template: StoreFinder
 path: /store-finder
 date: 2020-04-18T12:12:25.364Z
 title: 'Store Finder'
-thumbnail: /assets/now-thats-delicious.jpg
+thumbnail: /assets/store-finder.jpg
 metaDescription: store finder
 ---
 # Store Finder
