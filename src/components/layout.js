@@ -25,12 +25,7 @@ export default ({ children }) => {
       </header>
       {children}
       <footer className="site-footer">
-        <div style={{ margin: '20px', padding: '20px' }}>
-          <Link to='/contact' className="button -primary">Get in touch &rarr;</Link>
-        </div>
-        <div style={{ margin: '20px', padding: '20px' }}>
-          <p>&copy; 2020 Davy Hausser &bull; Crafted with <span role="img" aria-label="love">⚡</span> @ <a href="https://github.com/dhausser">GitHub</a> | <a href="https://www.linkedin.com/in/davyhausser/">LinkedIn</a></p>
-        </div>
+        <p>&copy; 2020 Davy Hausser &bull; Crafted with <span role="img" aria-label="love">⚡</span> @ <a href="https://github.com/dhausser">GitHub</a> | <a href="https://www.linkedin.com/in/davyhausser/">LinkedIn</a></p>
       </footer>
     </div>
   )

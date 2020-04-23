@@ -32,6 +32,9 @@ const IndexPage = ({
         <div className="grids">
           {Posts}
         </div>
+        <div style={{ margin: '20px', padding: '20px' }}>
+          <Link to='/contact' className="button -primary">Get in touch &rarr;</Link>
+        </div>
       </Messenger>
     </Layout>
   )
