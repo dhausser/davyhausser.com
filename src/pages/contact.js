@@ -43,6 +43,7 @@ const ContactPage = ({ data: { site } }) => (
             <input
               type="submit"
               className="button -primary"
+              action="/pages/success"
               style={{ marginRight: 0 }}
             />
           </div>
