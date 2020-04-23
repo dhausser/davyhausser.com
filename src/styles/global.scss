@@ -9,9 +9,9 @@ body {
   margin-top: 0
 }
 body.light {
-  --primary-color: #381696;
+  --primary-color: #172B4D;
   --primary-text-color: #fff;
-  --featured-bg: #493b8a;
+  --featured-bg: #172B4D;
   --featured-text: #fff;
   --secondary-color: #10072b;
   --background: #fff;
@@ -222,6 +222,8 @@ a {
   box-shadow: 0 0 30px var(--card-shadow);
   overflow: hidden;
   line-height: 1.5;
+  transition: all .2s ease-in-out;
+  &:hover { transform: scale(1.1);
   &:hover .post-link {
     color: var(--primary-color);
   }
@@ -246,6 +248,7 @@ a {
     color: var(--text-color);
     text-decoration: none;
   }
+
 }
 .post-meta {
   font-size: 0.8rem;

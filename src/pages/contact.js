@@ -12,10 +12,6 @@ const ContactPage = ({ data: { site } }) => (
     <div className="two-grids -contact">
       <div
         className="post-thumbnail"
-        style={{
-          backgroundImage: `url('/assets/alexander-andrews-HgUDpaGPTEA-unsplash.webp')`,
-          marginBottom: 0,
-        }}
       >
         <h1 className="post-title">Get in Touch</h1>
         <p>Let me help you kick start your next project &rarr;</p>
@@ -23,24 +19,25 @@ const ContactPage = ({ data: { site } }) => (
       <div>
         <form
           className="form-container"
-          action="https://sendmail.w3layouts.com/SubmitContactForm"
+          name="contact"
           method="post"
+          netlify="true"
         >
           <div>
-            <label htmlFor="w3lName">Name</label>
-            <input type="text" name="w3lName" id="w3lName" />
+            <label htmlFor="name">Name</label>
+            <input type="text" name="name" id="name" />
           </div>
           <div>
-            <label htmlFor="w3lSender">Email</label>
-            <input type="email" name="w3lSender" id="w3lSender" />
+            <label htmlFor="email">Email</label>
+            <input type="email" name="email" id="email" />
           </div>
           <div>
-            <label htmlFor="w3lSubject">Subject</label>
-            <input type="text" name="w3lSubject" id="w3lSubject" />
+            <label htmlFor="subject">Subject</label>
+            <input type="text" name="subject" id="subject" />
           </div>
           <div>
-            <label htmlFor="w3lMessage">Message</label>
-            <textarea name="w3lMessage" id="w3lMessage"></textarea>
+            <label htmlFor="message">Message</label>
+            <textarea name="message" id="message"></textarea>
           </div>
           <div style={{ display: `flex`, justifyContent: `flex-end` }}>
             <input
