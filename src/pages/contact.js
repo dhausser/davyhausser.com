@@ -21,7 +21,7 @@ const ContactPage = ({ data: { site } }) => (
           className="form-container"
           name="contact"
           method="post"
-          netlify="true"
+          data-netlify="true"
         >
           <div>
             <label htmlFor="name">Name</label>
@@ -31,10 +31,10 @@ const ContactPage = ({ data: { site } }) => (
             <label htmlFor="email">Email</label>
             <input type="email" name="email" id="email" />
           </div>
-          {/* <div>
+          <div>
             <label htmlFor="subject">Subject</label>
             <input type="text" name="subject" id="subject" />
-          </div> */}
+          </div>
           <div>
             <label htmlFor="message">Message</label>
             <textarea name="message" id="message"></textarea>
