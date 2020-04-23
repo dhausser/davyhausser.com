@@ -19,9 +19,9 @@ const ContactPage = ({ data: { site } }) => (
       <div>
         <form
           className="form-container"
-          name="contact"
+          name="portfolio-contact-form"
           method="post"
-          netlify="true"
+          data-netlify="true"
         >
           <div>
             <label htmlFor="name">Name</label>
