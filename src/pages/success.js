@@ -25,7 +25,7 @@ const SuccessPage = () => {
 
 export default SuccessPage
 export const pageQuery = graphql`
-  query indexPageQuery {
+  query successPageQuery {
     site {
       siteMetadata {
         title
