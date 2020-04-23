@@ -24,3 +24,13 @@ const SuccessPage = () => {
 }
 
 export default SuccessPage
+export const pageQuery = graphql`
+  query indexPageQuery {
+    site {
+      siteMetadata {
+        title
+        description
+      }
+    }
+  }
+`
