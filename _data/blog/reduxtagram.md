@@ -3,7 +3,7 @@ template: Reduxtagram
 path: /reduxtagram
 date: 2020-03-15T12:12:25.364Z
 title: 'Reduxtagram'
-thumbnail: /assets/reduxtagram.jpg
+thumbnail: /assets/reduxtagram.webp
 metaDescription: reduxtagram
 ---
 # Reduxtagram
