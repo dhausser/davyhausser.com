@@ -3,7 +3,8 @@ template: Wanderlost
 path: /wanderlost
 date: 2020-04-22T12:12:25.364Z
 title: 'Wanderlost'
-thumbnail: /assets/wanderlost.webp
+thumbnail: /assets/image-5.jpg
+# thumbnail: /assets/wanderlost.webp
 metaDescription: wanderlost
 ---
 # Wanderlost

@@ -33,7 +33,7 @@ async function getPosts() {
 
 exports.handler = async function (event, context, callback) {
   const posts = await getPosts()
-  console.log(posts)
+  console.log('fetching posts', posts)
   callback(null, {
     statusCode: 200,
     headers: {

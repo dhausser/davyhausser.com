@@ -1,11 +1,10 @@
 ---
-template: FishMarket
-path: /fishmarket
-date: 2020-01-15T12:12:25.364Z
-title: 'Fish Market'
+template: Mflix
+path: /mflix
+date: 2020-01-13T12:12:25.364Z
+title: 'Mflix'
 thumbnail: /assets/image-5.jpg
-# thumbnail: /assets/fish-market.webp
-metaDescription: fishmarket
+metaDescription: mflix
 ---
 # Reduxtagram
 

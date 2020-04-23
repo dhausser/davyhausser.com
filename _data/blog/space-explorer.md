@@ -1,11 +1,10 @@
 ---
-template: FishMarket
-path: /fishmarket
-date: 2020-01-15T12:12:25.364Z
-title: 'Fish Market'
+template: SpaceExplorer
+path: /spaceexplorer
+date: 2020-01-14T12:12:25.364Z
+title: 'Space Explorer'
 thumbnail: /assets/image-5.jpg
-# thumbnail: /assets/fish-market.webp
-metaDescription: fishmarket
+metaDescription: spaceexplorer
 ---
 # Reduxtagram
 

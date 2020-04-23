@@ -176,7 +176,6 @@ a {
 .post-thumbnail {
   text-align: center;
   min-height: 380px;
-  //background-image: url('/assets/circles-light.png');
   background-color: var(--featured-bg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -305,7 +304,10 @@ and (min-width: 768px) {
 }
 }
 @media only screen 
-  and (min-width: 1024px) {
+and (min-width: 1024px) {
+  .grids {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
   .two-grids {
     display: grid;
     grid-template-columns: 1fr 1fr;

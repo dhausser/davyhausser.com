@@ -3,10 +3,8 @@ import Helmet from 'react-helmet';
 import { Link, graphql } from 'gatsby'
 import Layout from "../components/layout"
 import PostLink from "../components/post-link"
-// import GramLink from "../components/gram-link"
 import HeroHeader from "../components/heroHeader"
-import Messenger from '../components/messenger'
-// import { useInstagram } from "../components/instagram"
+import Instagram from "../components/instagram"
 
 const IndexPage = ({
   data: {
@@ -14,9 +12,6 @@ const IndexPage = ({
     allMarkdownRemark: { edges },
   },
 }) => {
-  // const instagram = useInstagram();
-  // const Posts = instagram.map(gram => <GramLink key={gram.id} post={gram.thumbnail} caption={gram.caption} />)
-
   const Posts = edges
     .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
     .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
@@ -27,15 +22,14 @@ const IndexPage = ({
         <title>{site.siteMetadata.title}</title>
         <meta name="description" content={site.siteMetadata.description} />
       </Helmet>
-      <Messenger>
-        <HeroHeader />
-        <div className="grids">
-          {Posts}
-        </div>
-        <div style={{ margin: '20px', padding: '20px', display: "flex", justifyContent: "center"  }}>
-          <Link to='/contact' className="button -primary">Get in touch &rarr;</Link>
-        </div>
-      </Messenger>
+      <HeroHeader />
+      <div className="grids">
+        {Posts}
+        {Instagram}
+      </div>
+      <div style={{ margin: '40px', padding: '40px', display: "flex", justifyContent: "center" }}>
+        <Link to='/contact' className="button -primary">Get in touch &rarr;</Link>
+      </div>
     </Layout>
   )
 }

@@ -17,36 +17,19 @@ const ContactPage = ({ data: { site } }) => (
         <p>Let me help you kick start your next project &rarr;</p>
       </div>
       <div>
-        <form
-          className="form-container"
-          name="portfolio-contact-form"
-          method="post"
-          data-netlify="true"
-        >
-          <div>
-            <label htmlFor="name">Name</label>
-            <input type="text" name="name" id="name" />
-          </div>
-          <div>
-            <label htmlFor="email">Email</label>
-            <input type="email" name="email" id="email" />
-          </div>
-          <div>
-            <label htmlFor="subject">Subject</label>
-            <input type="text" name="subject" id="subject" />
-          </div>
-          <div>
-            <label htmlFor="message">Message</label>
-            <textarea name="message" id="message"></textarea>
-          </div>
-          <div style={{ display: `flex`, justifyContent: `flex-end` }}>
-            <input
-              type="submit"
-              className="button -primary"
-              action="/pages/success"
-              style={{ marginRight: 0 }}
-            />
-          </div>
+        <form className="form-container" name="contact" method="POST" data-netlify="true">
+          <p>
+            <label>Your Name: <input type="text" name="name" /></label>
+          </p>
+          <p>
+            <label>Your Email: <input type="email" name="email" /></label>
+          </p>
+          <p>
+            <label>Message: <textarea name="message"></textarea></label>
+          </p>
+          <p>
+            <button className="button -primary" type="submit" action="/pages/success">Send</button>
+          </p>
         </form>
       </div>
     </div>
