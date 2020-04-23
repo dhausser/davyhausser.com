@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import HeroHeader from "../components/heroHeader"
 import Messenger from '../components/messenger'
 
-const SuccessPage = () => {
+const SuccessPage = ({ data: { site }}) => {
   return (
     <Layout>
       <Helmet>
