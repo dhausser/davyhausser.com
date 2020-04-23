@@ -11,16 +11,24 @@ module.exports = {
     description: `A personal portfolio website.`,
     siteUrl: `https://davyhausser.com/`,
     home: {
-      title: `Hi! I'm Davy`,
+      title: ``,
       description: ``,
     },
   },
   plugins: [
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `markdown-pages`,
         path: `${__dirname}/_data`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/static/assets`,
       },
     },
     {

@@ -10,11 +10,12 @@ const IndexPage = ({
   data: {
     site,
     allMarkdownRemark: { edges },
+    file,
   },
 }) => {
   const Posts = edges
     .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
-    .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
+    .map(edge => <PostLink key={edge.node.id} post={edge.node} childImageSharp={file.childImageSharp} />)
 
   return (
     <Layout>
@@ -54,6 +55,14 @@ export const pageQuery = graphql`
             title
             thumbnail
           }
+        }
+      }
+    },
+    file(relativePath: { eq: "image-5.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        fluid {
+          ...GatsbyImageSharpFluid
         }
       }
     }
