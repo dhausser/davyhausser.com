@@ -1,7 +1,9 @@
 import React from "react"
 import Helmet from "react-helmet"
 import { graphql } from "gatsby"
+
 import Layout from "../components/layout"
+import { TwoGrids, PostThumbnail, PostTitle, FormContainer, Button } from "../components/styles"
 
 const ContactPage = ({ data: { site } }) => (
   <Layout>
@@ -9,15 +11,13 @@ const ContactPage = ({ data: { site } }) => (
       <title>Contact — {site.siteMetadata.title}</title>
       <meta name="description" content={site.siteMetadata.description} />
     </Helmet>
-    <div className="two-grids -contact">
-      <div
-        className="post-thumbnail"
-      >
-        <h1 className="post-title">Get in Touch</h1>
+    <TwoGrids>
+      <PostThumbnail>
+        <PostTitle>Get in Touch</PostTitle>
         <p>Let me help you kick start your next project &rarr;</p>
-      </div>
+      </PostThumbnail>
       <div>
-        <form className="form-container" name="contact" method="POST" netlify="true">
+        <FormContainer name="contact" method="POST" netlify="true">
           <p>
             <label>Your Name: <input type="text" name="name" /></label>
           </p>
@@ -28,11 +28,11 @@ const ContactPage = ({ data: { site } }) => (
             <label>Message: <textarea name="message"></textarea></label>
           </p>
           <p>
-            <button className="button -primary" type="submit" action="/pages/success">Send</button>
+            <Button className="-primary" type="submit" action="/pages/success">Send</Button>
           </p>
-        </form>
+        </FormContainer>
       </div>
-    </div>
+    </TwoGrids>
   </Layout>
 )
 export default ContactPage

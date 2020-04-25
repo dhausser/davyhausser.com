@@ -1,12 +1,12 @@
-import React from "react"
-import { Global, css } from "@emotion/core"
-
+/** @jsx jsx */
+import { css, jsx } from "@emotion/core"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
-import 'prismjs/themes/prism-okaidia.css';
+
+// import 'prismjs/themes/prism-okaidia.css';
 
 import Navigation from "../components/navigation"
-import { GlobalStyles, Wrapper, Header, Title, Footer } from "../styles/globalStyles"
+import { GlobalStyles, Wrapper, Header, Title, Footer } from "../components/styles"
 
 export default ({ children }) => {
   const data = useStaticQuery(

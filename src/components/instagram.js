@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react"
+import { Card, PostMeta } from './styles'
 
-import { Card, PostMeta } from './post-link'
-
-export function useInstagram() {
+function useInstagram() {
   const [posts, setPosts] = useState([])
   useEffect(() => {
     fetch(`/.netlify/functions/instagram`)

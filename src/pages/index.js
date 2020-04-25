@@ -1,10 +1,13 @@
-import React from "react"
+/** @jsx jsx */
 import Helmet from 'react-helmet';
 import { Link, graphql } from 'gatsby'
+import { css, jsx } from "@emotion/core"
+
 import Layout from "../components/layout"
 import PostLink from "../components/post-link"
 import HeroHeader from "../components/heroHeader"
 import Instagram from "../components/instagram"
+import { Grid } from "../components/styles"
 
 const IndexPage = ({
   data: {
@@ -24,11 +27,17 @@ const IndexPage = ({
         <meta name="description" content={site.siteMetadata.description} />
       </Helmet>
       <HeroHeader />
-      <div className="grids">
+      <Grid>
         {Posts}
         <Instagram />
-      </div>
-      <div style={{ margin: '40px', padding: '40px', display: "flex", justifyContent: "center" }}>
+      </Grid>
+      <div css={
+        css`
+          display: flex;
+          justify-content: center;
+          margin: 40px;
+          padding: 40px;
+      `}>
         <Link to='/contact' className="button -primary">Get in touch &rarr;</Link>
       </div>
     </Layout>
