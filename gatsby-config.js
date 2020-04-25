@@ -20,6 +20,7 @@ module.exports = {
     'gatsby-plugin-dark-mode',
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

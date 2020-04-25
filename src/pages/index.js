@@ -4,19 +4,23 @@ import { Link, graphql } from 'gatsby'
 import { css, jsx } from "@emotion/core"
 
 import Layout from "../components/layout"
-import PostLink from "../components/postLink"
-import HeroHeader from "../components/heroHeader"
+import ProjectPreview from "../components/project-preview"
+import PostLink from "../components/post-link"
+import HeroHeader from "../components/hero-header"
 import Instagram from "../components/instagram"
 import { Grid, Button } from "../utils/styles"
 
 const IndexPage = ({
   data: {
     site,
-    allMarkdownRemark: { edges },
+    allProjectsJson,
+    allMarkdownRemark,
     file,
   },
 }) => {
-  const Posts = edges
+  console.log(allProjectsJson)
+
+  const Posts = allMarkdownRemark.edges
     .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
     .map(edge => <PostLink key={edge.node.id} post={edge.node} childImageSharp={file.childImageSharp} />)
 
@@ -28,6 +32,15 @@ const IndexPage = ({
       </Helmet>
       <HeroHeader />
       <Grid>
+        {allProjectsJson.edges.map(({ node: project }) => (
+          <ProjectPreview
+            key={`preview${project.slug}`}
+            title={project.title}
+            description={project.description}
+            slug={project.slug}
+            imageData={project.image.childImageSharp.fluid}
+          />
+        ))}
         {Posts}
         <Instagram />
       </Grid>
@@ -55,6 +68,22 @@ export const pageQuery = graphql`
         description
       }
     }
+    allProjectsJson {
+      edges {
+        node {
+          title
+          description
+          slug
+          image {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
@@ -76,6 +105,6 @@ export const pageQuery = graphql`
           ...GatsbyImageSharpFluid
         }
       }
-    }
+    },
   }
 `

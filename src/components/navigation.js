@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
-import ThemeChanger from "../components/themeChanger"
+import ThemeChanger from "./theme-changer"
 import { Navigation } from "../utils/styles"
 
 export default () => (

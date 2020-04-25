@@ -1,0 +1,97 @@
+[
+  {
+    "title": "Wanderlost",
+    "slug": "wanderlost",
+    "url": "https://ecommerce-nextjs-apollo-client.now.sh/",
+    "image": "./images/wanderlost.webp",
+    "description": "I built this site to show off my sweet skills!",
+    "tags": [
+      "React",
+      "Next.js",
+      "JavaScript"
+    ]
+  },
+  {
+    "title": "Reduxtagram",
+    "slug": "fish-market",
+    "url": "https://reduxtagram-dhausser.herokuapp.com/",
+    "image": "./images/reduxtagram.webp",
+    "description": "I built this site to show off my sweet skills!",
+    "tags": [
+      "React",
+      "Redux",
+      "JavaScript"
+    ]
+  },
+  {
+    "title": "Store Finder",
+    "slug": "store-finder",
+    "url": "https://now-thats-delicious-dhausser.herokuapp.com/",
+    "image": "./images/store-finder.webp",
+    "description": "I built this site to show off my sweet skills!",
+    "tags": [
+      "React",
+      "Redux",
+      "JavaScript"
+    ]
+  },
+  {
+    "title": "Catch of the Day",
+    "slug": "fish-market",
+    "url": "https://catch-of-the-day-by-dhausser.netlify.app/",
+    "image": "./images/fish-market.webp",
+    "description": "I built this site to show off my sweet skills!",
+    "tags": [
+      "React",
+      "Firebase",
+      "JavaScript"
+    ]
+  },
+  {
+    "title": "Space Explorer",
+    "slug": "space-explorer",
+    "url": "/",
+    "image": "./images/deepspace.jpg",
+    "description": "I built this site to show off my sweet skills!",
+    "tags": [
+      "React",
+      "Apollo",
+      "GraphQL",
+      "JavaScript"
+    ]
+  },
+  {
+    "title": "Mflix",
+    "slug": "mflix",
+    "url": "/",
+    "image": "./images/deepspace.jpg",
+    "description": "I built this site to show off my sweet skills!",
+    "tags": [
+      "Node.js",
+      "MongoDB",
+      "JavaScript"
+    ]
+  },
+  {
+    "title": "My Project",
+    "slug": "project-1",
+    "url": "https://example.com/",
+    "image": "./images/project1.jpg",
+    "description": "I built this site to show off my sweet skills!",
+    "tags": [
+      "React",
+      "Gatsby",
+      "JavaScript"
+    ]
+  },
+  {
+    "title": "Another Project",
+    "slug": "project-2",
+    "url": "https://example.org/",
+    "image": "./images/project2.jpg",
+    "description": "This one is also good.",
+    "tags": [
+      "GraphQL"
+    ]
+  }
+]

@@ -1,9 +1,10 @@
-import React from "react"
+/** @jsx jsx */
+import { css, jsx } from "@emotion/core"
 import Helmet from "react-helmet"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import { TwoGrids, PostThumbnail, PostTitle, FormContainer, Button } from "../utils/styles"
+import { TwoGrids, PostThumbnail, PostTitle, FormContainer, SubmitButton } from "../utils/styles"
 
 const ContactPage = ({ data: { site, file } }) => (
   <Layout>
@@ -20,18 +21,23 @@ const ContactPage = ({ data: { site, file } }) => (
       </PostThumbnail>
       <div>
         <FormContainer name="contact" method="POST" netlify="true">
-          <p>
+          <div>
             <label>Your Name: <input type="text" name="name" /></label>
-          </p>
-          <p>
+          </div>
+          <div>
             <label>Your Email: <input type="email" name="email" /></label>
-          </p>
-          <p>
+          </div>
+          <div>
             <label>Message: <textarea name="message"></textarea></label>
-          </p>
-          <p>
-            <Button className="-primary" type="submit" action="/pages/success">Send</Button>
-          </p>
+          </div>
+          <div css={css` display: "flex"; justify-content: "flex-end";`}>
+            <SubmitButton
+              type="submit"
+              action="/pages/success"
+              className="button -primary"
+              css={css`margin-right: 0;`}
+            />
+          </div>
         </FormContainer>
       </div>
     </TwoGrids>

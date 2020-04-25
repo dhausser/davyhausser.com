@@ -336,6 +336,34 @@ const Button = styled("div")`
   }
 `
 
+const SubmitButton = styled("input")`
+  padding: 18px 27px;
+  display: inline-block;
+  background: var(--btn-bg);
+  border: 1px solid var(--btn-bdr);
+  border-radius: 9px;
+  text-decoration: none;
+  color: var(--btn-text-color);
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0 20px 0 0;
+  transition: background-color .3s linear;
+  &.-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--primary-text-color);
+    &:hover {
+      background-color: var(--secondary-color);
+      color: var(--primary-text-color);
+      text-decoration: none;
+    }
+  }
+  &:hover {
+    background-color: var(--btn-hover-bg);
+    color: var(--btn-hover-text-color);
+  }
+`
+
 const themeChanger = css`
   display: none;
   body.dark {
@@ -520,6 +548,7 @@ export {
   PostTitle,
   FormContainer,
   Button,
+  SubmitButton,
   ModeContainer,
   Sun,
   Moon

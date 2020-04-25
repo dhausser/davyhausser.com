@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 import { Link, graphql } from 'gatsby'
 
 import Layout from "../components/layout"
-import HeroHeader from "../components/heroHeader"
+import HeroHeader from "../components/hero-header"
 
 const SuccessPage = ({ data: { site } }) => {
   return (
