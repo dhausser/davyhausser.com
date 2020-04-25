@@ -5,14 +5,10 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
 export default () => (
   <nav className="navigation">
-    <p>
-      <a href="https://github.com/dhausser"><p>{FaGithub}</p></a>
-    </p>
-    <p>
-      <a href="https://www.linkedin.com/in/davyhausser/"><p>{FaLinkedin}</p></a>
-    </p>
     <Link to="/">Home</Link>
     <Link to="/contact">Contact</Link>
+    <a href="https://github.com/dhausser"><FaGithub /></a>
+    <a href="https://www.linkedin.com/in/davyhausser/"><FaLinkedin /></a>
     <ThemeChanger />
   </nav>
 

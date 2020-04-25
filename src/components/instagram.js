@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react"
 
+import { Card, PostMeta } from './post-link'
+
 export function useInstagram() {
   const [posts, setPosts] = useState([])
   useEffect(() => {
@@ -12,26 +14,20 @@ export function useInstagram() {
   return posts;
 }
 
-const Instagram = ({ thumbnail, caption, url }) => {
+const Instagram = () => {
   const posts = useInstagram()
-  console.log(posts)
-  return (
-    <article className="card ">
-      <a hrel={url}>
-        {!!thumbnail && (
-          <img src={thumbnail} alt={caption + "- Featured Shot"} />
+  return posts.map(post => (
+    <Card key={post.url}>
+      <a href={post.url}>
+        {!!post.thumbnail && (
+          <img src={post.thumbnail} alt={post.caption + "- Featured Shot"} />
         )}
       </a>
       <header>
-        <h2 className="post-title">
-          <a href={url} className="post-link">
-            {caption}
-          </a>
-        </h2>
-        <div className="post-meta">{caption}</div>
+        <PostMeta>{post.caption}</PostMeta>
       </header>
-    </article>
-  )
+    </Card>
+  ))
 }
 
 export default Instagram

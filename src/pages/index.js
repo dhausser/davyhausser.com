@@ -26,7 +26,7 @@ const IndexPage = ({
       <HeroHeader />
       <div className="grids">
         {Posts}
-        {Instagram}
+        <Instagram />
       </div>
       <div style={{ margin: '40px', padding: '40px', display: "flex", justifyContent: "center" }}>
         <Link to='/contact' className="button -primary">Get in touch &rarr;</Link>
