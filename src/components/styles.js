@@ -31,6 +31,9 @@ const GlobalStyles = () => (
       --contact-bg: #f7f8fe;
       --contact-bdr: #d3d6e7;
       --input-bg: var(--background);
+     .gg-sun {
+        display: none;
+      }
     }
     body.dark {
       --primary-color: #9984d5;
@@ -53,10 +56,12 @@ const GlobalStyles = () => (
       --contact-bg: var(--card-shadow);
       --contact-bdr: var(--card-bg);
       --input-bg: var(--card-bg);
+     .gg-moon {
+        display: none;
+      }
     }
     /* System Fonts as used by Medium and WordPress */
     body {
-      border-top: 10px solid var(--primary-color);
       background-color: var(--background);
       color: var(--text-color);
     }
@@ -167,7 +172,7 @@ const Card = styled("article")`
   > header {
     padding: 24px;
   }
-  > h2:first-child {
+  > h2:first-of-type {
     margin: 0 0 0.5rem 0;
   }
   .post-title {
@@ -451,6 +456,9 @@ const Sun = styled("i")`
 `
 
 const Moon = styled("i")`
+  display: block;
+  box-sizing: border-box;
+  border-radius: 50%;
   overflow: hidden;
   position: relative;
   transform: rotate(-135deg) scale(var(--ggs,1));
@@ -459,19 +467,17 @@ const Moon = styled("i")`
   border: 2px solid;
   border-bottom-color: transparent;
   ::after {
-      display: block;
-      box-sizing: border-box;
-      border-radius: 50%
-  }
-  ::after {
-      content: "";
-      position: absolute;
-      width: 12px;
-      height: 18px;
-      border: 2px solid transparent;
-      box-shadow: 0 0 0 2px;
-      top: 8px;
-      left: 2px
+    display: block;
+    box-sizing: border-box;
+    border-radius: 50%;
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 18px;
+    border: 2px solid transparent;
+    box-shadow: 0 0 0 2px;
+    top: 8px;
+    left: 2px;
   }
 `
 

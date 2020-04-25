@@ -10,10 +10,10 @@ export default () => (
           type="checkbox"
           onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
           checked={theme === 'dark'}
-        />{' '}
+        />
         <ModeContainer>
-          <Sun />
-          <Moon />
+          <Sun className="gg-sun" />
+          <Moon className="gg-moon" />
         </ModeContainer>
       </label>
     )}

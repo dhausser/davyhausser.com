@@ -5,14 +5,16 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import { TwoGrids, PostThumbnail, PostTitle, FormContainer, Button } from "../components/styles"
 
-const ContactPage = ({ data: { site } }) => (
+const ContactPage = ({ data: { site, file } }) => (
   <Layout>
     <Helmet>
       <title>Contact — {site.siteMetadata.title}</title>
       <meta name="description" content={site.siteMetadata.description} />
     </Helmet>
     <TwoGrids>
-      <PostThumbnail>
+      <PostThumbnail style={{
+        backgroundImage: `url('/assets/palmtree.jpg')`
+      }}>
         <PostTitle>Get in Touch</PostTitle>
         <p>Let me help you kick start your next project &rarr;</p>
       </PostThumbnail>
@@ -42,6 +44,13 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         description
+      }
+    }
+    file(relativePath: { eq: "palmtree.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
   }

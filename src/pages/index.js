@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby'
 import { css, jsx } from "@emotion/core"
 
 import Layout from "../components/layout"
-import PostLink from "../components/post-link"
+import PostLink from "../components/postLink"
 import HeroHeader from "../components/heroHeader"
 import Instagram from "../components/instagram"
 import { Grid, Button } from "../components/styles"

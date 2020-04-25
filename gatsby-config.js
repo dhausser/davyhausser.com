@@ -11,8 +11,8 @@ module.exports = {
     description: `A personal portfolio website.`,
     siteUrl: `https://davyhausser.com/`,
     home: {
-      title: ``,
-      description: ``,
+      title: `Portfolio`,
+      description: `Welcome to my personal piece of the Internet. I build websites and apps with React, Node and GraphQL. Hit me up!`,
     },
   },
   plugins: [
