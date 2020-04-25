@@ -34,11 +34,11 @@ const globalStyles = css`
     }
   }
   body.dark {
-    --primary-color: #dfe1e6;
+    --primary-color: #5cbac9;
     --primary-text-color: #fff;
     --featured-bg: #66578d;
     --featured-text: #fff;
-    --secondary-color: #66578d;
+    --secondary-color: #5cc9ac;
     --background: #0a041a;
     --text-color: rgba(255, 255, 255, 0.88);
     --text-secondary-color: rgba(255, 255, 255, 0.66);

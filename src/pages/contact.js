@@ -21,13 +21,40 @@ const ContactPage = ({ data: { site, file } }) => (
     <TwoGrids>
       <PostThumbnail
         style={{
-          backgroundImage: `url('/assets/palmtree.jpg')`
+          backgroundImage: `url(${file.childImageSharp.fluid.src})`
         }}
       >
         <PostTitle>Get in Touch</PostTitle>
         <p>Let me help you kick start your next project &rarr;</p>
       </PostThumbnail>
-      <div>
+      <form name="contact" method="POST" data-netlify="true">
+        <p>
+          <label>
+            Your Name: <input type="text" name="name" />
+          </label>
+        </p>
+        {/* <p>
+          <label>Your Email: <input type="email" name="email" /></label>
+        </p> */}
+        <p>
+          <label>
+            Your Role:{" "}
+            <select name="role[]" multiple>
+              <option value="leader">Leader</option>
+              <option value="follower">Follower</option>
+            </select>
+          </label>
+        </p>
+        <p>
+          <label>
+            Message: <textarea name="message"></textarea>
+          </label>
+        </p>
+        <p>
+          <button type="submit">Send</button>
+        </p>
+      </form>
+      {/* <div>
         <FormContainer name="contact" method="POST" netlify="true">
           <div>
             <label>
@@ -60,7 +87,7 @@ const ContactPage = ({ data: { site, file } }) => (
             />
           </div>
         </FormContainer>
-      </div>
+      </div> */}
     </TwoGrids>
   </Layout>
 )

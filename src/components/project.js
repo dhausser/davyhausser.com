@@ -1,5 +1,4 @@
 import React from "react"
-// import { jsx } from "@emotion/core"
 import Helmet from "react-helmet"
 import { Link } from "gatsby"
 
