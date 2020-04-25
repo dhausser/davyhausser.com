@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 import { Card, PostMeta } from "../utils/styles"
 
-const PostLink = ({ post, childImageSharp }) => (
+const PostLink = ({ post }) => (
   <Card>
     <Link to={post.frontmatter.path}>
       <img src={post.frontmatter.thumbnail} alt={"stars in space"} />

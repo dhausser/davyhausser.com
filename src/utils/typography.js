@@ -1,7 +1,4 @@
 import Typography from "typography"
-// import fairyGatesTheme from 'typography-theme-fairy-gates'
-
-// const typography = new Typography(fairyGatesTheme)
 
 const typography = new Typography({
   baseFontSize: "18px",
@@ -12,7 +9,7 @@ const typography = new Typography({
     "Segoe UI",
     "Helvetica",
     "Arial",
-    "sans-serif",
+    "sans-serif"
   ],
   bodyFontFamily: [
     "Avenir Next",
@@ -20,8 +17,8 @@ const typography = new Typography({
     "Segoe UI",
     "Helvetica",
     "Arial",
-    "sans-serif",
-  ],
+    "sans-serif"
+  ]
 })
 
 export default typography

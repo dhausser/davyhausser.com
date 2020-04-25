@@ -8,10 +8,10 @@ const globalStyles = css`
     padding: 0;
   }
   * {
-    margin-top: 0
+    margin-top: 0;
   }
   body.light {
-    --primary-color: #42526E;
+    --primary-color: #42526e;
     --primary-text-color: #fff;
     --featured-bg: #493b8a;
     --featured-text: #fff;
@@ -34,14 +34,14 @@ const globalStyles = css`
     }
   }
   body.dark {
-    --primary-color: #DFE1E6;
+    --primary-color: #dfe1e6;
     --primary-text-color: #fff;
     --featured-bg: #66578d;
     --featured-text: #fff;
     --secondary-color: #66578d;
-    --background: #0A041A;
-    --text-color: rgba(255,255,255,0.88);
-    --text-secondary-color: rgba(255,255,255,0.66);
+    --background: #0a041a;
+    --text-color: rgba(255, 255, 255, 0.88);
+    --text-secondary-color: rgba(255, 255, 255, 0.66);
     --site-header: var(--background);
     --card-bg: #181326;
     --card-bdr: #181326;
@@ -79,7 +79,7 @@ const Wrapper = styled("div")`
   img {
     max-width: 100%;
   }
-`;
+`
 
 const Navigation = styled("nav")`
   display: flex;
@@ -127,7 +127,7 @@ const Header = styled("header")`
   background: var(--site-header);
   margin-bottom: 32px;
   align-items: center;
-`;
+`
 
 const Title = styled("div")`
   color: var(--primary-color);
@@ -137,7 +137,7 @@ const Title = styled("div")`
   a {
     text-decoration: none;
   }
-`;
+`
 
 const Footer = styled("footer")`
   text-align: center;
@@ -146,7 +146,7 @@ const Footer = styled("footer")`
   a {
     font-weight: 700;
   }
-`;
+`
 
 const Grid = styled("div")`
   display: grid;
@@ -229,7 +229,7 @@ const PostThumbnail = styled("div")`
   overflow: hidden;
   &:before {
     content: "";
-    background: rgba(0,0,0,0.4);
+    background: rgba(0, 0, 0, 0.4);
     position: absolute;
     top: 0;
     left: 0;
@@ -242,14 +242,14 @@ const PostThumbnail = styled("div")`
     z-index: 2;
   }
   .post-meta {
-    color: rgba(255,255,255,0.8);
+    color: rgba(255, 255, 255, 0.8);
     margin-bottom: 0;
   }
 `
 
 const Post = styled("article")`
   padding: 0;
-  background:var(--background);
+  background: var(--background);
   color: var(--text-color);
   line-height: 1.5;
   > .blog-post-content {
@@ -289,8 +289,8 @@ const FormContainer = styled("form")`
     margin-bottom: 0.5rem;
     color: var(--text-secondary-color);
   }
-  input[type=text],
-  input[type=email],
+  input[type="text"],
+  input[type="email"],
   textarea {
     appearance: none;
     border: 1px solid var(--card-shadow);
@@ -319,7 +319,7 @@ const Button = styled("div")`
   font-size: 16px;
   font-weight: 400;
   margin: 0 20px 0 0;
-  transition: background-color .3s linear;
+  transition: background-color 0.3s linear;
   &.-primary {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
@@ -347,7 +347,7 @@ const SubmitButton = styled("input")`
   font-size: 16px;
   font-weight: 400;
   margin: 0 20px 0 0;
-  transition: background-color .3s linear;
+  transition: background-color 0.3s linear;
   &.-primary {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
@@ -385,25 +385,20 @@ const themeChanger = css`
     box-sizing: border-box;
     position: relative;
     display: block;
-    transform: scale(var(--ggs,1));
+    transform: scale(var(--ggs, 1));
     width: 24px;
     height: 24px;
-    background:
-      linear-gradient(to bottom,
-          currentColor 4px,transparent 0)
-          no-repeat 5px -6px/2px 6px,
-      linear-gradient(to bottom,
-          currentColor 4px,transparent 0)
-          no-repeat 5px 14px/2px 6px,
-      linear-gradient(to bottom,
-          currentColor 4px,transparent 0)
-          no-repeat -8px 5px/6px 2px,
-      linear-gradient(to bottom,
-          currentColor 4px,transparent 0)
-          no-repeat 14px 5px/6px 2px;
+    background: linear-gradient(to bottom, currentColor 4px, transparent 0)
+        no-repeat 5px -6px/2px 6px,
+      linear-gradient(to bottom, currentColor 4px, transparent 0) no-repeat 5px
+        14px/2px 6px,
+      linear-gradient(to bottom, currentColor 4px, transparent 0) no-repeat -8px
+        5px/6px 2px,
+      linear-gradient(to bottom, currentColor 4px, transparent 0) no-repeat 14px
+        5px/6px 2px;
     border-radius: 100px;
     box-shadow: inset 0 0 0 2px;
-    border: 6px solid transparent
+    border: 6px solid transparent;
   }
   .gg-sun::after,
   .gg-sun::before {
@@ -416,38 +411,38 @@ const themeChanger = css`
     border-right: 4px solid;
     border-left: 4px solid;
     left: -6px;
-    top: 5px
+    top: 5px;
   }
   .gg-sun::before {
-    transform: rotate(-45deg)
+    transform: rotate(-45deg);
   }
   .gg-sun::after {
-    transform: rotate(45deg)
+    transform: rotate(45deg);
   }
   .gg-moon,
   .gg-moon::after {
-      display: block;
-      box-sizing: border-box;
-      border-radius: 50%
+    display: block;
+    box-sizing: border-box;
+    border-radius: 50%;
   }
   .gg-moon {
-      overflow: hidden;
-      position: relative;
-      transform: rotate(-135deg) scale(var(--ggs,1));
-      width: 20px;
-      height: 20px;
-      border: 2px solid;
-      border-bottom-color: transparent
+    overflow: hidden;
+    position: relative;
+    transform: rotate(-135deg) scale(var(--ggs, 1));
+    width: 20px;
+    height: 20px;
+    border: 2px solid;
+    border-bottom-color: transparent;
   }
   .gg-moon::after {
-      content: "";
-      position: absolute;
-      width: 12px;
-      height: 18px;
-      border: 2px solid transparent;
-      box-shadow: 0 0 0 2px;
-      top: 8px;
-      left: 2px
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 18px;
+    border: 2px solid transparent;
+    box-shadow: 0 0 0 2px;
+    top: 8px;
+    left: 2px;
   }
 `
 
@@ -461,22 +456,17 @@ const Sun = styled("i")`
   box-sizing: border-box;
   position: relative;
   display: block;
-  transform: scale(var(--ggs,1));
+  transform: scale(var(--ggs, 1));
   width: 24px;
   height: 24px;
-  background:
-    linear-gradient(to bottom,
-        currentColor 4px,transparent 0)
-        no-repeat 5px -6px/2px 6px,
-    linear-gradient(to bottom,
-        currentColor 4px,transparent 0)
-        no-repeat 5px 14px/2px 6px,
-    linear-gradient(to bottom,
-        currentColor 4px,transparent 0)
-        no-repeat -8px 5px/6px 2px,
-    linear-gradient(to bottom,
-        currentColor 4px,transparent 0)
-        no-repeat 14px 5px/6px 2px;
+  background: linear-gradient(to bottom, currentColor 4px, transparent 0)
+      no-repeat 5px -6px/2px 6px,
+    linear-gradient(to bottom, currentColor 4px, transparent 0) no-repeat 5px
+      14px/2px 6px,
+    linear-gradient(to bottom, currentColor 4px, transparent 0) no-repeat -8px 5px/6px
+      2px,
+    linear-gradient(to bottom, currentColor 4px, transparent 0) no-repeat 14px
+      5px/6px 2px;
   border-radius: 100px;
   box-shadow: inset 0 0 0 2px;
   border: 6px solid transparent;
@@ -491,13 +481,13 @@ const Sun = styled("i")`
     border-right: 4px solid;
     border-left: 4px solid;
     left: -6px;
-    top: 5px
+    top: 5px;
   }
   ::before {
-    transform: rotate(-45deg)
+    transform: rotate(-45deg);
   }
   ::after {
-    transform: rotate(45deg)
+    transform: rotate(45deg);
   }
 `
 
@@ -507,7 +497,7 @@ const Moon = styled("i")`
   border-radius: 50%;
   overflow: hidden;
   position: relative;
-  transform: rotate(-135deg) scale(var(--ggs,1));
+  transform: rotate(-135deg) scale(var(--ggs, 1));
   width: 20px;
   height: 20px;
   border: 2px solid;
@@ -526,7 +516,6 @@ const Moon = styled("i")`
     left: 2px;
   }
 `
-
 
 export {
   globalStyles,

@@ -1,25 +1,47 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import Image from 'gatsby-image';
+import React from "react"
+// import { jsx } from "@emotion/core"
+import Helmet from "react-helmet"
+import { Link } from "gatsby"
 
-const ProjectPreview = ({ title, description, url, imageData, tags }) => (
-  <div className="project">
-    <h1>{title}</h1>
-    <Image fluid={imageData} alt={title} />
-    <p>{description}</p>
-    <p>
-      <a href={url}>View this project online &rarr;</a>
-    </p>
-    <h3>Tags:</h3>
-    <ul>
-      {tags.map(tag => (
-        <li key={`tag-${tag}`}>{tag}</li>
-      ))}
-    </ul>
-    <p>
-      <Link to="/">&larr; back to all projects</Link>
-    </p>
-  </div>
-);
+import Layout from "../components/layout"
+import { Post, PostThumbnail, PostTitle, Button } from "../utils/styles"
 
-export default ProjectPreview;
+const ProjectPreview = ({ title, description, url, imageData, tags }) => {
+  console.log(imageData)
+  return (
+    <Layout>
+      <Helmet>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+      </Helmet>
+      <div>
+        <Post>
+          <PostThumbnail style={{ backgroundImage: `url(${imageData.src})` }}>
+            <PostTitle>{title}</PostTitle>
+          </PostThumbnail>
+        </Post>
+      </div>
+      <PostTitle>{title}</PostTitle>
+      <p>{description}</p>
+      <ul>
+        <li>
+          <a href={url}>View Live &rarr;</a>
+        </li>
+        <li>
+          <a href={`https://github.com/dhausser`}>View Code &rarr;</a>
+        </li>
+      </ul>
+      <h3>Tags:</h3>
+      <ul>
+        {tags.map(tag => (
+          <li key={`tag-${tag}`}>{tag}</li>
+        ))}
+      </ul>
+      <Link to="/">
+        <Button className="-primary">&larr; back to all projects</Button>
+      </Link>
+    </Layout>
+  )
+}
+
+export default ProjectPreview

@@ -3,6 +3,7 @@ const path = require(`path`)
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
+  const projectTemplate = path.resolve(`src/templates/project.js`)
   const blogPostTemplate = path.resolve(`src/templates/blogTemplate.js`)
 
   const result = await graphql(`
@@ -40,8 +41,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   projects.forEach(project => {
     actions.createPage({
-      path: `/${project.slug}/`,
-      component: require.resolve('./src/templates/project.js'),
+      path: `/project/${project.slug}/`,
+      component: projectTemplate,
       context: {
         slug: project.slug
       }

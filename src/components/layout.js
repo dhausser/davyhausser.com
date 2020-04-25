@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Global, css, jsx } from "@emotion/core"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FaGithub, FaLinkedin } from "react-icons/fa"
 
 import Navigation from "../components/navigation"
 import { globalStyles, Wrapper, Header, Title, Footer } from "../utils/styles"
@@ -29,18 +29,36 @@ export default ({ children }) => {
       </Header>
       {children}
       <Footer>
-        <div css={
-          css`
+        <div
+          css={css`
             display: flex;
             flex-direction: row;
             justify-content: center;
-            `}>
-          <p>&copy; 2020 Davy Hausser &bull; Crafted with <span role="img" aria-label="bolt">⚡</span></p>
-          <div css={css`margin: 0 .5em 0 .5em;`}>
-            <a href="https://github.com/dhausser"><FaGithub /></a>
+          `}
+        >
+          <p>
+            &copy; 2020 Davy Hausser &bull; Crafted with{" "}
+            <span role="img" aria-label="bolt">
+              ⚡
+            </span>
+          </p>
+          <div
+            css={css`
+              margin: 0 0.5em 0 0.5em;
+            `}
+          >
+            <a href="https://github.com/dhausser">
+              <FaGithub />
+            </a>
           </div>
-          <div css={css`margin: 0 .5em 0 .5em;`}>
-            <a href="https://www.linkedin.com/in/davyhausser/"><FaLinkedin /></a>
+          <div
+            css={css`
+              margin: 0 0.5em 0 0.5em;
+            `}
+          >
+            <a href="https://www.linkedin.com/in/davyhausser/">
+              <FaLinkedin />
+            </a>
           </div>
         </div>
       </Footer>

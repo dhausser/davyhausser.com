@@ -4,7 +4,7 @@ const url = `https://www.instagram.com/graphql/query/?query_hash=e769aa130647d23
 
 const cache = {
   lastFetch: 0,
-  posts: [],
+  posts: []
 }
 
 async function getPosts() {
@@ -26,19 +26,18 @@ function slimUpPosts(response) {
       thumbnail: edge.node.thumbnail_src,
       url: `https://instagram.com/p/${edge.node.shortcode}`,
       caption: edge.node.edge_media_to_caption.edges[0].node.text,
-      id: edge.node.id,
+      id: edge.node.id
     }
   })
 }
 
-
-exports.handler = async function (event, context, callback) {
+exports.handler = async function(event, context, callback) {
   const posts = await getPosts()
   callback(null, {
     statusCode: 200,
     headers: {
-      "Content-Type": `application/json`,
+      "Content-Type": `application/json`
     },
-    body: JSON.stringify(posts),
+    body: JSON.stringify(posts)
   })
 }

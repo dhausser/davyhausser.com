@@ -16,7 +16,6 @@ export default function Template({ data }) {
       </Helmet>
       <div>
         <Post>
-
           {!frontmatter.thumbnail && (
             <PostThumbnail>
               <PostTitle>{frontmatter.title}</PostTitle>
