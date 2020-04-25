@@ -4,8 +4,6 @@ import styled from "@emotion/styled"
 
 const GlobalStyles = () => (
   <Global styles={css`
-    $font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
-
     html,
     body {
       margin: 0;
@@ -58,7 +56,6 @@ const GlobalStyles = () => (
     }
     /* System Fonts as used by Medium and WordPress */
     body {
-      font-family: $font-family;
       border-top: 10px solid var(--primary-color);
       background-color: var(--background);
       color: var(--text-color);
@@ -227,7 +224,7 @@ const PostThumbnail = styled("div")`
   }
 `
 
-const Post = styled("div")`
+const Post = styled("article")`
   padding: 0;
   background:var(--background);
   color: var(--text-color);
@@ -281,7 +278,6 @@ const FormContainer = styled("form")`
     width: calc(100% - 24px);
     margin-bottom: 1.5rem;
     background-color: var(--input-bg);
-    font-family: $font-family;
   }
   textarea {
     margin-bottom: 2rem;

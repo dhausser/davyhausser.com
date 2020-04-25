@@ -10,6 +10,7 @@
     "gatsby-plugin-emotion": "^4.2.3",
     "gatsby-plugin-react-helmet": "^3.1.22",
     "gatsby-plugin-sharp": "^2.5.6",
+    "gatsby-plugin-typography": "^2.4.4",
     "gatsby-remark-emojis": "^0.4.2",
     "gatsby-source-filesystem": "^2.1.48",
     "gatsby-transformer-remark": "^2.6.53",
@@ -18,10 +19,16 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
-    "react-icons": "^3.10.0"
+    "react-icons": "^3.10.0",
+    "react-typography": "^0.16.19",
+    "typography": "^0.16.19",
+    "typography-theme-fairy-gates": "^0.16.19"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "@babel/core": "^7.0.0",
+    "@types/react": "^16.9.34",
+    "prettier": "^1.19.1",
+    "typescript": "^3.8.3"
   },
   "keywords": [
     "gatsby"

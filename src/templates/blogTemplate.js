@@ -3,6 +3,8 @@ import Helmet from "react-helmet"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 
+import { Post, PostThumbnail, PostTitle, PostMeta } from "../components/styles"
+
 export default function Template({ data }) {
   const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
@@ -12,28 +14,28 @@ export default function Template({ data }) {
         <title>{frontmatter.title}</title>
         <meta name="description" content={frontmatter.metaDescription} />
       </Helmet>
-      <div className="blog-post-container">
-        <article className="post">
+      <div>
+        <Post>
+
           {!frontmatter.thumbnail && (
-            <div className="post-thumbnail">
-              <h1 className="post-title">{frontmatter.title}</h1>
-              <div className="post-meta">{frontmatter.date}</div>
-            </div>
+            <PostThumbnail>
+              <PostTitle>{frontmatter.title}</PostTitle>
+              <PostMeta>{frontmatter.date}</PostMeta>
+            </PostThumbnail>
           )}
           {!!frontmatter.thumbnail && (
-            <div
-              className="post-thumbnail"
+            <PostThumbnail
               style={{ backgroundImage: `url(${frontmatter.thumbnail})` }}
             >
-              <h1 className="post-title">{frontmatter.title}</h1>
-              <div className="post-meta">{frontmatter.date}</div>
-            </div>
+              <PostTitle>{frontmatter.title}</PostTitle>
+              <PostMeta>{frontmatter.date}</PostMeta>
+            </PostThumbnail>
           )}
           <div
             className="blog-post-content"
             dangerouslySetInnerHTML={{ __html: html }}
           />
-        </article>
+        </Post>
       </div>
     </Layout>
   )

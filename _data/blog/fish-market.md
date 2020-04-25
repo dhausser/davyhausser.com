@@ -3,8 +3,8 @@ template: FishMarket
 path: /fishmarket
 date: 2020-01-15T12:12:25.364Z
 title: 'Fish Market'
-thumbnail: /assets/image-5.jpg
-# thumbnail: /assets/fish-market.webp
+# thumbnail: /assets/image-5.jpg
+thumbnail: /assets/fish-market.webp
 metaDescription: fishmarket
 ---
 # Reduxtagram

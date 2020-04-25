@@ -7,7 +7,7 @@ import Layout from "../components/layout"
 import PostLink from "../components/post-link"
 import HeroHeader from "../components/heroHeader"
 import Instagram from "../components/instagram"
-import { Grid } from "../components/styles"
+import { Grid, Button } from "../components/styles"
 
 const IndexPage = ({
   data: {
@@ -38,7 +38,9 @@ const IndexPage = ({
           margin: 40px;
           padding: 40px;
       `}>
-        <Link to='/contact' className="button -primary">Get in touch &rarr;</Link>
+        <Link to='/contact' >
+          <Button className="-primary">Get in touch &rarr;</Button>
+        </Link>
       </div>
     </Layout>
   )
