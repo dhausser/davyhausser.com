@@ -1,10 +1,10 @@
 /** @jsx jsx */
-import { css, jsx } from "@emotion/core"
+import { Global, css, jsx } from "@emotion/core"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
 import Navigation from "../components/navigation"
-import { GlobalStyles, Wrapper, Header, Title, Footer } from "../components/styles"
+import { globalStyles, Wrapper, Header, Title, Footer } from "../utils/styles"
 
 export default ({ children }) => {
   const data = useStaticQuery(
@@ -20,7 +20,7 @@ export default ({ children }) => {
   )
   return (
     <Wrapper>
-      <GlobalStyles />
+      <Global styles={globalStyles} />
       <Header>
         <Title>
           <Link to="/">{data.site.siteMetadata.title}</Link>

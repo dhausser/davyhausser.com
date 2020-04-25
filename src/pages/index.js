@@ -7,7 +7,7 @@ import Layout from "../components/layout"
 import PostLink from "../components/postLink"
 import HeroHeader from "../components/heroHeader"
 import Instagram from "../components/instagram"
-import { Grid, Button } from "../components/styles"
+import { Grid, Button } from "../utils/styles"
 
 const IndexPage = ({
   data: {

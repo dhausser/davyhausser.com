@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { Card, PostMeta } from './styles'
+import { Card, PostMeta } from '../utils/styles'
 
 function useInstagram() {
   const [posts, setPosts] = useState([])

@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
 import ThemeChanger from "../components/themeChanger"
-import { Navigation } from "./styles"
+import { Navigation } from "../utils/styles"
 
 export default () => (
   <Navigation>

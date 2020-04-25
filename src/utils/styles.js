@@ -1,79 +1,76 @@
-/** @jsx jsx */
-import { Global, css, jsx } from "@emotion/core"
+import { css } from "@emotion/core"
 import styled from "@emotion/styled"
 
-const GlobalStyles = () => (
-  <Global styles={css`
-    html,
-    body {
-      margin: 0;
-      padding: 0;
+const globalStyles = css`
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  * {
+    margin-top: 0
+  }
+  body.light {
+    --primary-color: #42526E;
+    --primary-text-color: #fff;
+    --featured-bg: #493b8a;
+    --featured-text: #fff;
+    --secondary-color: #10072b;
+    --background: #fff;
+    --site-header: var(--background);
+    --card-bg: #fff;
+    --card-bdr: #eee;
+    --card-shadow: #d5d5d5;
+    --btn-bg: var(--background);
+    --btn-bdr: #d3d6e7;
+    --btn-text-color: #868892;
+    --btn-hover-bg: var(--btn-bdr);
+    --btn-hover-text-color: #00062b;
+    --contact-bg: #f7f8fe;
+    --contact-bdr: #d3d6e7;
+    --input-bg: var(--background);
+    .gg-sun {
+      display: none;
     }
-    * {
-      margin-top: 0
+  }
+  body.dark {
+    --primary-color: #DFE1E6;
+    --primary-text-color: #fff;
+    --featured-bg: #66578d;
+    --featured-text: #fff;
+    --secondary-color: #66578d;
+    --background: #0A041A;
+    --text-color: rgba(255,255,255,0.88);
+    --text-secondary-color: rgba(255,255,255,0.66);
+    --site-header: var(--background);
+    --card-bg: #181326;
+    --card-bdr: #181326;
+    --card-shadow: #020204;
+    --btn-bg: var(--background);
+    --btn-bdr: #d3d6e7;
+    --btn-text-color: #868892;
+    --btn-hover-bg: var(--btn-bdr);
+    --btn-hover-text-color: #00062b;
+    --contact-bg: var(--card-shadow);
+    --contact-bdr: var(--card-bg);
+    --input-bg: var(--card-bg);
+    .gg-moon {
+      display: none;
     }
-    body.light {
-      --primary-color: #381696;
-      --primary-text-color: #fff;
-      --featured-bg: #493b8a;
-      --featured-text: #fff;
-      --secondary-color: #10072b;
-      --background: #fff;
-      --site-header: var(--background);
-      --card-bg: #fff;
-      --card-bdr: #eee;
-      --card-shadow: #d5d5d5;
-      --btn-bg: var(--background);
-      --btn-bdr: #d3d6e7;
-      --btn-text-color: #868892;
-      --btn-hover-bg: var(--btn-bdr);
-      --btn-hover-text-color: #00062b;
-      --contact-bg: #f7f8fe;
-      --contact-bdr: #d3d6e7;
-      --input-bg: var(--background);
-     .gg-sun {
-        display: none;
-      }
+  }
+  /* System Fonts as used by Medium and WordPress */
+  body {
+    background-color: var(--background);
+    color: var(--text-color);
+  }
+  a {
+    color: var(--primary-color);
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
     }
-    body.dark {
-      --primary-color: #9984d5;
-      --primary-text-color: #fff;
-      --featured-bg: #66578d;
-      --featured-text: #fff;
-      --secondary-color: #66578d;
-      --background: #0A041A;
-      --text-color: rgba(255,255,255,0.88);
-      --text-secondary-color: rgba(255,255,255,0.66);
-      --site-header: var(--background);
-      --card-bg: #181326;
-      --card-bdr: #181326;
-      --card-shadow: #020204;
-      --btn-bg: var(--background);
-      --btn-bdr: #d3d6e7;
-      --btn-text-color: #868892;
-      --btn-hover-bg: var(--btn-bdr);
-      --btn-hover-text-color: #00062b;
-      --contact-bg: var(--card-shadow);
-      --contact-bdr: var(--card-bg);
-      --input-bg: var(--card-bg);
-     .gg-moon {
-        display: none;
-      }
-    }
-    /* System Fonts as used by Medium and WordPress */
-    body {
-      background-color: var(--background);
-      color: var(--text-color);
-    }
-    a {
-      color: var(--primary-color);
-      text-decoration: none;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  `} />
-)
+  }
+`
 
 const Wrapper = styled("div")`
   padding: 32px;
@@ -87,14 +84,15 @@ const Wrapper = styled("div")`
 const Navigation = styled("nav")`
   display: flex;
   align-items: center;
-  font-weight: 300;
+  font-weight: 400;
+  text-transform: lowercase;
   a {
     color: #888;
     text-decoration: none;
     margin: 0 8px 0;
     &[aria-current] {
       color: var(--primary-color);
-      font-weight: 700;
+      font-weight: 600;
     }
     &:hover {
       color: var(--primary-color);
@@ -103,6 +101,23 @@ const Navigation = styled("nav")`
       margin-right: 0;
     }
   }
+`
+
+const HeroHeader = styled("div")`
+  padding: 0 0 64px;
+  max-width: 980px;
+`
+const Headline = styled("div")`
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+`
+
+const PrimaryContent = styled("div")`
+  font-size: 18px;
+  margin-bottom: 32px;
+  line-height: 1.5;
+  font-weight: 300;
 `
 
 const Header = styled("header")`
@@ -117,8 +132,11 @@ const Header = styled("header")`
 const Title = styled("div")`
   color: var(--primary-color);
   text-decoration: none;
-  font-weight: 900;
-  text-transform: uppercase;
+  font-weight: 600;
+  text-transform: lowercase;
+  a {
+    text-decoration: none;
+  }
 `;
 
 const Footer = styled("footer")`
@@ -318,7 +336,7 @@ const Button = styled("div")`
   }
 `
 
-const ThemeChanger = styled("input")`
+const themeChanger = css`
   display: none;
   body.dark {
     .gg-moon {
@@ -483,9 +501,13 @@ const Moon = styled("i")`
 
 
 export {
-  GlobalStyles,
+  globalStyles,
+  themeChanger,
   Wrapper,
   Navigation,
+  HeroHeader,
+  Headline,
+  PrimaryContent,
   Header,
   Title,
   Footer,
@@ -498,7 +520,6 @@ export {
   PostTitle,
   FormContainer,
   Button,
-  ThemeChanger,
   ModeContainer,
   Sun,
   Moon

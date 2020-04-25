@@ -3,7 +3,7 @@ import Helmet from "react-helmet"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import { TwoGrids, PostThumbnail, PostTitle, FormContainer, Button } from "../components/styles"
+import { TwoGrids, PostThumbnail, PostTitle, FormContainer, Button } from "../utils/styles"
 
 const ContactPage = ({ data: { site, file } }) => (
   <Layout>

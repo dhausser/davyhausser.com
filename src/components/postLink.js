@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import { Card, PostMeta } from "./styles"
+import { Card, PostMeta } from "../utils/styles"
 
 const PostLink = ({ post, childImageSharp }) => (
   <Card>

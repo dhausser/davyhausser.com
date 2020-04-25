@@ -12,7 +12,7 @@ module.exports = {
     siteUrl: `https://davyhausser.com/`,
     home: {
       title: `Portfolio`,
-      description: `Welcome to my personal piece of the Internet. I build websites and apps with React, Node and GraphQL. Hit me up!`,
+      description: `Welcome to my personal piece of the Internet. I build websites and apps with React, Node and GraphQL. Hit me up! 🚀`,
     },
   },
   plugins: [

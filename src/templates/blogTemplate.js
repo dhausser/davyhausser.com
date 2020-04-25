@@ -3,7 +3,7 @@ import Helmet from "react-helmet"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 
-import { Post, PostThumbnail, PostTitle, PostMeta } from "../components/styles"
+import { Post, PostThumbnail, PostTitle, PostMeta } from "../utils/styles"
 
 export default function Template({ data }) {
   const { markdownRemark } = data

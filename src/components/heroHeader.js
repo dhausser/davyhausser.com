@@ -1,6 +1,8 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
+import { HeroHeader, Headline, PrimaryContent } from "../utils/styles"
+
 export default () => {
   const data = useStaticQuery(graphql`
     query HeadingQuery {
@@ -15,11 +17,11 @@ export default () => {
     }
   `)
   return (
-    <div className="hero-header">
-      <div className="headline">{data.site.siteMetadata.home.title}</div>
-      <div className="primary-content">
+    <HeroHeader>
+      <Headline>{data.site.siteMetadata.home.title}</Headline>
+      <PrimaryContent>
         <p>{data.site.siteMetadata.home.description}</p>
-      </div>
-    </div>
+      </PrimaryContent>
+    </HeroHeader>
   )
 }
