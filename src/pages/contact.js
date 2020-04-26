@@ -28,15 +28,9 @@ const ContactPage = ({ data: { site, file } }) => (
       </PostThumbnail>
       <FormContainer>
         <form name="contact" method="post" data-netlify="true">
-          <div>
-            <input type="text" name="name" placeholder="Name" />
-          </div>
-          <div>
-            <input type="email" name="email" placeholder="Email" />
-          </div>
-          <div>
-            <button type="submit">Submit</button>
-          </div>
+          <input type="text" name="name" placeholder="Name" />
+          <input type="email" name="email" placeholder="Email" />
+          <button type="submit">Submit</button>
           {/* <p>
             <input type="email" name="email" placeholder="Email" />
           </p>
