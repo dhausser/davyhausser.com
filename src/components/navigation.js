@@ -8,6 +8,7 @@ import { Navigation } from "../utils/styles"
 export default () => (
   <Navigation>
     <Link to="/">Home</Link>
+    <Link to="/blog">Blog</Link>
     <Link to="/contact">Contact</Link>
     <a href="https://github.com/dhausser">
       <FaGithub />

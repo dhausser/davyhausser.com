@@ -1,10 +1,11 @@
-import React from "react"
-import { css } from "@emotion/core"
+/** @jsx jsx */
+import { css, jsx } from "@emotion/core"
 import { Link } from "gatsby"
 import Image from "gatsby-image"
-import { Card, PostMeta } from "../utils/styles"
+import { GoMarkGithub, GoLinkExternal } from "react-icons/go"
+import { Navigation, Card, PostMeta } from "../utils/styles"
 
-const PostLink = ({ title, description, slug, imageData }) => (
+const ProjectPreview = ({ title, description, slug, url, repo, imageData }) => (
   <Card>
     <Link to={`/project/${slug}/`}>
       <div
@@ -20,13 +21,31 @@ const PostLink = ({ title, description, slug, imageData }) => (
       </div>
     </Link>
     <header>
-      <h2 className="post-title">
-        <Link to={`/project/${slug}/`} className="post-link">
-          {title}
-        </Link>
-      </h2>
+      <div
+        css={css`
+          display: flex;
+          justify-content: space-between;
+        `}
+      >
+        <div>
+          <h2 className="post-title">
+            <Link to={`/project/${slug}/`} className="post-link">
+              {title}
+            </Link>
+          </h2>
+        </div>
+        <Navigation>
+          <a href={repo}>
+            <GoMarkGithub />
+          </a>
+
+          <a href={url}>
+            <GoLinkExternal />
+          </a>
+        </Navigation>
+      </div>
       <PostMeta className="post-meta">{description}</PostMeta>
     </header>
   </Card>
 )
-export default PostLink
+export default ProjectPreview

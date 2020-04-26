@@ -34,7 +34,8 @@ const globalStyles = css`
     }
   }
   body.dark {
-    --primary-color: #5cbac9;
+    --primary-color: #fff;
+    /* --primary-color: #5cbac9; */
     --primary-text-color: #fff;
     --featured-bg: #66578d;
     --featured-text: #fff;
@@ -104,7 +105,7 @@ const Navigation = styled("nav")`
 `
 
 const HeroHeader = styled("div")`
-  padding: 0 0 64px;
+  padding: 0 0 10px;
   max-width: 980px;
 `
 const Headline = styled("div")`

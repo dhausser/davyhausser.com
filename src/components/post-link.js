@@ -1,12 +1,14 @@
 import React from "react"
 import { Link } from "gatsby"
+import Img from "gatsby-image"
 
 import { Card, PostMeta } from "../utils/styles"
 
-const PostLink = ({ post }) => (
+const PostLink = ({ post, imageData }) => (
   <Card>
     <Link to={post.frontmatter.path}>
-      <img src={post.frontmatter.thumbnail} alt={"stars in space"} />
+      <Img fluid={imageData} alt={"stars in space"} />
+      {/* <img src={post.frontmatter.thumbnail} alt={"stars in space"} /> */}
     </Link>
     <header>
       <h2 className="post-title">

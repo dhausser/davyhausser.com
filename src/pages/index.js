@@ -5,25 +5,15 @@ import { css, jsx } from "@emotion/core"
 
 import Layout from "../components/layout"
 import ProjectPreview from "../components/project-preview"
-import PostLink from "../components/post-link"
-import HeroHeader from "../components/hero-header"
-import Instagram from "../components/instagram"
 import { Grid, Button } from "../utils/styles"
 
-const IndexPage = ({
-  data: { site, allProjectsJson, allMarkdownRemark, file }
-}) => {
-  const Posts = allMarkdownRemark.edges
-    .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
-    .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
-
+const IndexPage = ({ data: { site, allProjectsJson } }) => {
   return (
     <Layout>
       <Helmet>
         <title>{site.siteMetadata.title}</title>
         <meta name="description" content={site.siteMetadata.description} />
       </Helmet>
-      <HeroHeader />
       <Grid>
         {allProjectsJson.edges.map(({ node: project }) => (
           <ProjectPreview
@@ -31,11 +21,11 @@ const IndexPage = ({
             title={project.title}
             description={project.description}
             slug={project.slug}
+            url={project.url}
+            repo={project.repo}
             imageData={project.image.childImageSharp.fluid}
           />
         ))}
-        {Posts}
-        <Instagram />
       </Grid>
       <div
         css={css`
@@ -46,7 +36,7 @@ const IndexPage = ({
         `}
       >
         <Link to="/contact">
-          <Button className="-primary">Get in touch &rarr;</Button>
+          <Button>Get in touch &rarr;</Button>
         </Link>
       </div>
     </Layout>
@@ -68,6 +58,8 @@ export const pageQuery = graphql`
           title
           description
           slug
+          url
+          repo
           image {
             childImageSharp {
               fluid {
@@ -75,28 +67,6 @@ export const pageQuery = graphql`
               }
             }
           }
-        }
-      }
-    }
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-      edges {
-        node {
-          id
-          excerpt(pruneLength: 250)
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            path
-            title
-            thumbnail
-          }
-        }
-      }
-    }
-    file(relativePath: { eq: "image-5.jpg" }) {
-      childImageSharp {
-        # Specify the image processing specifications right in the query.
-        fluid {
-          ...GatsbyImageSharpFluid
         }
       }
     }

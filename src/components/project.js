@@ -1,11 +1,19 @@
-import React from "react"
+/** @jsx jsx */
 import Helmet from "react-helmet"
+import { css, jsx } from "@emotion/core"
 import { Link } from "gatsby"
+import { GoMarkGithub, GoLinkExternal } from "react-icons/go"
 
 import Layout from "../components/layout"
-import { Post, PostThumbnail, PostTitle, Button } from "../utils/styles"
+import {
+  Post,
+  PostThumbnail,
+  PostTitle,
+  Button,
+  Navigation
+} from "../utils/styles"
 
-const ProjectPreview = ({ title, description, url, imageData, tags }) => {
+const ProjectPreview = ({ title, description, url, repo, imageData, tags }) => {
   console.log(imageData)
   return (
     <Layout>
@@ -20,14 +28,30 @@ const ProjectPreview = ({ title, description, url, imageData, tags }) => {
           </PostThumbnail>
         </Post>
       </div>
-      <PostTitle>{title}</PostTitle>
-      <p>{description}</p>
+      <div
+        css={css`
+          display: flex;
+          justify-content: space-between;
+          margin: 20px;
+        `}
+      >
+        <p>{description}</p>
+        <Navigation>
+          <a href={repo}>
+            <GoMarkGithub />
+          </a>
+
+          <a href={url}>
+            <GoLinkExternal />
+          </a>
+        </Navigation>
+      </div>
       <ul>
         <li>
           <a href={url}>View Live &rarr;</a>
         </li>
         <li>
-          <a href={`https://github.com/dhausser`}>View Code &rarr;</a>
+          <a href={repo}>View Code &rarr;</a>
         </li>
       </ul>
       <h3>Tags:</h3>
@@ -37,7 +61,7 @@ const ProjectPreview = ({ title, description, url, imageData, tags }) => {
         ))}
       </ul>
       <Link to="/">
-        <Button className="-primary">&larr; back to all projects</Button>
+        <Button>&larr; back to all projects</Button>
       </Link>
     </Layout>
   )

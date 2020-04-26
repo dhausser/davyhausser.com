@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from "@emotion/core"
+import React from "react"
 import Helmet from "react-helmet"
 import { graphql } from "gatsby"
 
@@ -18,7 +17,7 @@ const ContactPage = ({ data: { site, file } }) => (
       <title>Contact — {site.siteMetadata.title}</title>
       <meta name="description" content={site.siteMetadata.description} />
     </Helmet>
-    <TwoGrids>
+    <TwoGrids className="contact">
       <PostThumbnail
         style={{
           backgroundImage: `url(${file.childImageSharp.fluid.src})`
@@ -27,35 +26,8 @@ const ContactPage = ({ data: { site, file } }) => (
         <PostTitle>Get in Touch</PostTitle>
         <p>Let me help you kick start your next project &rarr;</p>
       </PostThumbnail>
-      <form name="contact" method="POST" data-netlify="true">
-        <p>
-          <label>
-            Your Name: <input type="text" name="name" />
-          </label>
-        </p>
-        {/* <p>
-          <label>Your Email: <input type="email" name="email" /></label>
-        </p> */}
-        <p>
-          <label>
-            Your Role:{" "}
-            <select name="role[]" multiple>
-              <option value="leader">Leader</option>
-              <option value="follower">Follower</option>
-            </select>
-          </label>
-        </p>
-        <p>
-          <label>
-            Message: <textarea name="message"></textarea>
-          </label>
-        </p>
-        <p>
-          <button type="submit">Send</button>
-        </p>
-      </form>
-      {/* <div>
-        <FormContainer name="contact" method="POST" netlify="true">
+      <div>
+        <FormContainer name="contact" method="POST" netlify>
           <div>
             <label>
               Your Name: <input type="text" name="name" />
@@ -71,23 +43,11 @@ const ContactPage = ({ data: { site, file } }) => (
               Message: <textarea name="message"></textarea>
             </label>
           </div>
-          <div
-            css={css`
-              display: "flex";
-              justify-content: "flex-end";
-            `}
-          >
-            <SubmitButton
-              type="submit"
-              action="/pages/success"
-              className="button -primary"
-              css={css`
-                margin-right: 0;
-              `}
-            />
+          <div style={{ display: "flex", justifyContent: "flex-end" }}>
+            <SubmitButton type="submit" style={{ marginRight: 0 }} />
           </div>
         </FormContainer>
-      </div> */}
+      </div>
     </TwoGrids>
   </Layout>
 )

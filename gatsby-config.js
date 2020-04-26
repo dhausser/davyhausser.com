@@ -12,12 +12,12 @@ module.exports = {
     siteUrl: `https://davyhausser.com/`,
     home: {
       title: `Portfolio`,
-      description: `Welcome to my personal piece of the Internet. I build websites and apps with React, Node and GraphQL. Hit me up! 🚀`,
-    },
+      description: `Welcome to my personal piece of the Internet. I build websites and apps with React, Node and GraphQL.`
+    }
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    'gatsby-plugin-dark-mode',
+    "gatsby-plugin-dark-mode",
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-transformer-json`,
@@ -25,31 +25,31 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `markdown-pages`,
-        path: `${__dirname}/_data`,
-      },
+        path: `${__dirname}/_data`
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/static/assets`,
-      },
+        path: `${__dirname}/static/assets`
+      }
     },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
           {
-            resolve: 'gatsby-remark-emojis',
+            resolve: "gatsby-remark-emojis"
           }
-        ],
-      },
+        ]
+      }
     },
     {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `${__dirname}/src/utils/typography`,
-        omitGoogleFonts: false,
-      },
-    },
-  ],
+        omitGoogleFonts: false
+      }
+    }
+  ]
 }
