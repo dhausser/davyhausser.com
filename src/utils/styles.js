@@ -293,6 +293,7 @@ const FormContainer = styled("form")`
     width: calc(100% - 24px);
     margin-bottom: 1.5rem;
     background-color: var(--input-bg);
+    font-family: $font-family;
   }
   textarea {
     margin-bottom: 2rem;
@@ -442,6 +443,7 @@ const ModeContainer = styled("div")`
   width: 24px;
   height: 24px;
   margin-left: 20px;
+  cursor: pointer;
 `
 
 const Sun = styled("i")`

@@ -9,39 +9,39 @@ import { GoMarkGithub, GoLinkExternal } from "react-icons/go"
 import { NavStyles, Card, PostMeta } from "../utils/styles"
 
 const ProjectPreview = ({ title, tags, slug, url, repo, imageData }) => (
-  <Card>
-    <Link to={`/project/${slug}/`}>
-      <motion.div whileHover={{ scale: 1.05 }}>
+  <motion.div whileHover={{ scale: 1.05 }}>
+    <Card>
+      <Link to={`/project/${slug}/`}>
         <Image fluid={imageData} alt={title} />
-      </motion.div>
-    </Link>
-    <header>
-      <div
-        css={css`
-          display: flex;
-          justify-content: space-between;
-        `}
-      >
-        <h3 className="post-title">
-          <Link to={`/project/${slug}/`} className="post-link">
-            {title}
-          </Link>
-        </h3>
-        <NavStyles>
-          <a href={repo} target="_blank" rel="noopener noreferrer">
-            <GoMarkGithub />
-          </a>
+      </Link>
+      <header>
+        <div
+          css={css`
+            display: flex;
+            justify-content: space-between;
+          `}
+        >
+          <h3 className="post-title">
+            <Link to={`/project/${slug}/`} className="post-link">
+              {title}
+            </Link>
+          </h3>
+          <NavStyles>
+            <a href={repo} target="_blank" rel="noopener noreferrer">
+              <GoMarkGithub />
+            </a>
 
-          <a href={url} target="_blank" rel="noopener noreferrer">
-            <GoLinkExternal />
-          </a>
-        </NavStyles>
-      </div>
-      <PostMeta className="post-meta">
-        <Tags tags={tags} />
-      </PostMeta>
-    </header>
-  </Card>
+            <a href={url} target="_blank" rel="noopener noreferrer">
+              <GoLinkExternal />
+            </a>
+          </NavStyles>
+        </div>
+        <PostMeta className="post-meta">
+          <Tags tags={tags} />
+        </PostMeta>
+      </header>
+    </Card>
+  </motion.div>
 )
 
 export default ProjectPreview

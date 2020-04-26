@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { motion } from "framer-motion"
 import { Card, PostMeta } from "../utils/styles"
 
 function useInstagram() {
@@ -16,16 +17,22 @@ function useInstagram() {
 const Instagram = () => {
   const posts = useInstagram()
   return posts.map(post => (
-    <Card key={post.url}>
-      <a href={post.url}>
-        {!!post.thumbnail && (
-          <img src={post.thumbnail} alt={post.caption + "- Featured Shot"} />
-        )}
-      </a>
-      <header>
-        <PostMeta>{post.caption}</PostMeta>
-      </header>
-    </Card>
+    <motion.div whileHover={{ scale: 1.05 }}>
+      <Card key={post.url}>
+        <a href={post.url}>
+          {!!post.thumbnail && (
+            <img
+              src={post.thumbnail}
+              alt={post.caption + "- Featured Shot"}
+              style={{ opacity: "90%" }}
+            />
+          )}
+        </a>
+        <header>
+          <PostMeta>{post.caption}</PostMeta>
+        </header>
+      </Card>
+    </motion.div>
   ))
 }
 
