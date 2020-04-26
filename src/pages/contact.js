@@ -31,7 +31,7 @@ const ContactPage = ({ data: { site, file } }) => (
           <p>
             <input type="text" name="name" placeholder="Name" />
           </p>
-          <p>
+          {/* <p>
             <input type="email" name="email" placeholder="Email" />
           </p>
           <p>
@@ -40,7 +40,7 @@ const ContactPage = ({ data: { site, file } }) => (
               name="message"
               placeholder="Message"
             ></textarea>
-          </p>
+          </p> */}
           <div style={{ display: "flex", justifyContent: "flex-end" }}>
             <SubmitButton type="submit">Submit</SubmitButton>
           </div>
