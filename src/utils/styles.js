@@ -271,7 +271,7 @@ const PostTitle = styled("h1")`
   font-size: 2rem;
 `
 
-const FormContainer = styled("form")`
+const FormContainer = styled("div")`
   background-color: var(--contact-bg);
   padding: 32px;
   border: 1px solid var(--contact-bdr);
