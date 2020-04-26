@@ -329,7 +329,7 @@ const Button = styled("div")`
   }
 `
 
-const SubmitButton = styled("input")`
+const SubmitButton = styled("button")`
   padding: 18px 27px;
   display: inline-block;
   background: var(--btn-bg);

@@ -28,12 +28,13 @@ const ContactPage = ({ data: { site, file } }) => (
       </PostThumbnail>
       <div>
         <FormContainer>
-          <form method="post" name="contact-testnet" netlify>
+          <form method="post" name="contact-testn-form" data-netlify="true">
             <input type="text" name="name" placeholder="Name" />
             <input type="email" name="email" placeholder="Email" />
             <textarea name="message" placeholder="Message"></textarea>
             <div style={{ display: "flex", justifyContent: "flex-end" }}>
-              <SubmitButton type="submit" />
+              <button type="submit">Submit</button>
+              {/* <SubmitButton type="submit" /> */}
             </div>
           </form>
         </FormContainer>
