@@ -5,6 +5,7 @@ import { css, jsx } from "@emotion/core"
 
 import Layout from "../components/layout"
 import ProjectPreview from "../components/project-preview"
+import Instagram from "../components/instagram"
 import { Grid, Button } from "../utils/styles"
 
 const IndexPage = ({ data: { site, allProjectsJson } }) => {
@@ -26,6 +27,7 @@ const IndexPage = ({ data: { site, allProjectsJson } }) => {
             imageData={project.image.childImageSharp.fluid}
           />
         ))}
+        <Instagram />
       </Grid>
       <div
         css={css`
