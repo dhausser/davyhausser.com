@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
 import { FaGithub, FaLinkedin } from "react-icons/fa"
-// import { motion } from "framer-motion"
 
 import ThemeChanger from "./theme-changer"
 import { NavStyles } from "../utils/styles"
@@ -9,7 +8,6 @@ import { NavStyles } from "../utils/styles"
 export default () => (
   <NavStyles>
     <Link to="/">Home</Link>
-    <Link to="/blog">Blog</Link>
     <Link to="/contact">Contact</Link>
     <a
       href="https://github.com/dhausser"

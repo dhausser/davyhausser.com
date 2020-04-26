@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 
 import { Post, PostThumbnail, PostTitle, PostMeta } from "../utils/styles"
 
-function Blog({ data }) {
+function BlogPage({ data }) {
   const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
   return (
@@ -40,7 +40,7 @@ function Blog({ data }) {
   )
 }
 
-export default Blog
+export default BlogPage
 export const pageQuery = graphql`
   query($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {

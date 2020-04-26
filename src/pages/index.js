@@ -1,14 +1,15 @@
-/** @jsx jsx */
+import React from "react"
 import Helmet from "react-helmet"
-import { Link, graphql } from "gatsby"
-import { css, jsx } from "@emotion/core"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import ProjectPreview from "../components/project-preview"
+import Contact from "../components/contact"
 import Instagram from "../components/instagram"
-import { Grid, Button } from "../utils/styles"
+import { Grid } from "../utils/styles"
 
 const IndexPage = ({ data: { site, allProjectsJson } }) => {
+  console.log(allProjectsJson)
   return (
     <Layout>
       <Helmet>
@@ -22,6 +23,7 @@ const IndexPage = ({ data: { site, allProjectsJson } }) => {
             title={project.title}
             description={project.description}
             slug={project.slug}
+            tags={project.tags}
             url={project.url}
             repo={project.repo}
             imageData={project.image.childImageSharp.fluid}
@@ -29,18 +31,7 @@ const IndexPage = ({ data: { site, allProjectsJson } }) => {
         ))}
         <Instagram />
       </Grid>
-      <div
-        css={css`
-          display: flex;
-          justify-content: center;
-          margin: 40px;
-          padding: 40px;
-        `}
-      >
-        <Link to="/contact">
-          <Button>Get in touch &rarr;</Button>
-        </Link>
-      </div>
+      <Contact />
     </Layout>
   )
 }
@@ -60,11 +51,19 @@ export const pageQuery = graphql`
           title
           description
           slug
+          tags
           url
           repo
           image {
             childImageSharp {
-              fluid {
+              fluid(
+                fit: COVER
+                maxWidth: 400
+                maxHeight: 250
+                toFormat: WEBP
+                cropFocus: NORTHWEST
+                grayscale: true
+              ) {
                 ...GatsbyImageSharpFluid
               }
             }

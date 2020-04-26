@@ -5,6 +5,7 @@ import { Link } from "gatsby"
 import { GoMarkGithub, GoLinkExternal } from "react-icons/go"
 
 import Layout from "../components/layout"
+import Tags from "../components/tags"
 import {
   Post,
   PostThumbnail,
@@ -13,58 +14,59 @@ import {
   NavStyles
 } from "../utils/styles"
 
-const ProjectPreview = ({ title, description, url, repo, imageData, tags }) => {
-  console.log(imageData)
-  return (
-    <Layout>
-      <Helmet>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-      </Helmet>
-      <div>
-        <Post>
-          <PostThumbnail style={{ backgroundImage: `url(${imageData.src})` }}>
-            <PostTitle>{title}</PostTitle>
-          </PostThumbnail>
-        </Post>
-      </div>
-      <div
-        css={css`
-          display: flex;
-          justify-content: space-between;
-          margin: 20px;
-        `}
-      >
-        <p>{description}</p>
-        <NavStyles>
-          <a href={repo}>
-            <GoMarkGithub />
-          </a>
+const ProjectPreview = ({ title, description, url, repo, imageData, tags }) => (
+  <Layout>
+    <Helmet>
+      <title>{title}</title>
+      <meta name="description" content={description} />
+    </Helmet>
+    <div>
+      <Post>
+        <PostThumbnail style={{ backgroundImage: `url(${imageData.src})` }}>
+          <PostTitle>{title}</PostTitle>
+        </PostThumbnail>
+      </Post>
+    </div>
+    <div
+      css={css`
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0px;
+      `}
+    >
+      <Tags tags={tags} />
+      <NavStyles>
+        <a href={repo}>
+          <GoMarkGithub />
+        </a>
 
-          <a href={url}>
-            <GoLinkExternal />
-          </a>
-        </NavStyles>
-      </div>
-      <ul>
-        <li>
-          <a href={url}>View Live &rarr;</a>
-        </li>
-        <li>
-          <a href={repo}>View Code &rarr;</a>
-        </li>
-      </ul>
-      <h3>Tags:</h3>
-      <ul>
-        {tags.map(tag => (
-          <li key={`tag-${tag}`}>{tag}</li>
-        ))}
-      </ul>
+        <a href={url}>
+          <GoLinkExternal />
+        </a>
+      </NavStyles>
+    </div>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo nam non
+      consectetur voluptatem eveniet perferendis! Nisi fugit asperiores quo
+      aliquam quidem, eos assumenda quod architecto in earum nostrum amet
+      aspernatur.
+    </p>
+    <div
+      css={css`
+        display: flex;
+        justify-content: center;
+        margin: 40px;
+        padding: 40px;
+      `}
+    >
       <Link to="/">
-        <Button>&larr; back to all projects</Button>
+        <Button>&larr; Home</Button>
       </Link>
-    </Layout>
-  )
-}
+      <Link to="/contact">
+        <Button>Contact &rarr;</Button>
+      </Link>
+    </div>
+  </Layout>
+)
 
 export default ProjectPreview

@@ -1,15 +1,15 @@
-/** @jsx jsx */
+import React from "react"
 import Helmet from "react-helmet"
-import { Link, graphql } from "gatsby"
-import { css, jsx } from "@emotion/core"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import PostLink from "../components/post-link"
-import { Grid, Button } from "../utils/styles"
+import Contact from "../components/contact"
+import { Grid } from "../utils/styles"
 
 const BlogPage = ({ data: { site, allMarkdownRemark, file } }) => {
   const Posts = allMarkdownRemark.edges
-    .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
+    .filter(edge => !!edge.node.frontmatter.date)
     .map(edge => (
       <PostLink
         key={edge.node.id}
@@ -25,18 +25,7 @@ const BlogPage = ({ data: { site, allMarkdownRemark, file } }) => {
         <meta name="description" content={site.siteMetadata.description} />
       </Helmet>
       <Grid>{Posts}</Grid>
-      <div
-        css={css`
-          display: flex;
-          justify-content: center;
-          margin: 40px;
-          padding: 40px;
-        `}
-      >
-        <Link to="/contact">
-          <Button>Get in touch &rarr;</Button>
-        </Link>
-      </div>
+      <Contact />
     </Layout>
   )
 }
@@ -66,7 +55,6 @@ export const pageQuery = graphql`
     }
     file(relativePath: { eq: "images/deepspace.jpg" }) {
       childImageSharp {
-        # Specify the image processing specifications right in the query.
         fluid {
           ...GatsbyImageSharpFluid
         }

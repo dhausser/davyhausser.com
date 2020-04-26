@@ -3,8 +3,8 @@ const path = require(`path`)
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
-  const project = path.resolve(`src/templates/project.js`)
-  const blogPost = path.resolve(`src/templates/blog.js`)
+  const projectTemplate = path.resolve(`src/templates/project.js`)
+  const blogPostTemplate = path.resolve(`src/templates/blog.js`)
 
   const result = await graphql(`
     {
@@ -42,7 +42,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   projects.forEach(project => {
     actions.createPage({
       path: `/project/${project.slug}/`,
-      component: project,
+      component: projectTemplate,
       context: {
         slug: project.slug
       }
@@ -52,7 +52,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
       path: node.frontmatter.path,
-      component: blogPost,
+      component: blogPostTemplate,
       context: {}
     })
   })

@@ -60,9 +60,9 @@ export const pageQuery = graphql`
         description
       }
     }
-    file(relativePath: { eq: "palmtree.jpg" }) {
+    file(relativePath: { eq: "images/deepspace.jpg" }) {
       childImageSharp {
-        fluid {
+        fluid(grayscale: true) {
           ...GatsbyImageSharpFluid
         }
       }

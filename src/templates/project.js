@@ -25,7 +25,7 @@ export const query = graphql`
       tags
       image {
         childImageSharp {
-          fluid {
+          fluid(grayscale: true) {
             ...GatsbyImageSharpFluid
           }
         }

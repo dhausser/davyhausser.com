@@ -168,7 +168,7 @@ const TwoGrids = styled("div")`
 const Card = styled("article")`
   display: grid;
   background-color: var(--card-bg);
-  border-radius: 9px;
+  border-radius: 10px;
   border: 1px solid var(--card-bdr);
   box-shadow: 0 0 30px var(--card-shadow);
   overflow: hidden;
