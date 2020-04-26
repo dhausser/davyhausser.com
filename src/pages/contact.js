@@ -28,9 +28,8 @@ const ContactPage = ({ data: { site, file } }) => (
       </PostThumbnail>
       <FormContainer>
         <form name="contact" method="post" data-netlify="true">
-          <p>
-            <input type="text" name="name" placeholder="Name" />
-          </p>
+          <input type="text" name="name" placeholder="Name" />
+          <button type="submit">Submit</button>
           {/* <p>
             <input type="email" name="email" placeholder="Email" />
           </p>
@@ -41,9 +40,9 @@ const ContactPage = ({ data: { site, file } }) => (
               placeholder="Message"
             ></textarea>
           </p> */}
-          <div style={{ display: "flex", justifyContent: "flex-end" }}>
+          {/* <div style={{ display: "flex", justifyContent: "flex-end" }}>
             <SubmitButton type="submit">Submit</SubmitButton>
-          </div>
+          </div> */}
         </form>
       </FormContainer>
     </TwoGrids>
