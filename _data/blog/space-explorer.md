@@ -2,10 +2,11 @@
 template: SpaceExplorer
 path: /spaceexplorer
 date: 2020-01-14T12:12:25.364Z
-title: 'Space Explorer'
-thumbnail: /assets/image-5.jpg
+title: "Space Explorer"
+thumbnail: /images/deepspace.jpg
 metaDescription: spaceexplorer
 ---
+
 # Reduxtagram
 
 - [View Live](https://catch-of-the-day-by-dhausser.netlify.app/)

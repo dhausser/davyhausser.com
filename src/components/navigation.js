@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import { FaGithub, FaLinkedin } from "react-icons/fa"
-import { motion } from "framer-motion"
+// import { motion } from "framer-motion"
 
 import ThemeChanger from "./theme-changer"
 import { NavStyles } from "../utils/styles"

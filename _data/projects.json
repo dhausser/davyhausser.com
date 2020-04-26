@@ -4,7 +4,7 @@
     "slug": "wanderlost",
     "url": "https://ecommerce-nextjs-apollo-client.now.sh/",
     "repo": "https://github.com/dhausser/wanderlost/",
-    "image": "./images/wanderlost.webp",
+    "image": "./images/wanderlost.jpg",
     "description": "I built this site to show off my sweet skills!",
     "tags": ["React", "Next.js", "JavaScript"]
   },
@@ -13,7 +13,7 @@
     "slug": "reduxtagram",
     "url": "https://inspiring-hugle-48043a.netlify.app/",
     "repo": "https://github.com/dhausser/reduxtagram/",
-    "image": "./images/reduxtagram.webp",
+    "image": "./images/reduxtagram.jpg",
     "description": "I built this site to show off my sweet skills!",
     "tags": ["React", "Redux", "JavaScript"]
   },
@@ -22,7 +22,7 @@
     "slug": "store-finder",
     "url": "https://now-thats-delicious-dhausser.herokuapp.com/",
     "repo": "https://github.com/dhausser/dang-thats-delicious/",
-    "image": "./images/store-finder.webp",
+    "image": "./images/stores.jpg",
     "description": "I built this site to show off my sweet skills!",
     "tags": ["React", "Redux", "JavaScript"]
   },
@@ -31,7 +31,7 @@
     "slug": "fish-market",
     "url": "https://catch-of-the-day-by-dhausser.netlify.app/",
     "repo": "https://github.com/dhausser/catch-of-the-day/",
-    "image": "./images/fish-market.webp",
+    "image": "./images/fishy.jpg",
     "description": "I built this site to show off my sweet skills!",
     "tags": ["React", "Firebase", "JavaScript"]
   },
