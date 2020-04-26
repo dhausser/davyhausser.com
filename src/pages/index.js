@@ -8,33 +8,30 @@ import Contact from "../components/contact"
 import Instagram from "../components/instagram"
 import { Grid } from "../utils/styles"
 
-const IndexPage = ({ data: { site, allProjectsJson } }) => {
-  console.log(allProjectsJson)
-  return (
-    <Layout>
-      <Helmet>
-        <title>{site.siteMetadata.title}</title>
-        <meta name="description" content={site.siteMetadata.description} />
-      </Helmet>
-      <Grid>
-        {allProjectsJson.edges.map(({ node: project }) => (
-          <ProjectPreview
-            key={`preview-${project.slug}`}
-            title={project.title}
-            description={project.description}
-            slug={project.slug}
-            tags={project.tags}
-            url={project.url}
-            repo={project.repo}
-            imageData={project.image.childImageSharp.fluid}
-          />
-        ))}
-        <Instagram />
-      </Grid>
-      <Contact />
-    </Layout>
-  )
-}
+const IndexPage = ({ data: { site, allProjectsJson } }) => (
+  <Layout>
+    <Helmet>
+      <title>{site.siteMetadata.title}</title>
+      <meta name="description" content={site.siteMetadata.description} />
+    </Helmet>
+    <Grid>
+      {allProjectsJson.edges.map(({ node: project }) => (
+        <ProjectPreview
+          key={`preview-${project.slug}`}
+          title={project.title}
+          description={project.description}
+          slug={project.slug}
+          tags={project.tags}
+          url={project.url}
+          repo={project.repo}
+          imageData={project.image.childImageSharp.fluid}
+        />
+      ))}
+      <Instagram />
+    </Grid>
+    <Contact />
+  </Layout>
+)
 
 export default IndexPage
 export const pageQuery = graphql`
@@ -60,7 +57,6 @@ export const pageQuery = graphql`
                 fit: COVER
                 maxWidth: 400
                 maxHeight: 250
-                toFormat: WEBP
                 cropFocus: NORTHWEST
                 grayscale: true
               ) {

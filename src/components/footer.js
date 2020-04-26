@@ -1,8 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core"
-import { FaGithub, FaLinkedin } from "react-icons/fa"
-
-import { NavStyles } from "../utils/styles"
+import SocialHandles from "../components/social-handles"
 
 export default function Footer() {
   return (
@@ -32,22 +30,7 @@ export default function Footer() {
               justify-content: center;
             `}
           >
-            <NavStyles>
-              <a
-                href="https://github.com/dhausser"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaGithub />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/davyhausser/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaLinkedin />
-              </a>
-            </NavStyles>
+            <SocialHandles />
           </div>
         </div>
       </div>
