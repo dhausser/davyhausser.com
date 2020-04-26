@@ -10,7 +10,7 @@ import {
   PostThumbnail,
   PostTitle,
   Button,
-  Navigation
+  NavStyles
 } from "../utils/styles"
 
 const ProjectPreview = ({ title, description, url, repo, imageData, tags }) => {
@@ -36,7 +36,7 @@ const ProjectPreview = ({ title, description, url, repo, imageData, tags }) => {
         `}
       >
         <p>{description}</p>
-        <Navigation>
+        <NavStyles>
           <a href={repo}>
             <GoMarkGithub />
           </a>
@@ -44,7 +44,7 @@ const ProjectPreview = ({ title, description, url, repo, imageData, tags }) => {
           <a href={url}>
             <GoLinkExternal />
           </a>
-        </Navigation>
+        </NavStyles>
       </div>
       <ul>
         <li>

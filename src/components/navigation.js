@@ -1,21 +1,30 @@
 import React from "react"
 import { Link } from "gatsby"
 import { FaGithub, FaLinkedin } from "react-icons/fa"
+import { motion } from "framer-motion"
 
 import ThemeChanger from "./theme-changer"
-import { Navigation } from "../utils/styles"
+import { NavStyles } from "../utils/styles"
 
 export default () => (
-  <Navigation>
+  <NavStyles>
     <Link to="/">Home</Link>
     <Link to="/blog">Blog</Link>
     <Link to="/contact">Contact</Link>
-    <a href="https://github.com/dhausser">
+    <a
+      href="https://github.com/dhausser"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <FaGithub />
     </a>
-    <a href="https://www.linkedin.com/in/davyhausser/">
+    <a
+      href="https://www.linkedin.com/in/davyhausser/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <FaLinkedin />
     </a>
     <ThemeChanger />
-  </Navigation>
+  </NavStyles>
 )

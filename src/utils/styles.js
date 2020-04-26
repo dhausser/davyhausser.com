@@ -82,7 +82,7 @@ const Wrapper = styled("div")`
   }
 `
 
-const Navigation = styled("nav")`
+const NavStyles = styled("nav")`
   display: flex;
   align-items: center;
   font-weight: 400;
@@ -137,15 +137,6 @@ const Title = styled("div")`
   text-transform: lowercase;
   a {
     text-decoration: none;
-  }
-`
-
-const Footer = styled("footer")`
-  text-align: center;
-  margin: 90px 0 16px;
-  color: #666;
-  a {
-    font-weight: 700;
   }
 `
 
@@ -522,13 +513,12 @@ export {
   globalStyles,
   themeChanger,
   Wrapper,
-  Navigation,
+  NavStyles,
   HeroHeader,
   Headline,
   PrimaryContent,
   Header,
   Title,
-  Footer,
   Grid,
   TwoGrids,
   Card,
