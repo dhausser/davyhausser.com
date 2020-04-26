@@ -27,18 +27,20 @@ const ContactPage = ({ data: { site, file } }) => (
         <p>Let me help you kick start your next project &rarr;</p>
       </PostThumbnail>
       <div>
-        <FormContainer
-          name="contact"
-          method="POST"
-          netlify-honeypot="bot-field"
-          data-netlify="true"
-        >
-          <input type="hidden" name="bot-field" />
-          <input type="text" name="name" placeholder="Name" />
-          <input type="email" name="email" placeholder="Email" />
-          <textarea name="message" placeholder="Message"></textarea>
+        <FormContainer name="contact-form" method="POST" data-netlify="true">
+          <p>
+            <input type="text" name="name" placeholder="Name" />
+          </p>
+          <p>
+            <input type="email" name="email" placeholder="Email" />
+          </p>
+          <p>
+            <textarea name="message" placeholder="Message"></textarea>
+          </p>
           <div style={{ display: "flex", justifyContent: "flex-end" }}>
-            <SubmitButton type="submit" />
+            <p>
+              <SubmitButton type="submit" />
+            </p>
           </div>
         </FormContainer>
       </div>
