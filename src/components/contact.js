@@ -71,12 +71,15 @@ export function ContactForm() {
           method="POST"
           data-netlify="true"
         >
-          {/* <input type="text" name="name" placeholder="Name" /> */}
-          <input type="email" name="email" placeholder="Email" />
-          <textarea name="message" placeholder="Message"></textarea>
-          <SubmitButton type="submit">Send</SubmitButton>
-          {/* <div style={{ display: "flex", justifyContent: "flex-end" }}>
-          </div> */}
+          <label htmlFor="email">
+            <input type="email" name="email" placeholder="Email" />
+          </label>
+          <label htmlFor="message">
+            <textarea name="message" placeholder="Message"></textarea>
+          </label>
+          <div style={{ display: "flex", justifyContent: "flex-end" }}>
+            <SubmitButton type="submit">Send</SubmitButton>
+          </div>
         </FormContainer>
       </Wrapper>
     </Card>

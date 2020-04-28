@@ -521,6 +521,10 @@ const Moon = styled("i")`
   }
 `
 
+// Layout
+export const blogWidth = `42rem`
+export const breakpointGutter = `@media (min-width: ${blogWidth})`
+
 export {
   globalStyles,
   themeChanger,
