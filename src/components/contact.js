@@ -14,35 +14,25 @@ export default function Contact() {
         /* padding: 40px; */
       `}
     >
-      <form name="contact" method="POST" data-netlify="true">
+      <FormContainer
+        name="contact-form-footer"
+        method="POST"
+        data-netlify="true"
+      >
         <p>
           <label>
-            Your Name: <input type="text" name="name" />
+            <input type="email" name="email" placeholder="Email" />
           </label>
         </p>
         <p>
           <label>
-            Your Email: <input type="email" name="email" />
-          </label>
-        </p>
-        <p>
-          <label>
-            Your Role:{" "}
-            <select name="role[]" multiple>
-              <option value="leader">Leader</option>
-              <option value="follower">Follower</option>
-            </select>
-          </label>
-        </p>
-        <p>
-          <label>
-            Message: <textarea name="message"></textarea>
+            <textarea name="message"></textarea>
           </label>
         </p>
         <p>
           <button type="submit">Send</button>
         </p>
-      </form>
+      </FormContainer>
     </div>
   )
 }
