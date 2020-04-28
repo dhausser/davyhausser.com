@@ -57,8 +57,8 @@ export const pageQuery = graphql`
                 maxWidth: 800
                 maxHeight: 400
                 cropFocus: NORTHWEST
-              ) # grayscale: true
-              {
+                grayscale: true
+              ) {
                 ...GatsbyImageSharpFluid
               }
             }

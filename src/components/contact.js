@@ -77,9 +77,7 @@ export function ContactForm() {
           <label htmlFor="message">
             <textarea name="message" placeholder="Message"></textarea>
           </label>
-          <div style={{ display: "flex", justifyContent: "flex-end" }}>
-            <SubmitButton type="submit">Send</SubmitButton>
-          </div>
+          <SubmitButton type="submit">Send</SubmitButton>
         </FormContainer>
       </Wrapper>
     </Card>

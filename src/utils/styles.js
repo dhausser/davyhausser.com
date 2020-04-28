@@ -280,6 +280,9 @@ const PostTitle = styled("h1")`
 `
 
 const FormContainer = styled("form")`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   background-color: var(--contact-bg);
   padding: 32px;
   label {

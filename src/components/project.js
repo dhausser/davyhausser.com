@@ -24,7 +24,7 @@ const Project = ({ title, description, url, repo, imageData, tags }) => (
     <div>
       <motion.div whileHover={{ scale: 1.03 }}>
         <Post>
-          <a href={url}>
+          <a href={url} target="_blank" rel="noopener noreferrer">
             <PostThumbnail style={{ backgroundImage: `url(${imageData.src})` }}>
               <PostTitle>{title}</PostTitle>
             </PostThumbnail>
@@ -41,11 +41,11 @@ const Project = ({ title, description, url, repo, imageData, tags }) => (
     >
       <Tags tags={tags} />
       <NavStyles>
-        <a href={repo}>
+        <a href={repo} target="_blank" rel="noopener noreferrer">
           <GoMarkGithub />
         </a>
 
-        <a href={url}>
+        <a href={url} target="_blank" rel="noopener noreferrer">
           <GoLinkExternal />
         </a>
       </NavStyles>
