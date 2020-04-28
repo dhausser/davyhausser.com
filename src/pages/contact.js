@@ -14,7 +14,7 @@ const ContactPage = ({ data: { site, file } }) => (
       <meta name="description" content={site.siteMetadata.description} />
     </Helmet>
     <Grid>
-      <ContactHeader file={file} />
+      <ContactHeader />
       <ContactForm />
     </Grid>
     <div
@@ -38,13 +38,6 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         description
-      }
-    }
-    file(relativePath: { eq: "images/deepspace.jpg" }) {
-      childImageSharp {
-        fluid(grayscale: true) {
-          ...GatsbyImageSharpFluid
-        }
       }
     }
   }

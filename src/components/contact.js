@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import { motion } from "framer-motion"
 
 import {
@@ -26,7 +26,20 @@ const Wrapper = styled("div")`
   justify-content: center;
 `
 
-export function ContactHeader({ file }) {
+export function ContactHeader() {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        file(relativePath: { eq: "images/deepspace.jpg" }) {
+          childImageSharp {
+            fluid(grayscale: true) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    `
+  )
   return (
     <motion.div whileHover={{ scale: 1.03 }}>
       <Card>
@@ -34,7 +47,7 @@ export function ContactHeader({ file }) {
           <motion.div whileHover={{ scale: 1.05 }}>
             <PostThumbnail
               style={{
-                backgroundImage: `url(${file.childImageSharp.fluid.src})`
+                backgroundImage: `url(${data.file.childImageSharp.fluid.src})`
               }}
             >
               <PostTitle>Get in Touch</PostTitle>

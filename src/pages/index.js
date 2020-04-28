@@ -26,10 +26,9 @@ const IndexPage = ({ data: { site, allProjectsJson, file } }) => (
           imageData={project.image.childImageSharp.fluid}
         />
       ))}
-      <ContactHeader file={file} />
+      <ContactHeader />
       <ContactForm />
     </Grid>
-    {/* <Contact file={file} /> */}
   </Layout>
 )
 
@@ -64,13 +63,6 @@ export const pageQuery = graphql`
               }
             }
           }
-        }
-      }
-    }
-    file(relativePath: { eq: "images/deepspace.jpg" }) {
-      childImageSharp {
-        fluid(grayscale: true) {
-          ...GatsbyImageSharpFluid
         }
       }
     }
