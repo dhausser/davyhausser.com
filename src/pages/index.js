@@ -54,11 +54,11 @@ export const pageQuery = graphql`
             childImageSharp {
               fluid(
                 fit: COVER
-                maxWidth: 400
-                maxHeight: 250
+                maxWidth: 800
+                maxHeight: 400
                 cropFocus: NORTHWEST
-                grayscale: true
-              ) {
+              ) # grayscale: true
+              {
                 ...GatsbyImageSharpFluid
               }
             }

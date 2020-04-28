@@ -12,6 +12,7 @@ import {
 } from "../utils/styles"
 
 const Card = styled("div")`
+  height: 350px;
   background-color: var(--contact-bg);
   border-radius: 10px;
   border: 1px solid var(--card-bdr);
@@ -32,7 +33,8 @@ export function ContactHeader() {
       query {
         file(relativePath: { eq: "images/deepspace.jpg" }) {
           childImageSharp {
-            fluid(grayscale: true) {
+            fluid {
+              # grayscale: true
               ...GatsbyImageSharpFluid
             }
           }
@@ -41,10 +43,10 @@ export function ContactHeader() {
     `
   )
   return (
-    <motion.div whileHover={{ scale: 1.03 }}>
+    <motion.div whileHover={{ scale: 0.96 }}>
       <Card>
         <Link to="/contact">
-          <motion.div whileHover={{ scale: 1.05 }}>
+          <motion.div whileHover={{ scale: 1.0 }}>
             <PostThumbnail
               style={{
                 backgroundImage: `url(${data.file.childImageSharp.fluid.src})`
@@ -69,18 +71,12 @@ export function ContactForm() {
           method="POST"
           data-netlify="true"
         >
-          {/* <motion.div whileHover={{ scale: 1.03 }}>
-            <input type="text" name="email" placeholder="Name" />
-          </motion.div> */}
-          <motion.div whileHover={{ scale: 1.03 }}>
-            <input type="email" name="email" placeholder="Email" />
-          </motion.div>
-          <motion.div whileHover={{ scale: 1.03 }}>
-            <textarea name="message" placeholder="Message"></textarea>
-          </motion.div>
-          <div style={{ display: "flex", justifyContent: "flex-end" }}>
-            <SubmitButton type="submit">Send</SubmitButton>
-          </div>
+          {/* <input type="text" name="name" placeholder="Name" /> */}
+          <input type="email" name="email" placeholder="Email" />
+          <textarea name="message" placeholder="Message"></textarea>
+          <SubmitButton type="submit">Send</SubmitButton>
+          {/* <div style={{ display: "flex", justifyContent: "flex-end" }}>
+          </div> */}
         </FormContainer>
       </Wrapper>
     </Card>

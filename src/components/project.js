@@ -15,7 +15,7 @@ import {
   NavStyles
 } from "../utils/styles"
 
-const ProjectPreview = ({ title, description, url, repo, imageData, tags }) => (
+const Project = ({ title, description, url, repo, imageData, tags }) => (
   <Layout>
     <Helmet>
       <title>{title}</title>
@@ -86,4 +86,4 @@ const ProjectPreview = ({ title, description, url, repo, imageData, tags }) => (
   </Layout>
 )
 
-export default ProjectPreview
+export default Project
