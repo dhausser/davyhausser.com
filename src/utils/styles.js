@@ -146,7 +146,7 @@ const Grid = styled("div")`
   grid-gap: 32px;
   margin-top: 32px;
   @media only screen and (min-width: 1024px) {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 `
 
@@ -271,7 +271,7 @@ const PostTitle = styled("h1")`
   font-size: 2rem;
 `
 
-const FormContainer = styled("div")`
+const FormContainer = styled("form")`
   background-color: var(--contact-bg);
   padding: 32px;
   border: 1px solid var(--contact-bdr);
@@ -281,8 +281,8 @@ const FormContainer = styled("div")`
     margin-bottom: 0.5rem;
     color: var(--text-secondary-color);
   }
-  input[type="text"],
-  input[type="email"],
+  /* input[type="text"], */
+  /* input[type="email"], */
   textarea {
     appearance: none;
     border: 1px solid var(--card-shadow);

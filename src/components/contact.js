@@ -19,19 +19,9 @@ export default function Contact() {
         method="POST"
         data-netlify="true"
       >
-        <p>
-          <label>
-            <input type="email" name="email" placeholder="Email" />
-          </label>
-        </p>
-        <p>
-          <label>
-            <textarea name="message"></textarea>
-          </label>
-        </p>
-        <p>
-          <button type="submit">Send</button>
-        </p>
+        <input type="email" name="email" placeholder="Email" />
+        <textarea name="message"></textarea>
+        <button type="submit">Send</button>
       </FormContainer>
     </div>
   )
