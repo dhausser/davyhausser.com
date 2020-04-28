@@ -4,18 +4,17 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import ProjectPreview from "../components/project-preview"
-import Contact from "../components/contact"
-// import Instagram from "../components/instagram"
+import { ContactHeader, ContactForm } from "../components/contact"
 import { Grid } from "../utils/styles"
 
-const IndexPage = ({ data: { site, allProjectsJson } }) => (
+const IndexPage = ({ data: { site, allProjectsJson, file } }) => (
   <Layout>
     <Helmet>
       <title>{site.siteMetadata.title}</title>
       <meta name="description" content={site.siteMetadata.description} />
     </Helmet>
     <Grid>
-      {allProjectsJson.edges.map(({ node: project }) => (
+      {allProjectsJson.edges.slice(0, 4).map(({ node: project }) => (
         <ProjectPreview
           key={`preview-${project.slug}`}
           title={project.title}
@@ -27,9 +26,10 @@ const IndexPage = ({ data: { site, allProjectsJson } }) => (
           imageData={project.image.childImageSharp.fluid}
         />
       ))}
-      {/* <Instagram /> */}
+      <ContactHeader file={file} />
+      <ContactForm />
     </Grid>
-    <Contact />
+    {/* <Contact file={file} /> */}
   </Layout>
 )
 
@@ -64,6 +64,13 @@ export const pageQuery = graphql`
               }
             }
           }
+        }
+      }
+    }
+    file(relativePath: { eq: "images/deepspace.jpg" }) {
+      childImageSharp {
+        fluid(grayscale: true) {
+          ...GatsbyImageSharpFluid
         }
       }
     }

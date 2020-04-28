@@ -269,13 +269,14 @@ const PostTitle = styled("h1")`
   margin: 0 0 0.5rem;
   line-height: 1.3;
   font-size: 2rem;
+  a {
+    text-decoration: none;
+  }
 `
 
 const FormContainer = styled("form")`
   background-color: var(--contact-bg);
   padding: 32px;
-  border: 1px solid var(--contact-bdr);
-  border-radius: 9px;
   label {
     display: block;
     margin-bottom: 0.5rem;
@@ -297,7 +298,7 @@ const FormContainer = styled("form")`
   }
   textarea {
     margin-bottom: 2rem;
-    height: 150px;
+    height: 100px;
   }
 `
 
@@ -312,7 +313,6 @@ const Button = styled("div")`
   color: var(--btn-text-color);
   font-size: 16px;
   font-weight: 400;
-  margin: 0 20px 0 0;
   transition: background-color 0.3s linear;
   &.-primary {
     background-color: var(--primary-color);

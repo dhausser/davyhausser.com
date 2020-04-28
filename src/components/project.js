@@ -3,6 +3,7 @@ import Helmet from "react-helmet"
 import { css, jsx } from "@emotion/core"
 import { Link } from "gatsby"
 import { GoMarkGithub, GoLinkExternal } from "react-icons/go"
+import { motion } from "framer-motion"
 
 import Layout from "../components/layout"
 import Tags from "../components/tags"
@@ -21,11 +22,15 @@ const ProjectPreview = ({ title, description, url, repo, imageData, tags }) => (
       <meta name="description" content={description} />
     </Helmet>
     <div>
-      <Post>
-        <PostThumbnail style={{ backgroundImage: `url(${imageData.src})` }}>
-          <PostTitle>{title}</PostTitle>
-        </PostThumbnail>
-      </Post>
+      <motion.div whileHover={{ scale: 1.03 }}>
+        <Post>
+          <a href={url}>
+            <PostThumbnail style={{ backgroundImage: `url(${imageData.src})` }}>
+              <PostTitle>{title}</PostTitle>
+            </PostThumbnail>
+          </a>
+        </Post>
+      </motion.div>
     </div>
     <div
       css={css`
@@ -59,12 +64,24 @@ const ProjectPreview = ({ title, description, url, repo, imageData, tags }) => (
         padding: 40px;
       `}
     >
-      <Link to="/">
-        <Button>&larr; Home</Button>
-      </Link>
-      <Link to="/contact">
-        <Button>Contact &rarr;</Button>
-      </Link>
+      <div
+        css={css`
+          margin: 0px 10px;
+        `}
+      >
+        <Link to="/">
+          <Button>&larr; Home</Button>
+        </Link>
+      </div>
+      <div
+        css={css`
+          margin: 0px 10px;
+        `}
+      >
+        <Link to="/contact">
+          <Button>Contact &rarr;</Button>
+        </Link>
+      </div>
     </div>
   </Layout>
 )
