@@ -5,7 +5,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import ProjectPreview from "../components/project-preview"
 import Contact from "../components/contact"
-import Instagram from "../components/instagram"
+// import Instagram from "../components/instagram"
 import { Grid } from "../utils/styles"
 
 const IndexPage = ({ data: { site, allProjectsJson } }) => (
@@ -27,7 +27,7 @@ const IndexPage = ({ data: { site, allProjectsJson } }) => (
           imageData={project.image.childImageSharp.fluid}
         />
       ))}
-      <Instagram />
+      {/* <Instagram /> */}
     </Grid>
     <Contact />
   </Layout>

@@ -7,6 +7,13 @@ export default function SocialHandles() {
   return (
     <NavStyles>
       <a
+        href="https://www.twitter.com/davyhausser/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaTwitter />
+      </a>
+      <a
         href="https://github.com/dhausser"
         target="_blank"
         rel="noopener noreferrer"
@@ -19,13 +26,6 @@ export default function SocialHandles() {
         rel="noopener noreferrer"
       >
         <FaLinkedin />
-      </a>
-      <a
-        href="https://www.twitter.com/davyhausser/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <FaTwitter />
       </a>
     </NavStyles>
   )

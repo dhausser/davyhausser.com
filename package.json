@@ -8,7 +8,7 @@
     "@lingui/react": "^2.9.1",
     "framer-motion": "^1.10.3",
     "gatsby": "^2.19.7",
-    "gatsby-cli": "^2.11.22",
+    "gatsby-cli": "^2.12.1",
     "gatsby-design-tokens": "^2.0.5",
     "gatsby-image": "^2.3.4",
     "gatsby-plugin-dark-mode": "^1.1.1",

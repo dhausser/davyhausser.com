@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 
 import SocialHandles from "./social-handles"
 import ThemeChanger from "./theme-changer"
@@ -8,10 +8,10 @@ import { NavStyles } from "../utils/styles"
 
 export default () => (
   <NavStyles>
-    <Link to="/">Home</Link>
-    <Link to="/contact">Contact</Link>
+    {/* <Link to="/">Home</Link> */}
+    {/* <Link to="/contact">Contact</Link> */}
     <SocialHandles />
-    {/* <DarkModeToggle /> */}
     <ThemeChanger />
+    {/* <DarkModeToggle /> */}
   </NavStyles>
 )
