@@ -9,7 +9,8 @@ export default function Footer() {
         css={css`
           display: flex;
           justify-content: center;
-          margin: 40px;
+          padding: 20px;
+          margin: 20px;
         `}
       >
         <p>

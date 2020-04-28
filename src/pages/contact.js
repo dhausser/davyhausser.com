@@ -1,15 +1,11 @@
-import React from "react"
+/** @jsx jsx */
+import { css, jsx } from "@emotion/core"
 import Helmet from "react-helmet"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 import Layout from "../components/layout"
-import {
-  TwoGrids,
-  PostThumbnail,
-  PostTitle,
-  FormContainer,
-  SubmitButton
-} from "../utils/styles"
+import { ContactHeader, ContactForm } from "../components/contact"
+import { Grid, Button } from "../utils/styles"
 
 const ContactPage = ({ data: { site, file } }) => (
   <Layout>
@@ -17,25 +13,22 @@ const ContactPage = ({ data: { site, file } }) => (
       <title>Contact — {site.siteMetadata.title}</title>
       <meta name="description" content={site.siteMetadata.description} />
     </Helmet>
-    <TwoGrids className="-contact">
-      <PostThumbnail
-        style={{
-          backgroundImage: `url(${file.childImageSharp.fluid.src})`
-        }}
-      >
-        <PostTitle>Get in Touch</PostTitle>
-        <p>Let me help you kick start your next project &rarr;</p>
-      </PostThumbnail>
-      <FormContainer>
-        <form name="contact" method="post" data-netlify="true">
-          <input type="text" name="name" placeholder="Name" />
-          <input type="email" name="email" placeholder="Email" />
-          <textarea type="text" name="message" placeholder="Message" />
-          <SubmitButton type="submit">Submit</SubmitButton>
-          {/* <div style={{ display: "flex", justifyContent: "flex-end" }}></div> */}
-        </form>
-      </FormContainer>
-    </TwoGrids>
+    <Grid>
+      <ContactHeader file={file} />
+      <ContactForm />
+    </Grid>
+    <div
+      css={css`
+        display: flex;
+        justify-content: center;
+        margin: 20px;
+        padding: 20px;
+      `}
+    >
+      <Link to="/">
+        <Button>&larr; Home</Button>
+      </Link>
+    </div>
   </Layout>
 )
 export default ContactPage

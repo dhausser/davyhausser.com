@@ -12,7 +12,9 @@ const ProjectPreview = ({ title, tags, slug, url, repo, imageData }) => (
   <motion.div whileHover={{ scale: 1.03 }}>
     <Card>
       <Link to={`/project/${slug}/`}>
-        <Image fluid={imageData} alt={title} />
+        <motion.div whileHover={{ scale: 1.03 }}>
+          <Image fluid={imageData} alt={title} />
+        </motion.div>
       </Link>
       <header>
         <div

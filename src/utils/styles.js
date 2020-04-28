@@ -131,12 +131,15 @@ const Header = styled("header")`
 `
 
 const Title = styled("div")`
-  color: var(--primary-color);
   text-decoration: none;
   font-weight: 600;
   text-transform: lowercase;
   a {
+    color: #888;
     text-decoration: none;
+    &:hover {
+      color: var(--primary-color);
+    }
   }
 `
 
@@ -144,7 +147,7 @@ const Grid = styled("div")`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 32px;
-  margin: 32px 0;
+  margin: 40px 0;
   @media only screen and (min-width: 1024px) {
     grid-template-columns: 1fr 1fr;
   }
@@ -212,13 +215,15 @@ const PostThumbnail = styled("div")`
   background-size: cover;
   background-position: center;
   border-radius: 18px;
-  margin-bottom: 36px;
   color: var(--featured-text);
   display: grid;
   align-content: center;
   position: relative;
   padding: 18px;
   overflow: hidden;
+  a {
+    text-decoration: none;
+  }
   &:before {
     content: "";
     background: rgba(0, 0, 0, 0.4);
@@ -445,6 +450,10 @@ const ModeContainer = styled("div")`
   height: 24px;
   margin-left: 20px;
   cursor: pointer;
+  color: #888;
+  :hover {
+    color: var(--primary-color);
+  }
 `
 
 const Sun = styled("i")`

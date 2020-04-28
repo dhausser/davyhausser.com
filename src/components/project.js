@@ -60,8 +60,8 @@ const ProjectPreview = ({ title, description, url, repo, imageData, tags }) => (
       css={css`
         display: flex;
         justify-content: center;
-        margin: 40px;
-        padding: 40px;
+        margin: 20px;
+        padding: 20px;
       `}
     >
       <div

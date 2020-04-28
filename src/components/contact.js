@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
+import { Link } from "gatsby"
 import { motion } from "framer-motion"
 
 import {
@@ -27,18 +28,22 @@ const Wrapper = styled("div")`
 
 export function ContactHeader({ file }) {
   return (
-    <Card>
-      <motion.div whileHover={{ scale: 1.03 }}>
-        <PostThumbnail
-          style={{
-            backgroundImage: `url(${file.childImageSharp.fluid.src})`
-          }}
-        >
-          <PostTitle>Get in Touch</PostTitle>
-          <p>Let me help you kick start your next project &rarr;</p>
-        </PostThumbnail>
-      </motion.div>
-    </Card>
+    <motion.div whileHover={{ scale: 1.03 }}>
+      <Card>
+        <Link to="/contact">
+          <motion.div whileHover={{ scale: 1.05 }}>
+            <PostThumbnail
+              style={{
+                backgroundImage: `url(${file.childImageSharp.fluid.src})`
+              }}
+            >
+              <PostTitle>Get in Touch</PostTitle>
+              <p>Let me help you kick start your next project &rarr;</p>
+            </PostThumbnail>
+          </motion.div>
+        </Link>
+      </Card>
+    </motion.div>
   )
 }
 
