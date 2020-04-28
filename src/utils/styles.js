@@ -144,7 +144,7 @@ const Grid = styled("div")`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 32px;
-  margin-top: 32px;
+  margin: 32px 0;
   @media only screen and (min-width: 1024px) {
     grid-template-columns: 1fr 1fr;
   }
@@ -281,8 +281,8 @@ const FormContainer = styled("form")`
     margin-bottom: 0.5rem;
     color: var(--text-secondary-color);
   }
-  /* input[type="text"], */
-  /* input[type="email"], */
+  input[type="text"],
+  input[type="email"],
   textarea {
     appearance: none;
     border: 1px solid var(--card-shadow);
@@ -302,6 +302,7 @@ const FormContainer = styled("form")`
 `
 
 const Button = styled("div")`
+  width: 100%;
   padding: 18px 27px;
   display: inline-block;
   background: var(--btn-bg);

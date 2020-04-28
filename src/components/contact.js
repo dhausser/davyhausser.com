@@ -1,16 +1,17 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 
-import { FormContainer, Button, SubmitButton } from "../utils/styles"
+import { FormContainer, SubmitButton } from "../utils/styles"
 
 export default function Contact() {
   return (
     <div
       css={css`
-        display: flex;
-        justify-content: center;
-        margin: 40px;
+        /* display: flex; */
+        /* width: 100%; */
+        /* justify-content: center; */
+        /* margin: 40px; */
         /* padding: 40px; */
       `}
     >
@@ -21,7 +22,9 @@ export default function Contact() {
       >
         <input type="email" name="email" placeholder="Email" />
         <textarea name="message"></textarea>
-        <button type="submit">Send</button>
+        <div style={{ display: "flex", justifyContent: "flex-end" }}>
+          <SubmitButton type="submit">Send</SubmitButton>
+        </div>
       </FormContainer>
     </div>
   )

@@ -9,7 +9,7 @@ import { GoMarkGithub, GoLinkExternal } from "react-icons/go"
 import { NavStyles, Card, PostMeta } from "../utils/styles"
 
 const ProjectPreview = ({ title, tags, slug, url, repo, imageData }) => (
-  <motion.div whileHover={{ scale: 1.05 }}>
+  <motion.div whileHover={{ scale: 1.03 }}>
     <Card>
       <Link to={`/project/${slug}/`}>
         <Image fluid={imageData} alt={title} />
