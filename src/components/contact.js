@@ -73,10 +73,14 @@ export function ContactForm() {
           <p>
             <input type="email" name="email" placeholder="Email" />
           </p>
-          <textarea name="message" placeholder="Message"></textarea>
-          <SubmitWrapper>
-            <SubmitButton type="submit" value="Submit" />
-          </SubmitWrapper>
+          <p>
+            <textarea name="message" placeholder="Message"></textarea>
+          </p>
+          <p>
+            <SubmitWrapper>
+              <SubmitButton type="submit" value="Submit" />
+            </SubmitWrapper>
+          </p>
         </FormContainer>
       </Wrapper>
     </Card>
