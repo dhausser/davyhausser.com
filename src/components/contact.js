@@ -70,7 +70,9 @@ export function ContactForm() {
           method="POST"
           data-netlify="true"
         >
-          <input type="email" name="email" placeholder="Email" />
+          <p>
+            <input type="email" name="email" placeholder="Email" />
+          </p>
           <textarea name="message" placeholder="Message"></textarea>
           <SubmitWrapper>
             <SubmitButton type="submit" value="Submit" />

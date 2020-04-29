@@ -10,7 +10,20 @@ import { NavStyles, Card, PostMeta } from "../utils/styles"
 const ProjectPreview = ({ title, tags, slug, url, repo, imageData }) => (
   <Card>
     <Link to={`/project/${slug}/`}>
-      <Image fluid={imageData} alt={title} />
+      <div
+        css={css`
+          transition-timing-function: ease-in-out;
+          transition: 1s;
+          /* transform: scale(1.05, 1.05); */
+          :hover {
+            transition-timing-function: ease-in-out;
+            transition: 1s;
+            transform: scale(1.05, 1.05);
+          }
+        `}
+      >
+        <Image fluid={imageData} alt={title} />
+      </div>
     </Link>
     <header>
       <div

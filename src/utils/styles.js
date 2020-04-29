@@ -244,7 +244,8 @@ const PostThumbnail = styled("div")`
   }
 `
 
-const Post = styled("article")`
+const Post = styled("div")`
+  border-radius: 18px;
   padding: 0;
   background: var(--background);
   color: var(--text-color);

@@ -8,7 +8,7 @@ import { GoMarkGithub, GoLinkExternal } from "react-icons/go"
 import Layout from "../components/layout"
 import Tags from "../components/tags"
 import {
-  Post,
+  // Post,
   // PostThumbnail,
   PostTitle,
   Button,
@@ -21,16 +21,25 @@ const Project = ({ title, description, url, repo, imageData, tags }) => (
       <title>{title}</title>
       <meta name="description" content={description} />
     </Helmet>
-    <div>
-      <Post>
-        <a href={url} target="_blank" rel="noopener noreferrer">
-          <Image fluid={imageData} alt={title} />
-          {/* <PostThumbnail style={{ backgroundImage: `url(${imageData.src})` }}>
+    <a href={url} target="_blank" rel="noopener noreferrer">
+      <Image
+        fluid={imageData}
+        alt={title}
+        css={css`
+          border-radius: 10px;
+          transition-timing-function: ease-in-out;
+          transition: 1s;
+          :hover {
+            transition-timing-function: ease-in-out;
+            transition: 1s;
+            transform: scale(1.02, 1.02);
+          }
+        `}
+      />
+      {/* <PostThumbnail style={{ backgroundImage: `url(${imageData.src})` }}>
             <PostTitle>{title}</PostTitle>
-          </PostThumbnail> */}
-        </a>
-      </Post>
-    </div>
+        //   </PostThumbnail> */}
+    </a>
     <div
       css={css`
         display: flex;
