@@ -1,4 +1,5 @@
-import React from "react"
+/** @jsx jsx */
+import { css, jsx } from "@emotion/core"
 import styled from "@emotion/styled"
 import { Link, useStaticQuery, graphql } from "gatsby"
 
@@ -11,7 +12,7 @@ import {
 } from "../utils/styles"
 
 const Card = styled("div")`
-  height: 350px;
+  height: 300px;
   background-color: var(--contact-bg);
   border-radius: 10px;
   border: 1px solid var(--card-bdr);
@@ -46,7 +47,12 @@ export function ContactHeader() {
     `
   )
   return (
-    <Card>
+    <Card
+      css={css`
+        display: grid;
+        align-content: center;
+      `}
+    >
       <Link to="/contact">
         <PostThumbnail
           style={{

@@ -271,13 +271,9 @@ const Post = styled("div")`
 `
 
 const PostTitle = styled("h1")`
-  /* text-align: center; */
   margin: 0 0 0.5rem;
   line-height: 1.3;
   font-size: 2rem;
-  a {
-    text-decoration: none;
-  }
 `
 
 const FormContainer = styled("form")`
@@ -307,7 +303,7 @@ const FormContainer = styled("form")`
   }
   textarea {
     margin-bottom: 2rem;
-    height: 100px;
+    height: 50px;
   }
 `
 
