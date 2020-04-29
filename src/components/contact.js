@@ -5,15 +5,15 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import {
   TwoGrids,
   PostThumbnail,
-  PostTitle
-  // FormContainer,
-  // SubmitButton
+  PostTitle,
+  FormContainer,
+  SubmitButton
 } from "../utils/styles"
 
 const Card = styled("div")`
   height: 350px;
   background-color: var(--contact-bg);
-  /* border-radius: 10px; */
+  border-radius: 10px;
   border: 1px solid var(--card-bdr);
   box-shadow: 0 0 30px var(--card-shadow);
   overflow: hidden;
@@ -24,6 +24,11 @@ const Wrapper = styled("div")`
   display: flex;
   flex-direction: column;
   justify-content: center;
+`
+
+const SubmitWrapper = styled("div")`
+  display: flex;
+  justify-content: flex-end;
 `
 
 export function ContactHeader() {
@@ -60,12 +65,17 @@ export function ContactForm() {
   return (
     <Card>
       <Wrapper>
-        <form name="contact-form-footer" method="POST" netlify>
-          <input type="text" name="name" placeholder="Name" />
-          {/* <input type="email" name="email" placeholder="Email" /> */}
-          {/* <textarea name="message" placeholder="Message"></textarea> */}
-          <input type="submit" value="Submit" />
-        </form>
+        <FormContainer
+          name="contact-form-footer"
+          method="POST"
+          data-netlify="true"
+        >
+          <input type="email" name="email" placeholder="Email" />
+          <textarea name="message" placeholder="Message"></textarea>
+          <SubmitWrapper>
+            <SubmitButton type="submit" value="Submit" />
+          </SubmitWrapper>
+        </FormContainer>
       </Wrapper>
     </Card>
   )
