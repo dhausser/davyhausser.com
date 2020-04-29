@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import { motion } from "framer-motion"
 import { Card, PostMeta } from "../utils/styles"
 
 function useInstagram() {

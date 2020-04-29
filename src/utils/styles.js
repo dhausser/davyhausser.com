@@ -171,7 +171,7 @@ const TwoGrids = styled("div")`
 const Card = styled("article")`
   display: grid;
   background-color: var(--card-bg);
-  border-radius: 10px;
+  /* border-radius: 10px; */
   border: 1px solid var(--card-bdr);
   box-shadow: 0 0 30px var(--card-shadow);
   overflow: hidden;
@@ -214,7 +214,7 @@ const PostThumbnail = styled("div")`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  border-radius: 18px;
+  /* border-radius: 18px; */
   color: var(--featured-text);
   display: grid;
   align-content: center;
@@ -270,7 +270,7 @@ const Post = styled("article")`
 `
 
 const PostTitle = styled("h1")`
-  text-align: center;
+  /* text-align: center; */
   margin: 0 0 0.5rem;
   line-height: 1.3;
   font-size: 2rem;

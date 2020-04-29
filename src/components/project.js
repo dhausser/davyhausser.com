@@ -2,14 +2,14 @@
 import Helmet from "react-helmet"
 import { css, jsx } from "@emotion/core"
 import { Link } from "gatsby"
+import Image from "gatsby-image"
 import { GoMarkGithub, GoLinkExternal } from "react-icons/go"
-import { motion } from "framer-motion"
 
 import Layout from "../components/layout"
 import Tags from "../components/tags"
 import {
   Post,
-  PostThumbnail,
+  // PostThumbnail,
   PostTitle,
   Button,
   NavStyles
@@ -22,15 +22,14 @@ const Project = ({ title, description, url, repo, imageData, tags }) => (
       <meta name="description" content={description} />
     </Helmet>
     <div>
-      <motion.div whileHover={{ scale: 1.03 }}>
-        <Post>
-          <a href={url} target="_blank" rel="noopener noreferrer">
-            <PostThumbnail style={{ backgroundImage: `url(${imageData.src})` }}>
-              <PostTitle>{title}</PostTitle>
-            </PostThumbnail>
-          </a>
-        </Post>
-      </motion.div>
+      <Post>
+        <a href={url} target="_blank" rel="noopener noreferrer">
+          <Image fluid={imageData} alt={title} />
+          {/* <PostThumbnail style={{ backgroundImage: `url(${imageData.src})` }}>
+            <PostTitle>{title}</PostTitle>
+          </PostThumbnail> */}
+        </a>
+      </Post>
     </div>
     <div
       css={css`
@@ -50,6 +49,7 @@ const Project = ({ title, description, url, repo, imageData, tags }) => (
         </a>
       </NavStyles>
     </div>
+    <PostTitle>{title}</PostTitle>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo nam non
       consectetur voluptatem eveniet perferendis! Nisi fugit asperiores quo
