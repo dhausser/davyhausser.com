@@ -116,7 +116,7 @@ const MoonMask = styled.div`
   width: 24px;
 `
 
-function DarkModeToggle() {
+export default () => {
   const [colorMode, setColorMode] = useState("dark")
   const isDark = colorMode === `dark`
 
@@ -144,5 +144,3 @@ function DarkModeToggle() {
     </ThemeToggler>
   )
 }
-
-export default DarkModeToggle

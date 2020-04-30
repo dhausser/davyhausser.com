@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core"
 
-export default function Tags({ tags }) {
+export default ({ tags }) => {
   return (
     <div
       css={css`
@@ -16,7 +16,7 @@ export default function Tags({ tags }) {
         >
           <div
             css={css`
-              background-color: #62319e;
+              background-color: #542c85;
               color: #fff;
               border-radius: 5px;
               padding: 0 5px;

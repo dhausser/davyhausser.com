@@ -5,9 +5,9 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import PostLink from "../components/post-link"
 import Contact from "../components/contact"
-import { Grid } from "../utils/styles"
+import { Grid } from './index'
 
-const BlogPage = ({ data: { site, allMarkdownRemark, file } }) => {
+export default ({ data: { site, allMarkdownRemark, file } }) => {
   const Posts = allMarkdownRemark.edges
     .filter(edge => !!edge.node.frontmatter.date)
     .map(edge => (
@@ -30,7 +30,6 @@ const BlogPage = ({ data: { site, allMarkdownRemark, file } }) => {
   )
 }
 
-export default BlogPage
 export const pageQuery = graphql`
   query blogPageQuery {
     site {

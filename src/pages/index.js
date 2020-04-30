@@ -1,13 +1,23 @@
 import React from "react"
 import Helmet from "react-helmet"
 import { graphql } from "gatsby"
+import styled from "@emotion/styled"
 
 import Layout from "../components/layout"
 import ProjectPreview from "../components/project-preview"
-import { ContactHeader, ContactForm } from "../components/contact"
-import { Grid } from "../utils/styles"
+// import { ContactHeader, ContactForm } from "../components/contact"
 
-const IndexPage = ({ data: { site, allProjectsJson, file } }) => (
+export const Grid = styled("div")`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 32px;
+  margin: 40px 0;
+  @media only screen and (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+  }
+`
+
+export default ({ data: { site, allProjectsJson } }) => (
   <Layout>
     <Helmet>
       <title>{site.siteMetadata.title}</title>
@@ -26,13 +36,12 @@ const IndexPage = ({ data: { site, allProjectsJson, file } }) => (
           imageData={project.image.childImageSharp.fluid}
         />
       ))}
-      <ContactHeader />
-      <ContactForm />
+      {/* <ContactHeader /> */}
+      {/* <ContactForm /> */}
     </Grid>
   </Layout>
 )
 
-export default IndexPage
 export const pageQuery = graphql`
   query indexPageQuery {
     site {
@@ -54,9 +63,10 @@ export const pageQuery = graphql`
             childImageSharp {
               fluid(
                 fit: COVER
-                maxWidth: 800
-                maxHeight: 400
-                cropFocus: NORTHWEST # grayscale: true
+                # maxWidth: 600
+                # maxHeight: 400
+                # cropFocus: NORTHWEST
+                grayscale: true
               ) {
                 ...GatsbyImageSharpFluid
               }

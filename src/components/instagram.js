@@ -13,7 +13,7 @@ function useInstagram() {
   return posts
 }
 
-const Instagram = () => {
+export default () => {
   const posts = useInstagram()
   return posts.map(post => (
     <motion.div whileHover={{ scale: 1.05 }}>
@@ -34,5 +34,3 @@ const Instagram = () => {
     </motion.div>
   ))
 }
-
-export default Instagram

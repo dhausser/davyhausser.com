@@ -2,9 +2,9 @@ import React from "react"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 
-import { Card, PostMeta } from "../utils/styles"
+import { Card, PostMeta } from "./project-preview"
 
-const PostLink = ({ post, imageData }) => (
+export default ({ post, imageData }) => (
   <Card>
     <Link to={post.frontmatter.path}>
       <Img fluid={imageData} alt={"stars in space"} />
@@ -19,4 +19,3 @@ const PostLink = ({ post, imageData }) => (
     </header>
   </Card>
 )
-export default PostLink

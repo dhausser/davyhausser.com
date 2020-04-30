@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 
 import Project from "../components/project"
 
-const ProjectPage = ({ data: { projectsJson: project } }) => (
+export default ({ data: { projectsJson: project } }) => (
   <Project
     title={project.title}
     imageData={project.image.childImageSharp.fluid}
@@ -14,7 +14,6 @@ const ProjectPage = ({ data: { projectsJson: project } }) => (
   />
 )
 
-export default ProjectPage
 export const query = graphql`
   query($slug: String!) {
     projectsJson(slug: { eq: $slug }) {
@@ -25,7 +24,9 @@ export const query = graphql`
       tags
       image {
         childImageSharp {
-          fluid {
+          fluid (
+            grayscale: true
+          ) {
             ...GatsbyImageSharpFluid
           }
         }

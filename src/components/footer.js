@@ -2,7 +2,7 @@
 import { css, jsx } from "@emotion/core"
 import SocialHandles from "../components/social-handles"
 
-export default function Footer() {
+export default () => {
   return (
     <footer>
       <div
