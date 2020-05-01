@@ -1,14 +1,14 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core"
 
-export default ({ tags }) => {
+export default ({ categories }) => {
   return (
     <div
       css={css`
         display: flex;
       `}
     >
-      {tags.map(tag => (
+      {categories.map(tag => (
         <div
           css={css`
             display: flex;

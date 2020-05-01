@@ -2,16 +2,15 @@
 import { jsx } from "theme-ui"
 import { Fragment } from "react"
 import { Link } from "gatsby"
-// import qs from "qs"
 
-const ScrollToLink = ({ to, ...rest }) => <a href={to} {...rest} />
+// const ScrollToLink = ({ to, ...rest }) => <a href={to} alt="" {...rest} />
 
 const ShowcaseItemCategories = ({ categories, onCategoryClick }) => {
-  const LinkComponent = onCategoryClick ? ScrollToLink : Link
+  // const LinkComponent = onCategoryClick ? ScrollToLink : Link
 
   return categories.map((c, i) => (
     <Fragment key={c}>
-      <LinkComponent
+      <Link
         sx={{
           "&&": {
             color: `textMuted`,
@@ -35,7 +34,7 @@ const ShowcaseItemCategories = ({ categories, onCategoryClick }) => {
         category={c}
       >
         {c}
-      </LinkComponent>
+      </Link>
       {i === categories.length - 1 ? `` : `, `}
     </Fragment>
   ))

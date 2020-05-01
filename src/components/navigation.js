@@ -1,19 +1,12 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import { useColorMode } from "theme-ui"
 import { GoMarkGithub as GithubIcon } from "react-icons/go"
 import {
   FaTwitter as TwitterIcon,
-  FaLinkedin as LinkedinIcon,
-  FaEnvelope as EnvelopeIcon
+  FaLinkedin as LinkedinIcon
 } from "react-icons/fa"
 
 import { Link } from "gatsby"
-// import SearchForm from "./search-form"
-// import logo from "../assets/dhausser-logo.png"
-// import logoInverted from "../assets/dhausser-logo-inverted.png"
-import logo from "../assets/logo.svg"
-import logoInverted from "../assets/logo-inverted.svg"
 import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
 import { breakpointGutter } from "../utils/styles"
 import DarkModeToggle from "./dark-mode-toggle"
@@ -87,11 +80,11 @@ const SocialNavItem = ({ href, title, children }) => (
 
 const navItems = [
   { id: "showcase", text: `Showcase` },
-  { id: "blog", text: `Blog` }
+  { id: "blog", text: `Blog` },
+  { id: "contact", text: `Contact` }
 ]
 
 const Navigation = ({ pathname }) => {
-  const [colorMode] = useColorMode()
   const isHomepage = pathname === `/`
 
   return (
@@ -210,7 +203,6 @@ const Navigation = ({ pathname }) => {
             ))}
           </ul>
         </nav>
-        {/* <SearchForm key="SearchForm" offsetVertical={navItemTopOffset} /> */}
         <div
           sx={{
             alignSelf: `flex-end`,
@@ -238,14 +230,10 @@ const Navigation = ({ pathname }) => {
             >
               <LinkedinIcon />
             </SocialNavItem>
-            {/* <SocialNavItem href="mailto:davy.hausser@gmail.com" title="Mail">
-              <EnvelopeIcon />
-            </SocialNavItem> */}
           </div>
           <div
             sx={{
               ...navItemStyles,
-              // ...overrideDefaultMdLineHeight,
               color: `navigation.socialLink`,
               ml: navItemHorizontalSpacing,
               "&:hover": {
@@ -262,4 +250,3 @@ const Navigation = ({ pathname }) => {
 }
 
 export default Navigation
-// export default withI18n()(Navigation)

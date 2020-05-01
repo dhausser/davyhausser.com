@@ -19,10 +19,10 @@ export default ({ data: { site, allMarkdownRemark, file } }) => {
           margin: "0 auto"
         }}
       >
-        <Posts
+        {/* <Posts
           posts={allMarkdownRemark.edges}
           imageData={file.childImageSharp.fluid}
-        />
+        /> */}
       </div>
     </Layout>
   )
@@ -36,26 +36,19 @@ export const pageQuery = graphql`
         description
       }
     }
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-      edges {
-        node {
-          id
-          excerpt(pruneLength: 250)
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            path
-            title
-            thumbnail
-          }
-        }
-      }
-    }
-    file(relativePath: { eq: "images/deepspace.jpg" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
+    # allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    #   edges {
+    #     node {
+    #       id
+    #       excerpt(pruneLength: 250)
+    #       frontmatter {
+    #         date(formatString: "MMMM DD, YYYY")
+    #         path
+    #         title
+    #         thumbnail
+    #       }
+    #     }
+    #   }
+    # }
   }
 `

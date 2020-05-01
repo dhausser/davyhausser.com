@@ -2,6 +2,7 @@
 import { css, jsx } from "@emotion/core"
 import styled from "@emotion/styled"
 import { Link, useStaticQuery, graphql } from "gatsby"
+import Button from "../button"
 
 const Card = styled("div")`
   background-color: var(--contact-bg);
@@ -11,21 +12,6 @@ const Card = styled("div")`
   overflow: hidden;
   line-height: 1.5;
 `
-
-// const TwoGrids = styled("div")`
-//   display: grid;
-//   grid-gap: 32px;
-//   &.-contact {
-//     .post-thumbnail {
-//       min-height: 240px !important;
-//     }
-//   }
-//   @media only screen and (min-width: 1024px) {
-//     display: grid;
-//     grid-template-columns: 1fr 1fr;
-//     grid-gap: 64px;
-//   }
-// `
 
 const Wrapper = styled("div")`
   display: flex;
@@ -172,11 +158,10 @@ export function ContactHeader() {
   )
 }
 
-export function ContactForm() {
-  return (
-    <Card>
-      <Wrapper>
-        <form
+export default () => (
+  <Card>
+    <Wrapper>
+      {/* <form
           method="post"
           action="#"
           netlify-honeypot="bot-field"
@@ -201,27 +186,23 @@ export function ContactForm() {
           </label>
           <button type="submit">Send</button>
           <input type="reset" value="Clear" />
-        </form>
-        {/* <FormContainer
-          name="contact-form-footer"
-          method="POST"
-          data-netlify="true"
-        >
-          <input type="text" name="name" placeholder="Name" />
-          <input type="email" name="email" placeholder="Email" />
-          <textarea name="message" placeholder="Message"></textarea>
-          <SubmitWrapper>
+        </form> */}
+      <FormContainer
+        method="post"
+        action="#"
+        netlify-honeypot="bot-field"
+        data-netlify="true"
+      >
+        <input type="hidden" name="bot-field" />
+        <input type="text" name="name" placeholder="Name" />
+        <input type="email" name="email" placeholder="Email" />
+        <textarea name="message" placeholder="Message"></textarea>
+        <SubmitWrapper>
+          <Button>
             <SubmitButton type="submit" value="Submit" />
-          </SubmitWrapper>
-        </FormContainer> */}
-      </Wrapper>
-    </Card>
-  )
-}
-
-export default ({ file }) => (
-  <ContactForm />
-  // <TwoGrids className="-contact">
-  // <ContactHeader file={file} />
-  // </TwoGrids>
+          </Button>
+        </SubmitWrapper>
+      </FormContainer>
+    </Wrapper>
+  </Card>
 )

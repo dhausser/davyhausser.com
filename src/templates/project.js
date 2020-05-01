@@ -3,37 +3,39 @@ import { graphql } from "gatsby"
 
 import Project from "../components/project"
 
-export default ({ data: { projectsJson: project } }) => (
-  <div
-    style={{
-      padding: "32px",
-      maxWidth: "1140px",
-      margin: "0 auto"
-    }}
-  >
-    <Project
-      title={project.title}
-      imageData={project.image.childImageSharp.fluid}
-      description={project.description}
-      tags={project.tags}
-      url={project.url}
-      repo={project.repo}
-    />
-  </div>
-)
+export default ({ data: { sitesYaml: project } }) => {
+  console.log(project)
+  return (
+    <div
+      style={{
+        padding: "32px",
+        maxWidth: "1140px",
+        margin: "0 auto"
+      }}
+    >
+      <Project project={project} />
+    </div>
+  )
+}
 
 export const query = graphql`
   query($slug: String!) {
-    projectsJson(slug: { eq: $slug }) {
+    sitesYaml(slug: { eq: $slug }) {
       title
-      description
+      slug
+      main_url
       url
-      repo
-      tags
-      image {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
+      source_url
+      description
+      categories
+      built_by
+      built_by_url
+      childScreenshot {
+        screenshotFile {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
           }
         }
       }

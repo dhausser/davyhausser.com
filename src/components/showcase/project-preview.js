@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 import Img from "gatsby-image"
 import { GoMarkGithub, GoLinkExternal } from "react-icons/go"
 
-import Tags from "../tags"
+import Categories from "../categories"
 import { NavStyles } from "../../utils/styles"
 
 export const Card = styled("article")`
@@ -131,7 +131,7 @@ export default ({ title, tags, slug, url, repo, imageData }) => {
                   justify-content: center;
                 `}
               >
-                <Tags tags={tags} />
+                <Categories tags={tags} />
               </div>
             </div>
           </div>
@@ -161,7 +161,7 @@ export default ({ title, tags, slug, url, repo, imageData }) => {
           </NavStyles>
         </div>
         <PostMeta className="post-meta">
-          <Tags tags={tags} />
+          <Categories tags={tags} />
         </PostMeta>
       </header>
     </Card>

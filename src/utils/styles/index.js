@@ -1,15 +1,7 @@
 import { keyframes } from "@emotion/core"
 import styled from "@emotion/styled"
 
-import {
-  colors,
-  space,
-  transition,
-  radii,
-  fontSizes,
-  fontWeights,
-  fonts
-} from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
+import { colors, space } from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
 
 const stripeAnimation = keyframes({
   "0%": { backgroundPosition: `0 0` },

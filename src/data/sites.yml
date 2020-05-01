@@ -1,35 +1,101 @@
-- name: Davyhausser.com
+- title: Davyhausser.com
   slug: davyhausser
+  main_url: https://davyhausser.com/
   url: https://davyhausser.com/
-  repo: https://github.com/dhausser/davyhausser.com/
-  categories: [React, Gatsby, GraphQL, JavaScript]
-- name: Wanderlost
+  source_url: https://github.com/dhausser/davyhausser.com/
+  description: This portfolio is a shiny new website built with Gatsby v2 that makes important contributions towards a faster web for everyone.
+  categories:
+    - React
+    - Gatsby
+    - GraphQL
+    - JavaScript
+  built_by: Davy Hausser
+  built_by_url: https://davyhausser.com/
+  featured: true
+
+- title: Wanderlost
   slug: wanderlost
+  main_url: https://ecommerce-nextjs-apollo-client.now.sh/
   url: https://ecommerce-nextjs-apollo-client.now.sh/
-  repo: https://github.com/dhausser/wanderlost/
-  categories: [React, Next.js, Apollo, GraphQL, TypeScript]
-- name: Reduxtagram
+  source_url: https://github.com/dhausser/wanderlost/
+  description: This application is a ecommerce demo website built with Next.js and Apollo GraphQL that showcases SSR (Server Side Rendering)
+  categories:
+    - React
+    - Next.js
+    - Apollo
+    - GraphQL
+    - TypeScript
+  built_by: Davy Hausser
+  built_by_url: https://davyhausser.com/
+  featured: true
+
+- title: Reduxtagram
   slug: reduxtagram
+  main_url: https://inspiring-hugle-48043a.netlify.app/
   url: https://inspiring-hugle-48043a.netlify.app/
-  repo: https://github.com/dhausser/reduxtagram/
-  categories: [React, Redux, JavaScript]
-- name: Store Finder
+  source_url: https://github.com/dhausser/reduxtagram/
+  description: This site is an interactive wep application, clone of Instagram built with React and Redux.
+  categories:
+    - React
+    - Redux
+    - JavaScript
+  built_by: Davy Hausser
+  built_by_url: https://davyhausser.com/
+  featured: true
+
+- title: Store Finder
   slug: store-finder
+  main_url: https://now-thats-delicious-dhausser.herokuapp.com/
   url: https://now-thats-delicious-dhausser.herokuapp.com/
-  repo: https://github.com/dhausser/dang-thats-delicious/
-  categories: [Node.js, MongoDB, JavaScript]
-- name: Catch of the Day
+  source_url: https://github.com/dhausser/dang-thats-delicious/
+  description: This site is a restaurant finder where users can leave reviews. It is build with Node.js on the backend and uses SSR (Server Side Rendering)
+  categories:
+    - Node.js
+    - MongoDB
+    - JavaScript
+  built_by: Davy Hausser
+  built_by_url: https://davyhausser.com/
+  featured: true
+
+- title: Catch of the Day
   slug: fish-market
+  main_url: https://catch-of-the-day-by-dhausser.netlify.app/
   url: https://catch-of-the-day-by-dhausser.netlify.app/
-  repo: https://github.com/dhausser/catch-of-the-day/
-  categories: [React, Firebase, JavaScript]
-- name: Space Explorer
+  source_url: https://github.com/dhausser/catch-of-the-day/
+  description: This site is a fish market simulator where users can create an inventory of fishes. It is build with React.
+  categories:
+    - React
+    - Firebase
+    - JavaScript
+  built_by: Davy Hausser
+  built_by_url: https://davyhausser.com/
+  featured: true
+
+- title: Space Explorer
   slug: space-explorer
+  main_url: https://ecommerce-nextjs-apollo-client.now.sh/
   url: https://ecommerce-nextjs-apollo-client.now.sh/
-  repo: https://github.com/dhausser/space-explorer/
-  categories: [React, Apollo, GraphQL, TypeScript]
-- name: Mflix
+  source_url: https://github.com/dhausser/space-explorer/
+  description: This site is an application using the SpaceX API, where users can book their seat on a rocket launch. It uses GraphQL with Apollo Client and Apollo Server.
+  categories:
+    - React
+    - Apollo
+    - GraphQL
+    - TypeScript
+  built_by: Davy Hausser
+  built_by_url: https://davyhausser.com/
+  featured: true
+
+- title: Mflix
   slug: mflix
+  main_url: https://ecommerce-nextjs-apollo-client.now.sh/
   url: https://ecommerce-nextjs-apollo-client.now.sh/
-  repo: https://github.com/dhausser/mflix/
-  categories: [Node.js, MongoDB, JavaScript]
+  source_url: https://github.com/dhausser/mflix/
+  description: This site is a database of movies build with MongoDB and the Node.js MongoDb driver.
+  categories:
+    - Node.js
+    - MongoDB
+    - JavaScript
+  built_by: Davy Hausser
+  built_by_url: https://davyhausser.com/
+  featured: true

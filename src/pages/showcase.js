@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 import Showcase from "../components/showcase"
 
 export default ({ data }) => {
+  console.log(data)
   return (
     <Layout>
       <Helmet>
@@ -28,20 +29,21 @@ export const pageQuery = graphql`
     allSitesYaml {
       edges {
         node {
-          url
-          name
+          title
           slug
-          repo
+          main_url
+          url
+          source_url
+          description
           categories
+          built_by
+          built_by_url
           childScreenshot {
             screenshotFile {
               childImageSharp {
                 fluid {
                   ...GatsbyImageSharpFluid
                 }
-                # resolutions(width: 384, height: 288) {
-                #   ...GatsbyImageSharpResolutions
-                # }
               }
             }
           }

@@ -102,7 +102,7 @@ class FeaturedSites extends Component {
           >
             Featured Sites
           </h1>
-          <a
+          {/* <a
             href="#showcase"
             sx={{
               ...withTitleHover,
@@ -124,7 +124,7 @@ class FeaturedSites extends Component {
             <span className="title">View all</span>
             {` `}
             <ArrowForwardIcon sx={{ verticalAlign: `sub` }} />
-          </a>
+          </a> */}
           <div
             css={{
               alignItems: `center`,
@@ -143,18 +143,17 @@ class FeaturedSites extends Component {
                 }
               }}
             >
-              Want to get featured?
+              Need a site?
             </div>
-            <Button
-              to="https://www.gatsbyjs.org/contributing/site-showcase-submissions/"
-              tag="href"
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="small"
-              icon={<ArrowForwardIcon />}
-            >
-              Submit your Site
-            </Button>
+            <Link to="/contact/">
+              <Button
+                to="/contact/"
+                variant="small"
+                icon={<ArrowForwardIcon />}
+              >
+                Get in Touch
+              </Button>
+            </Link>
           </div>
         </div>
         <div css={{ position: `relative` }}>
@@ -189,15 +188,11 @@ class FeaturedSites extends Component {
                       "&:hover": { ...screenshotHover }
                     }
                   }}
-                  to={`project/${node.slug}`}
+                  to={`/showcase/${node.slug}/`}
                   state={{ isModal: true }}
                 >
                   {node.childScreenshot && (
                     <Img
-                      // resolutions={
-                      //   node.childScreenshot.screenshotFile.childImageSharp
-                      //     .resolutions
-                      // }
                       fluid={
                         node.childScreenshot.screenshotFile.childImageSharp
                           .fluid
@@ -207,7 +202,7 @@ class FeaturedSites extends Component {
                     />
                   )}
                   <div>
-                    <span className="title">{node.name}</span>
+                    <span className="title">{node.title}</span>
                   </div>
                 </Link>
                 <div
@@ -223,7 +218,7 @@ class FeaturedSites extends Component {
                   <div
                     sx={{ color: `text`, fontFamily: `heading`, fontSize: 2 }}
                   >
-                    Built by Davy Hausser
+                    <a href={node.built_by_url}>Built by {node.built_by}</a>
                   </div>
                   <ShowcaseItemCategories
                     categories={node.categories}
