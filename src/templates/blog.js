@@ -88,7 +88,13 @@ export default ({ data }) => {
         <title>{frontmatter.title}</title>
         <meta name="description" content={frontmatter.metaDescription} />
       </Helmet>
-      <div>
+      <div
+        style={{
+          padding: "32px",
+          maxWidth: "1140px",
+          margin: "0 auto"
+        }}
+      >
         <Post>
           {!frontmatter.thumbnail && (
             <PostThumbnail>

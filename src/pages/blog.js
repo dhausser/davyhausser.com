@@ -12,10 +12,18 @@ export default ({ data: { site, allMarkdownRemark, file } }) => {
         <title>{site.siteMetadata.title}</title>
         <meta name="description" content={site.siteMetadata.description} />
       </Helmet>
-      <Posts
-        posts={allMarkdownRemark.edges}
-        imageData={file.childImageSharp.fluid}
-      />
+      <div
+        style={{
+          padding: "32px",
+          maxWidth: "1140px",
+          margin: "0 auto"
+        }}
+      >
+        <Posts
+          posts={allMarkdownRemark.edges}
+          imageData={file.childImageSharp.fluid}
+        />
+      </div>
     </Layout>
   )
 }

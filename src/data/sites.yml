@@ -1,3 +1,8 @@
+- name: Davyhausser.com
+  slug: davyhausser
+  url: https://davyhausser.com/
+  repo: https://github.com/dhausser/davyhausser.com/
+  categories: [React, Gatsby, GraphQL, JavaScript]
 - name: Wanderlost
   slug: wanderlost
   url: https://ecommerce-nextjs-apollo-client.now.sh/

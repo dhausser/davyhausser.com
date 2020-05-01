@@ -22,10 +22,7 @@ export default ({ children }) => (
         [breakpointGutter]: {
           pt: t => `calc(${t.sizes.bannerHeight} + ${t.sizes.headerHeight})`,
           pb: 0
-        },
-        padding: "32px",
-        maxWidth: "1140px",
-        margin: "0 auto"
+        }
       }}
     >
       {children}

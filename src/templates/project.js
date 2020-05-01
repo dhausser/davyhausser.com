@@ -4,14 +4,22 @@ import { graphql } from "gatsby"
 import Project from "../components/project"
 
 export default ({ data: { projectsJson: project } }) => (
-  <Project
-    title={project.title}
-    imageData={project.image.childImageSharp.fluid}
-    description={project.description}
-    tags={project.tags}
-    url={project.url}
-    repo={project.repo}
-  />
+  <div
+    style={{
+      padding: "32px",
+      maxWidth: "1140px",
+      margin: "0 auto"
+    }}
+  >
+    <Project
+      title={project.title}
+      imageData={project.image.childImageSharp.fluid}
+      description={project.description}
+      tags={project.tags}
+      url={project.url}
+      repo={project.repo}
+    />
+  </div>
 )
 
 export const query = graphql`
