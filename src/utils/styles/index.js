@@ -1,8 +1,7 @@
-import React from "react"
 import styled from "@emotion/styled"
 
-import SocialHandles from "./social-handles"
-import DarkModeToggle from "./dark-mode-toggle"
+export const blogWidth = `42rem`
+export const breakpointGutter = `@media (min-width: ${blogWidth})`
 
 export const NavStyles = styled("nav")`
   display: flex;
@@ -25,10 +24,3 @@ export const NavStyles = styled("nav")`
     }
   }
 `
-
-export default () => (
-  <NavStyles>
-    <SocialHandles />
-    <DarkModeToggle />
-  </NavStyles>
-)

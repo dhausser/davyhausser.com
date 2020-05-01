@@ -1,66 +1,34 @@
 /** @jsx jsx */
-import { Global, jsx } from "@emotion/core"
-import styled from "@emotion/styled"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { jsx } from "theme-ui"
+import React from "react"
 
-import { globalStyles } from "../utils/styles"
+import { Global } from "@emotion/core"
+
+import { globalStyles } from "../utils/styles/global"
+import { breakpointGutter } from "../utils/styles"
 import Navigation from "./navigation"
-import Footer from "./footer"
 
-const Wrapper = styled("div")`
-  padding: 32px;
-  max-width: 1140px;
-  margin: 0 auto;
-  img {
-    max-width: 100%;
-  }
-`
-
-const Header = styled("header")`
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 0;
-  background: var(--site-header);
-  margin-bottom: 32px;
-  align-items: center;
-`
-
-const Title = styled("div")`
-  text-decoration: none;
-  font-weight: 600;
-  text-transform: lowercase;
-  a {
-    color: #888;
-    text-decoration: none;
-    &:hover {
-      color: var(--primary-color);
-    }
-  }
-`
-
-export default ({ children }) => {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `
-  )
-  return (
-    <Wrapper>
-      {/* <Global styles={globalStyles} /> */}
-      <Header>
-        <Title>
-          <Link to="/">{data.site.siteMetadata.title}</Link>
-        </Title>
-        <Navigation />
-      </Header>
+export default ({ children }) => (
+  <>
+    <Global styles={globalStyles} />
+    <Navigation />
+    <div
+      className={`main-body docSearch-content`}
+      sx={{
+        px: `env(safe-area-inset-left)`,
+        pt: t => t.sizes.bannerHeight,
+        // make room for the mobile navigation
+        pb: t => t.sizes.headerHeight,
+        [breakpointGutter]: {
+          pt: t => `calc(${t.sizes.bannerHeight} + ${t.sizes.headerHeight})`,
+          pb: 0
+        },
+        padding: "32px",
+        maxWidth: "1140px",
+        margin: "0 auto"
+      }}
+    >
       {children}
-      {/* <Footer /> */}
-    </Wrapper>
-  )
-}
+    </div>
+  </>
+)

@@ -1,9 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
 import { useColorMode } from "theme-ui"
-
-import { ThemeToggler } from "gatsby-plugin-dark-mode"
-
 import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
 
 // kudos to our friends at narative.co
@@ -144,31 +141,5 @@ export default () => {
       <MoonOrSun isDark={isDark} />
       <MoonMask isDark={isDark} />
     </IconWrapper>
-    // const [colorMode, setColorMode] = useState("dark")
-    // const isDark = colorMode === `dark`
-
-    // function toggleColorMode(event, toggleTheme) {
-    //   event.preventDefault()
-    //   setColorMode(isDark ? `light` : `dark`)
-    //   toggleTheme(isDark ? "light" : "dark")
-    // }
-
-    // const label = isDark ? `Activate light mode` : `Activate dark mode`
-
-    // return (
-    //   <ThemeToggler>
-    //     {({ toggleTheme }) => (
-    //       <IconWrapper
-    //         isDark={isDark}
-    //         onClick={event => toggleColorMode(event, toggleTheme)}
-    //         aria-label={label}
-    //         title={label}
-    //       >
-    //         <MoonOrSun isDark={isDark} />
-    //         <MoonMask isDark={isDark} />
-    //       </IconWrapper>
-    //     )}
-    //   </ThemeToggler>
-    // )
   )
 }

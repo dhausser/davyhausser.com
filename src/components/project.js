@@ -8,7 +8,7 @@ import { GoMarkGithub, GoLinkExternal } from "react-icons/go"
 
 import Layout from "./layout"
 import Tags from "./tags"
-import { NavStyles } from "./navigation"
+import { NavStyles } from "../utils/styles"
 
 const PostThumbnail = styled("div")`
   text-align: center;

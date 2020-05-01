@@ -6176,13 +6176,6 @@ gatsby-page-utils@^0.1.3:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
-gatsby-plugin-dark-mode@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-dark-mode/-/gatsby-plugin-dark-mode-1.1.1.tgz#134040b50c0c01287ef5ab5fbbffc4669efd4c6c"
-  integrity sha512-cjQbcSpNLMJ6J8w6Fd8pTraa8aBxiDrrMR6SrpYQTDvrrUxj6xdk5OeugB0RKBtSb956J7gQBtSrsUCc3dy43w==
-  dependencies:
-    prop-types "^15.5.7"
-
 gatsby-plugin-emotion@^4.2.3:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-emotion/-/gatsby-plugin-emotion-4.2.3.tgz#7b0f8c40c428b3926699699c1bce606117c53ace"
@@ -11205,7 +11198,7 @@ prompts@^2.3.1, prompts@^2.3.2:
     kleur "^3.0.3"
     sisteransi "^1.0.4"
 
-prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.7, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -13692,6 +13685,14 @@ typography-normalize@^0.16.19:
   version "0.16.19"
   resolved "https://registry.yarnpkg.com/typography-normalize/-/typography-normalize-0.16.19.tgz#58e0cf12466870c5b27006daa051fe7307780660"
   integrity sha512-vtnSv/uGBZVbd4e/ZhZB9HKBgKKlWQUXw74+ADIHHxzKp27CEf8PSR8TX1zF2qSyQ9/qMdqLwXYz8yRQFq9JLQ==
+
+typography-plugin-code@^0.16.19:
+  version "0.16.19"
+  resolved "https://registry.yarnpkg.com/typography-plugin-code/-/typography-plugin-code-0.16.19.tgz#e65e9527b7fb096f9c73a69b714013eeab07af4c"
+  integrity sha512-iIERwepUUdNPODL/nBnGuTCkA0TnflowsdZNMhhG50NNaZ2jNAhK2TWUEdSUZB+Iig1UMHtRSSXFuMt+9mWYig==
+  dependencies:
+    gray-percentage "^2.0.0"
+    lodash "^4.13.1"
 
 typography@^0.16.19:
   version "0.16.19"

@@ -1,8 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { useColorMode } from "theme-ui"
-import styled from "@emotion/styled"
-import { t } from "@lingui/macro"
 import { GoMarkGithub as GithubIcon } from "react-icons/go"
 import {
   FaTwitter as TwitterIcon,
@@ -19,28 +17,6 @@ import logoInverted from "../assets/logo-inverted.svg"
 import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
 import { breakpointGutter } from "../utils/styles"
 import DarkModeToggle from "./dark-mode-toggle"
-
-export const NavStyles = styled("nav")`
-  display: flex;
-  align-items: center;
-  font-weight: 400;
-  text-transform: lowercase;
-  a {
-    color: #888;
-    text-decoration: none;
-    margin: 0 8px 0;
-    &[aria-current] {
-      color: var(--primary-color);
-      font-weight: 600;
-    }
-    &:hover {
-      color: var(--primary-color);
-    }
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-`
 
 // what we need to nudge down the navItems to sit
 // on the baseline of the logo's wordmark
@@ -111,7 +87,7 @@ const SocialNavItem = ({ href, title, children }) => (
 
 const navItems = [
   { id: "blog", text: `Blog` },
-  { id: "showcase", text: `Showcase` }
+  { id: "#", text: `Showcase` }
 ]
 
 const Navigation = ({ pathname }) => {
@@ -127,7 +103,7 @@ const Navigation = ({ pathname }) => {
         px: `env(safe-area-inset-left)`,
         position: `relative`,
         right: 0,
-        top: t => t.sizes.bannerHeight,
+        // top: t => t.sizes.bannerHeight,
         zIndex: `navigation`,
         // use this to test if the header items are properly aligned to the logo
         // wordmark
@@ -262,9 +238,9 @@ const Navigation = ({ pathname }) => {
             >
               <LinkedinIcon />
             </SocialNavItem>
-            <SocialNavItem href="mailto:davy.hausser@gmail.com" title="Mail">
+            {/* <SocialNavItem href="mailto:davy.hausser@gmail.com" title="Mail">
               <EnvelopeIcon />
-            </SocialNavItem>
+            </SocialNavItem> */}
           </div>
           <div
             sx={{
