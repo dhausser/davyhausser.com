@@ -3,7 +3,7 @@ import Helmet from "react-helmet"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import Posts from "../components/blog"
+// import Posts from "../components/blog"
 
 export default ({ data: { site, allMarkdownRemark, file } }) => {
   return (

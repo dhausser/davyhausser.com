@@ -2,6 +2,7 @@
 import { jsx } from "theme-ui"
 import { Fragment } from "react"
 import { Link } from "gatsby"
+import qs from "qs"
 
 import {
   showcaseList,
