@@ -13,6 +13,6 @@ export const Grid = styled("div")`
 `
 
 export default () => {
-  navigate("/showcase")
+  navigate("/showcase/")
   return <div></div>
 }

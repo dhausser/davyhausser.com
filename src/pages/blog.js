@@ -3,29 +3,19 @@ import Helmet from "react-helmet"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import PostLink from "../components/post-link"
-import Contact from "../components/contact"
-import { Grid } from './index'
+import Posts from "../components/blog"
 
 export default ({ data: { site, allMarkdownRemark, file } }) => {
-  const Posts = allMarkdownRemark.edges
-    .filter(edge => !!edge.node.frontmatter.date)
-    .map(edge => (
-      <PostLink
-        key={edge.node.id}
-        post={edge.node}
-        imageData={file.childImageSharp.fluid}
-      />
-    ))
-
   return (
     <Layout>
       <Helmet>
         <title>{site.siteMetadata.title}</title>
         <meta name="description" content={site.siteMetadata.description} />
       </Helmet>
-      <Grid>{Posts}</Grid>
-      <Contact />
+      <Posts
+        posts={allMarkdownRemark.edges}
+        imageData={file.childImageSharp.fluid}
+      />
     </Layout>
   )
 }

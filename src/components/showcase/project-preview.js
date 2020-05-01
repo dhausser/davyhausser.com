@@ -5,8 +5,8 @@ import { Link } from "gatsby"
 import Img from "gatsby-image"
 import { GoMarkGithub, GoLinkExternal } from "react-icons/go"
 
-import Tags from "./tags"
-import { NavStyles } from "../utils/styles"
+import Tags from "../tags"
+import { NavStyles } from "../../utils/styles"
 
 export const Card = styled("article")`
   display: grid;
