@@ -1,11 +1,17 @@
-import React from "react"
+import React, { useState } from "react"
 
 import FeaturedSites from "./featured-sites"
-import ProjectGrid from "./project-grid"
+import FilteredShowcase from "./filtered-showcase"
 
-export default ({ projects }) => (
-  <>
-    <FeaturedSites featured={projects} />
-    {/* <ProjectGrid projects={projects} /> */}
-  </>
-)
+export default ({ data }) => {
+  const [filters, setFilters] = useState([])
+  return (
+    <>
+      <FeaturedSites
+        setFilters={setFilters}
+        featured={data.allSitesYaml.edges}
+      />
+      <FilteredShowcase filters={filters} setFilters={setFilters} data={data} />
+    </>
+  )
+}

@@ -68,6 +68,8 @@ class FeaturedSites extends Component {
   render() {
     const { featured, setFilters } = this.props
 
+    console.log(featured)
+
     return (
       <section
         className="featured-sites"
@@ -190,15 +192,22 @@ class FeaturedSites extends Component {
                   to={`project/${node.slug}`}
                   state={{ isModal: true }}
                 >
-                  {node.image && (
+                  {node.childScreenshot && (
                     <Img
-                      fluid={node.image.childImageSharp.fluid}
-                      alt={node.title}
+                      // resolutions={
+                      //   node.childScreenshot.screenshotFile.childImageSharp
+                      //     .resolutions
+                      // }
+                      fluid={
+                        node.childScreenshot.screenshotFile.childImageSharp
+                          .fluid
+                      }
+                      alt={node.name}
                       sx={{ ...screenshot }}
                     />
                   )}
                   <div>
-                    <span className="title">{node.title}</span>
+                    <span className="title">{node.name}</span>
                   </div>
                 </Link>
                 <div
@@ -216,10 +225,10 @@ class FeaturedSites extends Component {
                   >
                     Built by Davy Hausser
                   </div>
-                  {/* <ShowcaseItemCategories
-                    categories={node.tags}
+                  <ShowcaseItemCategories
+                    categories={node.categories}
                     onCategoryClick={c => setFilters(c)}
-                  /> */}
+                  />
                 </div>
               </div>
             ))}

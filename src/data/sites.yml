@@ -1,0 +1,30 @@
+- name: Wanderlost
+  slug: wanderlost
+  url: https://ecommerce-nextjs-apollo-client.now.sh/
+  repo: https://github.com/dhausser/wanderlost/
+  categories: [React, Next.js, Apollo, GraphQL, TypeScript]
+- name: Reduxtagram
+  slug: reduxtagram
+  url: https://inspiring-hugle-48043a.netlify.app/
+  repo: https://github.com/dhausser/reduxtagram/
+  categories: [React, Redux, JavaScript]
+- name: Store Finder
+  slug: store-finder
+  url: https://now-thats-delicious-dhausser.herokuapp.com/
+  repo: https://github.com/dhausser/dang-thats-delicious/
+  categories: [Node.js, MongoDB, JavaScript]
+- name: Catch of the Day
+  slug: fish-market
+  url: https://catch-of-the-day-by-dhausser.netlify.app/
+  repo: https://github.com/dhausser/catch-of-the-day/
+  categories: [React, Firebase, JavaScript]
+- name: Space Explorer
+  slug: space-explorer
+  url: https://ecommerce-nextjs-apollo-client.now.sh/
+  repo: https://github.com/dhausser/space-explorer/
+  categories: [React, Apollo, GraphQL, TypeScript]
+- name: Mflix
+  slug: mflix
+  url: https://ecommerce-nextjs-apollo-client.now.sh/
+  repo: https://github.com/dhausser/mflix/
+  categories: [Node.js, MongoDB, JavaScript]

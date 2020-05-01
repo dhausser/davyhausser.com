@@ -5,44 +5,43 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Showcase from "../components/showcase"
 
-export default ({ data: { site, allProjectsJson } }) => (
-  <Layout>
-    <Helmet>
-      <title>{site.siteMetadata.title}</title>
-      <meta name="description" content={site.siteMetadata.description} />
-    </Helmet>
-    <Showcase projects={allProjectsJson.edges} />
-  </Layout>
-)
+export default ({ data }) => {
+  return (
+    <Layout>
+      <Helmet>
+        <title>{data.site.siteMetadata.title}</title>
+        <meta name="description" content={data.site.siteMetadata.description} />
+      </Helmet>
+      <Showcase data={data} />
+    </Layout>
+  )
+}
 
 export const pageQuery = graphql`
-  query indexPageQuery {
+  query showcasePageQuery {
     site {
       siteMetadata {
         title
         description
       }
     }
-    allProjectsJson {
+    allSitesYaml {
       edges {
         node {
-          title
-          description
-          slug
-          tags
           url
+          name
+          slug
           repo
-          image {
-            childImageSharp {
-              fluid # (
-              # fit: COVER
-              # maxWidth: 600
-              # maxHeight: 400
-              # cropFocus: NORTHWEST
-              # grayscale: true
-              # )
-              {
-                ...GatsbyImageSharpFluid
+          categories
+          childScreenshot {
+            screenshotFile {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+                # resolutions(width: 384, height: 288) {
+                #   ...GatsbyImageSharpResolutions
+                # }
               }
             }
           }

@@ -2,6 +2,14 @@ const path = require(`path`)
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
+  const { createRedirect } = actions
+
+  createRedirect({
+    fromPath: `/`,
+    toPath: `/showcase/`,
+    isPermanent: true,
+    force: true
+  })
 
   const projectTemplate = path.resolve(`src/templates/project.js`)
   const blogPostTemplate = path.resolve(`src/templates/blog.js`)

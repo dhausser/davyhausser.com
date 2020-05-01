@@ -38,6 +38,9 @@ module.exports = {
         pathToConfigModule: `${__dirname}/src/utils/typography`,
         omitGoogleFonts: false
       }
-    }
+    },
+    `gatsby-plugin-netlify`,
+    `gatsby-transformer-yaml`,
+    `gatsby-transformer-screenshot`
   ]
 }
