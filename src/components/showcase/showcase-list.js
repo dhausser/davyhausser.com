@@ -26,7 +26,7 @@ export default ({ items, filters, onCategoryClick }) => (
         node.slug && ( // have to filter out null fields from bad data
           <div key={node.slug} sx={showcaseItem}>
             <ThumbnailLink
-              slug={node.slug}
+              slug={`/showcase/${node.slug}/`}
               image={node.childScreenshot}
               title={node.title}
               state={{ filters }}
@@ -105,10 +105,9 @@ export default ({ items, filters, onCategoryClick }) => (
                       }
                     }
                   }}
-                  to={`/showcase/${node.slug}/`}
-                  // to={`/showcase/?${qs.stringify({
-                  //   filters: `Featured`
-                  // })}`}
+                  to={`/showcase/?${qs.stringify({
+                    filters: `Featured`
+                  })}`}
                   className="featured-site"
                 >
                   <FeaturedIcon />
