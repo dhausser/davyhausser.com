@@ -86,8 +86,8 @@ const SocialNavItem = ({ href, title, children }) => (
 )
 
 const navItems = [
-  { id: "blog", text: `Blog` },
-  { id: "#", text: `Showcase` }
+  { id: "showcase", text: `Showcase` },
+  { id: "blog", text: `Blog` }
 ]
 
 const Navigation = ({ pathname }) => {
@@ -116,7 +116,7 @@ const Navigation = ({ pathname }) => {
         //   width: `100%`,
         //   height: 1,
         //   zIndex: 10,
-        //   background: `red`,
+        //   background: `red`
         // },
         [breakpointGutter]: {
           position: isHomepage ? `absolute` : `fixed`
@@ -161,7 +161,7 @@ const Navigation = ({ pathname }) => {
           }}
           aria-label={`Gatsby, Back to homepage`}
         >
-          <img
+          {/* <img
             src={colorMode === `light` ? logo : logoInverted}
             sx={{
               height: `logo`,
@@ -171,7 +171,7 @@ const Navigation = ({ pathname }) => {
             }}
             alt={`Gatsby Logo`}
             aria-hidden="true"
-          />
+          /> */}
         </Link>
         <nav
           className="navigation"
@@ -245,7 +245,7 @@ const Navigation = ({ pathname }) => {
           <div
             sx={{
               ...navItemStyles,
-              ...overrideDefaultMdLineHeight,
+              // ...overrideDefaultMdLineHeight,
               color: `navigation.socialLink`,
               ml: navItemHorizontalSpacing,
               "&:hover": {

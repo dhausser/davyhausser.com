@@ -2,7 +2,7 @@
 import { css, jsx } from "@emotion/core"
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
-// import Image from "gatsby-image"
+import Img from "gatsby-image"
 import { GoMarkGithub, GoLinkExternal } from "react-icons/go"
 
 import Tags from "./tags"
@@ -53,6 +53,61 @@ const PostTitle = styled("h1")`
   font-size: 2rem;
 `
 
+const overlayStyles = css`
+  text-align: center;
+  min-height: 300px;
+  background-size: cover;
+  background-position: center;
+  color: var(--featured-text);
+  display: grid;
+  align-content: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* background-color: #008cba; */
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    /* transition: 0.5s ease; */
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.3);
+    /* background: linear-gradient(
+    to bottom,
+    rgba(234, 230, 255, 0),
+    rgba(64, 50, 148, 0.52)
+  ); */
+    :hover {
+      opacity: 1;
+    }
+  }
+
+  /* transition-timing-function: ease-in-out; */
+  /* transition: 1s; */
+  :hover .overlay {
+    height: 100%;
+    /* transition-timing-function: ease-in-out; */
+    /* transition: 1s; */
+    /* transform: scale(0.98, 0.98); */
+  }
+`
+
+const overlayTransform = css`
+  color: white;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+`
+
 export default ({ title, tags, slug, url, repo, imageData }) => {
   return (
     <Card>
@@ -65,63 +120,10 @@ export default ({ title, tags, slug, url, repo, imageData }) => {
               rgba(64, 50, 148, 0.80)
             ), url(${imageData.src})`
           }}
-          css={css`
-            text-align: center;
-            min-height: 300px;
-            background-size: cover;
-            background-position: center;
-            color: var(--featured-text);
-            display: grid;
-            align-content: center;
-            position: relative;
-            overflow: hidden;
-            border-radius: 2px;
-
-            .overlay {
-              position: absolute;
-              bottom: 0;
-              left: 0;
-              right: 0;
-              /* background-color: #008cba; */
-              overflow: hidden;
-              width: 100%;
-              height: 0;
-              /* transition: 0.5s ease; */
-              opacity: 0;
-              background: rgba(0, 0, 0, 0.3);
-              /* background: linear-gradient(
-                to bottom,
-                rgba(234, 230, 255, 0),
-                rgba(64, 50, 148, 0.52)
-              ); */
-              :hover {
-                opacity: 1;
-              }
-            }
-
-            /* transition-timing-function: ease-in-out; */
-            /* transition: 1s; */
-            :hover .overlay {
-              height: 100%;
-              /* transition-timing-function: ease-in-out; */
-              /* transition: 1s; */
-              /* transform: scale(0.98, 0.98); */
-            }
-          `}
+          css={overlayStyles}
         >
           <div className="overlay">
-            <div
-              css={css`
-                color: white;
-                position: relative;
-                top: 50%;
-                left: 50%;
-                -webkit-transform: translate(-50%, -50%);
-                -ms-transform: translate(-50%, -50%);
-                transform: translate(-50%, -50%);
-                text-align: center;
-              `}
-            >
+            <div css={overlayTransform}>
               <PostTitle>{title}</PostTitle>
               <div
                 css={css`
@@ -133,7 +135,7 @@ export default ({ title, tags, slug, url, repo, imageData }) => {
               </div>
             </div>
           </div>
-          {/* <Image fluid={imageData} alt={title} /> */}
+          <Img fluid={imageData} alt={title} />
         </div>
       </Link>
       <header>

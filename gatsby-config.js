@@ -11,12 +11,11 @@ module.exports = {
     siteUrl: `https://davyhausser.com/`
   },
   plugins: [
-    `gatsby-plugin-theme-ui`,
     `gatsby-plugin-react-helmet`,
-    "gatsby-plugin-dark-mode",
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-transformer-json`,
+    `gatsby-plugin-theme-ui`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
