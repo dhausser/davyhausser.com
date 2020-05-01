@@ -29,6 +29,37 @@
   built_by_url: https://davyhausser.com/
   featured: true
 
+  featured: true
+
+- title: Space Explorer
+  slug: space-explorer
+  main_url: https://apollo-graphql-space-explorer.herokuapp.com/
+  url: https://apollo-graphql-space-explorer.herokuapp.com/
+  source_url: https://github.com/dhausser/space-explorer/
+  description: This site is an application using the SpaceX API, where users can book their seat on a rocket launch. It uses GraphQL with Apollo Client and Apollo Server.
+  categories:
+    - React
+    - Apollo
+    - GraphQL
+    - TypeScript
+  built_by: Davy Hausser
+  built_by_url: https://davyhausser.com/
+  featured: true
+
+- title: Mflix
+  slug: mflix
+  main_url: https://mongodb-mflix.herokuapp.com/
+  url: https://mongodb-mflix.herokuapp.com/
+  source_url: https://github.com/dhausser/mflix/
+  description: This site is a database of movies build with MongoDB and the Node.js MongoDb driver.
+  categories:
+    - Node.js
+    - MongoDB
+    - JavaScript
+  built_by: Davy Hausser
+  built_by_url: https://davyhausser.com/
+  featured: true
+
 - title: Reduxtagram
   slug: reduxtagram
   main_url: https://inspiring-hugle-48043a.netlify.app/
@@ -55,7 +86,6 @@
     - JavaScript
   built_by: Davy Hausser
   built_by_url: https://davyhausser.com/
-  featured: true
 
 - title: Catch of the Day
   slug: fish-market
@@ -66,35 +96,6 @@
   categories:
     - React
     - Firebase
-    - JavaScript
-  built_by: Davy Hausser
-  built_by_url: https://davyhausser.com/
-  featured: true
-
-- title: Space Explorer
-  slug: space-explorer
-  main_url: https://ecommerce-nextjs-apollo-client.now.sh/
-  url: https://ecommerce-nextjs-apollo-client.now.sh/
-  source_url: https://github.com/dhausser/space-explorer/
-  description: This site is an application using the SpaceX API, where users can book their seat on a rocket launch. It uses GraphQL with Apollo Client and Apollo Server.
-  categories:
-    - React
-    - Apollo
-    - GraphQL
-    - TypeScript
-  built_by: Davy Hausser
-  built_by_url: https://davyhausser.com/
-  featured: true
-
-- title: Mflix
-  slug: mflix
-  main_url: https://ecommerce-nextjs-apollo-client.now.sh/
-  url: https://ecommerce-nextjs-apollo-client.now.sh/
-  source_url: https://github.com/dhausser/mflix/
-  description: This site is a database of movies build with MongoDB and the Node.js MongoDb driver.
-  categories:
-    - Node.js
-    - MongoDB
     - JavaScript
   built_by: Davy Hausser
   built_by_url: https://davyhausser.com/
