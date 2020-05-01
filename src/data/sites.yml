@@ -29,8 +29,6 @@
   built_by_url: https://davyhausser.com/
   featured: true
 
-  featured: true
-
 - title: Space Explorer
   slug: space-explorer
   main_url: https://apollo-graphql-space-explorer.herokuapp.com/
@@ -86,6 +84,7 @@
     - JavaScript
   built_by: Davy Hausser
   built_by_url: https://davyhausser.com/
+  featured: true
 
 - title: Catch of the Day
   slug: fish-market
