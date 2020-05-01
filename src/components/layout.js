@@ -52,7 +52,7 @@ export default ({ children }) => {
   )
   return (
     <Wrapper>
-      <Global styles={globalStyles} />
+      {/* <Global styles={globalStyles} /> */}
       <Header>
         <Title>
           <Link to="/">{data.site.siteMetadata.title}</Link>
@@ -60,7 +60,7 @@ export default ({ children }) => {
         <Navigation />
       </Header>
       {children}
-      <Footer />
+      {/* <Footer /> */}
     </Wrapper>
   )
 }

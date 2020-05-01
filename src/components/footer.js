@@ -19,7 +19,7 @@ export default () => {
             ⚡
           </span>
         </p>
-        <div
+        {/* <div
           css={css`
             display: flex;
             flex-direction: column;
@@ -33,7 +33,7 @@ export default () => {
           >
             <SocialHandles />
           </div>
-        </div>
+        </div> */}
       </div>
     </footer>
   )

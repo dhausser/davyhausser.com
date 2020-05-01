@@ -2,8 +2,9 @@
   "name": "davyhausser.com",
   "license": "MIT",
   "dependencies": {
-    "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
+    "@lingui/macro": "^2.9.1",
+    "@lingui/react": "^2.9.1",
     "gatsby": "^2.19.7",
     "gatsby-cli": "^2.12.5",
     "gatsby-design-tokens": "^2.0.5",
@@ -12,6 +13,7 @@
     "gatsby-plugin-emotion": "^4.2.3",
     "gatsby-plugin-react-helmet": "^3.1.22",
     "gatsby-plugin-sharp": "^2.5.6",
+    "gatsby-plugin-theme-ui": "^0.3.0",
     "gatsby-plugin-typography": "^2.4.4",
     "gatsby-remark-emojis": "^0.4.2",
     "gatsby-source-filesystem": "^2.1.48",
@@ -24,6 +26,7 @@
     "react-helmet": "^5.2.1",
     "react-icons": "^3.10.0",
     "react-typography": "^0.16.19",
+    "theme-ui": "^0.3.1",
     "typography": "^0.16.19"
   },
   "devDependencies": {

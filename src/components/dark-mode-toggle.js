@@ -1,5 +1,7 @@
-import React, { useState } from "react"
+import React from "react"
 import styled from "@emotion/styled"
+import { useColorMode } from "theme-ui"
+
 import { ThemeToggler } from "gatsby-plugin-dark-mode"
 
 import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
@@ -59,7 +61,7 @@ const IconWrapper = styled.button`
 
 const MoonOrSun = styled.div`
   border: ${p => (p.isDark ? `4px` : `2px`)} solid #888;
-  background: #888;
+  background: ${p => p.theme.colors.navigation.socialLink};
   border-radius: 50%;
   height: 24px;
   overflow: ${p => (p.isDark ? `visible` : `hidden`)};
@@ -84,8 +86,14 @@ const MoonOrSun = styled.div`
 
   &::after {
     border-radius: 50%;
-    box-shadow: 0 -23px 0 #888, 0 23px 0 #888, 23px 0 0 #888, -23px 0 0 #888,
-      15px 15px 0 #888, -15px 15px 0 #888, 15px -15px 0 #888, -15px -15px 0 #888;
+    box-shadow: 0 -23px 0 ${p => p.theme.colors.navigation.socialLink},
+      0 23px 0 ${p => p.theme.colors.navigation.socialLink},
+      23px 0 0 ${p => p.theme.colors.navigation.socialLink},
+      -23px 0 0 ${p => p.theme.colors.navigation.socialLink},
+      15px 15px 0 ${p => p.theme.colors.navigation.socialLink},
+      -15px 15px 0 ${p => p.theme.colors.navigation.socialLink},
+      15px -15px 0 ${p => p.theme.colors.navigation.socialLink},
+      -15px -15px 0 ${p => p.theme.colors.navigation.socialLink};
     content: "";
     height: 8px;
     left: 50%;
@@ -96,9 +104,9 @@ const MoonOrSun = styled.div`
     transform: scale(${p => (p.isDark ? 1 : 0)});
     transition: all 0.35s ease;
 
-    /* ${mediaQueries.md} {
+    ${mediaQueries.md} {
       transform: scale(${p => (p.isDark ? 0.92 : 0)});
-    } */
+    }
   }
 `
 
@@ -117,30 +125,50 @@ const MoonMask = styled.div`
 `
 
 export default () => {
-  const [colorMode, setColorMode] = useState("dark")
+  const [colorMode, setColorMode] = useColorMode()
   const isDark = colorMode === `dark`
 
-  function toggleColorMode(event, toggleTheme) {
+  function toggleColorMode(event) {
     event.preventDefault()
     setColorMode(isDark ? `light` : `dark`)
-    toggleTheme(isDark ? "light" : "dark")
   }
-
   const label = isDark ? `Activate light mode` : `Activate dark mode`
 
   return (
-    <ThemeToggler>
-      {({ toggleTheme }) => (
-        <IconWrapper
-          isDark={isDark}
-          onClick={event => toggleColorMode(event, toggleTheme)}
-          aria-label={label}
-          title={label}
-        >
-          <MoonOrSun isDark={isDark} />
-          <MoonMask isDark={isDark} />
-        </IconWrapper>
-      )}
-    </ThemeToggler>
+    <IconWrapper
+      isDark={isDark}
+      onClick={toggleColorMode}
+      aria-label={label}
+      title={label}
+    >
+      <MoonOrSun isDark={isDark} />
+      <MoonMask isDark={isDark} />
+    </IconWrapper>
+    // const [colorMode, setColorMode] = useState("dark")
+    // const isDark = colorMode === `dark`
+
+    // function toggleColorMode(event, toggleTheme) {
+    //   event.preventDefault()
+    //   setColorMode(isDark ? `light` : `dark`)
+    //   toggleTheme(isDark ? "light" : "dark")
+    // }
+
+    // const label = isDark ? `Activate light mode` : `Activate dark mode`
+
+    // return (
+    //   <ThemeToggler>
+    //     {({ toggleTheme }) => (
+    //       <IconWrapper
+    //         isDark={isDark}
+    //         onClick={event => toggleColorMode(event, toggleTheme)}
+    //         aria-label={label}
+    //         title={label}
+    //       >
+    //         <MoonOrSun isDark={isDark} />
+    //         <MoonMask isDark={isDark} />
+    //       </IconWrapper>
+    //     )}
+    //   </ThemeToggler>
+    // )
   )
 }

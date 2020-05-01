@@ -86,13 +86,14 @@ export default ({ title, tags, slug, url, repo, imageData }) => {
               overflow: hidden;
               width: 100%;
               height: 0;
-              transition: 0.5s ease;
+              /* transition: 0.5s ease; */
               opacity: 0;
-              background: linear-gradient(
+              background: rgba(0, 0, 0, 0.3);
+              /* background: linear-gradient(
                 to bottom,
                 rgba(234, 230, 255, 0),
                 rgba(64, 50, 148, 0.52)
-              );
+              ); */
               :hover {
                 opacity: 1;
               }

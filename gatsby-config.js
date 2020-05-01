@@ -11,6 +11,7 @@ module.exports = {
     siteUrl: `https://davyhausser.com/`
   },
   plugins: [
+    `gatsby-plugin-theme-ui`,
     `gatsby-plugin-react-helmet`,
     "gatsby-plugin-dark-mode",
     `gatsby-plugin-sharp`,
@@ -19,7 +20,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/_data`
+        path: `${__dirname}/src/data`
       }
     },
     {
