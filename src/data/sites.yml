@@ -1,3 +1,18 @@
+- title: Un bien bel endroit
+  slug: unbienbelendroit
+  main_url: https://unbienbelendroit.netlify.app/
+  url: https://unbienbelendroit.netlify.app/
+  source_url: https://github.com/dhausser/gatsby-theme-gallery/
+  description: This beautiful image gallery is built with gatsby-theme-gallery.
+  categories:
+    - React
+    - Gatsby
+    - GraphQL
+    - JavaScript
+  built_by: Davy Hausser
+  built_by_url: https://davyhausser.com/
+  featured: true
+
 - title: Davyhausser.com
   slug: davyhausser
   main_url: https://davyhausser.com/
