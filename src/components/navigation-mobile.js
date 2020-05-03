@@ -35,7 +35,8 @@ const MobileNavItem = ({ linkTo, label, icon }) => (
 )
 const navItems = [
   { id: `showcase`, text: `Showcase`, icon: ShowcaseIcon },
-  { id: `blog`, text: `Blog`, icon: BlogIcon }
+  // { id: `blog`, text: `Blog`, icon: BlogIcon }
+  { id: "contact", text: `Contact`, icon: BlogIcon }
 ]
 
 export default () => (

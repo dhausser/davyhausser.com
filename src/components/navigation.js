@@ -80,7 +80,7 @@ const SocialNavItem = ({ href, title, children }) => (
 
 const navItems = [
   { id: "showcase", text: `Showcase` },
-  { id: "blog", text: `Blog` },
+  // { id: "blog", text: `Blog` },
   { id: "contact", text: `Contact` }
 ]
 

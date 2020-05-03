@@ -12,7 +12,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   })
 
   const projectTemplate = path.resolve(`src/templates/project.js`)
-  const blogPostTemplate = path.resolve(`src/templates/blog.js`)
+  // const blogPostTemplate = path.resolve(`src/templates/blog.js`)
 
   const result = await graphql(`
     {
@@ -46,7 +46,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   const projects = result.data.allSitesYaml.edges.map(({ node }) => node)
-  const blogs = result.data.allMarkdownRemark.edges.map(({ node }) => node)
+  // const blogs = result.data.allMarkdownRemark.edges.map(({ node }) => node)
 
   projects.forEach(project => {
     actions.createPage({
@@ -58,11 +58,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   })
 
-  blogs.forEach(blog => {
-    createPage({
-      path: blog.frontmatter.path,
-      component: blogPostTemplate,
-      context: {}
-    })
-  })
+  // blogs.forEach(blog => {
+  //   createPage({
+  //     path: blog.frontmatter.path,
+  //     component: blogPostTemplate,
+  //     context: {}
+  //   })
+  // })
 }
