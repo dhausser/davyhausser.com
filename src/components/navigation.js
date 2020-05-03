@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, useColorMode } from "theme-ui"
 import { GoMarkGithub as GithubIcon } from "react-icons/go"
 import {
   FaTwitter as TwitterIcon,
@@ -7,6 +7,8 @@ import {
 } from "react-icons/fa"
 
 import { Link } from "gatsby"
+import logo from "../assets/logo.svg"
+import logoInverted from "../assets/logo-inverted.svg"
 import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
 import { breakpointGutter } from "../utils/styles"
 import DarkModeToggle from "./dark-mode-toggle"
@@ -80,11 +82,12 @@ const SocialNavItem = ({ href, title, children }) => (
 
 const navItems = [
   { id: "showcase", text: `Showcase` },
-  // { id: "blog", text: `Blog` },
+  { id: "blog", text: `Blog` },
   { id: "contact", text: `Contact` }
 ]
 
 const Navigation = ({ pathname }) => {
+  const [colorMode] = useColorMode()
   const isHomepage = pathname === `/`
 
   return (
@@ -154,7 +157,7 @@ const Navigation = ({ pathname }) => {
           }}
           aria-label={`Gatsby, Back to homepage`}
         >
-          {/* <img
+          <img
             src={colorMode === `light` ? logo : logoInverted}
             sx={{
               height: `logo`,
@@ -164,7 +167,7 @@ const Navigation = ({ pathname }) => {
             }}
             alt={`Gatsby Logo`}
             aria-hidden="true"
-          /> */}
+          />
         </Link>
         <nav
           className="navigation"
@@ -234,6 +237,7 @@ const Navigation = ({ pathname }) => {
           <div
             sx={{
               ...navItemStyles,
+              ...overrideDefaultMdLineHeight,
               color: `navigation.socialLink`,
               ml: navItemHorizontalSpacing,
               "&:hover": {

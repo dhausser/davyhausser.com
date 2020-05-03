@@ -2,7 +2,7 @@
 import { jsx } from "theme-ui"
 import { Link } from "gatsby"
 
-import { ShowcaseIcon, BlogIcon } from "../assets/icons"
+import { ShowcaseIcon, BlogIcon, DocsIcon } from "../assets/icons"
 import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
 import { svgStyles } from "../utils/styles"
 
@@ -35,8 +35,8 @@ const MobileNavItem = ({ linkTo, label, icon }) => (
 )
 const navItems = [
   { id: `showcase`, text: `Showcase`, icon: ShowcaseIcon },
-  // { id: `blog`, text: `Blog`, icon: BlogIcon }
-  { id: "contact", text: `Contact`, icon: BlogIcon }
+  { id: `blog`, text: `Blog`, icon: BlogIcon },
+  { id: "contact", text: `Contact`, icon: DocsIcon }
 ]
 
 export default () => (

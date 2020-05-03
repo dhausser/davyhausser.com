@@ -108,7 +108,7 @@ function Form({ isHomepage, formId, onSuccess }) {
       // onSubmit={onSubmit}
       isHomepage={isHomepage}
     >
-      <input
+      {/* <input
         id="name"
         name="name"
         type="name"
@@ -123,7 +123,7 @@ function Form({ isHomepage, formId, onSuccess }) {
             ...formInputFocus
           }
         }}
-      />
+      /> */}
       <input
         id="email"
         name="email"
@@ -133,7 +133,7 @@ function Form({ isHomepage, formId, onSuccess }) {
         aria-label="Email"
         placeholder="Email"
         sx={{
-          ml: "8px",
+          // ml: "8px",
           ...themedInput,
           width: `100%`,
           "&:focus": {
