@@ -1,9 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
-import Img from "gatsby-image"
 import styled from "@emotion/styled"
 
-import { Card, PostMeta } from "../showcase/project-preview"
+import { Card, PostMeta } from "./showcase/project-preview"
 
 const Grid = styled("div")`
   display: grid;
@@ -15,18 +14,21 @@ const Grid = styled("div")`
   }
 `
 
-const PostLink = ({ post, imageData }) => (
+const PostLink = ({ post }) => (
   <Card>
-    <Link to={post.frontmatter.path}>
-      <Img fluid={imageData} alt={"stars in space"} />
-    </Link>
+    {/* <Link to={`/blog/${post.frontmatter.path}`}>
+      {!!post.frontmatter.thumbnail && (
+        <img
+          src={post.frontmatter.thumbnail}
+          alt={post.frontmatter.title + "- Featured Shot"}
+        />
+      )}
+    </Link> */}
     <header>
       <h2 className="post-title">
-        <Link to={post.frontmatter.path} className="post-link">
-          {post.frontmatter.title}
-        </Link>
+        <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
       </h2>
-      <PostMeta className="post-meta">{post.frontmatter.date}</PostMeta>
+      <PostMeta>{post.frontmatter.date}</PostMeta>
     </header>
   </Card>
 )

@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import styled from "@emotion/styled"
 
 import Layout from "../components/layout"
+import HomepageSection from "../components/homepage-section"
 
 const Post = styled("div")`
   border-radius: 18px;
@@ -88,13 +89,7 @@ export default ({ data }) => {
         <title>{frontmatter.title}</title>
         <meta name="description" content={frontmatter.metaDescription} />
       </Helmet>
-      <div
-        style={{
-          padding: "32px",
-          maxWidth: "1140px",
-          margin: "0 auto"
-        }}
-      >
+      <HomepageSection>
         <Post>
           {!frontmatter.thumbnail && (
             <PostThumbnail>
@@ -115,7 +110,7 @@ export default ({ data }) => {
             dangerouslySetInnerHTML={{ __html: html }}
           />
         </Post>
-      </div>
+      </HomepageSection>
     </Layout>
   )
 }

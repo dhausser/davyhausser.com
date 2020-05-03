@@ -1,14 +1,11 @@
 /** @jsx jsx */
-import Helmet from "react-helmet"
+import React from "react"
 import { css, jsx } from "@emotion/core"
-import { Link } from "gatsby"
 import Img from "gatsby-image"
 import { GoMarkGithub, GoLinkExternal } from "react-icons/go"
 
-import Layout from "./layout"
 import Categories from "./categories"
 import Button from "./button"
-import { NavStyles } from "../utils/styles"
 
 export default ({
   project: {
@@ -20,11 +17,7 @@ export default ({
     childScreenshot
   }
 }) => (
-  <Layout>
-    <Helmet>
-      <title>{title}</title>
-      <meta name="description" content={description} />
-    </Helmet>
+  <>
     <a href={main_url} target="_blank" rel="noopener noreferrer">
       <Img
         fluid={childScreenshot.screenshotFile.childImageSharp.fluid}
@@ -39,15 +32,29 @@ export default ({
       `}
     >
       <Categories categories={categories} />
-      <NavStyles>
-        <a href={source_url} target="_blank" rel="noopener noreferrer">
+      <div>
+        <a
+          href={source_url}
+          target="_blank"
+          rel="noopener noreferrer"
+          css={css`
+            margin: 5px 5px;
+          `}
+        >
           <GoMarkGithub />
         </a>
 
-        <a href={main_url} target="_blank" rel="noopener noreferrer">
+        <a
+          href={main_url}
+          target="_blank"
+          rel="noopener noreferrer"
+          css={css`
+            margin: 5px 5px;
+          `}
+        >
           <GoLinkExternal />
         </a>
-      </NavStyles>
+      </div>
     </div>
     <h2>{title}</h2>
     <p>{description}</p>
@@ -67,19 +74,15 @@ export default ({
           margin: 0px 10px;
         `}
       >
-        <Link to="/">
-          <Button>&larr; Home</Button>
-        </Link>
+        <Button to="/showcase">&larr; Home</Button>
       </div>
       <div
         css={css`
           margin: 0px 10px;
         `}
       >
-        <Link to="/contact">
-          <Button>Contact &rarr;</Button>
-        </Link>
+        <Button to="/contact">Contact &rarr;</Button>
       </div>
     </div>
-  </Layout>
+  </>
 )

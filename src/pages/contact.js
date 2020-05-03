@@ -1,12 +1,11 @@
 /** @jsx jsx */
-import { graphql, Link } from "gatsby"
-import { css, jsx } from "@emotion/core"
+import { jsx } from "theme-ui"
+import { graphql } from "gatsby"
 import Helmet from "react-helmet"
 
 import Layout from "../components/layout"
-import Container from "../components/container"
+import HomepageSection from "../components/homepage-section"
 import EmailCaptureForm from "../components/email-capture-form"
-import Button from "../components/button"
 
 export default ({ data: { site } }) => (
   <Layout>
@@ -14,29 +13,9 @@ export default ({ data: { site } }) => (
       <title>Contact — {site.siteMetadata.title}</title>
       <meta name="description" content={site.siteMetadata.description} />
     </Helmet>
-    <div
-      style={{
-        padding: "32px",
-        maxWidth: "1140px",
-        margin: "0 auto"
-      }}
-    >
-      <Container>
-        <EmailCaptureForm isHomepage={false} confirmMessage="Success!" />
-      </Container>
-      <div
-        css={css`
-          display: flex;
-          justify-content: center;
-          margin: 20px;
-          padding: 20px;
-        `}
-      >
-        <Link to="/">
-          <Button>&larr; Home</Button>
-        </Link>
-      </div>
-    </div>
+    <HomepageSection>
+      <EmailCaptureForm isHomepage />
+    </HomepageSection>
   </Layout>
 )
 

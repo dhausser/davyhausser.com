@@ -1,7 +1,14 @@
 import { keyframes } from "@emotion/core"
-import styled from "@emotion/styled"
 
-import { colors, space } from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
+import {
+  colors,
+  space,
+  transition,
+  radii,
+  fontSizes,
+  fontWeights,
+  fonts
+} from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
 
 const stripeAnimation = keyframes({
   "0%": { backgroundPosition: `0 0` },
@@ -12,32 +19,6 @@ export const focusStyle = {
   outline: 0,
   boxShadow: `0 0 0 2px ${colors.input.focusBoxShadow}`
 }
-
-export const NavStyles = styled("nav")`
-  display: flex;
-  align-items: center;
-  font-weight: 400;
-  text-transform: lowercase;
-  a {
-    color: #888;
-    text-decoration: none;
-    margin: 0 8px 0;
-    &[aria-current] {
-      color: var(--primary-color);
-      font-weight: 600;
-    }
-    &:hover {
-      color: var(--primary-color);
-    }
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-`
-
-export const blogWidth = `42rem`
-
-export const breakpointGutter = `@media (min-width: ${blogWidth})`
 
 export const buttonStyles = t => {
   return {
@@ -114,4 +95,85 @@ export const svgStyles = t => {
       "& .svg-fill-light.svg-fill-transparent": { fill: `icon.lightActive` }
     }
   }
+}
+
+// form elements
+export const formInputFocus = {
+  borderColor: colors.input.focusBorder,
+  ...focusStyle
+}
+
+export const formInput = {
+  backgroundColor: colors.white,
+  border: `1px solid ${colors.input.border}`,
+  borderRadius: `${radii[2]}`,
+  display: `block`,
+  fontFamily: fonts.system,
+  fontSize: fontSizes[2],
+  fontWeight: fontWeights.body,
+  lineHeight: `2.25rem`,
+  py: 0,
+  px: space[2],
+  transition: `box-shadow ${transition.speed.default} ${transition.curve.default}`,
+  verticalAlign: `middle`,
+  width: `100%`,
+  "::placeholder": {
+    color: colors.input.placeholder,
+    opacity: 1
+  },
+  "&:focus": {
+    ...formInputFocus
+  },
+  "&:disabled": {
+    cursor: `not-allowed`,
+    opacity: `0.5`
+  }
+}
+
+export const themedInputFocus = {
+  bg: `themedInput.backgroundFocus`,
+  boxShadow: t => `0 0 0 2px ${t.colors.themedInput.focusBoxShadow}`,
+  outline: 0,
+  width: `100%`
+}
+
+export const themedInput = {
+  ...formInput,
+  appearance: `none`,
+  bg: `themedInput.background`,
+  border: 0,
+  color: `text`,
+  overflow: `hidden`,
+  px: 3,
+  ":focus": {
+    ...themedInputFocus
+  },
+  "::placeholder": {
+    color: `themedInput.placeholder`
+  }
+}
+
+// Utilities
+export const visuallyHidden = {
+  // include `px` so we can use it with `sx`
+  border: 0,
+  clip: `rect(0, 0, 0, 0)`,
+  height: `1px`,
+  margin: `-1px`,
+  overflow: `hidden`,
+  padding: 0,
+  position: `absolute`,
+  whiteSpace: `nowrap`,
+  width: `1px`
+}
+
+// Layout
+export const blogWidth = `42rem`
+export const breakpointGutter = `@media (min-width: ${blogWidth})`
+
+export const pullIntoGutter = {
+  marginLeft: `-${space[6]}`,
+  marginRight: `-${space[6]}`,
+  paddingLeft: space[6],
+  paddingRight: space[6]
 }

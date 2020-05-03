@@ -3,30 +3,22 @@ import Helmet from "react-helmet"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-// import Posts from "../components/blog"
+import HomepageSection from "../components/homepage-section"
+import EmailCaptureForm from "../components/email-capture-form"
+import Posts from "../components/blog"
 
-export default ({ data: { site, allMarkdownRemark, file } }) => {
-  return (
-    <Layout>
-      <Helmet>
-        <title>{site.siteMetadata.title}</title>
-        <meta name="description" content={site.siteMetadata.description} />
-      </Helmet>
-      <div
-        style={{
-          padding: "32px",
-          maxWidth: "1140px",
-          margin: "0 auto"
-        }}
-      >
-        {/* <Posts
-          posts={allMarkdownRemark.edges}
-          imageData={file.childImageSharp.fluid}
-        /> */}
-      </div>
-    </Layout>
-  )
-}
+export default ({ data: { site, allMarkdownRemark } }) => (
+  <Layout>
+    <Helmet>
+      <title>{site.siteMetadata.title}</title>
+      <meta name="description" content={site.siteMetadata.description} />
+    </Helmet>
+    <HomepageSection>
+      <Posts posts={allMarkdownRemark.edges} />
+      <EmailCaptureForm isHomepage={true} />
+    </HomepageSection>
+  </Layout>
+)
 
 export const pageQuery = graphql`
   query blogPageQuery {
@@ -36,19 +28,19 @@ export const pageQuery = graphql`
         description
       }
     }
-    # allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-    #   edges {
-    #     node {
-    #       id
-    #       excerpt(pruneLength: 250)
-    #       frontmatter {
-    #         date(formatString: "MMMM DD, YYYY")
-    #         path
-    #         title
-    #         thumbnail
-    #       }
-    #     }
-    #   }
-    # }
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+      edges {
+        node {
+          id
+          excerpt(pruneLength: 250)
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            path
+            title
+            thumbnail
+          }
+        }
+      }
+    }
   }
 `

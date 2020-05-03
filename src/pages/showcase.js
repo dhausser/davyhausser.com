@@ -3,7 +3,9 @@ import Helmet from "react-helmet"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
+import HomepageSection from "../components/homepage-section"
 import Showcase from "../components/showcase"
+import EmailCaptureForm from "../components/email-capture-form"
 
 export default ({ data }) => (
   <Layout>
@@ -11,7 +13,10 @@ export default ({ data }) => (
       <title>{data.site.siteMetadata.title}</title>
       <meta name="description" content={data.site.siteMetadata.description} />
     </Helmet>
-    <Showcase data={data} />
+    <HomepageSection>
+      <Showcase data={data} />
+      <EmailCaptureForm isHomepage={true} />
+    </HomepageSection>
   </Layout>
 )
 

@@ -1,22 +1,22 @@
 import React from "react"
+import Helmet from "react-helmet"
 import { graphql } from "gatsby"
 
+import Layout from "../components/layout"
+import HomepageSection from "../components/homepage-section"
 import Project from "../components/project"
 
-export default ({ data: { sitesYaml: project } }) => {
-  console.log(project)
-  return (
-    <div
-      style={{
-        padding: "32px",
-        maxWidth: "1140px",
-        margin: "0 auto"
-      }}
-    >
+export default ({ data: { sitesYaml: project } }) => (
+  <Layout>
+    <Helmet>
+      <title>{project.title}</title>
+      <meta name="description" content={project.description} />
+    </Helmet>
+    <HomepageSection>
       <Project project={project} />
-    </div>
-  )
-}
+    </HomepageSection>
+  </Layout>
+)
 
 export const query = graphql`
   query($slug: String!) {

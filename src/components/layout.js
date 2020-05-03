@@ -1,11 +1,14 @@
 /** @jsx jsx */
-import React from "react"
 import { jsx } from "theme-ui"
+import React from "react"
+
 import { Global } from "@emotion/core"
 
 import { globalStyles } from "../utils/styles/global"
 import { breakpointGutter } from "../utils/styles"
 import Navigation from "./navigation"
+import MobileNavigation from "./navigation-mobile"
+import "../assets/fonts/futura"
 
 export default ({ children }) => (
   <>
@@ -23,5 +26,6 @@ export default ({ children }) => (
     >
       {children}
     </div>
+    <MobileNavigation />
   </>
 )
