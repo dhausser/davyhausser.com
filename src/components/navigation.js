@@ -1,5 +1,6 @@
 /** @jsx jsx */
-import { jsx, useColorMode } from "theme-ui"
+import { jsx } from "theme-ui"
+// import { useColorMode } from "theme-ui"
 import { GoMarkGithub as GithubIcon } from "react-icons/go"
 import {
   FaTwitter as TwitterIcon,
@@ -7,8 +8,8 @@ import {
 } from "react-icons/fa"
 
 import { Link } from "gatsby"
-import logo from "../assets/logo.svg"
-import logoInverted from "../assets/logo-inverted.svg"
+// import logo from "../assets/logo.svg"
+// import logoInverted from "../assets/logo-inverted.svg"
 import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
 import { breakpointGutter } from "../utils/styles"
 import DarkModeToggle from "./dark-mode-toggle"
@@ -72,6 +73,7 @@ const SocialNavItem = ({ href, title, children }) => (
     sx={{
       ...navItemStyles,
       ...overrideDefaultMdLineHeight,
+      transform: `translate(0px, 4px)`,
       color: `navigation.socialLink`,
       px: navItemHorizontalSpacing
     }}
@@ -82,12 +84,12 @@ const SocialNavItem = ({ href, title, children }) => (
 
 const navItems = [
   { id: "showcase", text: `Showcase` },
-  { id: "blog", text: `Blog` },
+  // { id: "blog", text: `Blog` },
   { id: "contact", text: `Contact` }
 ]
 
 const Navigation = ({ pathname }) => {
-  const [colorMode] = useColorMode()
+  // const [colorMode] = useColorMode()
   const isHomepage = pathname === `/`
 
   return (
@@ -99,7 +101,6 @@ const Navigation = ({ pathname }) => {
         px: `env(safe-area-inset-left)`,
         position: `relative`,
         right: 0,
-        // top: t => t.sizes.bannerHeight,
         zIndex: `navigation`,
         // use this to test if the header items are properly aligned to the logo
         // wordmark
@@ -155,9 +156,19 @@ const Navigation = ({ pathname }) => {
             width: [`24px`, null, `auto`],
             overflow: [`hidden`, null, `visible`]
           }}
-          aria-label={`Gatsby, Back to homepage`}
+          aria-label={`DH, Back to showcase`}
         >
-          <img
+          <h2
+            sx={{
+              height: `logo`,
+              width: `auto`,
+              maxWidth: `none`,
+              m: 0
+            }}
+          >
+            DH
+          </h2>
+          {/* <img
             src={colorMode === `light` ? logo : logoInverted}
             sx={{
               height: `logo`,
@@ -167,7 +178,7 @@ const Navigation = ({ pathname }) => {
             }}
             alt={`Gatsby Logo`}
             aria-hidden="true"
-          />
+          /> */}
         </Link>
         <nav
           className="navigation"
@@ -208,6 +219,8 @@ const Navigation = ({ pathname }) => {
         </nav>
         <div
           sx={{
+            // ...navItemStyles,
+            // ...overrideDefaultMdLineHeight,
             alignSelf: `flex-end`,
             display: `flex`
           }}
@@ -218,7 +231,7 @@ const Navigation = ({ pathname }) => {
           <div
             sx={{
               display: `none`,
-              [mediaQueries.xl]: { display: `flex` }
+              [mediaQueries.sm]: { display: `flex` }
             }}
           >
             <SocialNavItem

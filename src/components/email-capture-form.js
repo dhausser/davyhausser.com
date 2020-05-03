@@ -108,22 +108,6 @@ function Form({ isHomepage, formId, onSuccess }) {
       // onSubmit={onSubmit}
       isHomepage={isHomepage}
     >
-      {/* <input
-        id="name"
-        name="name"
-        type="name"
-        required
-        autoComplete="name"
-        aria-label="First Name"
-        placeholder="First Name"
-        sx={{
-          ...themedInput,
-          width: `70%`,
-          "&:focus": {
-            ...formInputFocus
-          }
-        }}
-      /> */}
       <input
         id="email"
         name="email"
@@ -206,7 +190,14 @@ export default ({
             />
           ) : (
             <HomepageContainer>
-              <header>
+              <header
+                sx={{
+                  pb: `1rem`,
+                  [mediaQueries.lg]: {
+                    pb: `0`
+                  }
+                }}
+              >
                 <Title>Need an app or website? Get in touch!</Title>
               </header>
               <FormComponent
