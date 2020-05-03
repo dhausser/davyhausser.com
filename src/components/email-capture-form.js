@@ -6,8 +6,8 @@ import styled from "@emotion/styled"
 import { MdSend as SendIcon } from "react-icons/md"
 
 import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
-import { themedInput, formInputFocus, buttonStyles } from "../../utils/styles"
-import { rhythm } from "../../utils/typography"
+import { themedInput, formInputFocus, buttonStyles } from "../utils/styles"
+import { rhythm } from "../utils/typography"
 
 const Container = styled(`div`)`
   background: ${p => p.theme.colors.newsletter.background};
@@ -80,80 +80,15 @@ const SuccessMessage = styled(`div`)`
   font-family: ${p => p.theme.fonts.system};
 `
 
-function Form({ isHomepage, portalId, formId, sfdcCampaignId, onSuccess }) {
+function Form({ isHomepage }) {
   const emailRef = React.useRef(null)
-  const [errorMessage, setErrorMessage] = React.useState("")
-  const [fieldErrors, setFieldErrors] = React.useState({})
-
-  const onSubmit = React.useCallback(
-    e => {
-      e.preventDefault()
-
-      // validation here or use Formik or something like that
-      // we can also rely on server side validation like I do right now
-
-      const url = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`
-      const data = {
-        fields: [
-          {
-            name: `email`,
-            value: emailRef.current.value
-          }
-        ],
-        context: {
-          pageUri: window.location.href,
-          pageName: document.title
-        }
-      }
-
-      if (sfdcCampaignId) {
-        data.context.sfdcCampaignId = sfdcCampaignId
-      }
-
-      const xhr = new XMLHttpRequest()
-      xhr.open(`POST`, url, false)
-      xhr.setRequestHeader(`Content-Type`, `application/json`)
-
-      xhr.onreadystatechange = () => {
-        if (xhr.readyState == 4) {
-          const response = JSON.parse(xhr.responseText)
-          if (xhr.status == 200) {
-            // https://developers.hubspot.com/docs/methods/forms/submit_form_ajax
-            // docs mention response should "thankYouMessage" field,
-            // but I get inlineMessage in my testing
-            onSuccess(response.thankYouMessage || response.inlineMessage)
-          } else {
-            let errorMessage,
-              fieldErrors = {}
-            if (response.errors) {
-              // {"message":"Error in 'fields.email'. Invalid email address","errorType":"INVALID_EMAIL"}
-              // {"message":"Error in 'fields.email'. Required field 'email' is missing","errorType":"REQUIRED_FIELD"}
-
-              const errorRe = /^Error in 'fields.([^']+)'. (.+)$/
-              response.errors.map(error => {
-                const [, fieldName, message] = errorRe.exec(error.message)
-                fieldErrors[fieldName] = message
-              })
-
-              // hubspot use "The request is not valid" message, so probably better use custom one
-              errorMessage = `Errors in the form`
-            } else {
-              errorMessage = response.message
-            }
-
-            setFieldErrors(fieldErrors)
-            setErrorMessage(errorMessage)
-          }
-        }
-      }
-
-      xhr.send(JSON.stringify(data))
-    },
-    [portalId, formId, sfdcCampaignId]
-  )
 
   return (
-    <StyledForm onSubmit={onSubmit} isHomepage={isHomepage}>
+    <StyledForm
+      isHomepage={isHomepage}
+      name="newsletter-form"
+      data-netlify="true"
+    >
       {!isHomepage && (
         <Label isRequired htmlFor="email">
           Email
@@ -176,8 +111,6 @@ function Form({ isHomepage, portalId, formId, sfdcCampaignId, onSuccess }) {
           }
         }}
       />
-      {fieldErrors.email && <ErrorMessage>{fieldErrors.email}</ErrorMessage>}
-      {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
 
       {isHomepage ? (
         <button
@@ -220,21 +153,14 @@ function Form({ isHomepage, portalId, formId, sfdcCampaignId, onSuccess }) {
 }
 
 function EmailCaptureForm({
-  formId = "089352d8-a617-4cba-ba46-6e52de5b6a1d",
-  signupMessage = `Enjoyed this post? Receive the next one in your inbox!`,
+  signupMessage = `Like what you see? Get in touch!`,
   isHomepage = false,
   className = ``
 }) {
   const [successMessage, setSuccessMessage] = React.useState("")
 
   const FormComponent = props => (
-    <Form
-      onSuccess={setSuccessMessage}
-      portalId="4731712"
-      formId={formId}
-      sfdcCampaignId="701f4000000Us7pAAC"
-      {...props}
-    />
+    <Form onSuccess={setSuccessMessage} {...props} />
   )
 
   return (

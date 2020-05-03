@@ -2,7 +2,70 @@
 import { css, jsx } from "@emotion/core"
 import styled from "@emotion/styled"
 import { Link, useStaticQuery, graphql } from "gatsby"
+
 import Button from "../button"
+
+export function ContactHeader() {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        file(relativePath: { eq: "images/deepspace.jpg" }) {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    `
+  )
+  return (
+    <Card
+      css={css`
+        display: grid;
+        align-content: center;
+      `}
+    >
+      <Link to="/contact">
+        <PostThumbnail
+          style={{
+            backgroundImage: `linear-gradient(
+              to bottom,
+              rgba(234, 230, 255, 0.20),
+              rgba(64, 50, 148, 0.80)
+            ), url(${data.file.childImageSharp.fluid.src})`
+          }}
+        >
+          <PostTitle>Get in Touch</PostTitle>
+          <p>Let me help you kick start your next project &rarr;</p>
+        </PostThumbnail>
+      </Link>
+    </Card>
+  )
+}
+
+export default () => (
+  <Card>
+    <Wrapper>
+      <FormContainer
+        method="post"
+        action="#"
+        netlify-honeypot="bot-field"
+        data-netlify="true"
+      >
+        <input type="hidden" name="bot-field" />
+        <input type="text" name="name" placeholder="Name" />
+        <input type="email" name="email" placeholder="Email" />
+        <textarea name="message" placeholder="Message"></textarea>
+        <SubmitWrapper>
+          <Button>
+            <SubmitButton type="submit" value="Submit" />
+          </Button>
+        </SubmitWrapper>
+      </FormContainer>
+    </Wrapper>
+  </Card>
+)
 
 const Card = styled("div")`
   background-color: var(--contact-bg);
@@ -118,91 +181,3 @@ const SubmitWrapper = styled("div")`
   display: flex;
   justify-content: flex-end;
 `
-
-export function ContactHeader() {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        file(relativePath: { eq: "images/deepspace.jpg" }) {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    `
-  )
-  return (
-    <Card
-      css={css`
-        display: grid;
-        align-content: center;
-      `}
-    >
-      <Link to="/contact">
-        <PostThumbnail
-          style={{
-            backgroundImage: `linear-gradient(
-              to bottom,
-              rgba(234, 230, 255, 0.20),
-              rgba(64, 50, 148, 0.80)
-            ), url(${data.file.childImageSharp.fluid.src})`
-          }}
-        >
-          <PostTitle>Get in Touch</PostTitle>
-          <p>Let me help you kick start your next project &rarr;</p>
-        </PostThumbnail>
-      </Link>
-    </Card>
-  )
-}
-
-export default () => (
-  <Card>
-    <Wrapper>
-      {/* <form
-          method="post"
-          action="#"
-          netlify-honeypot="bot-field"
-          data-netlify="true"
-        >
-          <input type="hidden" name="bot-field" />
-          <label>
-            Name
-            <input type="text" name="name" id="name" />
-          </label>
-          <label>
-            Email
-            <input type="email" name="email" id="email" />
-          </label>
-          <label>
-            Subject
-            <input type="text" name="subject" id="subject" />
-          </label>
-          <label>
-            Message
-            <textarea name="message" id="message" rows="5" />
-          </label>
-          <button type="submit">Send</button>
-          <input type="reset" value="Clear" />
-        </form> */}
-      <FormContainer
-        method="post"
-        action="#"
-        netlify-honeypot="bot-field"
-        data-netlify="true"
-      >
-        <input type="hidden" name="bot-field" />
-        <input type="text" name="name" placeholder="Name" />
-        <input type="email" name="email" placeholder="Email" />
-        <textarea name="message" placeholder="Message"></textarea>
-        <SubmitWrapper>
-          <Button>
-            <SubmitButton type="submit" value="Submit" />
-          </Button>
-        </SubmitWrapper>
-      </FormContainer>
-    </Wrapper>
-  </Card>
-)

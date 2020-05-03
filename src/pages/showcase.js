@@ -5,18 +5,15 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Showcase from "../components/showcase"
 
-export default ({ data }) => {
-  console.log(data)
-  return (
-    <Layout>
-      <Helmet>
-        <title>{data.site.siteMetadata.title}</title>
-        <meta name="description" content={data.site.siteMetadata.description} />
-      </Helmet>
-      <Showcase data={data} />
-    </Layout>
-  )
-}
+export default ({ data }) => (
+  <Layout>
+    <Helmet>
+      <title>{data.site.siteMetadata.title}</title>
+      <meta name="description" content={data.site.siteMetadata.description} />
+    </Helmet>
+    <Showcase data={data} />
+  </Layout>
+)
 
 export const pageQuery = graphql`
   query showcasePageQuery {
