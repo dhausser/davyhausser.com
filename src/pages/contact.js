@@ -4,7 +4,8 @@ import { css, jsx } from "@emotion/core"
 import Helmet from "react-helmet"
 
 import Layout from "../components/layout"
-import Contact from "../components/contact"
+import Container from "../components/container"
+import EmailCaptureForm from "../components/email-capture-form"
 import Button from "../components/button"
 
 export default ({ data: { site } }) => (
@@ -20,7 +21,9 @@ export default ({ data: { site } }) => (
         margin: "0 auto"
       }}
     >
-      <Contact />
+      <Container>
+        <EmailCaptureForm isHomepage={false} confirmMessage="Success!" />
+      </Container>
       <div
         css={css`
           display: flex;
