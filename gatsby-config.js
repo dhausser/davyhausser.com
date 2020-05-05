@@ -8,7 +8,8 @@ module.exports = {
   siteMetadata: {
     title: `davyhausser.com`,
     description: `A personal portfolio website.`,
-    siteUrl: `https://davyhausser.com/`
+    siteUrl: `https://davyhausser.com/`,
+    twitter: `davyhausser`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

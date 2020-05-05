@@ -5,6 +5,7 @@
     "@emotion/styled": "^10.0.27",
     "@lingui/macro": "^2.9.1",
     "@lingui/react": "^2.9.1",
+    "@loadable/component": "^5.12.0",
     "gatsby": "^2.19.7",
     "gatsby-cli": "^2.12.5",
     "gatsby-design-tokens": "^2.0.5",
@@ -24,15 +25,18 @@
     "gatsby-transformer-yaml": "^2.4.0",
     "hex2rgba": "^0.0.1",
     "isomorphic-unfetch": "^3.0.0",
+    "mousetrap": "^1.6.5",
     "qs": "^6.9.3",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
     "react-icons": "^3.10.0",
+    "react-modal": "^3.11.2",
     "react-typography": "^0.16.19",
     "theme-ui": "^0.3.1",
     "typography": "^0.16.19",
-    "typography-plugin-code": "^0.16.19"
+    "typography-plugin-code": "^0.16.19",
+    "url": "^0.11.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
