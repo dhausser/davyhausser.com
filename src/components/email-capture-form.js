@@ -241,7 +241,7 @@ export default ({
               }}
             />
           ) : (
-            <FormComponent />
+            <FormComponent confirmMessage="Thanks for signing up! We'll be in touch soon!" />
           )}
         </ContactpageContainer>
       )}
