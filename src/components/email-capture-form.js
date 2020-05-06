@@ -94,64 +94,26 @@ function Form({ isHomepage, formId, onSuccess, confirmMessage }) {
   const emailRef = useRef(null)
   const formRef = useRef(null)
   const [errorMessage, setErrorMessage] = useState("")
-  const [fieldErrors, setFieldErrors] = useState({})
 
   const onSubmit = useCallback(e => {
     e.preventDefault()
 
     const url = `https://getform.io/f/${formId}`
-    // const formData = new FormData(formRef.current)
-    const formData = new FormData()
-    formData.append(`email`, emailRef.current.value)
 
-    /** TODO: Set proper headers as expected  */
-    // $("#ajaxForm").submit(function(e){
-    //   e.preventDefault();
-    //   var action = $(this).attr("action");
-    //   $.ajax({
-    //     type: "POST",
-    //     url: action,
-    //     crossDomain: true,
-    //     data: new FormData(this),
-    //     dataType: "json",
-    //     contentType: "multipart/form-data",
-    //     processData: false,
-    //     contentType: false,
-    //     headers: {
-    //       "Accept": "application/json"
-    //     }
-    //   }).done(function() {
-    //      $('.success').addClass('is-active');
-    //   }).fail(function() {
-    //      alert('An error occurred please try again later.')
-    //   });
-    // });
+    const formData = { email: emailRef.current.value }
+
     const xhr = new XMLHttpRequest()
     xhr.open(`POST`, url, false)
-    xhr.setRequestHeader(`Content-Type`, `multipart/form-data`)
+    xhr.setRequestHeader(`Content-Type`, `application/json`)
 
     xhr.onreadystatechange = () => {
       if (xhr.readyState === 4) {
-        /** TO FIX: response should be of JSON format to be parsed */
-        // const response = JSON.parse(xhr.responseText)
         if (xhr.status === 200) {
           onSuccess(confirmMessage)
         } else {
-          let errorMessage,
-            fieldErrors = {}
-          if (response.errors) {
-            const errorRe = /^Error in 'fields.([^']+)'. (.+)$/
-            response.errors.map(error => {
-              const [, fieldName, message] = errorRe.exec(error.message)
-              fieldErrors[fieldName] = message
-            })
-          } else {
-            console.log(response)
+          console.log(xhr.responseText)
+          errorMessage = xhr.responseText
 
-            errorMessage = response.message
-          }
-
-          setFieldErrors(fieldErrors)
           setErrorMessage(errorMessage)
         }
       }
@@ -161,13 +123,7 @@ function Form({ isHomepage, formId, onSuccess, confirmMessage }) {
   }, [])
 
   return (
-    <StyledForm
-      // method="post"
-      // action={`https://getform.io/f/${formId}`}
-      ref={formRef}
-      onSubmit={onSubmit}
-      isHomepage={isHomepage}
-    >
+    <StyledForm ref={formRef} onSubmit={onSubmit} isHomepage={isHomepage}>
       <input
         id="email"
         name="email"
@@ -186,7 +142,6 @@ function Form({ isHomepage, formId, onSuccess, confirmMessage }) {
           }
         }}
       />
-      {fieldErrors.email && <ErrorMessage>{fieldErrors.email}</ErrorMessage>}
       {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
 
       {isHomepage ? (
@@ -262,7 +217,7 @@ export default ({
           ) : (
             <FormComponent
               isHomepage={true}
-              confirmMessage="Success! You have been subscribed to the Gatsby newsletter. Expect to see a newsletter in your inbox each Wednesday (or the equivalent of US Wednesday in your time zone)!"
+              confirmMessage="Success! We'll be in touch soon!"
             />
           )}
         </HomepageContainer>

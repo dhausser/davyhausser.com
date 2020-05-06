@@ -4,7 +4,6 @@ import { graphql } from "gatsby"
 import ShowcaseDetails from "../components/showcase-details"
 
 export default function ShowcaseTemplate({ data, location }) {
-  console.log(data, location)
   const isModal =
     location.state && location.state.isModal && window.innerWidth > 750
 
