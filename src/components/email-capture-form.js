@@ -90,22 +90,82 @@ const SuccessMessage = styled(`div`)`
   font-family: ${p => p.theme.fonts.system};
 `
 
-function Form({ isHomepage, formId, onSuccess }) {
+function Form({ isHomepage, formId, onSuccess, confirmMessage }) {
   const emailRef = useRef(null)
+  const formRef = useRef(null)
   const [errorMessage, setErrorMessage] = useState("")
   const [fieldErrors, setFieldErrors] = useState({})
 
   const onSubmit = useCallback(e => {
     e.preventDefault()
-    const { email } = e.target
-    console.log(email.value)
+
+    const url = `https://getform.io/f/${formId}`
+    // const formData = new FormData(formRef.current)
+    const formData = new FormData()
+    formData.append(`email`, emailRef.current.value)
+
+    /** TODO: Set proper headers as expected  */
+    // $("#ajaxForm").submit(function(e){
+    //   e.preventDefault();
+    //   var action = $(this).attr("action");
+    //   $.ajax({
+    //     type: "POST",
+    //     url: action,
+    //     crossDomain: true,
+    //     data: new FormData(this),
+    //     dataType: "json",
+    //     contentType: "multipart/form-data",
+    //     processData: false,
+    //     contentType: false,
+    //     headers: {
+    //       "Accept": "application/json"
+    //     }
+    //   }).done(function() {
+    //      $('.success').addClass('is-active');
+    //   }).fail(function() {
+    //      alert('An error occurred please try again later.')
+    //   });
+    // });
+    const xhr = new XMLHttpRequest()
+    xhr.open(`POST`, url, false)
+    xhr.setRequestHeader(`Content-Type`, `multipart/form-data`)
+
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState === 4) {
+        /** TO FIX: response should be of JSON format to be parsed */
+        // const response = JSON.parse(xhr.responseText)
+        if (xhr.status === 200) {
+          onSuccess(confirmMessage)
+        } else {
+          let errorMessage,
+            fieldErrors = {}
+          if (response.errors) {
+            const errorRe = /^Error in 'fields.([^']+)'. (.+)$/
+            response.errors.map(error => {
+              const [, fieldName, message] = errorRe.exec(error.message)
+              fieldErrors[fieldName] = message
+            })
+          } else {
+            console.log(response)
+
+            errorMessage = response.message
+          }
+
+          setFieldErrors(fieldErrors)
+          setErrorMessage(errorMessage)
+        }
+      }
+    }
+
+    xhr.send(JSON.stringify(formData))
   }, [])
 
   return (
     <StyledForm
-      method="post"
-      action={`https://getform.io/f/${formId}`}
-      // onSubmit={onSubmit}
+      // method="post"
+      // action={`https://getform.io/f/${formId}`}
+      ref={formRef}
+      onSubmit={onSubmit}
       isHomepage={isHomepage}
     >
       <input
@@ -114,6 +174,7 @@ function Form({ isHomepage, formId, onSuccess }) {
         type="email"
         required
         autoComplete="email"
+        ref={emailRef}
         aria-label="Email"
         placeholder="Email"
         sx={{
@@ -183,30 +244,28 @@ export default ({
   return (
     <>
       {isHomepage ? (
-        <div className={className}>
+        <HomepageContainer>
+          <header
+            sx={{
+              pb: `1rem`,
+              [mediaQueries.lg]: {
+                pb: `0`
+              }
+            }}
+          >
+            <Title>Need an app or website? Get in touch!</Title>
+          </header>
           {successMessage ? (
             <SuccessMessage
               dangerouslySetInnerHTML={{ __html: successMessage }}
             />
           ) : (
-            <HomepageContainer>
-              <header
-                sx={{
-                  pb: `1rem`,
-                  [mediaQueries.lg]: {
-                    pb: `0`
-                  }
-                }}
-              >
-                <Title>Need an app or website? Get in touch!</Title>
-              </header>
-              <FormComponent
-                isHomepage={true}
-                confirmMessage="Success! You have been subscribed to the Gatsby newsletter. Expect to see a newsletter in your inbox each Wednesday (or the equivalent of US Wednesday in your time zone)!"
-              />
-            </HomepageContainer>
+            <FormComponent
+              isHomepage={true}
+              confirmMessage="Success! You have been subscribed to the Gatsby newsletter. Expect to see a newsletter in your inbox each Wednesday (or the equivalent of US Wednesday in your time zone)!"
+            />
           )}
-        </div>
+        </HomepageContainer>
       ) : (
         <ContactpageContainer>
           <p
