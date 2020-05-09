@@ -2,8 +2,6 @@
 import { jsx } from "theme-ui"
 import React from "react"
 import { PageProps, Link, graphql } from "gatsby"
-// import { TiTags as TagsIcon } from "react-icons/ti"
-
 import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
 import { pullIntoGutter, breakpointGutter } from "../utils/styles"
 

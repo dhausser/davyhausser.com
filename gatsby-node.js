@@ -15,7 +15,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const showcaseTemplate = path.resolve(
     `src/templates/template-showcase-details.js`
   )
-  const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const blogPostTemplate = path.resolve(`./src/templates/template-blog-post.js`)
+  // const blogPost = path.resolve(`./src/templates/blog-post.js`)
   const result = await graphql(`
     {
       allSitesYaml {
@@ -68,7 +69,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
     createPage({
       path: `/blog${post.node.fields.slug}`,
-      component: blogPost,
+      component: blogPostTemplate,
       context: {
         slug: post.node.fields.slug,
         previous,

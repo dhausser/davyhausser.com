@@ -100,5 +100,11 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+      },
+    },
   ]
 }
