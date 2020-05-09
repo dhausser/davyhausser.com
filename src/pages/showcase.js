@@ -1,20 +1,22 @@
 import React from "react"
-import Helmet from "react-helmet"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
+import PageMetadata from "../components/page-metadata"
 import HomepageSection from "../components/homepage-section"
-import Showcase from "../components/showcase"
+import FeaturedSites from "../components/showcase/featured-sites"
+import ShowcaseList from "../components/showcase/showcase-list"
 import EmailCaptureForm from "../components/email-capture-form"
 
 export default ({ data }) => (
   <Layout>
-    <Helmet>
-      <title>{data.site.siteMetadata.title}</title>
-      <meta name="description" content={data.site.siteMetadata.description} />
-    </Helmet>
+    <PageMetadata
+      title={`Showcase | ${data.site.siteMetadata.author.name}`}
+      description={data.site.siteMetadata.description}
+    />
     <HomepageSection>
-      <Showcase data={data} />
+      <FeaturedSites featured={data.allSitesYaml.edges} />
+      <ShowcaseList items={data.allSitesYaml.edges} />
       <EmailCaptureForm isHomepage={true} />
     </HomepageSection>
   </Layout>
@@ -24,7 +26,9 @@ export const pageQuery = graphql`
   query showcasePageQuery {
     site {
       siteMetadata {
-        title
+        author {
+          name
+        }
         description
       }
     }

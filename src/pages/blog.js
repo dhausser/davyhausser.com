@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import React from "react"
-import { PageProps, Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
 import { pullIntoGutter, breakpointGutter } from "../utils/styles"
 
@@ -12,40 +12,16 @@ import EmailCaptureForm from "../components/email-capture-form"
 import PageMetadata from "../components/page-metadata"
 import Bio from "../components/bio"
 
-// import { rhythm } from "../utils/typography"
-
-// type Data = {
-//   site: {
-//     siteMetadata: {
-//       title: string
-//     }
-//   }
-//   allMarkdownRemark: {
-//     edges: {
-//       node: {
-//         excerpt: string
-//         frontmatter: {
-//           title: string
-//           date: string
-//           description: string
-//         }
-//         fields: {
-//           slug: string
-//         }
-//       }
-//     }[]
-//   }
-// }
-
-// function BlogIndex({ data, location }: PageProps<Data>) {
-function BlogIndex({ data, location }) {
-  const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMarkdownRemark.edges
+function BlogIndex({ data }) {
+  const posts = data.allMdx.edges
 
   return (
     <Layout>
       <main id={`reach-skip-nav`}>
-        <PageMetadata title={`Blog | Page ${siteTitle}`} />
+        <PageMetadata
+          title={`Blog | ${data.site.siteMetadata.author.name}`}
+          description={data.site.siteMetadata.description}
+        />
         <Container>
           <Bio />
           {posts.map(({ node }, index) => (
@@ -85,7 +61,7 @@ function BlogIndex({ data, location }) {
               }}
             />
           ))}
-          <EmailCaptureForm signupMessage="Enjoying our blog? Receive the next post in your inbox!" />
+          <EmailCaptureForm signupMessage="Enjoying this blog? Receive the next post in your inbox!" />
         </Container>
       </main>
     </Layout>
@@ -98,12 +74,16 @@ export const pageQuery = graphql`
   query {
     site {
       siteMetadata {
-        title
+        author {
+          name
+        }
+        description
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
+          id
           excerpt
           fields {
             slug

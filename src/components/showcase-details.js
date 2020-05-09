@@ -16,7 +16,6 @@ import PageMetadata from "./site-metadata"
 import FeaturedIcon from "../assets/icons/featured-sites-icons"
 import { MdArrowUpward, MdLink } from "react-icons/md"
 import { GoMarkGithub as GithubIcon } from "react-icons/go"
-import { filterByCategories } from "./showcase/filtered-showcase"
 
 const gutter = 6
 const gutterDesktop = 8
@@ -119,7 +118,7 @@ function usePrevAndNextSite(item, filters = []) {
   `)
 
   const slug = item.split("/")[2]
-  const sites = filterByCategories(allSitesYaml.nodes, filters)
+  const sites = allSitesYaml.nodes
   const currentIndex = sites.findIndex(node => node.slug === slug)
   const nextSite = sites[(currentIndex + 1) % sites.length]
   const previousSite =

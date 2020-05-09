@@ -3,11 +3,7 @@ import { jsx } from "theme-ui"
 import { Fragment } from "react"
 import { Link } from "gatsby"
 
-// const ScrollToLink = ({ to, ...rest }) => <a href={to} alt="" {...rest} />
-
-const ShowcaseItemCategories = ({ categories, onCategoryClick }) => {
-  // const LinkComponent = onCategoryClick ? ScrollToLink : Link
-
+const ShowcaseItemCategories = ({ categories }) => {
   return categories.map((c, i) => (
     <Fragment key={c}>
       <Link
@@ -22,15 +18,6 @@ const ShowcaseItemCategories = ({ categories, onCategoryClick }) => {
           }
         }}
         to={`/showcase/${c}`}
-        // to={`/showcase/?${qs.stringify({
-        //   filters: [c]
-        // })}`}
-        onClick={e => {
-          e.preventDefault()
-          if (onCategoryClick) {
-            onCategoryClick(c)
-          }
-        }}
         category={c}
       >
         {c}

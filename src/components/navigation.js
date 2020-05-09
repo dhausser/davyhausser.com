@@ -69,6 +69,8 @@ const NavItem = ({ linkTo, children }) => (
 const SocialNavItem = ({ href, title, children }) => (
   <a
     href={href}
+    target="_blank"
+    rel="noreferrer"
     title={title}
     sx={{
       ...navItemStyles,
@@ -124,6 +126,7 @@ const Navigation = ({ pathname }) => {
         sx={{
           alignItems: `center`,
           display: `flex`,
+          justifyContent: `space-between`,
           fontFamily: `heading`,
           height: `100%`,
           margin: `0 auto`,
@@ -152,8 +155,6 @@ const Navigation = ({ pathname }) => {
             height: `logo`,
             mr: [1, null, 3],
             textDecoration: `none`,
-            /* chop logo down to just the monogram for small screens */
-            width: [`24px`, null, `auto`],
             overflow: [`hidden`, null, `visible`]
           }}
           aria-label={`DH, Back to showcase`}
@@ -168,17 +169,6 @@ const Navigation = ({ pathname }) => {
           >
             DH
           </h2>
-          {/* <img
-            src={colorMode === `light` ? logo : logoInverted}
-            sx={{
-              height: `logo`,
-              width: `auto`,
-              maxWidth: `none`,
-              m: 0
-            }}
-            alt={`Gatsby Logo`}
-            aria-hidden="true"
-          /> */}
         </Link>
         <nav
           className="navigation"
@@ -221,32 +211,28 @@ const Navigation = ({ pathname }) => {
           sx={{
             // ...navItemStyles,
             // ...overrideDefaultMdLineHeight,
-            alignSelf: `flex-end`,
-            display: `flex`
+            display: `flex`,
+            alignSelf: `flex-end`
           }}
         >
-          <SocialNavItem href="https://github.com/dhausser" title="GitHub">
+          <SocialNavItem
+            href="https://github.com/dhausser"
+            title="GitHub"
+          >
             <GithubIcon />
           </SocialNavItem>
-          <div
-            sx={{
-              display: `none`,
-              [mediaQueries.sm]: { display: `flex` }
-            }}
+          <SocialNavItem
+            href="https://www.twitter.com/davyhausser"
+            title="Twitter"
           >
-            <SocialNavItem
-              href="https://www.twitter.com/davyhausser"
-              title="Twitter"
-            >
-              <TwitterIcon />
+            <TwitterIcon />
+          </SocialNavItem>
+          <SocialNavItem
+            href="https://www.linkedin.com/in/davyhausser"
+            title="Linkedin"
+          >
+            <LinkedinIcon />
             </SocialNavItem>
-            <SocialNavItem
-              href="https://www.linkedin.com/in/davyhausser"
-              title="Linkedin"
-            >
-              <LinkedinIcon />
-            </SocialNavItem>
-          </div>
           <div
             sx={{
               ...navItemStyles,

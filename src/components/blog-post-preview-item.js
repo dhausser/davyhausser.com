@@ -6,7 +6,6 @@ import Avatar from "./avatar"
 
 const formatDate = dateString =>
   new Date(dateString).toLocaleDateString(`en-EN`, {
-    timeZone: `UTC`,
     month: `long`,
     day: `numeric`,
     year: `numeric`
@@ -34,7 +33,7 @@ const BlogPostPreviewItem = ({ post, className }) => {
 
   return (
     <article css={{ position: `relative` }} className={className}>
-      <Link to={post.id} sx={{ "&&": { color: `card.color` } }}>
+      <Link to={`/blog${post.fields.slug}`} sx={{ "&&": { color: `card.color` } }}>
         <h2 sx={{ color: `card.header`, mt: 0 }}>{post.frontmatter.title}</h2>
         <p>{post.excerpt}</p>
       </Link>

@@ -33,7 +33,7 @@ export default function Modal({
     return () => {
       document.querySelector(`html`).style.overflowY = `auto`
     }
-  }, [])
+  })
 
   function modalPrev() {
     navigate(previous, {
@@ -57,7 +57,7 @@ export default function Modal({
       mousetrap.unbind(`right`)
       mousetrap.unbind(`spacebar`)
     }
-  }, [previous, next])
+  })
   return (
     <>
       <Global styles={globalStyles} />

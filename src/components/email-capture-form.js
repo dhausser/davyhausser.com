@@ -111,16 +111,13 @@ function Form({ isHomepage, formId, onSuccess, confirmMessage }) {
         if (xhr.status === 200) {
           onSuccess(confirmMessage)
         } else {
-          console.log(xhr.responseText)
-          errorMessage = xhr.responseText
-
-          setErrorMessage(errorMessage)
+          setErrorMessage(xhr.responseText)
         }
       }
     }
 
     xhr.send(JSON.stringify(formData))
-  }, [])
+  }, [formId, onSuccess, confirmMessage])
 
   return (
     <StyledForm ref={formRef} onSubmit={onSubmit} isHomepage={isHomepage}>

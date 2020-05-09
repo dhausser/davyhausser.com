@@ -3,21 +3,20 @@ import { jsx } from "theme-ui"
 import React from "react"
 import { graphql, Link } from "gatsby"
 // import Img from "gatsby-image"
-// import { MDXRenderer } from "gatsby-plugin-mdx"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import Layout from "../components/layout"
 import PageMetadata from "../components/page-metadata"
-// import BlogPostMetadata from "../components/blog-post-metadata"
 import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
 import Container from "../components/container"
 import EmailCaptureForm from "../components/email-capture-form"
 // import TagsSection from "../components/tags-section"
 import Avatar from "../components/avatar"
-// import PrevAndNext from "../components/prev-and-next"
-// import FooterLinks from "../components/shared/footer-links"
+import PrevAndNext from "../components/prev-and-next"
+import FooterLinks from "../components/shared/footer-links"
 
 function BlogPostTemplate({ data, pageContext }) {
-  const post = data.markdownRemark
+  const post = data.mdx
   const { previous, next } = pageContext
 
   const BioLine = ({ children }) => (
@@ -36,12 +35,15 @@ function BlogPostTemplate({ data, pageContext }) {
   return (
     <Layout>
       <Container>
-        <main id={`reach-skip-nav`}>
+        <main id={`reach-skip-nav`} className="post docSearch-content">
           <PageMetadata
-            title={post.frontmatter.title}
-            description={post.frontmatter.description || post.excerpt}
+            title={post.title}
+            description={post.excerpt}
+            type="article"
+            timeToRead={post.timeToRead}
+            image={post.image?.childImageSharp.resize}
+            twitterCard={post?.twittercard || "summary"}
           />
-          {/* <BlogPostMetadata post={post} /> */}
           <div sx={{ display: `flex`, flexDirection: `column` }}>
             <section
               sx={{
@@ -84,9 +86,8 @@ function BlogPostTemplate({ data, pageContext }) {
                 </Link>
                 <BioLine>{data.site.siteMetadata.author.summary}</BioLine>
                 <BioLine>
-                  {/* {post.timeToRead} min read · {post.frontmatter.date} */}5
-                  min read · {post.frontmatter.date}
-                  {/* {post.frontmatter.canonicalLink && (
+                  {post.timeToRead} min read · {post.frontmatter.date}
+                  {post.frontmatter.canonicalLink && (
                     <span>
                       {` `}
                       (originally published at
@@ -96,7 +97,7 @@ function BlogPostTemplate({ data, pageContext }) {
                       </a>
                       )
                     </span>
-                  )} */}
+                  )}
                 </BioLine>
               </div>
             </section>
@@ -139,10 +140,9 @@ function BlogPostTemplate({ data, pageContext }) {
                 </div>
               )} */}
           </div>
-          <section dangerouslySetInnerHTML={{ __html: post.html }} />
-          {/* <section className="post-body">
+          <section className="post-body">
             <MDXRenderer>{post.body}</MDXRenderer>
-          </section> */}
+          </section>
           {/* <TagsSection tags={post.frontmatter.tags} /> */}
           <EmailCaptureForm />
         </main>
@@ -155,10 +155,10 @@ function BlogPostTemplate({ data, pageContext }) {
           [mediaQueries.lg]: { pt: 7 }
         }}
       >
-        {/* <Container>
-          <PrevAndNext prev={prev} next={next} />
-        </Container> */}
-        {/* <FooterLinks /> */}
+        <Container>
+          <PrevAndNext previous={previous} next={next} />
+        </Container>
+        <FooterLinks />
       </div>
     </Layout>
   )
@@ -179,15 +179,16 @@ export const pageQuery = graphql`
     }
     avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
       childImageSharp {
-        fixed(width: 50, height: 50) {
+        fixed(width: 64, height: 64, quality: 75) {
           ...GatsbyImageSharpFixed
         }
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    mdx(fields: { slug: { eq: $slug } }) {
       id
+      timeToRead
       excerpt(pruneLength: 160)
-      html
+      body
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")

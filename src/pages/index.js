@@ -1,11 +1,29 @@
 import React, { useEffect } from "react"
-import { navigate } from "gatsby"
+import { navigate, graphql } from "gatsby"
 
-export default () => {
+import PageMetadata from "../components/page-metadata"
+
+export default ({ data }) => {
   useEffect(() => {
     if (window) {
       navigate("/showcase/")
     }
   })
-  return <div />
+  return (
+    <PageMetadata
+      title={`Showcase | ${data.site.siteMetadata.title}`}
+      description={data.site.siteMetadata.description}
+    />
+  )
 }
+
+export const pageQuery = graphql`
+  query indexPageQuery {
+    site {
+      siteMetadata {
+        title
+        description
+      }
+    }
+  }
+`

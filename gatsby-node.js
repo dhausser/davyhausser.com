@@ -12,11 +12,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     force: true
   })
 
-  const showcaseTemplate = path.resolve(
-    `src/templates/template-showcase-details.js`
-  )
+  const showcaseTemplate = path.resolve(`src/templates/template-showcase-details.js`)
   const blogPostTemplate = path.resolve(`./src/templates/template-blog-post.js`)
-  // const blogPost = path.resolve(`./src/templates/blog-post.js`)
   const result = await graphql(`
     {
       allSitesYaml {
@@ -26,7 +23,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
-      allMarkdownRemark(
+      allMdx(
         sort: { fields: [frontmatter___date], order: DESC }
         limit: 1000
       ) {
@@ -51,7 +48,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   const projects = result.data.allSitesYaml.edges.map(({ node }) => node)
-  const posts = result.data.allMarkdownRemark.edges
+  const posts = result.data.allMdx.edges
 
   projects.forEach(project => {
     createPage({
@@ -82,7 +79,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === `Mdx`) {
     const value = createFilePath({ node, getNode })
     createNodeField({
       name: `slug`,

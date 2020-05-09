@@ -9,7 +9,7 @@ module.exports = {
     title: `davyhausser.com`,
     author: {
       name: `Davy Hausser`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      summary: `who lives and works in Warsaw building useful things.`,
     },
     description: `A personal portfolio website.`,
     siteUrl: `https://davyhausser.com/`,
@@ -57,9 +57,10 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        plugins: [
+        extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -87,7 +88,6 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`
       }
     },
-    `gatsby-plugin-netlify`,
     `gatsby-transformer-yaml`,
     `gatsby-transformer-screenshot`,
     {
@@ -100,11 +100,5 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
-    {
-      resolve: `gatsby-plugin-mdx`,
-      options: {
-        extensions: [`.mdx`, `.md`],
-      },
-    },
   ]
 }
