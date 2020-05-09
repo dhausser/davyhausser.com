@@ -1,4 +1,5 @@
 const path = require(`path`)
+const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
@@ -11,12 +12,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     force: true
   })
 
-  const projectTemplate = path.resolve(
+  const showcaseTemplate = path.resolve(
     `src/templates/template-showcase-details.js`
   )
-  // const projectTemplate = path.resolve(`src/templates/project.js`)
-  // const blogPostTemplate = path.resolve(`src/templates/blog.js`)
-
+  const blogPost = path.resolve(`./src/templates/blog-post.js`)
   const result = await graphql(`
     {
       allSitesYaml {
@@ -27,14 +26,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         }
       }
       allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
+        sort: { fields: [frontmatter___date], order: DESC }
         limit: 1000
       ) {
         edges {
           node {
-            id
+            fields {
+              slug
+            }
             frontmatter {
-              path
+              title
             }
           }
         }
@@ -49,23 +50,43 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   const projects = result.data.allSitesYaml.edges.map(({ node }) => node)
-  // const blogs = result.data.allMarkdownRemark.edges.map(({ node }) => node)
+  const posts = result.data.allMarkdownRemark.edges
 
   projects.forEach(project => {
-    actions.createPage({
+    createPage({
       path: `/showcase/${project.slug}`,
-      component: projectTemplate,
+      component: showcaseTemplate,
       context: {
         slug: project.slug
       }
     })
   })
 
-  // blogs.forEach(blog => {
-  //   createPage({
-  //     path: blog.frontmatter.path,
-  //     component: blogPostTemplate,
-  //     context: {}
-  //   })
-  // })
+  posts.forEach((post, index) => {
+    const previous = index === posts.length - 1 ? null : posts[index + 1].node
+    const next = index === 0 ? null : posts[index - 1].node
+
+    createPage({
+      path: `/blog${post.node.fields.slug}`,
+      component: blogPost,
+      context: {
+        slug: post.node.fields.slug,
+        previous,
+        next,
+      },
+    })
+  })
+}
+
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+
+  if (node.internal.type === `MarkdownRemark`) {
+    const value = createFilePath({ node, getNode })
+    createNodeField({
+      name: `slug`,
+      node,
+      value,
+    })
+  }
 }

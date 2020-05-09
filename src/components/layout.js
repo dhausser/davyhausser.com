@@ -8,6 +8,7 @@ import { globalStyles } from "../utils/styles/global"
 import { breakpointGutter } from "../utils/styles"
 import Navigation from "./navigation"
 import MobileNavigation from "./navigation-mobile"
+import "prismjs/themes/prism.css"
 import "../assets/fonts/futura"
 
 export default ({ children }) => (

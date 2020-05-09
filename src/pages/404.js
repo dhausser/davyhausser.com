@@ -1,26 +1,29 @@
-/** @jsx jsx */
-import { css, jsx } from "@emotion/core"
-import { Link } from "gatsby"
+import React from "react"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import Button from "../components/button"
+import PageMetadata from "../components/page-metadata"
 
-export default () => {
+const NotFoundPage = ({ data, location }) => {
+  const siteTitle = data.site.siteMetadata.title
+
   return (
-    <Layout>
-      <div
-        css={css`
-          display: flex;
-          justify-content: center;
-          margin: 20px;
-          padding: 20px;
-        `}
-      >
-        <h2>Page not found</h2>
-        <Link to="/">
-          <Button>&larr; Home</Button>
-        </Link>
-      </div>
+    <Layout location={location} title={siteTitle}>
+      <PageMetadata title="404: Not Found" />
+      <h1>Not Found</h1>
+      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
     </Layout>
   )
 }
+
+export default NotFoundPage
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`

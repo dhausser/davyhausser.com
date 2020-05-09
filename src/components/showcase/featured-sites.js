@@ -78,11 +78,9 @@ export default ({ featured, setFilters }) => (
             }
           }}
         ></div>
-        <Link to="/contact/">
-          <Button to="/contact/" variant="small" icon={<ArrowForwardIcon />}>
-            Get in Touch
-          </Button>
-        </Link>
+        <Button to="/contact/" variant="small" icon={<ArrowForwardIcon />}>
+          Get in Touch
+        </Button>
       </div>
     </div>
     <div css={{ position: `relative` }}>
