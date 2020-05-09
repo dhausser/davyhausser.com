@@ -8,14 +8,13 @@ import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
 import { pullIntoGutter, breakpointGutter } from "../utils/styles"
 
 import Layout from "../components/layout"
-import Button from "../components/button"
 import Container from "../components/container"
 import BlogPostPreviewItem from "../components/blog-post-preview-item"
 import EmailCaptureForm from "../components/email-capture-form"
 import PageMetadata from "../components/page-metadata"
-
 import Bio from "../components/bio"
-import { rhythm } from "../utils/typography"
+
+// import { rhythm } from "../utils/typography"
 
 // type Data = {
 //   site: {
@@ -51,33 +50,7 @@ function BlogIndex({ data, location }) {
         <PageMetadata title={`Blog | Page ${siteTitle}`} />
         <Container>
           <Bio />
-          {posts.map(({ node }) => {
-            const title = node.frontmatter.title || node.fields.slug
-            return (
-              <article key={node.fields.slug}>
-                <header>
-                  <h3
-                    style={{
-                      marginBottom: rhythm(1 / 4)
-                    }}
-                  >
-                    <Link style={{ boxShadow: `none` }} to={`/blog/${node.fields.slug}`}>
-                      {title}
-                    </Link>
-                  </h3>
-                  <small>{node.frontmatter.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: node.frontmatter.description || node.excerpt
-                    }}
-                  />
-                </section>
-              </article>
-            )
-          })}
-          {/* {allMarkdownRemark.edges.map((node, index) => (
+          {posts.map(({ node }, index) => (
             <BlogPostPreviewItem
               post={node}
               key={node.id}
@@ -86,7 +59,7 @@ function BlogIndex({ data, location }) {
                 borderBottomStyle: `solid`,
                 borderColor: `ui.border`,
                 pb: 8,
-                mb: index === allMarkdownRemark.nodes.length - 1 ? 0 : 8,
+                mb: index === posts.length - 1 ? 0 : 8,
                 ...pullIntoGutter,
                 [breakpointGutter]: {
                   p: 9,
@@ -113,7 +86,7 @@ function BlogIndex({ data, location }) {
                 }
               }}
             />
-          ))} */}
+          ))}
           <EmailCaptureForm signupMessage="Enjoying our blog? Receive the next post in your inbox!" />
         </Container>
       </main>
