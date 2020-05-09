@@ -8,7 +8,6 @@ import qs from "qs"
 
 import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
 import Modal from "./modal"
-import ShareMenu from "./share-menu"
 import Button from "./button"
 import Screenshot from "./shared/screenshot"
 import PageMetadata from "./site-metadata"
@@ -329,11 +328,6 @@ const ShowcaseDetails = ({ location, site, isModal, categories }) => {
                 >
                   Visit site
                 </Button>
-                <ShareMenu
-                  image={`https://www.gatsbyjs.org${screenshotFile.resize.src}`}
-                  title={site.title}
-                  url={site.main_url}
-                />
               </div>
             </div>
           </div>

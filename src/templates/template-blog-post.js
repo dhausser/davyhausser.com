@@ -144,7 +144,7 @@ function BlogPostTemplate({ data, pageContext }) {
             <MDXRenderer>{post.body}</MDXRenderer>
           </section>
           {/* <TagsSection tags={post.frontmatter.tags} /> */}
-          <EmailCaptureForm />
+          <EmailCaptureForm signupMessage="Enjoying this blog? Receive the next post in your inbox!" />
         </main>
       </Container>
       <div

@@ -70,7 +70,7 @@ const SocialNavItem = ({ href, title, children }) => (
   <a
     href={href}
     target="_blank"
-    rel="noreferrer"
+    rel="noopener noreferrer"
     title={title}
     sx={{
       ...navItemStyles,

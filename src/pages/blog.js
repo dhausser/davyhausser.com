@@ -17,53 +17,51 @@ function BlogIndex({ data }) {
 
   return (
     <Layout>
-      <main id={`reach-skip-nav`}>
-        <PageMetadata
-          title={`Blog | ${data.site.siteMetadata.author.name}`}
-          description={data.site.siteMetadata.description}
+      <PageMetadata
+        title={`Blog | ${data.site.siteMetadata.author.name}`}
+        description={data.site.siteMetadata.description}
+      />
+      <Container>
+      <Bio />
+      {posts.map(({ node }, index) => (
+        <BlogPostPreviewItem
+          post={node}
+          key={node.id}
+          sx={{
+            borderBottomWidth: `1px`,
+            borderBottomStyle: `solid`,
+            borderColor: `ui.border`,
+            pb: 8,
+            mb: index === posts.length - 1 ? 0 : 8,
+            ...pullIntoGutter,
+            [breakpointGutter]: {
+              p: 9,
+              boxShadow: `raised`,
+              bg: `card.background`,
+              borderRadius: 2,
+              border: 0,
+              mb: 6,
+              mx: 0,
+              transition: t =>
+                `transform ${t.transition.default},  box-shadow ${t.transition.default}, padding ${t.transition.default}`,
+              "&:hover": {
+                transform: t => `translateY(-${t.space[1]})`,
+                boxShadow: `overlay`
+              },
+              "&:active": {
+                boxShadow: `cardActive`,
+                transform: `translateY(0)`
+              }
+            },
+            [mediaQueries.md]: {
+              marginLeft: t => `-${t.space[9]}`,
+              marginRight: t => `-${t.space[9]}`
+            }
+          }}
         />
-        <Container>
-          <Bio />
-          {posts.map(({ node }, index) => (
-            <BlogPostPreviewItem
-              post={node}
-              key={node.id}
-              sx={{
-                borderBottomWidth: `1px`,
-                borderBottomStyle: `solid`,
-                borderColor: `ui.border`,
-                pb: 8,
-                mb: index === posts.length - 1 ? 0 : 8,
-                ...pullIntoGutter,
-                [breakpointGutter]: {
-                  p: 9,
-                  boxShadow: `raised`,
-                  bg: `card.background`,
-                  borderRadius: 2,
-                  border: 0,
-                  mb: 6,
-                  mx: 0,
-                  transition: t =>
-                    `transform ${t.transition.default},  box-shadow ${t.transition.default}, padding ${t.transition.default}`,
-                  "&:hover": {
-                    transform: t => `translateY(-${t.space[1]})`,
-                    boxShadow: `overlay`
-                  },
-                  "&:active": {
-                    boxShadow: `cardActive`,
-                    transform: `translateY(0)`
-                  }
-                },
-                [mediaQueries.md]: {
-                  marginLeft: t => `-${t.space[9]}`,
-                  marginRight: t => `-${t.space[9]}`
-                }
-              }}
-            />
-          ))}
-          <EmailCaptureForm signupMessage="Enjoying this blog? Receive the next post in your inbox!" />
-        </Container>
-      </main>
+      ))}
+      <EmailCaptureForm signupMessage="Enjoying this blog? Receive the next post in your inbox!" />
+      </Container>
     </Layout>
   )
 }
