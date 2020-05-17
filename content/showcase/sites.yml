@@ -1,3 +1,18 @@
+- title: Simple Form
+  slug: simpleform
+  main_url: https://amazing-agnesi-5e6feb.netlify.app/
+  url: https://amazing-agnesi-5e6feb.netlify.app/
+  source_url: https://github.com/dhausser/simple-form/
+  description: A simple form application using GraphQL.
+  categories:
+    - React
+    - Node.js
+    - GraphQL
+    - TypeScript
+  built_by: Davy Hausser
+  built_by_url: https://davyhausser.com/
+  featured: true
+
 - title: Un bien bel endroit
   slug: unbienbelendroit
   main_url: https://unbienbelendroit.netlify.app/
