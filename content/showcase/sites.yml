@@ -1,29 +1,16 @@
-- title: Rocket Science
-  slug: rocketscience
-  main_url: https://rocket-science.netlify.app/
-  url: https://rocket-science.netlify.app/
-  source_url: https://github.com/dhausser/rocket-science/
+- title: Next.js Apollo TypeScript Serverless Boilerplate
+  slug: airbnb-app
+  main_url: https://airbnb-app.vercel.app/
+  url: https://airbnb-app.vercel.app/
+  source_url: https://github.com/dhausser/airbnb-app./
   description: Explore the SpaceX API with Apollo GraphQL.
   categories:
+    - Next.js
+    - Apollo Client 3
     - React
     - Node.js
     - GraphQL
     - TypeScript
-  built_by: Davy Hausser
-  built_by_url: https://davyhausser.com/
-  featured: true
-
-- title: Un bien bel endroit
-  slug: unbienbelendroit
-  main_url: https://unbienbelendroit.netlify.app/
-  url: https://unbienbelendroit.netlify.app/
-  source_url: https://github.com/dhausser/gatsby-theme-gallery/
-  description: This beautiful image gallery is built with gatsby-theme-gallery.
-  categories:
-    - React
-    - Gatsby
-    - GraphQL
-    - JavaScript
   built_by: Davy Hausser
   built_by_url: https://davyhausser.com/
   featured: true
