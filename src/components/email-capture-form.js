@@ -168,15 +168,15 @@ function Form({ isHomepage, formId, onSuccess, confirmMessage }) {
           </span>
         </button>
       ) : (
-        <input
-          type="submit"
-          value="Send"
-          sx={{
-            ...buttonStyles().default,
-            mt: 3
-          }}
-        />
-      )}
+          <input
+            type="submit"
+            value="Send"
+            sx={{
+              ...buttonStyles().default,
+              mt: 3
+            }}
+          />
+        )}
     </StyledForm>
   )
 }
@@ -212,36 +212,36 @@ export default ({
               dangerouslySetInnerHTML={{ __html: successMessage }}
             />
           ) : (
-            <FormComponent
-              isHomepage={true}
-              confirmMessage="Success! We'll be in touch soon!"
-            />
-          )}
+              <FormComponent
+                isHomepage={true}
+                confirmMessage="Success! We'll be in touch soon!"
+              />
+            )}
         </HomepageContainer>
       ) : (
-        <ContactpageContainer>
-          <p
-            sx={{
-              color: `newsletter.heading`,
-              fontWeight: `bold`,
-              fontSize: 3,
-              fontFamily: `heading`,
-              lineHeight: `dense`
-            }}
-          >
-            {signupMessage}
-          </p>
-          {successMessage ? (
-            <div
-              dangerouslySetInnerHTML={{
-                __html: successMessage
+          <ContactpageContainer>
+            <p
+              sx={{
+                color: `newsletter.heading`,
+                fontWeight: `bold`,
+                fontSize: 3,
+                fontFamily: `heading`,
+                lineHeight: `dense`
               }}
-            />
-          ) : (
-            <FormComponent confirmMessage="Thanks for signing up! We'll be in touch soon!" />
-          )}
-        </ContactpageContainer>
-      )}
+            >
+              {signupMessage}
+            </p>
+            {successMessage ? (
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: successMessage
+                }}
+              />
+            ) : (
+                <FormComponent confirmMessage="Thanks for signing up! We'll be in touch soon!" />
+              )}
+          </ContactpageContainer>
+        )}
     </>
   )
 }

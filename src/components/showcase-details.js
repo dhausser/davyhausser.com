@@ -288,8 +288,8 @@ const ShowcaseDetails = ({ location, site, isModal, categories }) => {
                     {site.built_by}
                   </a>
                 ) : (
-                  site.built_by
-                )}
+                    site.built_by
+                  )}
               </span>
             )}
           </div>
