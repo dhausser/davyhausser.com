@@ -32,6 +32,7 @@
     "hex2rgba": "^0.0.1",
     "isomorphic-unfetch": "^3.0.0",
     "mousetrap": "^1.6.5",
+    "nodemailer": "^6.4.11",
     "prismjs": "^1.21.0",
     "qs": "^6.9.4",
     "react": "^16.12.0",
