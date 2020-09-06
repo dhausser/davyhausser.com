@@ -95,8 +95,8 @@ function Form({ isHomepage, formId, onSuccess, confirmMessage }) {
   const onSubmit = async (e) => {
     e.preventDefault()
 
-    const url = `${process.env.NETLIFY_FUNCTIONS_URL}/hello`
-    const data = { email: emailRef.current.value }
+    const url = `${process.env.NETLIFY_FUNCTIONS_URL}/contact`
+    const data = { email: emailRef.current.value, message: 'sample message' }
 
     const response = await fetch(url, {
       method: 'POST',
@@ -107,9 +107,12 @@ function Form({ isHomepage, formId, onSuccess, confirmMessage }) {
     })
 
     console.log(response)
-    const result = await response.json()
-    console.log(result)
-    onSuccess(confirmMessage)
+
+    if (response.status === 200) {
+      onSuccess(confirmMessage)
+    } else {
+      setErrorMessage(`${response.status}: ${response.statusText}`)
+    }
   }
 
   return (
