@@ -1,14 +1,13 @@
-- title: Next.js Apollo TypeScript Serverless Boilerplate
-  slug: airbnb-app
-  main_url: https://airbnb-app.vercel.app/
-  url: https://airbnb-app.vercel.app/
-  source_url: https://github.com/dhausser/airbnb-app./
-  description: Explore the SpaceX API with Apollo GraphQL.
+- title: Wanderlost
+  slug: wanderlost
+  main_url: https://ecommerce-nextjs-apollo-client.now.sh/
+  url: https://ecommerce-nextjs-apollo-client.now.sh/
+  source_url: https://github.com/dhausser/wanderlost/
+  description: This application is a ecommerce demo website built with Next.js and Apollo GraphQL that showcases SSR (Server Side Rendering)
   categories:
-    - Next.js
-    - Apollo Client 3
     - React
-    - Node.js
+    - Next.js
+    - Apollo
     - GraphQL
     - TypeScript
   built_by: Davy Hausser
@@ -26,22 +25,6 @@
     - Gatsby
     - GraphQL
     - JavaScript
-  built_by: Davy Hausser
-  built_by_url: https://davyhausser.com/
-  featured: true
-
-- title: Wanderlost
-  slug: wanderlost
-  main_url: https://ecommerce-nextjs-apollo-client.now.sh/
-  url: https://ecommerce-nextjs-apollo-client.now.sh/
-  source_url: https://github.com/dhausser/wanderlost/
-  description: This application is a ecommerce demo website built with Next.js and Apollo GraphQL that showcases SSR (Server Side Rendering)
-  categories:
-    - React
-    - Next.js
-    - Apollo
-    - GraphQL
-    - TypeScript
   built_by: Davy Hausser
   built_by_url: https://davyhausser.com/
   featured: true
