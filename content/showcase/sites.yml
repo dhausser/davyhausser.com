@@ -46,21 +46,6 @@
   built_by_url: https://davyhausser.com/
   featured: true
 
-- title: Space Explorer
-  slug: space-explorer
-  main_url: https://apollo-graphql-space-explorer.herokuapp.com/
-  url: https://apollo-graphql-space-explorer.herokuapp.com/
-  source_url: https://github.com/dhausser/space-explorer/
-  description: This site is an application using the SpaceX API, where users can book their seat on a rocket launch. It uses GraphQL with Apollo Client and Apollo Server.
-  categories:
-    - React
-    - Apollo
-    - GraphQL
-    - TypeScript
-  built_by: Davy Hausser
-  built_by_url: https://davyhausser.com/
-  featured: true
-
 - title: Mflix
   slug: mflix
   main_url: https://mongodb-mflix.herokuapp.com/
@@ -77,8 +62,8 @@
 
 - title: Reduxtagram
   slug: reduxtagram
-  main_url: https://inspiring-hugle-48043a.netlify.app/
-  url: https://inspiring-hugle-48043a.netlify.app/
+  main_url: https://reduxtagram-app.netlify.app
+  url: https://reduxtagram-app.netlify.app
   source_url: https://github.com/dhausser/reduxtagram/
   description: This site is an interactive wep application, clone of Instagram built with React and Redux.
   categories:
