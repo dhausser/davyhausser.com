@@ -53,6 +53,7 @@ typings/
 
 # dotenv environment variable files
 .env
+sendgrid.env
 
 # gatsby files
 .cache/
