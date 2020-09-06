@@ -95,29 +95,51 @@ function Form({ isHomepage, formId, onSuccess, confirmMessage }) {
   const formRef = useRef(null)
   const [errorMessage, setErrorMessage] = useState("")
 
-  const onSubmit = useCallback(e => {
+  const onSubmit = useCallback(async e => {
     e.preventDefault()
 
-    const url = `https://getform.io/f/${formId}`
+    const data = { email: emailRef.current.value }
 
-    const formData = { email: emailRef.current.value }
+    // // fetch(`./netlify/functions/hello`, { email: emailRef.current.value })
+    const response = await fetch(`.netlify/functions/hello`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
 
-    const xhr = new XMLHttpRequest()
-    xhr.open(`POST`, url, false)
-    xhr.setRequestHeader(`Content-Type`, `application/json`)
+    // console.log(response)
+    // const result = await response.json()
+    // console.log(result)
+    onSuccess(confirmMessage)
+  })
 
-    xhr.onreadystatechange = () => {
-      if (xhr.readyState === 4) {
-        if (xhr.status === 200) {
-          onSuccess(confirmMessage)
-        } else {
-          setErrorMessage(xhr.responseText)
-        }
-      }
-    }
+  // const onSubmit = useCallback(
+  //   e => {
+  //     e.preventDefault()
 
-    xhr.send(JSON.stringify(formData))
-  }, [formId, onSuccess, confirmMessage])
+  // const url = `https://getform.io/f/${formId}`
+
+  // const formData = { email: emailRef.current.value }
+
+  // const xhr = new XMLHttpRequest()
+  // xhr.open(`POST`, url, false)
+  // xhr.setRequestHeader(`Content-Type`, `application/json`)
+
+  // xhr.onreadystatechange = () => {
+  //   if (xhr.readyState === 4) {
+  //     if (xhr.status === 200) {
+  //       onSuccess(confirmMessage)
+  //     } else {
+  //       setErrorMessage(xhr.responseText)
+  //     }
+  //   }
+  // }
+
+  // xhr.send(JSON.stringify(formData))
+  //   }, [formId, onSuccess, confirmMessage]
+  // )
 
   return (
     <StyledForm ref={formRef} onSubmit={onSubmit} isHomepage={isHomepage}>
@@ -135,8 +157,8 @@ function Form({ isHomepage, formId, onSuccess, confirmMessage }) {
           ...themedInput,
           width: `100%`,
           "&:focus": {
-            ...formInputFocus
-          }
+            ...formInputFocus,
+          },
         }}
       />
       {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
@@ -153,13 +175,13 @@ function Form({ isHomepage, formId, onSuccess, confirmMessage }) {
               alignItems: `center`,
               display: `flex`,
               justifyContent: `space-between`,
-              width: `100%`
+              width: `100%`,
             },
             [mediaQueries.lg]: {
               ml: 2,
               mt: 0,
-              width: `auto`
-            }
+              width: `auto`,
+            },
           }}
         >
           <span>
@@ -168,15 +190,15 @@ function Form({ isHomepage, formId, onSuccess, confirmMessage }) {
           </span>
         </button>
       ) : (
-          <input
-            type="submit"
-            value="Send"
-            sx={{
-              ...buttonStyles().default,
-              mt: 3
-            }}
-          />
-        )}
+        <input
+          type="submit"
+          value="Send"
+          sx={{
+            ...buttonStyles().default,
+            mt: 3,
+          }}
+        />
+      )}
     </StyledForm>
   )
 }
@@ -185,7 +207,7 @@ export default ({
   formId = "8336d95c-917d-402d-8f62-02e80b686cf4",
   signupMessage = `Need an app or website? Get in touch!`,
   isHomepage = false,
-  className = ``
+  className = ``,
 }) => {
   const [successMessage, setSuccessMessage] = useState("")
 
@@ -201,8 +223,8 @@ export default ({
             sx={{
               pb: `1rem`,
               [mediaQueries.lg]: {
-                pb: `0`
-              }
+                pb: `0`,
+              },
             }}
           >
             <Title>Need an app or website? Get in touch!</Title>
@@ -212,36 +234,36 @@ export default ({
               dangerouslySetInnerHTML={{ __html: successMessage }}
             />
           ) : (
-              <FormComponent
-                isHomepage={true}
-                confirmMessage="Success! We'll be in touch soon!"
-              />
-            )}
+            <FormComponent
+              isHomepage={true}
+              confirmMessage="Success! We'll be in touch soon!"
+            />
+          )}
         </HomepageContainer>
       ) : (
-          <ContactpageContainer>
-            <p
-              sx={{
-                color: `newsletter.heading`,
-                fontWeight: `bold`,
-                fontSize: 3,
-                fontFamily: `heading`,
-                lineHeight: `dense`
+        <ContactpageContainer>
+          <p
+            sx={{
+              color: `newsletter.heading`,
+              fontWeight: `bold`,
+              fontSize: 3,
+              fontFamily: `heading`,
+              lineHeight: `dense`,
+            }}
+          >
+            {signupMessage}
+          </p>
+          {successMessage ? (
+            <div
+              dangerouslySetInnerHTML={{
+                __html: successMessage,
               }}
-            >
-              {signupMessage}
-            </p>
-            {successMessage ? (
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: successMessage
-                }}
-              />
-            ) : (
-                <FormComponent confirmMessage="Thanks for signing up! We'll be in touch soon!" />
-              )}
-          </ContactpageContainer>
-        )}
+            />
+          ) : (
+            <FormComponent confirmMessage="Thanks for signing up! We'll be in touch soon!" />
+          )}
+        </ContactpageContainer>
+      )}
     </>
   )
 }

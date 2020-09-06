@@ -1,7 +1,7 @@
 exports.handler = async event => {
-  const subject = event.queryStringParameters.name || "World"
+  console.log(event.body)
   return {
     statusCode: 200,
-    body: `Hello ${subject}`,
+    body: `Hello world`,
   }
 }
