@@ -1,29 +1,12 @@
-- title: Wanderlost
-  slug: wanderlost
-  main_url: https://wanderlost.vercel.app/
-  url: https://wanderlost.vercel.app/
-  source_url: https://github.com/dhausser/wanderlost/
-  description: This application is a ecommerce demo website built with Next.js and Apollo GraphQL that showcases SSR (Server Side Rendering)
+- title: Reduxtagram
+  slug: reduxtagram
+  main_url: https://reduxtagram-app.netlify.app
+  url: https://reduxtagram-app.netlify.app
+  source_url: https://github.com/dhausser/reduxtagram/
+  description: This site is an interactive wep application, clone of Instagram built with React and Redux.
   categories:
     - React
-    - Next.js
-    - Apollo
-    - GraphQL
-    - TypeScript
-  built_by: Davy Hausser
-  built_by_url: https://davyhausser.com/
-  featured: true
-
-- title: Davyhausser.com
-  slug: davyhausser
-  main_url: https://www.davyhausser.com/
-  url: https://www.davyhausser.com/
-  source_url: https://github.com/dhausser/davyhausser.com/
-  description: This portfolio is a shiny new website built with Gatsby v2 that makes important contributions towards a faster web for everyone.
-  categories:
-    - React
-    - Gatsby
-    - GraphQL
+    - Redux
     - JavaScript
   built_by: Davy Hausser
   built_by_url: https://davyhausser.com/
@@ -38,20 +21,6 @@
   categories:
     - Node.js
     - MongoDB
-    - JavaScript
-  built_by: Davy Hausser
-  built_by_url: https://davyhausser.com/
-  featured: true
-
-- title: Reduxtagram
-  slug: reduxtagram
-  main_url: https://reduxtagram-app.netlify.app
-  url: https://reduxtagram-app.netlify.app
-  source_url: https://github.com/dhausser/reduxtagram/
-  description: This site is an interactive wep application, clone of Instagram built with React and Redux.
-  categories:
-    - React
-    - Redux
     - JavaScript
   built_by: Davy Hausser
   built_by_url: https://davyhausser.com/
@@ -80,6 +49,37 @@
   categories:
     - React
     - Firebase
+    - JavaScript
+  built_by: Davy Hausser
+  built_by_url: https://davyhausser.com/
+  featured: true
+
+- title: Wanderlost
+  slug: wanderlost
+  main_url: https://wanderlost.vercel.app/
+  url: https://wanderlost.vercel.app/
+  source_url: https://github.com/dhausser/wanderlost/
+  description: This application is a ecommerce demo website built with Next.js and Apollo GraphQL that showcases SSR (Server Side Rendering)
+  categories:
+    - React
+    - Next.js
+    - Apollo
+    - GraphQL
+    - TypeScript
+  built_by: Davy Hausser
+  built_by_url: https://davyhausser.com/
+  featured: true
+
+- title: Davyhausser.com
+  slug: davyhausser
+  main_url: https://www.davyhausser.com/
+  url: https://www.davyhausser.com/
+  source_url: https://github.com/dhausser/davyhausser.com/
+  description: This portfolio is a shiny new website built with Gatsby v2 that makes important contributions towards a faster web for everyone.
+  categories:
+    - React
+    - Gatsby
+    - GraphQL
     - JavaScript
   built_by: Davy Hausser
   built_by_url: https://davyhausser.com/
