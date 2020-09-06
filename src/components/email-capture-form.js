@@ -95,13 +95,13 @@ function Form({ isHomepage, formId, onSuccess, confirmMessage }) {
   const formRef = useRef(null)
   const [errorMessage, setErrorMessage] = useState("")
 
-  const onSubmit = useCallback(async e => {
+  const onSubmit = async e => {
     e.preventDefault()
 
+    const url = `${process.env.NETLIFY_FUNCTIONS_URL}/hello`
     const data = { email: emailRef.current.value }
 
-    // // fetch(`./netlify/functions/hello`, { email: emailRef.current.value })
-    const response = await fetch(`.netlify/functions/hello`, {
+    const response = await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -109,37 +109,11 @@ function Form({ isHomepage, formId, onSuccess, confirmMessage }) {
       body: JSON.stringify(data),
     })
 
-    // console.log(response)
-    // const result = await response.json()
-    // console.log(result)
+    console.log(response)
+    const result = await response.json()
+    console.log(result)
     onSuccess(confirmMessage)
-  })
-
-  // const onSubmit = useCallback(
-  //   e => {
-  //     e.preventDefault()
-
-  // const url = `https://getform.io/f/${formId}`
-
-  // const formData = { email: emailRef.current.value }
-
-  // const xhr = new XMLHttpRequest()
-  // xhr.open(`POST`, url, false)
-  // xhr.setRequestHeader(`Content-Type`, `application/json`)
-
-  // xhr.onreadystatechange = () => {
-  //   if (xhr.readyState === 4) {
-  //     if (xhr.status === 200) {
-  //       onSuccess(confirmMessage)
-  //     } else {
-  //       setErrorMessage(xhr.responseText)
-  //     }
-  //   }
-  // }
-
-  // xhr.send(JSON.stringify(formData))
-  //   }, [formId, onSuccess, confirmMessage]
-  // )
+  }
 
   return (
     <StyledForm ref={formRef} onSubmit={onSubmit} isHomepage={isHomepage}>
