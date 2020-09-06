@@ -1,7 +1,7 @@
 - title: Wanderlost
   slug: wanderlost
-  main_url: https://ecommerce-nextjs-apollo-client.now.sh/
-  url: https://ecommerce-nextjs-apollo-client.now.sh/
+  main_url: https://wanderlost.vercel.app/
+  url: https://wanderlost.vercel.app/
   source_url: https://github.com/dhausser/wanderlost/
   description: This application is a ecommerce demo website built with Next.js and Apollo GraphQL that showcases SSR (Server Side Rendering)
   categories:
