@@ -11,7 +11,6 @@
     "@mdx-js/mdx": "^1.6.16",
     "@mdx-js/react": "^1.6.16",
     "@sendgrid/mail": "^7.2.5",
-    "dotenv": "^8.2.0",
     "gatsby": "^2.24.53",
     "gatsby-cli": "^2.12.91",
     "gatsby-design-tokens": "^2.0.11",
