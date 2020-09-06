@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { css, jsx } from "@emotion/core"
+import { css, jsx } from '@emotion/core'
 
 export default ({ categories }) => {
   return (
@@ -8,8 +8,9 @@ export default ({ categories }) => {
         display: flex;
       `}
     >
-      {categories.map(tag => (
+      {categories.map((tag, index) => (
         <div
+          key={`${tag}${index}`}
           css={css`
             display: flex;
           `}

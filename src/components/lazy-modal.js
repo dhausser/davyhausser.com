@@ -1,4 +1,4 @@
-import loadable from "@loadable/component"
+import loadable from '@loadable/component'
 
 const LazyModal = loadable(async () => {
   const Module = await import(`react-modal`)

@@ -1,12 +1,12 @@
-const nodemailer = require("nodemailer")
+const nodemailer = require('nodemailer')
 
 exports.handler = function (event, context, callback) {
   let transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
+    host: 'smtp.gmail.com',
     port: 465,
     secure: true,
     auth: {
-      type: "OAuth2",
+      type: 'OAuth2',
       user: process.env.MAIL_LOGIN,
       clientId: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
@@ -29,7 +29,7 @@ exports.handler = function (event, context, callback) {
       } else {
         callback(null, {
           statusCode: 200,
-          body: "Ok",
+          body: 'Ok',
         })
       }
     }

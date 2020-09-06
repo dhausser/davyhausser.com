@@ -1,11 +1,11 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
-import { graphql } from "gatsby"
+import { jsx } from 'theme-ui'
+import { graphql } from 'gatsby'
 
-import Layout from "../components/layout"
-import PageMetadata from "../components/page-metadata"
-import HomepageSection from "../components/homepage-section"
-import EmailCaptureForm from "../components/email-capture-form"
+import Layout from '../components/layout'
+import PageMetadata from '../components/page-metadata'
+import HomepageSection from '../components/homepage-section'
+import EmailCaptureForm from '../components/email-capture-form'
 
 export default ({ data }) => (
   <Layout>

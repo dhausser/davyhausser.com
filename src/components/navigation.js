@@ -1,18 +1,15 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx } from 'theme-ui'
 // import { useColorMode } from "theme-ui"
-import { GoMarkGithub as GithubIcon } from "react-icons/go"
-import {
-  FaTwitter as TwitterIcon,
-  FaLinkedin as LinkedinIcon
-} from "react-icons/fa"
+import { GoMarkGithub as GithubIcon } from 'react-icons/go'
+import { FaTwitter as TwitterIcon, FaLinkedin as LinkedinIcon } from 'react-icons/fa'
 
-import { Link } from "gatsby"
+import { Link } from 'gatsby'
 // import logo from "../assets/logo.svg"
 // import logoInverted from "../assets/logo-inverted.svg"
-import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
-import { breakpointGutter } from "../utils/styles"
-import DarkModeToggle from "./dark-mode-toggle"
+import { mediaQueries } from 'gatsby-design-tokens/dist/theme-gatsbyjs-org'
+import { breakpointGutter } from '../utils/styles'
+import DarkModeToggle from './dark-mode-toggle'
 
 // what we need to nudge down the navItems to sit
 // on the baseline of the logo's wordmark
@@ -22,8 +19,8 @@ const navItemHorizontalSpacing = [1, null, 2]
 
 const overrideDefaultMdLineHeight = {
   [mediaQueries.md]: {
-    lineHeight: t => t.sizes.headerHeight
-  }
+    lineHeight: (t) => t.sizes.headerHeight,
+  },
 }
 
 const navItemStyles = {
@@ -31,14 +28,14 @@ const navItemStyles = {
   color: `navigation.linkDefault`,
   display: `block`,
   fontSize: 3,
-  lineHeight: t => t.sizes.headerHeight,
+  lineHeight: (t) => t.sizes.headerHeight,
   [mediaQueries.md]: {
-    lineHeight: t => `calc(${t.sizes.headerHeight} - ${navItemTopOffset})`
+    lineHeight: (t) => `calc(${t.sizes.headerHeight} - ${navItemTopOffset})`,
   },
   position: `relative`,
   textDecoration: `none`,
   zIndex: 1,
-  "&:hover, &:focus": { color: `navigation.linkHover` }
+  '&:hover, &:focus': { color: `navigation.linkHover` },
 }
 
 const NavItem = ({ linkTo, children }) => (
@@ -46,7 +43,7 @@ const NavItem = ({ linkTo, children }) => (
     sx={{
       display: `block`,
       m: 0,
-      mx: navItemHorizontalSpacing
+      mx: navItemHorizontalSpacing,
     }}
   >
     <Link
@@ -55,10 +52,10 @@ const NavItem = ({ linkTo, children }) => (
       partiallyActive={true}
       sx={{
         ...navItemStyles,
-        "&.active": {
+        '&.active': {
           borderBottomColor: `lilac`,
-          color: `navigation.linkActive`
-        }
+          color: `navigation.linkActive`,
+        },
       }}
     >
       {children}
@@ -77,7 +74,7 @@ const SocialNavItem = ({ href, title, children }) => (
       ...overrideDefaultMdLineHeight,
       transform: `translate(0px, 4px)`,
       color: `navigation.socialLink`,
-      px: navItemHorizontalSpacing
+      px: navItemHorizontalSpacing,
     }}
   >
     {children}
@@ -85,9 +82,9 @@ const SocialNavItem = ({ href, title, children }) => (
 )
 
 const navItems = [
-  { id: "showcase", text: `Showcase` },
-  { id: "blog", text: `Blog` },
-  { id: "contact", text: `Contact` }
+  { id: 'showcase', text: `Showcase` },
+  { id: 'blog', text: `Blog` },
+  { id: 'contact', text: `Contact` },
 ]
 
 const Navigation = ({ pathname }) => {
@@ -118,8 +115,8 @@ const Navigation = ({ pathname }) => {
         //   background: `red`
         // },
         [breakpointGutter]: {
-          position: isHomepage ? `absolute` : `fixed`
-        }
+          position: isHomepage ? `absolute` : `fixed`,
+        },
       }}
     >
       <div
@@ -133,7 +130,7 @@ const Navigation = ({ pathname }) => {
           px: 6,
           position: `relative`,
           width: `100%`,
-          "&:after": {
+          '&:after': {
             bg: isHomepage ? `transparent` : `ui.border`,
             bottom: 0,
             content: `''`,
@@ -141,8 +138,8 @@ const Navigation = ({ pathname }) => {
             left: 0,
             position: `absolute`,
             right: 0,
-            zIndex: -1
-          }
+            zIndex: -1,
+          },
         }}
       >
         <Link
@@ -155,7 +152,7 @@ const Navigation = ({ pathname }) => {
             height: `logo`,
             mr: [1, null, 3],
             textDecoration: `none`,
-            overflow: [`hidden`, null, `visible`]
+            overflow: [`hidden`, null, `visible`],
           }}
           aria-label={`DH, Back to showcase`}
         >
@@ -164,7 +161,7 @@ const Navigation = ({ pathname }) => {
               height: `logo`,
               width: `auto`,
               maxWidth: `none`,
-              m: 0
+              m: 0,
             }}
           >
             DH
@@ -182,8 +179,8 @@ const Navigation = ({ pathname }) => {
               flexShrink: 1,
               m: 0,
               minWidth: 0,
-              mr: `auto`
-            }
+              mr: `auto`,
+            },
           }}
         >
           <ul
@@ -194,10 +191,10 @@ const Navigation = ({ pathname }) => {
                 display: `flex`,
                 listStyle: `none`,
                 m: 0,
-                maskImage: t =>
+                maskImage: (t) =>
                   `linear-gradient(to right, transparent, white ${t.space[1]}, white 98%, transparent)`,
-                overflowX: `auto`
-              }
+                overflowX: `auto`,
+              },
             }}
           >
             {navItems.map(({ id, text }) => (
@@ -212,36 +209,27 @@ const Navigation = ({ pathname }) => {
             // ...navItemStyles,
             // ...overrideDefaultMdLineHeight,
             display: `flex`,
-            alignSelf: `flex-end`
+            alignSelf: `flex-end`,
           }}
         >
-          <SocialNavItem
-            href="https://github.com/dhausser"
-            title="GitHub"
-          >
+          <SocialNavItem href="https://github.com/dhausser" title="GitHub">
             <GithubIcon />
           </SocialNavItem>
-          <SocialNavItem
-            href="https://www.twitter.com/davyhausser"
-            title="Twitter"
-          >
+          <SocialNavItem href="https://www.twitter.com/davyhausser" title="Twitter">
             <TwitterIcon />
           </SocialNavItem>
-          <SocialNavItem
-            href="https://www.linkedin.com/in/davyhausser"
-            title="Linkedin"
-          >
+          <SocialNavItem href="https://www.linkedin.com/in/davyhausser" title="Linkedin">
             <LinkedinIcon />
-            </SocialNavItem>
+          </SocialNavItem>
           <div
             sx={{
               ...navItemStyles,
               ...overrideDefaultMdLineHeight,
               color: `navigation.socialLink`,
               ml: navItemHorizontalSpacing,
-              "&:hover": {
-                color: `navigation.linkHover`
-              }
+              '&:hover': {
+                color: `navigation.linkHover`,
+              },
             }}
           >
             <DarkModeToggle />

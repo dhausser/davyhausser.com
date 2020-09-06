@@ -1,16 +1,13 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
-import { Link } from "gatsby"
-import {
-  MdArrowBack as ArrowBackIcon,
-  MdArrowForward as ArrowForwardIcon,
-} from "react-icons/md"
+import { jsx } from 'theme-ui'
+import { Link } from 'gatsby'
+import { MdArrowBack as ArrowBackIcon, MdArrowForward as ArrowForwardIcon } from 'react-icons/md'
 
-import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
+import { mediaQueries } from 'gatsby-design-tokens/dist/theme-gatsbyjs-org'
 
 const prevNextLinkStyles = {
   // bump specificity to override the border applied to Link's by default
-  "&&": {
+  '&&': {
     borderBottom: 0,
   },
   color: `gatsby`,
@@ -47,9 +44,7 @@ const PrevAndNext = ({ previous = null, next = null, ...props }) => {
       <div css={{ [mediaQueries.sm]: { width: `48%` } }}>
         {previous && (
           <Link to={`/blog${previous.fields.slug}`} sx={prevNextLinkStyles}>
-            <p sx={prevNextLabelStyles}>
-              Previous
-            </p>
+            <p sx={prevNextLabelStyles}>Previous</p>
             <span
               sx={{
                 [mediaQueries.md]: {
@@ -80,9 +75,7 @@ const PrevAndNext = ({ previous = null, next = null, ...props }) => {
       >
         {next && (
           <Link to={`/blog${next.fields.slug}`} sx={prevNextLinkStyles}>
-            <p sx={prevNextLabelStyles}>
-              Next
-            </p>
+            <p sx={prevNextLabelStyles}>Next</p>
             <span
               sx={{
                 [mediaQueries.md]: {

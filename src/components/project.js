@@ -1,28 +1,16 @@
 /** @jsx jsx */
-import React from "react"
-import { css, jsx } from "@emotion/core"
-import Img from "gatsby-image"
-import { GoMarkGithub, GoLinkExternal } from "react-icons/go"
+import React from 'react'
+import { css, jsx } from '@emotion/core'
+import Img from 'gatsby-image'
+import { GoMarkGithub, GoLinkExternal } from 'react-icons/go'
 
-import Categories from "./categories"
-import Button from "./button"
+import Categories from './categories'
+import Button from './button'
 
-export default ({
-  project: {
-    title,
-    description,
-    main_url,
-    source_url,
-    categories,
-    childScreenshot
-  }
-}) => (
+export default ({ project: { title, description, main_url, source_url, categories, childScreenshot } }) => (
   <>
     <a href={main_url} target="_blank" rel="noopener noreferrer">
-      <Img
-        fluid={childScreenshot.screenshotFile.childImageSharp.fluid}
-        alt={title}
-      />
+      <Img fluid={childScreenshot.screenshotFile.childImageSharp.fluid} alt={title} />
     </a>
     <div
       css={css`

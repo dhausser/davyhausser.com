@@ -1,20 +1,20 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
-import React, { Fragment } from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
-import url from "url"
-import Img from "gatsby-image"
-import qs from "qs"
+import { jsx } from 'theme-ui'
+import React, { Fragment } from 'react'
+import { useStaticQuery, graphql, Link } from 'gatsby'
+import url from 'url'
+import Img from 'gatsby-image'
+import qs from 'qs'
 
-import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
-import Modal from "./modal"
-import Button from "./button"
-import Screenshot from "./shared/screenshot"
-import PageMetadata from "./site-metadata"
+import { mediaQueries } from 'gatsby-design-tokens/dist/theme-gatsbyjs-org'
+import Modal from './modal'
+import Button from './button'
+import Screenshot from './shared/screenshot'
+import PageMetadata from './site-metadata'
 
-import FeaturedIcon from "../assets/icons/featured-sites-icons"
-import { MdArrowUpward, MdLink } from "react-icons/md"
-import { GoMarkGithub as GithubIcon } from "react-icons/go"
+import FeaturedIcon from '../assets/icons/featured-sites-icons'
+import { MdArrowUpward, MdLink } from 'react-icons/md'
+import { GoMarkGithub as GithubIcon } from 'react-icons/go'
 
 const gutter = 6
 const gutterDesktop = 8
@@ -22,24 +22,24 @@ const gutterDesktop = 8
 const styles = {
   link: {
     color: `link.color`,
-    textDecoration: `none`
+    textDecoration: `none`,
   },
   prevNextLink: {
     color: `lilac`,
     fontFamily: `heading`,
-    px: [6, null, null, 0]
+    px: [6, null, null, 0],
   },
   prevNextLinkSiteTitle: {
     color: `link.color`,
-    fontWeight: `bold`
+    fontWeight: `bold`,
   },
   prevNextImage: {
     borderRadius: 1,
-    boxShadow: `overlay`
-  }
+    boxShadow: `overlay`,
+  },
 }
 
-const cleanUrl = mainUrl => {
+const cleanUrl = (mainUrl) => {
   const parsed = url.parse(mainUrl)
   let path = parsed.pathname
   if (path[path.length - 1] === `/`) path = path.slice(0, path.length - 1)
@@ -52,15 +52,15 @@ const Featured = () => (
       color: `textMuted`,
       display: `flex`,
       fontWeight: `bold`,
-      mr: 4
+      mr: 4,
     }}
   >
     <span
       sx={{
-        height: t => t.space[5],
+        height: (t) => t.space[5],
         m: 0,
         mr: 2,
-        width: t => t.space[5]
+        width: (t) => t.space[5],
       }}
     >
       <FeaturedIcon />
@@ -74,14 +74,14 @@ const SourceLink = ({ ...props }) => (
   <a
     {...props}
     sx={{
-      "&&": {
-        border: 0
+      '&&': {
+        border: 0,
       },
       display: `flex`,
       alignItems: `center`,
       mr: 3,
       color: `link.color`,
-      width: `100%`
+      width: `100%`,
     }}
   >
     <GithubIcon sx={{ fontSize: 3, mr: 2, color: `link.color` }} />
@@ -116,12 +116,11 @@ function usePrevAndNextSite(item, filters = []) {
     }
   `)
 
-  const slug = item.split("/")[2]
+  const slug = item.split('/')[2]
   const sites = allSitesYaml.nodes
-  const currentIndex = sites.findIndex(node => node.slug === slug)
+  const currentIndex = sites.findIndex((node) => node.slug === slug)
   const nextSite = sites[(currentIndex + 1) % sites.length]
-  const previousSite =
-    sites[currentIndex === 0 ? sites.length - 1 : currentIndex - 1]
+  const previousSite = sites[currentIndex === 0 ? sites.length - 1 : currentIndex - 1]
   return { nextSite, previousSite }
 }
 
@@ -139,10 +138,7 @@ function getExitLocation(filters = {}) {
 
 function ShowcaseModal({ children, location, isModal }) {
   const { filters } = location.state || {}
-  const { previousSite, nextSite } = usePrevAndNextSite(
-    location.pathname,
-    filters
-  )
+  const { previousSite, nextSite } = usePrevAndNextSite(location.pathname, filters)
   if (!isModal) return children
   return (
     <Modal
@@ -158,14 +154,12 @@ function ShowcaseModal({ children, location, isModal }) {
             backgroundColor
             fixed={{
               srcSet: ``,
-              src:
-                nextSite.childScreenshot.screenshotFile.childImageSharp.resize
-                  .src,
+              src: nextSite.childScreenshot.screenshotFile.childImageSharp.resize.src,
               width: 100,
-              height: 100
+              height: 100,
             }}
             imgStyle={{
-              margin: 0
+              margin: 0,
             }}
             alt=""
           />
@@ -176,16 +170,16 @@ function ShowcaseModal({ children, location, isModal }) {
                 position: `absolute`,
                 top: 240,
                 width: 300,
-                transform: `translateX(-80px) rotate(90deg)`
-              }
+                transform: `translateX(-80px) rotate(90deg)`,
+              },
             }}
           >
             <MdArrowUpward
               sx={{
                 transform: `rotate(90deg)`,
                 [mediaQueries.md]: {
-                  transform: `none`
-                }
+                  transform: `none`,
+                },
               }}
             />
             <div> Next Site in Showcase </div>
@@ -201,14 +195,12 @@ function ShowcaseModal({ children, location, isModal }) {
             backgroundColor
             fixed={{
               srcSet: ``,
-              src:
-                previousSite.childScreenshot.screenshotFile.childImageSharp
-                  .resize.src,
+              src: previousSite.childScreenshot.screenshotFile.childImageSharp.resize.src,
               width: 100,
-              height: 100
+              height: 100,
             }}
             imgStyle={{
-              margin: 0
+              margin: 0,
             }}
             alt=""
           />
@@ -220,16 +212,16 @@ function ShowcaseModal({ children, location, isModal }) {
                 position: `absolute`,
                 top: 240,
                 width: 300,
-                transform: `translateX(-80px) rotate(-90deg)`
-              }
+                transform: `translateX(-80px) rotate(-90deg)`,
+              },
             }}
           >
             <MdArrowUpward
               sx={{
                 transform: `rotate(-90deg)`,
                 [mediaQueries.md]: {
-                  transform: `none`
-                }
+                  transform: `none`,
+                },
               }}
             />
             <div> Previous Site in Showcase </div>
@@ -255,7 +247,7 @@ const ShowcaseDetails = ({ location, site, isModal, categories }) => {
           maxWidth: isModal ? false : 1080,
           margin: isModal ? false : `0 auto`,
           width: `100%`,
-          order: 1
+          order: 1,
         }}
       >
         <div css={{ width: `100%` }}>
@@ -271,8 +263,8 @@ const ShowcaseDetails = ({ location, site, isModal, categories }) => {
               [mediaQueries.lg]: {
                 p: gutterDesktop,
                 pb: gutter,
-                pr: isModal ? 96 : false
-              }
+                pr: isModal ? 96 : false,
+              },
             }}
           >
             <h1 sx={{ m: 0 }}>{site.title}</h1>
@@ -288,8 +280,8 @@ const ShowcaseDetails = ({ location, site, isModal, categories }) => {
                     {site.built_by}
                   </a>
                 ) : (
-                    site.built_by
-                  )}
+                  site.built_by
+                )}
               </span>
             )}
           </div>
@@ -301,8 +293,8 @@ const ShowcaseDetails = ({ location, site, isModal, categories }) => {
               mx: gutter,
               py: 4,
               [mediaQueries.lg]: {
-                mx: gutterDesktop
-              }
+                mx: gutterDesktop,
+              },
             }}
           >
             {site.featured && <Featured />}
@@ -310,22 +302,17 @@ const ShowcaseDetails = ({ location, site, isModal, categories }) => {
             <div
               sx={{
                 alignSelf: `center`,
-                ml: `auto`
+                ml: `auto`,
               }}
             >
               <div
                 css={{
                   display: `flex`,
                   position: `relative`,
-                  zIndex: 1
+                  zIndex: 1,
                 }}
               >
-                <Button
-                  icon={<MdLink />}
-                  overrideCSS={{ mr: 2 }}
-                  tag="href"
-                  to={site.main_url}
-                >
+                <Button icon={<MdLink />} overrideCSS={{ mr: 2 }} tag="href" to={site.main_url}>
                   Visit site
                 </Button>
               </div>
@@ -340,7 +327,7 @@ const ShowcaseDetails = ({ location, site, isModal, categories }) => {
           <div
             sx={{
               p: gutter,
-              [mediaQueries.lg]: { p: gutterDesktop }
+              [mediaQueries.lg]: { p: gutterDesktop },
             }}
           >
             <p>{site.description}</p>

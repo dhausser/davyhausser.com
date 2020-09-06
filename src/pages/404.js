@@ -1,8 +1,8 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from 'react'
+import { graphql } from 'gatsby'
 
-import Layout from "../components/layout"
-import PageMetadata from "../components/page-metadata"
+import Layout from '../components/layout'
+import PageMetadata from '../components/page-metadata'
 
 const NotFoundPage = ({ data }) => {
   return (

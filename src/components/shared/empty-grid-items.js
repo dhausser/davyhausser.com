@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
-import React from "react"
+import { jsx } from 'theme-ui'
+import React from 'react'
 
 const EmptyGridItems = ({ styles }) => {
   let items = []

@@ -52,7 +52,10 @@
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",
+    "@prisma-labs/prettier-config": "^0.1.0",
     "@types/react": "^16.9.49",
+    "eslint": "^7.8.1",
+    "eslint-plugin-react": "^7.20.6",
     "husky": ">=4",
     "lint-staged": ">=10",
     "prettier": "^2.1.1",
@@ -62,10 +65,11 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "lint": "eslint . --ext js",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "husky": {
@@ -74,6 +78,10 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,json,md}": "prettier --write"
-  }
+    "*.{js}": [
+      "eslint",
+      "prettier --write"
+    ]
+  },
+  "prettier": "@prisma-labs/prettier-config"
 }

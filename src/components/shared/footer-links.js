@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
-import { Link } from "gatsby"
+import { jsx } from 'theme-ui'
+import { Link } from 'gatsby'
 
 const links = [
   { to: `/showcase/`, text: `Showcase` },
@@ -8,37 +8,37 @@ const links = [
   { to: `/contact/`, text: `Contact` },
 ]
 
-const FooterLinks = props => (
+const FooterLinks = (props) => (
   <footer>
     <ul
       sx={{
-        background: props => (props.bg ? props.bg : `0`),
+        background: (props) => (props.bg ? props.bg : `0`),
         borderColor: `ui.border`,
         borderTopStyle: `solid`,
         borderTopWidth: `1px`,
         fontSize: 1,
         listStyle: `none`,
         m: 0,
-        mb: props => (props.bottomMargin ? props.bottomMargin : 0),
+        mb: (props) => (props.bottomMargin ? props.bottomMargin : 0),
         mt: 9,
         px: 6,
         py: 9,
         textAlign: `center`,
         width: `100%`,
-        "& li": {
+        '& li': {
           display: `inline-block`,
-          "&:after": {
+          '&:after': {
             color: `textMuted`,
             content: `"•"`,
             padding: 3,
           },
-          "&:last-of-type:after": {
+          '&:last-of-type:after': {
             content: `none`,
           },
-          "& a": {
+          '& a': {
             color: `navigation.linkDefault`,
             borderColor: `transparent`,
-            "&:hover": {
+            '&:hover': {
               color: `navigation.linkHover`,
               borderColor: `link.hoverBorder`,
             },
@@ -48,9 +48,7 @@ const FooterLinks = props => (
     >
       {links.map(({ to, text }) => (
         <li key={to}>
-          <Link to={to}>
-            {text}
-          </Link>
+          <Link to={to}>{text}</Link>
         </li>
       ))}
       <li>

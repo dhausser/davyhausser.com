@@ -1,24 +1,19 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
-import { Fragment } from "react"
-import { Link } from "gatsby"
-import qs from "qs"
+import { jsx } from 'theme-ui'
+import { Fragment } from 'react'
+import { Link } from 'gatsby'
+import qs from 'qs'
 
-import {
-  showcaseList,
-  showcaseItem,
-  shortcutIcon,
-  meta
-} from "../shared/styles"
-import ThumbnailLink from "../shared/thumbnail"
-import EmptyGridItems from "../shared/empty-grid-items"
+import { showcaseList, showcaseItem, shortcutIcon, meta } from '../shared/styles'
+import ThumbnailLink from '../shared/thumbnail'
+import EmptyGridItems from '../shared/empty-grid-items'
 
-import ShowcaseItemCategories from "./showcase-item-categories"
-import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
+import ShowcaseItemCategories from './showcase-item-categories'
+import { mediaQueries } from 'gatsby-design-tokens/dist/theme-gatsbyjs-org'
 
-import { GoMarkGithub as GithubIcon } from "react-icons/go"
-import { MdLaunch as LaunchSiteIcon } from "react-icons/md"
-import FeaturedIcon from "../../assets/icons/featured-sites-icons"
+import { GoMarkGithub as GithubIcon } from 'react-icons/go'
+import { MdLaunch as LaunchSiteIcon } from 'react-icons/md'
+import FeaturedIcon from '../../assets/icons/featured-sites-icons'
 
 export default ({ items, filters, onCategoryClick }) => (
   <section className="showcase" css={{ display: `flex` }}>
@@ -40,15 +35,12 @@ export default ({ items, filters, onCategoryClick }) => (
                   sx={{
                     ...meta,
                     display: `flex`,
-                    justifyContent: `space-between`
+                    justifyContent: `space-between`,
                   }}
                   className="meta"
                 >
                   <div sx={{ pr: 5 }}>
-                    <ShowcaseItemCategories
-                      categories={node.categories}
-                      onCategoryClick={onCategoryClick}
-                    />
+                    <ShowcaseItemCategories categories={node.categories} onCategoryClick={onCategoryClick} />
                   </div>
                   <div css={{ flex: `0 0 auto`, textAlign: `right` }}>
                     {node.source_url && (
@@ -78,7 +70,7 @@ export default ({ items, filters, onCategoryClick }) => (
                   {node.featured && (
                     <Link
                       sx={{
-                        "&&": {
+                        '&&': {
                           display: `none`,
                           [mediaQueries.lg]: {
                             alignItems: `center`,
@@ -99,17 +91,17 @@ export default ({ items, filters, onCategoryClick }) => (
                             top: 0,
                             right: 0,
                             width: 20,
-                            "&:hover": {
-                              bg: `gatsby`
+                            '&:hover': {
+                              bg: `gatsby`,
                             },
-                            "& svg": {
-                              display: `block`
-                            }
-                          }
-                        }
+                            '& svg': {
+                              display: `block`,
+                            },
+                          },
+                        },
                       }}
                       to={`/showcase/?${qs.stringify({
-                        filters: `Featured`
+                        filters: `Featured`,
                       })}`}
                       className="featured-site"
                     >

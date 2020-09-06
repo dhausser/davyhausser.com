@@ -1,14 +1,10 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
-import { graphql } from "gatsby"
-import Img from "gatsby-image"
-import { Link } from "gatsby"
+import { jsx } from 'theme-ui'
+import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
+import { Link } from 'gatsby'
 
-import {
-  screenshot as screenshotStyles,
-  screenshotHover,
-  withTitleHover
-} from "./styles"
+import { screenshot as screenshotStyles, screenshotHover, withTitleHover } from './styles'
 
 const ThumbnailLink = ({ slug, image, title, children, state }) => {
   let screenshot = false
@@ -29,23 +25,19 @@ const ThumbnailLink = ({ slug, image, title, children, state }) => {
         ...withTitleHover,
         lineHeight: `dense`,
         fontFamily: `heading`,
-        "&&": {
+        '&&': {
           borderBottom: `none`,
           color: `heading`,
           transition: `default`,
-          "&:hover": screenshotHover,
-          "&:hover ~ .meta > .featured-site": {
-            transform: t => `translateY(-${t.space[1]})`
-          }
-        }
+          '&:hover': screenshotHover,
+          '&:hover ~ .meta > .featured-site': {
+            transform: (t) => `translateY(-${t.space[1]})`,
+          },
+        },
       }}
     >
       {screenshot ? (
-        <Img
-          fluid={screenshot}
-          alt={`Screenshot of ${title}`}
-          sx={screenshotStyles}
-        />
+        <Img fluid={screenshot} alt={`Screenshot of ${title}`} sx={screenshotStyles} />
       ) : (
         <div sx={{ width: 320, bg: `grey.10` }}>missing</div>
       )}

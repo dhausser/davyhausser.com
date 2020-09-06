@@ -9,7 +9,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     fromPath: `/`,
     toPath: `/showcase/`,
     isPermanent: true,
-    force: true
+    force: true,
   })
 
   const showcaseTemplate = path.resolve(`src/templates/template-showcase-details.js`)
@@ -23,10 +23,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
-      allMdx(
-        sort: { fields: [frontmatter___date], order: DESC }
-        limit: 1000
-      ) {
+      allMdx(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
         edges {
           node {
             fields {
@@ -50,13 +47,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const projects = result.data.allSitesYaml.edges.map(({ node }) => node)
   const posts = result.data.allMdx.edges
 
-  projects.forEach(project => {
+  projects.forEach((project) => {
     createPage({
       path: `/showcase/${project.slug}`,
       component: showcaseTemplate,
       context: {
-        slug: project.slug
-      }
+        slug: project.slug,
+      },
     })
   })
 

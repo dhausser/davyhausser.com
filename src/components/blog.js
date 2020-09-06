@@ -1,8 +1,8 @@
-import React from "react"
-import { Link } from "gatsby"
-import styled from "@emotion/styled"
+import React from 'react'
+import { Link } from 'gatsby'
+import styled from '@emotion/styled'
 
-const Grid = styled("div")`
+const Grid = styled('div')`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 32px;
@@ -12,7 +12,7 @@ const Grid = styled("div")`
   }
 `
 
-export const Card = styled("article")`
+export const Card = styled('article')`
   display: grid;
   background-color: var(--card-bg);
   border-radius: 2px;
@@ -46,7 +46,7 @@ export const Card = styled("article")`
   }
 `
 
-export const PostMeta = styled("div")`
+export const PostMeta = styled('div')`
   font-size: 0.8rem;
   color: var(--text - secondary - color);
 `
@@ -72,7 +72,7 @@ const PostLink = ({ post }) => (
 
 export default ({ posts, imageData }) => (
   <Grid>
-    {posts.map(post => (
+    {posts.map((post) => (
       <PostLink key={post.node.id} post={post.node} imageData={imageData} />
     ))}
   </Grid>

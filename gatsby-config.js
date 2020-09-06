@@ -74,7 +74,7 @@ module.exports = {
             },
           },
           {
-            resolve: "gatsby-remark-emojis"
+            resolve: 'gatsby-remark-emojis',
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
@@ -85,8 +85,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-typography`,
       options: {
-        pathToConfigModule: `src/utils/typography`
-      }
+        pathToConfigModule: `src/utils/typography`,
+      },
     },
     `gatsby-transformer-yaml`,
     `gatsby-transformer-screenshot`,
@@ -100,5 +100,5 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
-  ]
+  ],
 }

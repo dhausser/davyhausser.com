@@ -1,11 +1,10 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from 'react'
+import { graphql } from 'gatsby'
 
-import ShowcaseDetails from "../components/showcase-details"
+import ShowcaseDetails from '../components/showcase-details'
 
 export default function ShowcaseTemplate({ data, location }) {
-  const isModal =
-    location.state && location.state.isModal && window.innerWidth > 750
+  const isModal = location.state && location.state.isModal && window.innerWidth > 750
 
   const categories = data.sitesYaml.categories || []
 
@@ -14,22 +13,14 @@ export default function ShowcaseTemplate({ data, location }) {
    * However, it appears to break Gatsby Build
    * so let's avoid a failure here
    */
-  if (
-    !data.sitesYaml.childScreenshot ||
-    !data.sitesYaml.childScreenshot.screenshotFile
-  ) {
+  if (!data.sitesYaml.childScreenshot || !data.sitesYaml.childScreenshot.screenshotFile) {
     data.sitesYaml.childScreenshot = {
-      screenshotFile: data.fallback
+      screenshotFile: data.fallback,
     }
   }
 
   return (
-    <ShowcaseDetails
-      isModal={isModal}
-      site={data.sitesYaml}
-      categories={categories}
-      location={location}
-    />
+    <ShowcaseDetails isModal={isModal} site={data.sitesYaml} categories={categories} location={location} />
   )
 }
 

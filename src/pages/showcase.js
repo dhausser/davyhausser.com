@@ -1,12 +1,12 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from 'react'
+import { graphql } from 'gatsby'
 
-import Layout from "../components/layout"
-import PageMetadata from "../components/page-metadata"
-import HomepageSection from "../components/homepage-section"
-import FeaturedSites from "../components/showcase/featured-sites"
-import ShowcaseList from "../components/showcase/showcase-list"
-import EmailCaptureForm from "../components/email-capture-form"
+import Layout from '../components/layout'
+import PageMetadata from '../components/page-metadata'
+import HomepageSection from '../components/homepage-section'
+import FeaturedSites from '../components/showcase/featured-sites'
+import ShowcaseList from '../components/showcase/showcase-list'
+import EmailCaptureForm from '../components/email-capture-form'
 
 export default ({ data }) => (
   <Layout>
