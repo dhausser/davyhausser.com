@@ -4,7 +4,7 @@ import { Card, PostMeta } from '../utils/styles'
 function useInstagram() {
   const [posts, setPosts] = useState([])
   useEffect(() => {
-    fetch(`/.netlify/functions/instagram`)
+    fetch(`${process.env.NETLIFY_FUNCTIONS_URL}/instagram`)
       .then((res) => res.json())
       .then((data) => {
         setPosts(data)
