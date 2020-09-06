@@ -106,8 +106,6 @@ function Form({ isHomepage, formId, onSuccess, confirmMessage }) {
       body: JSON.stringify(data),
     })
 
-    console.log(response)
-
     if (response.status === 200) {
       onSuccess(confirmMessage)
     } else {
