@@ -1,31 +1,52 @@
 import React from "react";
+import { graphql } from "gatsby";
+import { Link } from "gatsby";
+import Img from "gatsby-image";
+
 import Layout from "../components/layout";
 import PageMetadata from "../components/page-metadata";
-import HomepageSection from "../components/homepage-section";
+import Container from "../components/container";
 import EmailCaptureForm from "../components/email-capture-form";
 
 export default ({ data }) => (
   <Layout>
     <PageMetadata
-      title={`Showcase | ${data.site.siteMetadata.author.name}`}
+      title={data.site.siteMetadata.author.name}
       description={data.site.siteMetadata.description}
     />
-    <HomepageSection>
-      <h1>Wanderlost</h1>
-      <a href="https://wanderlost.vercel.app">Live</a>
-      <a href="https://github.com/dhausser/wanderlost">Code</a>
-      <p>
-        Wanderlost is is an interactive wep application, clone of Instagram
-        built with React and Redux.
-      </p>
-      <ul>
-        <li>Next.js</li>
-        <li>GraphQL</li>
-        <li>Prisma</li>
-        <li>TypeScript</li>
-      </ul>
-      <p>Build by: Davy Hausser</p>
-      <EmailCaptureForm isHomepage={true} />
-    </HomepageSection>
+    <h1>Wanderlost</h1>
+    <Img fluid={data.file.childImageSharp.fluid} />
+    <a href="https://wanderlost.vercel.app">Live</a>
+    <a href="https://github.com/dhausser/wanderlost">Code</a>
+    <ul>
+      <li>Next.js</li>
+      <li>GraphQL</li>
+      <li>Prisma</li>
+      <li>TypeScript</li>
+    </ul>
+    <p>Build by: Davy Hausser</p>
+    <EmailCaptureForm isHomepage={true} />
   </Layout>
 );
+
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        author {
+          name
+        }
+        description
+      }
+    }
+    file(relativePath: { eq: "wanderlost-dark.png" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fluid(maxWidth: 1200) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`;

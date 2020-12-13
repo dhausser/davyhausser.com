@@ -1,4 +1,5 @@
 import { keyframes } from "@emotion/core";
+import styled from "@emotion/styled";
 
 import {
   colors,
@@ -171,9 +172,72 @@ export const visuallyHidden = {
 export const blogWidth = `42rem`;
 export const breakpointGutter = `@media (min-width: ${blogWidth})`;
 
+export const breakpoints = {
+  mobileMin: "480px",
+  mobileMax: "959px",
+  tabletMin: "960px",
+  tabletMax: "1199px",
+  desktopMin: "1200px",
+};
+
 export const pullIntoGutter = {
   marginLeft: `-${space[6]}`,
   marginRight: `-${space[6]}`,
   paddingLeft: space[6],
   paddingRight: space[6],
 };
+
+export const Float = keyframes`
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
+
+export const HeadingWrapCont = styled.div`
+  padding-top: 40px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+`;
+
+export const HeadingMain = styled.h1`
+  font-weight: 700;
+  font-size: 7vw;
+  line-height: 129.69%;
+  letter-spacing: 0.03em;
+  margin-bottom: 0;
+  margin-left: 0px;
+
+  @media (min-width: ${breakpoints.mobileMax}) {
+    font-size: 60px;
+    margin-bottom: 0;
+    margin-left: 50px;
+  }
+
+  .blue {
+    color: #b4e0e8;
+  }
+
+  > span {
+    display: inline-block;
+    transform: translateY(30px);
+    opacity: 0;
+    animation: ${Float} 1s 0.2s forwards;
+  }
+
+  > span:nth-child(1) {
+    animation-delay: 0s;
+  }
+
+  > span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  > span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+`;

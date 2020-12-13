@@ -1,13 +1,48 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import React from "react";
-import { Global } from "@emotion/core";
+import { Global, keyframes } from "@emotion/core";
+import styled from "@emotion/styled";
 
 import { globalStyles } from "../utils/styles/global";
-import { breakpointGutter } from "../utils/styles";
+import { breakpoints, breakpointGutter } from "../utils/styles";
 import Navigation from "./navigation";
 import "prismjs/themes/prism.css";
 import "../utils/fonts/futura";
+
+const FadeOut = keyframes`
+  0%{
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 1;
+  }
+`;
+
+const Layout = styled.div`
+  min-height: 100vh;
+  padding: 20px;
+  margin: 25px auto;
+  opacity: 0;
+  animation: ${FadeOut} 0.6s 0.3s ease-in-out forwards;
+
+  a {
+    text-decoration: none;
+  }
+
+  @media (min-width: ${breakpoints.tabletMin}) {
+    max-width: 940px;
+    padding: 20px;
+    margin: 75px auto;
+  }
+
+  @media (min-width: ${breakpoints.desktopMin}) {
+    max-width: 1200px;
+    padding: 20px;
+    margin: 75px auto;
+  }
+`;
 
 export default ({ children }) => (
   <>
@@ -23,7 +58,7 @@ export default ({ children }) => (
         },
       }}
     >
-      {children}
+      <Layout>{children}</Layout>
     </div>
   </>
 );
