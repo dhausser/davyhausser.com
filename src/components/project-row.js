@@ -3,7 +3,6 @@ import { Link } from "gatsby";
 import Img from "gatsby-image";
 import styled from "@emotion/styled";
 import { breakpoints, Heading, Paragraph } from "../utils/styles";
-import wanderlost from "../images/wanderlost-dark.png";
 
 const ProjectContainer = styled.div`
   display: flex;
@@ -52,47 +51,6 @@ const Project = styled.div`
   height: auto;
   margin-bottom: 90px;
   transition-duration: 0.3s;
-
-  /* :hover {
-    ${ProjectImage} {
-      transform: scale(1.03);
-    }
-
-    ${ProjectLink} {
-      border-bottom: 2px solid black;
-    }
-  }
-
-  :nth-child(1) {
-    margin-right: 0;
-
-    @media (min-width: ${breakpoints.mobileMax}) {
-      margin-right: 10%;
-    }
-  }
-
-  @media (min-width: ${breakpoints.mobileMax}) {
-    width: 45%;
-    margin-bottom: 0px;
-  }
-
-  :nth-child(1) {
-    ${ProjectImage} {
-      background-image: url(${wanderlost});
-      background-size: cover;
-      background-position-x: center;
-      background-position-y: center;
-    }
-  }
-
-  :nth-child(2) {
-    ${ProjectImage} {
-      background-image: url(${wanderlost});
-      background-size: cover;
-      background-position-x: center;
-      background-position-y: center;
-    }
-  } */
 `;
 
 const SubHeading = styled(Heading)`
@@ -116,7 +74,6 @@ function ProjectRow({ data }) {
     <ProjectContainer>
       <Project>
         <Link title="Wanderlost" to="/wanderlost">
-          {/* <ProjectImage /> */}
           <Img fluid={data.file.childImageSharp.fluid} />
         </Link>
         <Link title="Wanderlost" to="/wanderlost">
@@ -126,17 +83,13 @@ function ProjectRow({ data }) {
           An ecommerce experiement about experiences and discovery.
         </ProjectParagraph>
         <Link title="Wanderlost" to="/wanderlost">
-          <h1>Wanderlost</h1>
-        </Link>
-        <Link title="Wanderlost" to="/wanderlost">
           <ProjectLink>
             View Project <span>&#8250;</span>
           </ProjectLink>
         </Link>
       </Project>
-      <Project>
+      {/* <Project>
         <Link title="Wanderlost" to="/wanderlost">
-          {/* <ProjectImage /> */}
           <Img fluid={data.file.childImageSharp.fluid} />
         </Link>
         <Link title="Wanderlost" to="/wanderlost">
@@ -146,14 +99,11 @@ function ProjectRow({ data }) {
           An ecommerce experiement about experiences and discovery.
         </ProjectParagraph>
         <Link title="Wanderlost" to="/wanderlost">
-          <h1>Wanderlost</h1>
-        </Link>
-        <Link title="Wanderlost" to="/wanderlost">
           <ProjectLink>
             View Project <span>&#8250;</span>
           </ProjectLink>
         </Link>
-      </Project>
+      </Project> */}
     </ProjectContainer>
   );
 }

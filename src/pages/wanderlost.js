@@ -6,7 +6,7 @@ import Img from "gatsby-image";
 import Layout from "../components/layout";
 import PageMetadata from "../components/page-metadata";
 import Container from "../components/container";
-import EmailCaptureForm from "../components/email-capture-form";
+import Contact from "../components/contact";
 
 export default ({ data }) => (
   <Layout>
@@ -25,7 +25,7 @@ export default ({ data }) => (
       <li>TypeScript</li>
     </ul>
     <p>Build by: Davy Hausser</p>
-    <EmailCaptureForm isHomepage={true} />
+    <Contact isHomepage={true} />
   </Layout>
 );
 

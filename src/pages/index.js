@@ -5,7 +5,7 @@ import { Link } from "gatsby";
 import Layout from "../components/layout";
 import ProjectRow from "../components/project-row";
 import PageMetadata from "../components/page-metadata";
-import EmailCaptureForm from "../components/email-capture-form";
+import Contact from "../components/contact";
 
 import {
   Heading,
@@ -109,22 +109,22 @@ export default ({ data }) => (
         </SkillContent>
       </SubContainer>
     </Container>
-    <Container>
-      <SubContainer>
-        <TextContent>
-          <Heading>What I've been working on </Heading>
-          <Paragraph>
-            I like to stay busy and always have a project in the works. Take a
-            look at some of the applications, articles, and companies I've
-            dedicated my time to.
-          </Paragraph>
-        </TextContent>
-      </SubContainer>
-      <SubContainer>
-        <ProjectRow data={data} />
-      </SubContainer>
-    </Container>
-    <EmailCaptureForm isHomepage={true} />
+    <SubContainer>
+      <TextContent>
+        <Heading>What I've been working on </Heading>
+        <Paragraph>
+          I like to stay busy and always have a project in the works. Take a
+          look at some of the applications, articles, and companies I've
+          dedicated my time to.
+        </Paragraph>
+      </TextContent>
+    </SubContainer>
+    <SubContainer>
+      <ProjectRow data={data} />
+    </SubContainer>
+    <Contact />
+    {/* <Container>
+    </Container> */}
   </Layout>
 );
 

@@ -15,6 +15,7 @@ const HomepageContainer = styled(`div`)`
   border-radius: ${(p) => p.theme.radii[2]};
   display: flex;
   flex-direction: column;
+  margin-top: ${(p) => p.theme.space[8]};
   margin-bottom: ${(p) => p.theme.space[8]};
   padding: calc(${(p) => p.theme.space[8]} * 1.2);
   padding-bottom: ${(props) => rhythm(props.theme.space[8] * 1.2)};
@@ -182,7 +183,7 @@ function Form({ isHomepage, formId, onSuccess, confirmMessage }) {
 export default ({
   formId = "8336d95c-917d-402d-8f62-02e80b686cf4",
   signupMessage = `Need an app or website? Get in touch!`,
-  isHomepage = false,
+  isHomepage = true,
   className = ``,
 }) => {
   const [successMessage, setSuccessMessage] = useState("");
@@ -192,54 +193,25 @@ export default ({
   );
 
   return (
-    <>
-      {isHomepage ? (
-        <HomepageContainer>
-          <header
-            sx={{
-              pb: `1rem`,
-              [mediaQueries.lg]: {
-                pb: `0`,
-              },
-            }}
-          >
-            <Title>Need an app or website? Get in touch!</Title>
-          </header>
-          {successMessage ? (
-            <SuccessMessage
-              dangerouslySetInnerHTML={{ __html: successMessage }}
-            />
-          ) : (
-            <FormComponent
-              isHomepage={true}
-              confirmMessage="Success! We'll be in touch soon!"
-            />
-          )}
-        </HomepageContainer>
+    <HomepageContainer>
+      <header
+        sx={{
+          pb: `1rem`,
+          [mediaQueries.lg]: {
+            pb: `0`,
+          },
+        }}
+      >
+        <Title>Need an app or website? Get in touch!</Title>
+      </header>
+      {successMessage ? (
+        <SuccessMessage dangerouslySetInnerHTML={{ __html: successMessage }} />
       ) : (
-        <ContactpageContainer>
-          <p
-            sx={{
-              color: `newsletter.heading`,
-              fontWeight: `bold`,
-              fontSize: 3,
-              fontFamily: `heading`,
-              lineHeight: `dense`,
-            }}
-          >
-            {signupMessage}
-          </p>
-          {successMessage ? (
-            <div
-              dangerouslySetInnerHTML={{
-                __html: successMessage,
-              }}
-            />
-          ) : (
-            <FormComponent confirmMessage="Thanks for signing up! We'll be in touch soon!" />
-          )}
-        </ContactpageContainer>
+        <FormComponent
+          isHomepage={true}
+          confirmMessage="Success! We'll be in touch soon!"
+        />
       )}
-    </>
+    </HomepageContainer>
   );
 };
