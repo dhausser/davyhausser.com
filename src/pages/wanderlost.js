@@ -33,7 +33,7 @@ export default ({ data }) => (
 );
 
 export const pageQuery = graphql`
-  query showcasePageQuery {
+  query siteDataQuery {
     site {
       siteMetadata {
         author {

@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import useSiteMetadata from "../hooks/use-site-metadata";
 
 // import { useLocale } from "./I18nContext"
-import gatsbyIcon from "../assets/icons/gatsby-icon.png";
+import gatsbyIcon from "../images/favicon.ico";
 
 const SiteMetadata = ({ pathname }) => {
   const { siteUrl, title, twitter } = useSiteMetadata();

@@ -8,16 +8,11 @@ import {
 } from "react-icons/fa";
 
 import { Link } from "gatsby";
-// import logo from "../assets/logo.svg"
-// import logoInverted from "../assets/logo-inverted.svg"
 import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org";
 import { breakpointGutter } from "../utils/styles";
 import DarkModeToggle from "./dark-mode-toggle";
 
-// what we need to nudge down the navItems to sit
-// on the baseline of the logo's wordmark
 const navItemTopOffset = `0.4rem`;
-// theme-ui values
 const navItemHorizontalSpacing = [1, null, 2];
 
 const overrideDefaultMdLineHeight = {
@@ -60,7 +55,6 @@ const SocialNavItem = ({ href, title, children }) => (
 );
 
 const Navigation = ({ pathname }) => {
-  // const [colorMode] = useColorMode()
   const isHomepage = pathname === `/`;
 
   return (
@@ -73,19 +67,6 @@ const Navigation = ({ pathname }) => {
         position: `relative`,
         right: 0,
         zIndex: `navigation`,
-        // use this to test if the header items are properly aligned to the logo
-        // wordmark
-        // "&:before": {
-        //   content: `''`,
-        //   position: `absolute`,
-        //   bottom: `1.5rem`,
-        //   left: 0,
-        //   right: 0,
-        //   width: `100%`,
-        //   height: 1,
-        //   zIndex: 10,
-        //   background: `red`
-        // },
         [breakpointGutter]: {
           position: isHomepage ? `absolute` : `fixed`,
         },

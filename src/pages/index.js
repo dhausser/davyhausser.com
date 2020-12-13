@@ -19,37 +19,13 @@ export default ({ data }) => (
 );
 
 export const pageQuery = graphql`
-  query showcasePageQuery {
+  query siteDataQuery {
     site {
       siteMetadata {
         author {
           name
         }
         description
-      }
-    }
-    allSitesYaml {
-      edges {
-        node {
-          title
-          slug
-          main_url
-          url
-          source_url
-          description
-          categories
-          built_by
-          built_by_url
-          childScreenshot {
-            screenshotFile {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
       }
     }
   }
