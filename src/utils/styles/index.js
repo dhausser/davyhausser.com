@@ -312,19 +312,6 @@ export const TextContent = styled.div`
 export const TextContentWrap = styled(TextContent)`
   width: 100%;
 
-  ${Paragraph} {
-    margin: 40px 0px;
-  }
-  :nth-child(2) {
-    ${Paragraph} {
-      margin: 0px 0px;
-
-      @media (min-width: ${breakpoints.mobileMax}) {
-        margin: 40px 0;
-      }
-    }
-  }
-
   @media (min-width: ${breakpoints.mobileMax}) {
     width: 45%;
   }
