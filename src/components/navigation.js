@@ -41,31 +41,6 @@ const navItemStyles = {
   "&:hover, &:focus": { color: `navigation.linkHover` },
 };
 
-const NavItem = ({ linkTo, children }) => (
-  <li
-    sx={{
-      display: `block`,
-      m: 0,
-      mx: navItemHorizontalSpacing,
-    }}
-  >
-    <Link
-      to={linkTo}
-      // activeClassName="active"
-      // partiallyActive={true}
-      sx={{
-        ...navItemStyles,
-        "&.active": {
-          borderBottomColor: `lilac`,
-          color: `navigation.linkActive`,
-        },
-      }}
-    >
-      {children}
-    </Link>
-  </li>
-);
-
 const SocialNavItem = ({ href, title, children }) => (
   <a
     href={href}
