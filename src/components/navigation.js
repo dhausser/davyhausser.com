@@ -51,8 +51,8 @@ const NavItem = ({ linkTo, children }) => (
   >
     <Link
       to={linkTo}
-      activeClassName="active"
-      partiallyActive={true}
+      // activeClassName="active"
+      // partiallyActive={true}
       sx={{
         ...navItemStyles,
         "&.active": {
@@ -83,12 +83,6 @@ const SocialNavItem = ({ href, title, children }) => (
     {children}
   </a>
 );
-
-const navItems = [
-  { id: "showcase", text: `Showcase` },
-  { id: "blog", text: `Blog` },
-  { id: "contact", text: `Contact` },
-];
 
 const Navigation = ({ pathname }) => {
   // const [colorMode] = useColorMode()
@@ -170,47 +164,8 @@ const Navigation = ({ pathname }) => {
             DH
           </h2>
         </Link>
-        <nav
-          className="navigation"
-          aria-label={`Primary Navigation`}
-          sx={{
-            display: `none`,
-            [mediaQueries.md]: {
-              alignSelf: `flex-end`,
-              display: `flex`,
-              flexGrow: 1,
-              flexShrink: 1,
-              m: 0,
-              minWidth: 0,
-              mr: `auto`,
-            },
-          }}
-        >
-          <ul
-            sx={{
-              display: `none`,
-              [mediaQueries.md]: {
-                alignSelf: `flex-end`,
-                display: `flex`,
-                listStyle: `none`,
-                m: 0,
-                maskImage: (t) =>
-                  `linear-gradient(to right, transparent, white ${t.space[1]}, white 98%, transparent)`,
-                overflowX: `auto`,
-              },
-            }}
-          >
-            {navItems.map(({ id, text }) => (
-              <NavItem key={id} linkTo={`/${id}/`}>
-                {text}
-              </NavItem>
-            ))}
-          </ul>
-        </nav>
         <div
           sx={{
-            // ...navItemStyles,
-            // ...overrideDefaultMdLineHeight,
             display: `flex`,
             alignSelf: `flex-end`,
           }}
