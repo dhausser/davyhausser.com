@@ -1,4 +1,4 @@
-import { keyframes } from "@emotion/core";
+import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
 
 import {
@@ -239,5 +239,137 @@ export const HeadingMain = styled.h1`
   }
   > span:nth-child(3) {
     animation-delay: 0.4s;
+  }
+`;
+
+export const Container = styled.div`
+  margin: 100px 0 200px 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @media (min-width: ${breakpoints.mobileMax}) {
+    flex-wrap: nowrap;
+  }
+`;
+
+export const SkillTable = styled.div`
+  width: 100%;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @media (min-width: ${breakpoints.mobileMax}) {
+    flex-wrap: nowrap;
+  }
+
+  p {
+    font-weight: 700;
+    min-width: 200px;
+    margin: 20px 0 0 0;
+
+    @media (min-width: ${breakpoints.mobileMax}) {
+      min-width: unset;
+      margin: 30px 0;
+    }
+
+    span {
+      font-size: 20px;
+      margin-right: 5px;
+    }
+  }
+`;
+
+export const SubContainer = styled.div`
+  margin: 0px 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @media (min-width: ${breakpoints.mobileMax}) {
+    flex-wrap: nowrap;
+  }
+`;
+
+export const TextContent = styled.div`
+  max-width: 700px;
+  .Paragraph {
+    a {
+      border-bottom: 2px solid transparent;
+      transition: 0.3s;
+
+      :hover {
+        border-bottom: 2px solid black;
+      }
+    }
+  }
+`;
+
+export const TextContentWrap = styled(TextContent)`
+  width: 100%;
+
+  ${Paragraph} {
+    margin: 40px 0px;
+  }
+  :nth-child(2) {
+    ${Paragraph} {
+      margin: 0px 0px;
+
+      @media (min-width: ${breakpoints.mobileMax}) {
+        margin: 40px 0;
+      }
+    }
+  }
+
+  @media (min-width: ${breakpoints.mobileMax}) {
+    width: 45%;
+  }
+`;
+
+export const SkillContent = styled.div`
+  width: 100%;
+`;
+
+export const Paragraph = styled.p`
+  margin: 50px 0;
+  width: 100%;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 184.69%;
+  letter-spacing: 0.03em;
+
+  a {
+    border-bottom: 2px solid transparent;
+    transition: 0.3s;
+
+    :hover {
+      border-bottom: 2px solid black;
+    }
+  }
+`;
+
+export const Heading = styled.h1`
+  width: 100%;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 33px;
+  line-height: 129.69%;
+  letter-spacing: 0.03em;
+  transform: translateY(30px);
+  opacity: 0;
+  animation: ${Float} 1s 0.2s forwards;
+
+  @media (min-width: ${breakpoints.mobileMax}) {
+    font-size: 40px;
+    transform: scale(1);
+  }
+
+  > span {
+    color: #b4e0e8;
   }
 `;

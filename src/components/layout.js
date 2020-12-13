@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import React from "react";
-import { Global, keyframes } from "@emotion/core";
+import { Global, keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
 
 import { globalStyles } from "../utils/styles/global";
