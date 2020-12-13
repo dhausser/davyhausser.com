@@ -13,6 +13,20 @@ export default ({ data }) => (
       description={data.site.siteMetadata.description}
     />
     <HomepageSection>
+      <h1>Wanderlost</h1>
+      <a href="https://wanderlost.vercel.app">Live</a>
+      <a href="https://github.com/dhausser/wanderlost">Code</a>
+      <p>
+        Wanderlost is is an interactive wep application, clone of Instagram
+        built with React and Redux.
+      </p>
+      <ul>
+        <li>Next.js</li>
+        <li>GraphQL</li>
+        <li>Prisma</li>
+        <li>TypeScript</li>
+      </ul>
+      <p>Build by: Davy Hausser</p>
       <EmailCaptureForm isHomepage={true} />
     </HomepageSection>
   </Layout>
@@ -26,30 +40,6 @@ export const pageQuery = graphql`
           name
         }
         description
-      }
-    }
-    allSitesYaml {
-      edges {
-        node {
-          title
-          slug
-          main_url
-          url
-          source_url
-          description
-          categories
-          built_by
-          built_by_url
-          childScreenshot {
-            screenshotFile {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
       }
     }
   }
