@@ -15,9 +15,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const showcaseTemplate = path.resolve(
     `src/templates/template-showcase-details.js`
   );
-  const blogPostTemplate = path.resolve(
-    `./src/templates/template-blog-post.js`
-  );
   const result = await graphql(`
     {
       allSitesYaml {
@@ -49,7 +46,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   const projects = result.data.allSitesYaml.edges.map(({ node }) => node);
-  const posts = result.data.allMdx.edges;
 
   projects.forEach((project) => {
     createPage({
@@ -57,21 +53,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: showcaseTemplate,
       context: {
         slug: project.slug,
-      },
-    });
-  });
-
-  posts.forEach((post, index) => {
-    const previous = index === posts.length - 1 ? null : posts[index + 1].node;
-    const next = index === 0 ? null : posts[index - 1].node;
-
-    createPage({
-      path: `/blog${post.node.fields.slug}`,
-      component: blogPostTemplate,
-      context: {
-        slug: post.node.fields.slug,
-        previous,
-        next,
       },
     });
   });
