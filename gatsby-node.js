@@ -24,18 +24,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
-      allMdx(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
-        edges {
-          node {
-            fields {
-              slug
-            }
-            frontmatter {
-              title
-            }
-          }
-        }
-      }
     }
   `);
 
