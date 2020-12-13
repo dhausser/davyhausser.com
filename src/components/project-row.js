@@ -88,7 +88,7 @@ function ProjectRow({ data }) {
           </ProjectLink>
         </Link>
       </Project>
-      {/* <Project>
+      <Project>
         <Link title="Wanderlost" to="/wanderlost">
           <Img fluid={data.file.childImageSharp.fluid} />
         </Link>
@@ -103,7 +103,7 @@ function ProjectRow({ data }) {
             View Project <span>&#8250;</span>
           </ProjectLink>
         </Link>
-      </Project> */}
+      </Project>
     </ProjectContainer>
   );
 }

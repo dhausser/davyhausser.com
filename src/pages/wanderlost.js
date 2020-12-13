@@ -17,6 +17,7 @@ export default ({ data }) => (
     <h1>Wanderlost</h1>
     <Img fluid={data.file.childImageSharp.fluid} />
     <a href="https://wanderlost.vercel.app">Live</a>
+    <br />
     <a href="https://github.com/dhausser/wanderlost">Code</a>
     <ul>
       <li>Next.js</li>

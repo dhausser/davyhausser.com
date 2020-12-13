@@ -15,7 +15,6 @@ const HomepageContainer = styled(`div`)`
   border-radius: ${(p) => p.theme.radii[2]};
   display: flex;
   flex-direction: column;
-  margin-top: ${(p) => p.theme.space[8]};
   margin-bottom: ${(p) => p.theme.space[8]};
   padding: calc(${(p) => p.theme.space[8]} * 1.2);
   padding-bottom: ${(props) => rhythm(props.theme.space[8] * 1.2)};
