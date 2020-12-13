@@ -11,7 +11,7 @@ module.exports = {
       name: `Davy Hausser`,
       summary: `who lives and works in Warsaw building useful things.`,
     },
-    description: `A personal portfolio website.`,
+    description: `Davy Hausser's portfolio`,
     siteUrl: `https://davyhausser.com/`,
     twitter: `davyhausser`,
   },
@@ -25,79 +25,21 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/showcase`,
-        name: `blog`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/assets`,
-        name: `assets`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/assets/fonts`,
+        path: `${__dirname}/src/utils/fonts`,
         name: `fonts`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/assets/icons`,
-        name: `icons`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-mdx`,
-      options: {
-        extensions: [`.mdx`, `.md`],
-        gatsbyRemarkPlugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 590,
-            },
-          },
-          {
-            resolve: `gatsby-remark-responsive-iframe`,
-            options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
-          },
-          {
-            resolve: "gatsby-remark-emojis",
-          },
-          `gatsby-remark-prismjs`,
-          `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
-        ],
+        path: `${__dirname}/src/images`,
+        name: `images`,
       },
     },
     {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
-      },
-    },
-    `gatsby-transformer-yaml`,
-    `gatsby-transformer-screenshot`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Davy Hausser Portfolio`,
-        short_name: `DavyHausser`,
-        start_url: `/`,
-        icon: `src/assets/icons/gatsby-icon.png`,
       },
     },
     `gatsby-plugin-offline`,
