@@ -1,12 +1,12 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { Link } from 'gatsby'
+import { jsx } from "theme-ui";
+import { Link } from "gatsby";
 
 const links = [
   { to: `/showcase/`, text: `Showcase` },
   { to: `/blog/`, text: `Blog` },
   { to: `/contact/`, text: `Contact` },
-]
+];
 
 const FooterLinks = (props) => (
   <footer>
@@ -25,20 +25,20 @@ const FooterLinks = (props) => (
         py: 9,
         textAlign: `center`,
         width: `100%`,
-        '& li': {
+        "& li": {
           display: `inline-block`,
-          '&:after': {
+          "&:after": {
             color: `textMuted`,
             content: `"•"`,
             padding: 3,
           },
-          '&:last-of-type:after': {
+          "&:last-of-type:after": {
             content: `none`,
           },
-          '& a': {
+          "& a": {
             color: `navigation.linkDefault`,
             borderColor: `transparent`,
-            '&:hover': {
+            "&:hover": {
               color: `navigation.linkHover`,
               borderColor: `link.hoverBorder`,
             },
@@ -56,6 +56,6 @@ const FooterLinks = (props) => (
       </li>
     </ul>
   </footer>
-)
+);
 
-export default FooterLinks
+export default FooterLinks;

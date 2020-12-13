@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { Helmet } from 'react-helmet'
-import useSiteMetadata from '../hooks/use-site-metadata'
+import { jsx } from "theme-ui";
+import { Helmet } from "react-helmet";
+import useSiteMetadata from "../hooks/use-site-metadata";
 
 /**
  * Component representing common metadata of a page.
@@ -48,8 +48,16 @@ import useSiteMetadata from '../hooks/use-site-metadata'
  *  - Twitter Card Docs: https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/markup
  *  - Twitter Card validator: https://cards-dev.twitter.com/validator
  */
-export default function PageMetadata({ title, description, type, image, twitterCard, timeToRead, children }) {
-  const { siteUrl } = useSiteMetadata()
+export default function PageMetadata({
+  title,
+  description,
+  type,
+  image,
+  twitterCard,
+  timeToRead,
+  children,
+}) {
+  const { siteUrl } = useSiteMetadata();
   // <Helmet> doesn't support JSX fragments so we can't bundle the tags based on
   // the property they match up with
   return (
@@ -61,11 +69,15 @@ export default function PageMetadata({ title, description, type, image, twitterC
       {type && <meta property="og:type" content={type} />}
       {twitterCard && <meta name="twitter:card" content={twitterCard} />}
       {timeToRead && <meta name="twitter:label1" content="Reading time" />}
-      {timeToRead && <meta name="twitter:data1" content={`${timeToRead} min read`} />}
+      {timeToRead && (
+        <meta name="twitter:data1" content={`${timeToRead} min read`} />
+      )}
       {image && <meta property="og:image" content={`${siteUrl}${image.src}`} />}
       {image?.width && <meta property="og:image:width" content={image.width} />}
-      {image?.height && <meta property="og:image:height" content={image.height} />}
+      {image?.height && (
+        <meta property="og:image:height" content={image.height} />
+      )}
       {children}
     </Helmet>
-  )
+  );
 }

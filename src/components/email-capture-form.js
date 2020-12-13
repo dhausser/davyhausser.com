@@ -1,13 +1,13 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import React, { useRef, useState } from 'react'
-import styled from '@emotion/styled'
+import { jsx } from "theme-ui";
+import React, { useRef, useState } from "react";
+import styled from "@emotion/styled";
 
-import { MdSend as SendIcon } from 'react-icons/md'
+import { MdSend as SendIcon } from "react-icons/md";
 
-import { mediaQueries } from 'gatsby-design-tokens/dist/theme-gatsbyjs-org'
-import { themedInput, formInputFocus, buttonStyles } from '../utils/styles'
-import { rhythm } from '../utils/typography'
+import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org";
+import { themedInput, formInputFocus, buttonStyles } from "../utils/styles";
+import { rhythm } from "../utils/typography";
 
 const HomepageContainer = styled(`div`)`
   background: ${(p) => p.theme.colors.newsletter.background};
@@ -28,7 +28,7 @@ const HomepageContainer = styled(`div`)`
       flex-basis: 50%;
     }
   }
-`
+`;
 
 const Title = styled(`h1`)`
   color: ${(p) => p.theme.colors.newsletter.heading};
@@ -37,21 +37,25 @@ const Title = styled(`h1`)`
   line-height: ${(p) => p.theme.lineHeights.dense};
   margin: 0;
   margin-top: ${(p) => p.theme.space[1]};
-`
+`;
 
 const ContactpageContainer = styled(`div`)`
   background: ${(p) => p.theme.colors.newsletter.background};
-  box-shadow: ${(p) => p.theme.shadows.floating}, inset 0 0 0 1px ${(p) => p.theme.colors.newsletter.border};
+  box-shadow: ${(p) => p.theme.shadows.floating},
+    inset 0 0 0 1px ${(p) => p.theme.colors.newsletter.border};
   border-radius: ${(p) => p.theme.radii[2]};
   margin-top: ${(p) => p.theme.space[8]};
   padding: calc(${(p) => p.theme.space[6]} * 1.2);
-  padding-bottom: calc(${(props) => rhythm(props.theme.space[6] * 1.2)} + ${(p) => p.theme.space[1]});
+  padding-bottom: calc(
+    ${(props) => rhythm(props.theme.space[6] * 1.2)} +
+      ${(p) => p.theme.space[1]}
+  );
   position: relative;
 
   :after {
     border-radius: 0 0 ${(p) => p.theme.radii[2]} ${(p) => p.theme.radii[2]};
     bottom: 0;
-    content: '';
+    content: "";
     height: ${(p) => p.theme.space[1]};
     left: 0;
     right: 0;
@@ -66,7 +70,7 @@ const ContactpageContainer = styled(`div`)`
       flex-basis: 50%;
     }
   }
-`
+`;
 
 const StyledForm = styled(`form`)`
   margin: 0;
@@ -74,44 +78,44 @@ const StyledForm = styled(`form`)`
   ${mediaQueries.lg} {
     display: ${(props) => (props.isHomepage ? `flex` : `block`)};
   }
-`
+`;
 
 const ErrorMessage = styled(`div`)`
   color: ${(p) => p.theme.colors.warning};
   font-family: ${(p) => p.theme.fonts.system};
   font-size: ${(p) => p.theme.fontSizes[1]};
   margin: ${(p) => p.theme.space[2]} 0;
-`
+`;
 
 const SuccessMessage = styled(`div`)`
   font-family: ${(p) => p.theme.fonts.system};
-`
+`;
 
 function Form({ isHomepage, formId, onSuccess, confirmMessage }) {
-  const emailRef = useRef(null)
-  const formRef = useRef(null)
-  const [errorMessage, setErrorMessage] = useState('')
+  const emailRef = useRef(null);
+  const formRef = useRef(null);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const onSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    const url = `${process.env.NETLIFY_FUNCTIONS_URL}/contact`
-    const data = { email: emailRef.current.value, message: 'sample message' }
+    const url = `${process.env.NETLIFY_FUNCTIONS_URL}/contact`;
+    const data = { email: emailRef.current.value, message: "sample message" };
 
     const response = await fetch(url, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
-    })
+    });
 
     if (response.status === 200) {
-      onSuccess(confirmMessage)
+      onSuccess(confirmMessage);
     } else {
-      setErrorMessage(`${response.status}: ${response.statusText}`)
+      setErrorMessage(`${response.status}: ${response.statusText}`);
     }
-  }
+  };
 
   return (
     <StyledForm ref={formRef} onSubmit={onSubmit} isHomepage={isHomepage}>
@@ -128,7 +132,7 @@ function Form({ isHomepage, formId, onSuccess, confirmMessage }) {
           // ml: "8px",
           ...themedInput,
           width: `100%`,
-          '&:focus': {
+          "&:focus": {
             ...formInputFocus,
           },
         }}
@@ -172,18 +176,20 @@ function Form({ isHomepage, formId, onSuccess, confirmMessage }) {
         />
       )}
     </StyledForm>
-  )
+  );
 }
 
 export default ({
-  formId = '8336d95c-917d-402d-8f62-02e80b686cf4',
+  formId = "8336d95c-917d-402d-8f62-02e80b686cf4",
   signupMessage = `Need an app or website? Get in touch!`,
   isHomepage = false,
   className = ``,
 }) => {
-  const [successMessage, setSuccessMessage] = useState('')
+  const [successMessage, setSuccessMessage] = useState("");
 
-  const FormComponent = (props) => <Form onSuccess={setSuccessMessage} formId={formId} {...props} />
+  const FormComponent = (props) => (
+    <Form onSuccess={setSuccessMessage} formId={formId} {...props} />
+  );
 
   return (
     <>
@@ -200,9 +206,14 @@ export default ({
             <Title>Need an app or website? Get in touch!</Title>
           </header>
           {successMessage ? (
-            <SuccessMessage dangerouslySetInnerHTML={{ __html: successMessage }} />
+            <SuccessMessage
+              dangerouslySetInnerHTML={{ __html: successMessage }}
+            />
           ) : (
-            <FormComponent isHomepage={true} confirmMessage="Success! We'll be in touch soon!" />
+            <FormComponent
+              isHomepage={true}
+              confirmMessage="Success! We'll be in touch soon!"
+            />
           )}
         </HomepageContainer>
       ) : (
@@ -230,5 +241,5 @@ export default ({
         </ContactpageContainer>
       )}
     </>
-  )
-}
+  );
+};

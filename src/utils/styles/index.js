@@ -1,4 +1,4 @@
-import { keyframes } from '@emotion/core'
+import { keyframes } from "@emotion/core";
 
 import {
   colors,
@@ -8,17 +8,17 @@ import {
   fontSizes,
   fontWeights,
   fonts,
-} from 'gatsby-design-tokens/dist/theme-gatsbyjs-org'
+} from "gatsby-design-tokens/dist/theme-gatsbyjs-org";
 
 const stripeAnimation = keyframes({
-  '0%': { backgroundPosition: `0 0` },
-  '100%': { backgroundPosition: `${space[7]} ${space[11]}` },
-})
+  "0%": { backgroundPosition: `0 0` },
+  "100%": { backgroundPosition: `${space[7]} ${space[11]}` },
+});
 
 export const focusStyle = {
   outline: 0,
   boxShadow: `0 0 0 2px ${colors.input.focusBoxShadow}`,
-}
+};
 
 export const buttonStyles = (t) => {
   return {
@@ -42,16 +42,16 @@ export const buttonStyles = (t) => {
       height: `36px`,
       backgroundSize: (t) => `${t.space[7]} ${t.space[7]}`,
       transition: (t) => `all ${t.transition.default}`,
-      ':hover, :focus': {
+      ":hover, :focus": {
         backgroundColor: `gatsby`,
         backgroundImage: `linear-gradient(135deg, rgba(0,0,0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0,0,0, 0.1) 50%, rgba(0,0,0, 0.1) 75%, transparent 75%, transparent)`,
         color: colors.white,
         animation: `${stripeAnimation} 2.8s linear infinite`,
         borderColor: `gatsby`,
       },
-      ':focus': { ...focusStyle },
-      ':after': { content: `''`, display: `block` },
-      '& svg': { marginLeft: `.2em` },
+      ":focus": { ...focusStyle },
+      ":after": { content: `''`, display: `block` },
+      "& svg": { marginLeft: `.2em` },
     },
     secondary: {
       borderColor: `button.secondaryBorder`,
@@ -59,49 +59,49 @@ export const buttonStyles = (t) => {
       color: `button.secondaryText`,
       fontWeight: `body`,
     },
-  }
-}
+  };
+};
 
 export const svgStyles = (t) => {
   return {
     stroke: {
-      '& .svg-stroke': {
+      "& .svg-stroke": {
         strokeMiterlimit: 10,
         strokeWidth: 1.5,
       },
     },
     default: {
-      '& .svg-stroke-dark': { stroke: `icon.neutral` },
-      '& .svg-stroke-accent': { stroke: `icon.neutralLight` },
-      '& .svg-stroke-background': { stroke: `icon.background` },
-      '& .svg-stroke-light': { stroke: `icon.light` },
-      '& .svg-fill-dark': { fill: `icon.neutral` },
-      '& .svg-fill-accent': { fill: `icon.neutralLight` },
-      '& .svg-fill-background': { fill: `icon.background` },
-      '& .svg-fill-light': { fill: `icon.light` },
-      '& .svg-fill-accent.svg-fill-transparent': { fill: `transparent` },
-      '& .svg-fill-light.svg-fill-transparent': { fill: `transparent` },
+      "& .svg-stroke-dark": { stroke: `icon.neutral` },
+      "& .svg-stroke-accent": { stroke: `icon.neutralLight` },
+      "& .svg-stroke-background": { stroke: `icon.background` },
+      "& .svg-stroke-light": { stroke: `icon.light` },
+      "& .svg-fill-dark": { fill: `icon.neutral` },
+      "& .svg-fill-accent": { fill: `icon.neutralLight` },
+      "& .svg-fill-background": { fill: `icon.background` },
+      "& .svg-fill-light": { fill: `icon.light` },
+      "& .svg-fill-accent.svg-fill-transparent": { fill: `transparent` },
+      "& .svg-fill-light.svg-fill-transparent": { fill: `transparent` },
     },
     active: {
-      '& .svg-stroke-dark': { stroke: `icon.dark` },
-      '& .svg-stroke-accent': { stroke: `icon.accent` },
-      '& .svg-stroke-background': { stroke: `icon.background` },
-      '& .svg-stroke-light': { stroke: `icon.light` },
-      '& .svg-fill-dark': { fill: `icon.dark` },
-      '& .svg-fill-accent': { fill: `icon.accent` },
-      '& .svg-fill-background': { fill: `icon.background` },
-      '& .svg-fill-light': { fill: `icon.lightActive` },
-      '& .svg-fill-accent.svg-fill-transparent': { fill: `icon.accent` },
-      '& .svg-fill-light.svg-fill-transparent': { fill: `icon.lightActive` },
+      "& .svg-stroke-dark": { stroke: `icon.dark` },
+      "& .svg-stroke-accent": { stroke: `icon.accent` },
+      "& .svg-stroke-background": { stroke: `icon.background` },
+      "& .svg-stroke-light": { stroke: `icon.light` },
+      "& .svg-fill-dark": { fill: `icon.dark` },
+      "& .svg-fill-accent": { fill: `icon.accent` },
+      "& .svg-fill-background": { fill: `icon.background` },
+      "& .svg-fill-light": { fill: `icon.lightActive` },
+      "& .svg-fill-accent.svg-fill-transparent": { fill: `icon.accent` },
+      "& .svg-fill-light.svg-fill-transparent": { fill: `icon.lightActive` },
     },
-  }
-}
+  };
+};
 
 // form elements
 export const formInputFocus = {
   borderColor: colors.input.focusBorder,
   ...focusStyle,
-}
+};
 
 export const formInput = {
   backgroundColor: colors.white,
@@ -117,25 +117,25 @@ export const formInput = {
   transition: `box-shadow ${transition.speed.default} ${transition.curve.default}`,
   verticalAlign: `middle`,
   width: `100%`,
-  '::placeholder': {
+  "::placeholder": {
     color: colors.input.placeholder,
     opacity: 1,
   },
-  '&:focus': {
+  "&:focus": {
     ...formInputFocus,
   },
-  '&:disabled': {
+  "&:disabled": {
     cursor: `not-allowed`,
     opacity: `0.5`,
   },
-}
+};
 
 export const themedInputFocus = {
   bg: `themedInput.backgroundFocus`,
   boxShadow: (t) => `0 0 0 2px ${t.colors.themedInput.focusBoxShadow}`,
   outline: 0,
   width: `100%`,
-}
+};
 
 export const themedInput = {
   ...formInput,
@@ -145,13 +145,13 @@ export const themedInput = {
   color: `text`,
   overflow: `hidden`,
   px: 3,
-  ':focus': {
+  ":focus": {
     ...themedInputFocus,
   },
-  '::placeholder': {
+  "::placeholder": {
     color: `themedInput.placeholder`,
   },
-}
+};
 
 // Utilities
 export const visuallyHidden = {
@@ -165,15 +165,15 @@ export const visuallyHidden = {
   position: `absolute`,
   whiteSpace: `nowrap`,
   width: `1px`,
-}
+};
 
 // Layout
-export const blogWidth = `42rem`
-export const breakpointGutter = `@media (min-width: ${blogWidth})`
+export const blogWidth = `42rem`;
+export const breakpointGutter = `@media (min-width: ${blogWidth})`;
 
 export const pullIntoGutter = {
   marginLeft: `-${space[6]}`,
   marginRight: `-${space[6]}`,
   paddingLeft: space[6],
   paddingRight: space[6],
-}
+};

@@ -1,27 +1,30 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx } from "theme-ui";
 // import { useColorMode } from "theme-ui"
-import { GoMarkGithub as GithubIcon } from 'react-icons/go'
-import { FaTwitter as TwitterIcon, FaLinkedin as LinkedinIcon } from 'react-icons/fa'
+import { GoMarkGithub as GithubIcon } from "react-icons/go";
+import {
+  FaTwitter as TwitterIcon,
+  FaLinkedin as LinkedinIcon,
+} from "react-icons/fa";
 
-import { Link } from 'gatsby'
+import { Link } from "gatsby";
 // import logo from "../assets/logo.svg"
 // import logoInverted from "../assets/logo-inverted.svg"
-import { mediaQueries } from 'gatsby-design-tokens/dist/theme-gatsbyjs-org'
-import { breakpointGutter } from '../utils/styles'
-import DarkModeToggle from './dark-mode-toggle'
+import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org";
+import { breakpointGutter } from "../utils/styles";
+import DarkModeToggle from "./dark-mode-toggle";
 
 // what we need to nudge down the navItems to sit
 // on the baseline of the logo's wordmark
-const navItemTopOffset = `0.4rem`
+const navItemTopOffset = `0.4rem`;
 // theme-ui values
-const navItemHorizontalSpacing = [1, null, 2]
+const navItemHorizontalSpacing = [1, null, 2];
 
 const overrideDefaultMdLineHeight = {
   [mediaQueries.md]: {
     lineHeight: (t) => t.sizes.headerHeight,
   },
-}
+};
 
 const navItemStyles = {
   borderBottom: `2px solid transparent`,
@@ -35,8 +38,8 @@ const navItemStyles = {
   position: `relative`,
   textDecoration: `none`,
   zIndex: 1,
-  '&:hover, &:focus': { color: `navigation.linkHover` },
-}
+  "&:hover, &:focus": { color: `navigation.linkHover` },
+};
 
 const NavItem = ({ linkTo, children }) => (
   <li
@@ -52,7 +55,7 @@ const NavItem = ({ linkTo, children }) => (
       partiallyActive={true}
       sx={{
         ...navItemStyles,
-        '&.active': {
+        "&.active": {
           borderBottomColor: `lilac`,
           color: `navigation.linkActive`,
         },
@@ -61,7 +64,7 @@ const NavItem = ({ linkTo, children }) => (
       {children}
     </Link>
   </li>
-)
+);
 
 const SocialNavItem = ({ href, title, children }) => (
   <a
@@ -79,17 +82,17 @@ const SocialNavItem = ({ href, title, children }) => (
   >
     {children}
   </a>
-)
+);
 
 const navItems = [
-  { id: 'showcase', text: `Showcase` },
-  { id: 'blog', text: `Blog` },
-  { id: 'contact', text: `Contact` },
-]
+  { id: "showcase", text: `Showcase` },
+  { id: "blog", text: `Blog` },
+  { id: "contact", text: `Contact` },
+];
 
 const Navigation = ({ pathname }) => {
   // const [colorMode] = useColorMode()
-  const isHomepage = pathname === `/`
+  const isHomepage = pathname === `/`;
 
   return (
     <header
@@ -130,7 +133,7 @@ const Navigation = ({ pathname }) => {
           px: 6,
           position: `relative`,
           width: `100%`,
-          '&:after': {
+          "&:after": {
             bg: isHomepage ? `transparent` : `ui.border`,
             bottom: 0,
             content: `''`,
@@ -215,10 +218,16 @@ const Navigation = ({ pathname }) => {
           <SocialNavItem href="https://github.com/dhausser" title="GitHub">
             <GithubIcon />
           </SocialNavItem>
-          <SocialNavItem href="https://www.twitter.com/davyhausser" title="Twitter">
+          <SocialNavItem
+            href="https://www.twitter.com/davyhausser"
+            title="Twitter"
+          >
             <TwitterIcon />
           </SocialNavItem>
-          <SocialNavItem href="https://www.linkedin.com/in/davyhausser" title="Linkedin">
+          <SocialNavItem
+            href="https://www.linkedin.com/in/davyhausser"
+            title="Linkedin"
+          >
             <LinkedinIcon />
           </SocialNavItem>
           <div
@@ -227,7 +236,7 @@ const Navigation = ({ pathname }) => {
               ...overrideDefaultMdLineHeight,
               color: `navigation.socialLink`,
               ml: navItemHorizontalSpacing,
-              '&:hover': {
+              "&:hover": {
                 color: `navigation.linkHover`,
               },
             }}
@@ -237,7 +246,7 @@ const Navigation = ({ pathname }) => {
         </div>
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;

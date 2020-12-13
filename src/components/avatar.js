@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import Img from 'gatsby-image'
+import { jsx } from "theme-ui";
+import Img from "gatsby-image";
 
 const Avatar = ({ image, alt, overrideCSS }) => (
   <Img
@@ -16,6 +16,6 @@ const Avatar = ({ image, alt, overrideCSS }) => (
       ...overrideCSS,
     }}
   />
-)
+);
 
-export default Avatar
+export default Avatar;

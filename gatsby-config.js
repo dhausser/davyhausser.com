@@ -15,6 +15,7 @@ module.exports = {
     siteUrl: `https://davyhausser.com/`,
     twitter: `davyhausser`,
   },
+  flags: { PRESERVE_WEBPACK_CACHE: true },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
@@ -74,7 +75,7 @@ module.exports = {
             },
           },
           {
-            resolve: 'gatsby-remark-emojis',
+            resolve: "gatsby-remark-emojis",
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
@@ -95,10 +96,10 @@ module.exports = {
       options: {
         name: `Davy Hausser Portfolio`,
         short_name: `DavyHausser`,
-        start_url: `/showcase`,
+        start_url: `/`,
         icon: `src/assets/icons/gatsby-icon.png`,
       },
     },
     `gatsby-plugin-offline`,
   ],
-}
+};

@@ -1,15 +1,20 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import React from 'react'
-import { navigate, PageRenderer, Link } from 'gatsby'
-import { useColorMode } from 'theme-ui'
-import { Global } from '@emotion/core'
-import mousetrap from 'mousetrap'
-import { MdClose } from 'react-icons/md'
-import { colors, space, zIndices, mediaQueries } from 'gatsby-design-tokens/dist/theme-gatsbyjs-org'
-import '../assets/fonts/futura'
-import LazyModal from './lazy-modal'
-import { globalStyles } from '../utils/styles/global'
+import { jsx } from "theme-ui";
+import React from "react";
+import { navigate, PageRenderer, Link } from "gatsby";
+import { useColorMode } from "theme-ui";
+import { Global } from "@emotion/core";
+import mousetrap from "mousetrap";
+import { MdClose } from "react-icons/md";
+import {
+  colors,
+  space,
+  zIndices,
+  mediaQueries,
+} from "gatsby-design-tokens/dist/theme-gatsbyjs-org";
+import "../assets/fonts/futura";
+import LazyModal from "./lazy-modal";
+import { globalStyles } from "../utils/styles/global";
 
 export default function Modal({
   modalBackgroundPath,
@@ -20,39 +25,39 @@ export default function Modal({
   modalPreviousLink,
   modalNextLink,
 }) {
-  const colorMode = useColorMode()
-  const isDark = colorMode[0] === `dark`
+  const colorMode = useColorMode();
+  const isDark = colorMode[0] === `dark`;
   React.useEffect(() => {
-    document.querySelector(`html`).style.overflowY = `hidden`
+    document.querySelector(`html`).style.overflowY = `hidden`;
 
     return () => {
-      document.querySelector(`html`).style.overflowY = `auto`
-    }
-  })
+      document.querySelector(`html`).style.overflowY = `auto`;
+    };
+  });
 
   function modalPrev() {
     navigate(previous, {
       state: { isModal: true, filters },
-    })
+    });
   }
 
   function modalNext() {
     navigate(next, {
       state: { isModal: true, filters },
-    })
+    });
   }
 
   React.useEffect(() => {
-    mousetrap.bind(`left`, modalPrev)
-    mousetrap.bind(`right`, modalNext)
-    mousetrap.bind(`spacebar`, modalNext)
+    mousetrap.bind(`left`, modalPrev);
+    mousetrap.bind(`right`, modalNext);
+    mousetrap.bind(`spacebar`, modalNext);
 
     return () => {
-      mousetrap.unbind(`left`)
-      mousetrap.unbind(`right`)
-      mousetrap.unbind(`spacebar`)
-    }
-  })
+      mousetrap.unbind(`left`);
+      mousetrap.unbind(`right`);
+      mousetrap.unbind(`spacebar`);
+    };
+  });
   return (
     <>
       <Global styles={globalStyles} />
@@ -126,7 +131,7 @@ export default function Modal({
                 right: (t) => t.space[7],
                 top: (t) => t.space[8],
                 width: 40,
-                '&:hover': {
+                "&:hover": {
                   bg: `ui.hover`,
                   color: `gatsby`,
                 },
@@ -182,5 +187,5 @@ export default function Modal({
         </div>
       </LazyModal>
     </>
-  )
+  );
 }

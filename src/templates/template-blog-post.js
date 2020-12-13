@@ -1,23 +1,23 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import React from 'react'
-import { graphql, Link } from 'gatsby'
+import { jsx } from "theme-ui";
+import React from "react";
+import { graphql, Link } from "gatsby";
 // import Img from "gatsby-image"
-import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
-import Layout from '../components/layout'
-import PageMetadata from '../components/page-metadata'
-import { mediaQueries } from 'gatsby-design-tokens/dist/theme-gatsbyjs-org'
-import Container from '../components/container'
-import EmailCaptureForm from '../components/email-capture-form'
+import Layout from "../components/layout";
+import PageMetadata from "../components/page-metadata";
+import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org";
+import Container from "../components/container";
+import EmailCaptureForm from "../components/email-capture-form";
 // import TagsSection from "../components/tags-section"
-import Avatar from '../components/avatar'
-import PrevAndNext from '../components/prev-and-next'
-import FooterLinks from '../components/shared/footer-links'
+import Avatar from "../components/avatar";
+import PrevAndNext from "../components/prev-and-next";
+import FooterLinks from "../components/shared/footer-links";
 
 function BlogPostTemplate({ data, pageContext }) {
-  const post = data.mdx
-  const { previous, next } = pageContext
+  const post = data.mdx;
+  const { previous, next } = pageContext;
 
   const BioLine = ({ children }) => (
     <p
@@ -30,7 +30,7 @@ function BlogPostTemplate({ data, pageContext }) {
     >
       {children}
     </p>
-  )
+  );
 
   return (
     <Layout>
@@ -42,7 +42,7 @@ function BlogPostTemplate({ data, pageContext }) {
             type="article"
             timeToRead={post.timeToRead}
             image={post.image?.childImageSharp.resize}
-            twitterCard={post?.twittercard || 'summary'}
+            twitterCard={post?.twittercard || "summary"}
           />
           <div sx={{ display: `flex`, flexDirection: `column` }}>
             <section
@@ -56,8 +56,11 @@ function BlogPostTemplate({ data, pageContext }) {
               }}
             >
               <div css={{ flex: `0 0 auto` }}>
-                <Link to="/blog/" css={{ '&&': { borderBottom: 0 } }}>
-                  <Avatar image={data.avatar.childImageSharp.fixed} overrideCSS={{ mr: 5 }} />
+                <Link to="/blog/" css={{ "&&": { borderBottom: 0 } }}>
+                  <Avatar
+                    image={data.avatar.childImageSharp.fixed}
+                    overrideCSS={{ mr: 5 }}
+                  />
                 </Link>
               </div>
               <div css={{ flex: `1 1 auto` }}>
@@ -71,9 +74,11 @@ function BlogPostTemplate({ data, pageContext }) {
                   >
                     <span
                       sx={{
-                        borderBottom: (t) => `1px solid ${t.colors.link.border}`,
-                        transition: (t) => `all ${t.transition.speed.fast} ${t.transition.curve.default}`,
-                        '&:hover': { borderColor: `link.hoverBorder` },
+                        borderBottom: (t) =>
+                          `1px solid ${t.colors.link.border}`,
+                        transition: (t) =>
+                          `all ${t.transition.speed.fast} ${t.transition.curve.default}`,
+                        "&:hover": { borderColor: `link.hoverBorder` },
                       }}
                     >
                       {data.site.siteMetadata.author.name}
@@ -88,7 +93,10 @@ function BlogPostTemplate({ data, pageContext }) {
                       {` `}
                       (originally published at
                       {` `}
-                      <a href={post.frontmatter.canonicalLink}>{post.fields.publishedAt}</a>)
+                      <a href={post.frontmatter.canonicalLink}>
+                        {post.fields.publishedAt}
+                      </a>
+                      )
                     </span>
                   )}
                 </BioLine>
@@ -154,10 +162,10 @@ function BlogPostTemplate({ data, pageContext }) {
         <FooterLinks />
       </div>
     </Layout>
-  )
+  );
 }
 
-export default BlogPostTemplate
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -189,4 +197,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

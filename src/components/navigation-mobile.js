@@ -1,27 +1,27 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { Link } from 'gatsby'
+import { jsx } from "theme-ui";
+import { Link } from "gatsby";
 
-import { ShowcaseIcon, BlogIcon, DocsIcon } from '../assets/icons'
-import { mediaQueries } from 'gatsby-design-tokens/dist/theme-gatsbyjs-org'
-import { svgStyles } from '../utils/styles'
+import { ShowcaseIcon, BlogIcon, DocsIcon } from "../assets/icons";
+import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org";
+import { svgStyles } from "../utils/styles";
 
 const getProps = ({ isPartiallyCurrent }) => {
   return {
     ...(isPartiallyCurrent
       ? {
-          'data-active': true,
+          "data-active": true,
         }
       : {}),
-  }
-}
+  };
+};
 
 const MobileNavItem = ({ linkTo, label, icon }) => (
   <Link
     sx={{
       ...styles.link.default,
       ...styles.svg.default,
-      '&[data-active]': {
+      "&[data-active]": {
         ...styles.link.active,
         ...styles.svg.active,
       },
@@ -32,12 +32,12 @@ const MobileNavItem = ({ linkTo, label, icon }) => (
     <span dangerouslySetInnerHTML={{ __html: icon }} />
     <div>{label}</div>
   </Link>
-)
+);
 const navItems = [
   { id: `showcase`, text: `Showcase`, icon: ShowcaseIcon },
   { id: `blog`, text: `Blog`, icon: BlogIcon },
-  { id: 'contact', text: `Contact`, icon: DocsIcon },
-]
+  { id: "contact", text: `Contact`, icon: DocsIcon },
+];
 
 export default () => (
   <div
@@ -65,14 +65,14 @@ export default () => (
       <MobileNavItem linkTo={`/${id}/`} key={id} label={text} icon={icon} />
     ))}
   </div>
-)
+);
 
 const styles = {
   svg: {
     default: {
       ...svgStyles().stroke,
       ...svgStyles().default,
-      '&:hover': { ...svgStyles().active },
+      "&:hover": { ...svgStyles().active },
     },
     active: svgStyles().active,
   },
@@ -92,24 +92,24 @@ const styles = {
       textDecoration: `none`,
       width: `headerHeight`,
       height: `headerHeight`,
-      '& svg': {
+      "& svg": {
         display: `block`,
         height: 32,
         mb: 1,
         mt: 0,
         mx: `auto`,
-        '& path, & line, & polygon': {
+        "& path, & line, & polygon": {
           transition: `default`,
         },
       },
-      ':hover': {
+      ":hover": {
         color: `navigation.linkHover`,
       },
     },
     active: {
       color: `navigation.linkActive`,
       fontWeight: `bold`,
-      '&:before': {
+      "&:before": {
         bg: `navigation.linkActive`,
         content: `" "`,
         height: `2px`,
@@ -123,4 +123,4 @@ const styles = {
       },
     },
   },
-}
+};

@@ -1,15 +1,15 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { Link } from 'gatsby'
-import Img from 'gatsby-image'
+import { jsx } from "theme-ui";
+import { Link } from "gatsby";
+import Img from "gatsby-image";
 
-import { screenshot, screenshotHover, withTitleHover } from '../shared/styles'
-import ShowcaseItemCategories from './showcase-item-categories'
-import { ShowcaseIcon } from '../../assets/icons'
-import { mediaQueries } from 'gatsby-design-tokens/dist/theme-gatsbyjs-org'
-import { svgStyles } from '../../utils/styles'
-import Button from '../button'
-import { MdArrowForward as ArrowForwardIcon } from 'react-icons/md'
+import { screenshot, screenshotHover, withTitleHover } from "../shared/styles";
+import ShowcaseItemCategories from "./showcase-item-categories";
+import { ShowcaseIcon } from "../../assets/icons";
+import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org";
+import { svgStyles } from "../../utils/styles";
+import Button from "../button";
+import { MdArrowForward as ArrowForwardIcon } from "react-icons/md";
 
 const featuredSitesCard = {
   display: `flex`,
@@ -26,7 +26,7 @@ const featuredSitesCard = {
   [mediaQueries.xxl]: {
     width: 400,
   },
-}
+};
 
 export default ({ featured, setFilters }) => (
   <section
@@ -104,7 +104,7 @@ export default ({ featured, setFilters }) => (
           >
             <Link
               sx={{
-                '&&': {
+                "&&": {
                   borderBottom: `none`,
                   color: `heading`,
                   fontFamily: `heading`,
@@ -112,7 +112,7 @@ export default ({ featured, setFilters }) => (
                   fontWeight: `bold`,
                   transition: (t) =>
                     `box-shadow ${t.transition.speed.slow} ${t.transition.curve.default}, transform .3s ${t.transition.curve.default}`,
-                  '&:hover': { ...screenshotHover },
+                  "&:hover": { ...screenshotHover },
                 },
               }}
               to={`/showcase/${node.slug}/`}
@@ -120,7 +120,9 @@ export default ({ featured, setFilters }) => (
             >
               {node.childScreenshot && (
                 <Img
-                  fluid={node.childScreenshot.screenshotFile.childImageSharp.fluid}
+                  fluid={
+                    node.childScreenshot.screenshotFile.childImageSharp.fluid
+                  }
                   alt={node.name}
                   sx={{ ...screenshot }}
                 />
@@ -142,7 +144,10 @@ export default ({ featured, setFilters }) => (
               <div sx={{ color: `text`, fontFamily: `heading`, fontSize: 2 }}>
                 <a href={node.built_by_url}>Built by {node.built_by}</a>
               </div>
-              <ShowcaseItemCategories categories={node.categories} onCategoryClick={(c) => setFilters(c)} />
+              <ShowcaseItemCategories
+                categories={node.categories}
+                onCategoryClick={(c) => setFilters(c)}
+              />
             </div>
           </div>
         ))}
@@ -175,7 +180,7 @@ export default ({ featured, setFilters }) => (
                   [mediaQueries.xl]: {
                     height: 72,
                   },
-                  '& svg': {
+                  "& svg": {
                     height: `100%`,
                     ...svgStyles.active,
                   },
@@ -190,4 +195,4 @@ export default ({ featured, setFilters }) => (
       </div>
     </div>
   </section>
-)
+);

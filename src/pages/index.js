@@ -1,21 +1,21 @@
-import React, { useEffect } from 'react'
-import { navigate, graphql } from 'gatsby'
+import React, { useEffect } from "react";
+import { navigate, graphql } from "gatsby";
 
-import PageMetadata from '../components/page-metadata'
+import PageMetadata from "../components/page-metadata";
 
 export default ({ data }) => {
   useEffect(() => {
     if (window) {
-      navigate('/showcase/')
+      navigate("/showcase/");
     }
-  })
+  });
   return (
     <PageMetadata
       title={`Showcase | ${data.site.siteMetadata.title}`}
       description={data.site.siteMetadata.description}
     />
-  )
-}
+  );
+};
 
 export const pageQuery = graphql`
   query indexPageQuery {
@@ -26,4 +26,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

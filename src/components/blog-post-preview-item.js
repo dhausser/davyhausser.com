@@ -1,15 +1,15 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { useStaticQuery, graphql, Link } from 'gatsby'
+import { jsx } from "theme-ui";
+import { useStaticQuery, graphql, Link } from "gatsby";
 
-import Avatar from './avatar'
+import Avatar from "./avatar";
 
 const formatDate = (dateString) =>
   new Date(dateString).toLocaleDateString(`en-EN`, {
     month: `long`,
     day: `numeric`,
     year: `numeric`,
-  })
+  });
 
 const BlogPostPreviewItem = ({ post, className }) => {
   const data = useStaticQuery(graphql`
@@ -29,11 +29,14 @@ const BlogPostPreviewItem = ({ post, className }) => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <article css={{ position: `relative` }} className={className}>
-      <Link to={`/blog${post.fields.slug}`} sx={{ '&&': { color: `card.color` } }}>
+      <Link
+        to={`/blog${post.fields.slug}`}
+        sx={{ "&&": { color: `card.color` } }}
+      >
         <h2 sx={{ color: `card.header`, mt: 0 }}>{post.frontmatter.title}</h2>
         <p>{post.excerpt}</p>
       </Link>
@@ -48,7 +51,7 @@ const BlogPostPreviewItem = ({ post, className }) => {
           css={{
             position: `relative`,
             zIndex: 1,
-            '&&': { borderBottom: `0` },
+            "&&": { borderBottom: `0` },
           }}
         >
           <Avatar
@@ -93,13 +96,13 @@ const BlogPostPreviewItem = ({ post, className }) => {
           textIndent: `-100%`,
           whiteSpace: `nowrap`,
           zIndex: 0,
-          '&&': { border: 0 },
+          "&&": { border: 0 },
         }}
       >
         Read more
       </Link>
     </article>
-  )
-}
+  );
+};
 
-export default BlogPostPreviewItem
+export default BlogPostPreviewItem;

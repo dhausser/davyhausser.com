@@ -2,9 +2,19 @@
   "name": "davyhausser.com",
   "private": true,
   "description": "Davy's personal website",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Davy Hausser <davy.hausser@gmail.com> (https://davyhausser.com)",
   "repository": "https://github.com/dhausser/davyhausser.com",
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "lint": "eslint . --ext js"
+  },
+  "license": "0BSD",
   "dependencies": {
     "@emotion/styled": "^10.0.27",
     "@loadable/component": "^5.13.1",
@@ -60,28 +70,5 @@
     "lint-staged": ">=10",
     "prettier": "^2.1.1",
     "typescript": "^4.0.2"
-  },
-  "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "lint": "eslint . --ext js",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js}": [
-      "eslint",
-      "prettier --write"
-    ]
-  },
-  "prettier": "@prisma-labs/prettier-config"
+  }
 }

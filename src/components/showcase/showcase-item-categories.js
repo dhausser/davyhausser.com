@@ -1,18 +1,18 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { Fragment } from 'react'
-import { Link } from 'gatsby'
+import { jsx } from "theme-ui";
+import { Fragment } from "react";
+import { Link } from "gatsby";
 
 const ShowcaseItemCategories = ({ categories }) => {
   return categories.map((c, i) => (
     <Fragment key={c}>
       <Link
         sx={{
-          '&&': {
+          "&&": {
             color: `textMuted`,
             fontWeight: `body`,
             borderBottom: `none`,
-            '&:hover': {
+            "&:hover": {
               color: `link.hoverColor`,
             },
           },
@@ -24,7 +24,7 @@ const ShowcaseItemCategories = ({ categories }) => {
       </Link>
       {i === categories.length - 1 ? `` : `, `}
     </Fragment>
-  ))
-}
+  ));
+};
 
-export default ShowcaseItemCategories
+export default ShowcaseItemCategories;

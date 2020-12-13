@@ -1,7 +1,13 @@
-import React from 'react'
+import React from "react";
 
 const FeaturedSitesIcon = () => (
-  <svg width="1em" height="1em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" focusable="false">
+  <svg
+    width="1em"
+    height="1em"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+    focusable="false"
+  >
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -21,6 +27,6 @@ const FeaturedSitesIcon = () => (
       fill="currentColor"
     />
   </svg>
-)
+);
 
-export default FeaturedSitesIcon
+export default FeaturedSitesIcon;

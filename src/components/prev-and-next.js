@@ -1,13 +1,16 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { Link } from 'gatsby'
-import { MdArrowBack as ArrowBackIcon, MdArrowForward as ArrowForwardIcon } from 'react-icons/md'
+import { jsx } from "theme-ui";
+import { Link } from "gatsby";
+import {
+  MdArrowBack as ArrowBackIcon,
+  MdArrowForward as ArrowForwardIcon,
+} from "react-icons/md";
 
-import { mediaQueries } from 'gatsby-design-tokens/dist/theme-gatsbyjs-org'
+import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org";
 
 const prevNextLinkStyles = {
   // bump specificity to override the border applied to Link's by default
-  '&&': {
+  "&&": {
     borderBottom: 0,
   },
   color: `gatsby`,
@@ -15,18 +18,18 @@ const prevNextLinkStyles = {
   fontSize: 3,
   fontWeight: `bold`,
   lineHeight: `dense`,
-}
+};
 const prevNextLabelStyles = {
   color: `textMuted`,
   fontSize: 2,
   fontWeight: `body`,
   mb: 2,
   mt: 0,
-}
+};
 
 const PrevAndNext = ({ previous = null, next = null, ...props }) => {
   if (!previous && !next) {
-    return null
+    return null;
   }
 
   return (
@@ -98,7 +101,7 @@ const PrevAndNext = ({ previous = null, next = null, ...props }) => {
         )}
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default PrevAndNext
+export default PrevAndNext;

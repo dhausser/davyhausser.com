@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import Img from 'gatsby-image'
+import { jsx } from "theme-ui";
+import Img from "gatsby-image";
 
-import { screenshot } from './styles'
+import { screenshot } from "./styles";
 
 const Screenshot = ({ imageSharp, alt, boxShadow = true }) => (
   <div className="screenshot" sx={{ position: `relative` }}>
@@ -14,6 +14,6 @@ const Screenshot = ({ imageSharp, alt, boxShadow = true }) => (
       />
     )}
   </div>
-)
+);
 
-export default Screenshot
+export default Screenshot;

@@ -1,27 +1,36 @@
-import React from 'react'
-import { graphql } from 'gatsby'
+import React from "react";
+import { graphql } from "gatsby";
 
-import ShowcaseDetails from '../components/showcase-details'
+import ShowcaseDetails from "../components/showcase-details";
 
 export default function ShowcaseTemplate({ data, location }) {
-  const isModal = location.state && location.state.isModal && window.innerWidth > 750
+  const isModal =
+    location.state && location.state.isModal && window.innerWidth > 750;
 
-  const categories = data.sitesYaml.categories || []
+  const categories = data.sitesYaml.categories || [];
 
   /*
    * This shouldn't ever happen due to filtering on hasScreenshot field
    * However, it appears to break Gatsby Build
    * so let's avoid a failure here
    */
-  if (!data.sitesYaml.childScreenshot || !data.sitesYaml.childScreenshot.screenshotFile) {
+  if (
+    !data.sitesYaml.childScreenshot ||
+    !data.sitesYaml.childScreenshot.screenshotFile
+  ) {
     data.sitesYaml.childScreenshot = {
       screenshotFile: data.fallback,
-    }
+    };
   }
 
   return (
-    <ShowcaseDetails isModal={isModal} site={data.sitesYaml} categories={categories} location={location} />
-  )
+    <ShowcaseDetails
+      isModal={isModal}
+      site={data.sitesYaml}
+      categories={categories}
+      location={location}
+    />
+  );
 }
 
 export const pageQuery = graphql`
@@ -58,4 +67,4 @@ export const pageQuery = graphql`
     #   }
     # }
   }
-`
+`;

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css, jsx } from "@emotion/core";
 
 export default ({ categories }) => {
   return (
@@ -34,5 +34,5 @@ export default ({ categories }) => {
         </div>
       ))}
     </div>
-  )
-}
+  );
+};

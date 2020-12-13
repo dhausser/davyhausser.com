@@ -1,9 +1,9 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import React from 'react'
+import { jsx } from "theme-ui";
+import React from "react";
 
 const EmptyGridItems = ({ styles }) => {
-  let items = []
+  let items = [];
 
   for (let i = 0; i < 6; i++) {
     items.push(
@@ -15,10 +15,10 @@ const EmptyGridItems = ({ styles }) => {
           my: 0,
         }}
       />
-    )
+    );
   }
 
-  return <React.Fragment>{items}</React.Fragment>
-}
+  return <React.Fragment>{items}</React.Fragment>;
+};
 
-export default EmptyGridItems
+export default EmptyGridItems;

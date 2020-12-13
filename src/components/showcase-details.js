@@ -1,23 +1,23 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import React, { Fragment } from 'react'
-import { useStaticQuery, graphql, Link } from 'gatsby'
-import url from 'url'
-import Img from 'gatsby-image'
-import qs from 'qs'
+import { jsx } from "theme-ui";
+import React, { Fragment } from "react";
+import { useStaticQuery, graphql, Link } from "gatsby";
+import url from "url";
+import Img from "gatsby-image";
+import qs from "qs";
 
-import { mediaQueries } from 'gatsby-design-tokens/dist/theme-gatsbyjs-org'
-import Modal from './modal'
-import Button from './button'
-import Screenshot from './shared/screenshot'
-import PageMetadata from './site-metadata'
+import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org";
+import Modal from "./modal";
+import Button from "./button";
+import Screenshot from "./shared/screenshot";
+import PageMetadata from "./site-metadata";
 
-import FeaturedIcon from '../assets/icons/featured-sites-icons'
-import { MdArrowUpward, MdLink } from 'react-icons/md'
-import { GoMarkGithub as GithubIcon } from 'react-icons/go'
+import FeaturedIcon from "../assets/icons/featured-sites-icons";
+import { MdArrowUpward, MdLink } from "react-icons/md";
+import { GoMarkGithub as GithubIcon } from "react-icons/go";
 
-const gutter = 6
-const gutterDesktop = 8
+const gutter = 6;
+const gutterDesktop = 8;
 
 const styles = {
   link: {
@@ -37,14 +37,14 @@ const styles = {
     borderRadius: 1,
     boxShadow: `overlay`,
   },
-}
+};
 
 const cleanUrl = (mainUrl) => {
-  const parsed = url.parse(mainUrl)
-  let path = parsed.pathname
-  if (path[path.length - 1] === `/`) path = path.slice(0, path.length - 1)
-  return parsed.hostname + path
-}
+  const parsed = url.parse(mainUrl);
+  let path = parsed.pathname;
+  if (path[path.length - 1] === `/`) path = path.slice(0, path.length - 1);
+  return parsed.hostname + path;
+};
 
 const Featured = () => (
   <div
@@ -68,13 +68,13 @@ const Featured = () => (
     {` `}
     Featured
   </div>
-)
+);
 
 const SourceLink = ({ ...props }) => (
   <a
     {...props}
     sx={{
-      '&&': {
+      "&&": {
         border: 0,
       },
       display: `flex`,
@@ -87,7 +87,7 @@ const SourceLink = ({ ...props }) => (
     <GithubIcon sx={{ fontSize: 3, mr: 2, color: `link.color` }} />
     Source
   </a>
-)
+);
 
 function usePrevAndNextSite(item, filters = []) {
   const { allSitesYaml } = useStaticQuery(graphql`
@@ -114,14 +114,15 @@ function usePrevAndNextSite(item, filters = []) {
         }
       }
     }
-  `)
+  `);
 
-  const slug = item.split('/')[2]
-  const sites = allSitesYaml.nodes
-  const currentIndex = sites.findIndex((node) => node.slug === slug)
-  const nextSite = sites[(currentIndex + 1) % sites.length]
-  const previousSite = sites[currentIndex === 0 ? sites.length - 1 : currentIndex - 1]
-  return { nextSite, previousSite }
+  const slug = item.split("/")[2];
+  const sites = allSitesYaml.nodes;
+  const currentIndex = sites.findIndex((node) => node.slug === slug);
+  const nextSite = sites[(currentIndex + 1) % sites.length];
+  const previousSite =
+    sites[currentIndex === 0 ? sites.length - 1 : currentIndex - 1];
+  return { nextSite, previousSite };
 }
 
 /**
@@ -129,17 +130,20 @@ function usePrevAndNextSite(item, filters = []) {
  */
 function getExitLocation(filters = {}) {
   if (Object.keys(filters).length) {
-    const queryString = qs.stringify({ filters })
-    return `/showcase/?${queryString}`
+    const queryString = qs.stringify({ filters });
+    return `/showcase/?${queryString}`;
   } else {
-    return `/showcase/`
+    return `/showcase/`;
   }
 }
 
 function ShowcaseModal({ children, location, isModal }) {
-  const { filters } = location.state || {}
-  const { previousSite, nextSite } = usePrevAndNextSite(location.pathname, filters)
-  if (!isModal) return children
+  const { filters } = location.state || {};
+  const { previousSite, nextSite } = usePrevAndNextSite(
+    location.pathname,
+    filters
+  );
+  if (!isModal) return children;
   return (
     <Modal
       modalBackgroundPath={getExitLocation(filters)}
@@ -154,7 +158,9 @@ function ShowcaseModal({ children, location, isModal }) {
             backgroundColor
             fixed={{
               srcSet: ``,
-              src: nextSite.childScreenshot.screenshotFile.childImageSharp.resize.src,
+              src:
+                nextSite.childScreenshot.screenshotFile.childImageSharp.resize
+                  .src,
               width: 100,
               height: 100,
             }}
@@ -195,7 +201,9 @@ function ShowcaseModal({ children, location, isModal }) {
             backgroundColor
             fixed={{
               srcSet: ``,
-              src: previousSite.childScreenshot.screenshotFile.childImageSharp.resize.src,
+              src:
+                previousSite.childScreenshot.screenshotFile.childImageSharp
+                  .resize.src,
               width: 100,
               height: 100,
             }}
@@ -232,11 +240,11 @@ function ShowcaseModal({ children, location, isModal }) {
     >
       {children}
     </Modal>
-  )
+  );
 }
 
 const ShowcaseDetails = ({ location, site, isModal, categories }) => {
-  const screenshotFile = site.childScreenshot.screenshotFile.childImageSharp
+  const screenshotFile = site.childScreenshot.screenshotFile.childImageSharp;
 
   return (
     <ShowcaseModal isModal={isModal} location={location}>
@@ -312,7 +320,12 @@ const ShowcaseDetails = ({ location, site, isModal, categories }) => {
                   zIndex: 1,
                 }}
               >
-                <Button icon={<MdLink />} overrideCSS={{ mr: 2 }} tag="href" to={site.main_url}>
+                <Button
+                  icon={<MdLink />}
+                  overrideCSS={{ mr: 2 }}
+                  tag="href"
+                  to={site.main_url}
+                >
                   Visit site
                 </Button>
               </div>
@@ -352,7 +365,7 @@ const ShowcaseDetails = ({ location, site, isModal, categories }) => {
         </div>
       </div>
     </ShowcaseModal>
-  )
-}
+  );
+};
 
-export default ShowcaseDetails
+export default ShowcaseDetails;
