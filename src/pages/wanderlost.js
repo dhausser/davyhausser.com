@@ -1,6 +1,4 @@
 import React from "react";
-import { graphql } from "gatsby";
-
 import Layout from "../components/layout";
 import PageMetadata from "../components/page-metadata";
 import HomepageSection from "../components/homepage-section";
@@ -31,16 +29,3 @@ export default ({ data }) => (
     </HomepageSection>
   </Layout>
 );
-
-export const pageQuery = graphql`
-  query siteDataQuery {
-    site {
-      siteMetadata {
-        author {
-          name
-        }
-        description
-      }
-    }
-  }
-`;
