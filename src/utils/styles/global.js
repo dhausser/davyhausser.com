@@ -2,7 +2,7 @@ import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org";
 
 export const globalStyles = (t) => {
   return {
-    "html, body": {
+    "html, body, a": {
       color: t.colors.text,
       MozOsxFontSmoothing: `grayscale`,
       textRendering: `optimizelegibility`,

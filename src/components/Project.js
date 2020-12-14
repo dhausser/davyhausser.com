@@ -4,7 +4,7 @@ import Img from "gatsby-image";
 import styled from "@emotion/styled";
 import { breakpoints, Heading, Paragraph } from "../utils/styles";
 
-const ProjectLink = styled(Paragraph)`
+export const ProjectLink = styled(Paragraph)`
   font-weight: 700;
   font-size: 14px;
   line-height: 163.19%;
@@ -15,7 +15,7 @@ const ProjectLink = styled(Paragraph)`
   transition: border-bottom 0.3s;
 
   :hover {
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid;
   }
 
   span {
