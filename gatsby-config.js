@@ -2,7 +2,7 @@ const path = require(`path`);
 
 module.exports = {
   siteMetadata: {
-    title: `davyhausser.com`,
+    title: `Davy Hausser`,
     author: {
       name: `Davy Hausser`,
       summary: `who lives and works in Warsaw building useful things.`,

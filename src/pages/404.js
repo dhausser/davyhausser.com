@@ -8,7 +8,7 @@ const NotFoundPage = ({ data }) => {
     <Layout>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>{`404: Not Found | ${data.site.siteMetadata.author.name}`}</title>
+        <title>{`404: Not Found | ${data.site.siteMetadata.title}`}</title>
         <meta name="description" content={data.site.siteMetadata.description} />
         <link
           rel="canonical"

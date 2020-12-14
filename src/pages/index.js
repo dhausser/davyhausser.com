@@ -22,7 +22,7 @@ export default ({ data }) => (
   <Layout>
     <Helmet>
       <meta charSet="utf-8" />
-      <title>{data.site.siteMetadata.author.name}</title>
+      <title>{data.site.siteMetadata.title}</title>
       <meta name="description" content={data.site.siteMetadata.description} />
       <link rel="canonical" href={data.site.siteMetadata.description} />
     </Helmet>
@@ -139,9 +139,7 @@ export const query = graphql`
   query {
     site {
       siteMetadata {
-        author {
-          name
-        }
+        title
         description
       }
     }
