@@ -3,10 +3,8 @@ import { jsx } from "theme-ui";
 import React from "react";
 import { Global, keyframes } from "@emotion/core";
 import styled from "@emotion/styled";
-
 import Navigation from "./Navigation";
-import { globalStyles } from "../utils/styles/global";
-import { breakpoints, breakpointGutter } from "../utils/styles";
+import { globalStyles, breakpoints, breakpointGutter } from "../utils/styles";
 import "../utils/fonts/futura";
 
 const FadeOut = keyframes`

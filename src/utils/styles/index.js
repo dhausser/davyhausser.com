@@ -11,6 +11,8 @@ import {
   fonts,
 } from "gatsby-design-tokens/dist/theme-gatsbyjs-org";
 
+export { globalStyles } from "./global";
+
 const stripeAnimation = keyframes({
   "0%": { backgroundPosition: `0 0` },
   "100%": { backgroundPosition: `${space[7]} ${space[11]}` },
@@ -59,41 +61,6 @@ export const buttonStyles = (t) => {
       backgroundColor: `button.secondaryBg`,
       color: `button.secondaryText`,
       fontWeight: `body`,
-    },
-  };
-};
-
-export const svgStyles = (t) => {
-  return {
-    stroke: {
-      "& .svg-stroke": {
-        strokeMiterlimit: 10,
-        strokeWidth: 1.5,
-      },
-    },
-    default: {
-      "& .svg-stroke-dark": { stroke: `icon.neutral` },
-      "& .svg-stroke-accent": { stroke: `icon.neutralLight` },
-      "& .svg-stroke-background": { stroke: `icon.background` },
-      "& .svg-stroke-light": { stroke: `icon.light` },
-      "& .svg-fill-dark": { fill: `icon.neutral` },
-      "& .svg-fill-accent": { fill: `icon.neutralLight` },
-      "& .svg-fill-background": { fill: `icon.background` },
-      "& .svg-fill-light": { fill: `icon.light` },
-      "& .svg-fill-accent.svg-fill-transparent": { fill: `transparent` },
-      "& .svg-fill-light.svg-fill-transparent": { fill: `transparent` },
-    },
-    active: {
-      "& .svg-stroke-dark": { stroke: `icon.dark` },
-      "& .svg-stroke-accent": { stroke: `icon.accent` },
-      "& .svg-stroke-background": { stroke: `icon.background` },
-      "& .svg-stroke-light": { stroke: `icon.light` },
-      "& .svg-fill-dark": { fill: `icon.dark` },
-      "& .svg-fill-accent": { fill: `icon.accent` },
-      "& .svg-fill-background": { fill: `icon.background` },
-      "& .svg-fill-light": { fill: `icon.lightActive` },
-      "& .svg-fill-accent.svg-fill-transparent": { fill: `icon.accent` },
-      "& .svg-fill-light.svg-fill-transparent": { fill: `icon.lightActive` },
     },
   };
 };
@@ -152,20 +119,6 @@ export const themedInput = {
   "::placeholder": {
     color: `themedInput.placeholder`,
   },
-};
-
-// Utilities
-export const visuallyHidden = {
-  // include `px` so we can use it with `sx`
-  border: 0,
-  clip: `rect(0, 0, 0, 0)`,
-  height: `1px`,
-  margin: `-1px`,
-  overflow: `hidden`,
-  padding: 0,
-  position: `absolute`,
-  whiteSpace: `nowrap`,
-  width: `1px`,
 };
 
 // Layout
