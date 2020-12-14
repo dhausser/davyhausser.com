@@ -39,13 +39,6 @@ const ProjectLink = styled(Paragraph)`
   }
 `;
 
-const ProjectImage = styled.div`
-  width: 100%;
-  height: 300px;
-  border-radius: 4px;
-  transition-duration: 0.3s;
-`;
-
 const Project = styled.div`
   width: 100%;
   height: auto;

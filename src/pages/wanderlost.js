@@ -1,12 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Link } from "gatsby";
 import Img from "gatsby-image";
 
 import Layout from "../components/layout";
-import PageMetadata from "../components/page-metadata";
-import Container from "../components/container";
 import Contact from "../components/contact";
+import PageMetadata from "../components/page-metadata";
 
 export default ({ data }) => (
   <Layout>

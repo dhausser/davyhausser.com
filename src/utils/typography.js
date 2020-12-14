@@ -1,5 +1,4 @@
 import Typography from "typography";
-import CodePlugin from "typography-plugin-code";
 import {
   colors,
   lineHeights,
@@ -14,7 +13,6 @@ const _options = {
   headerLineHeight: lineHeights.heading,
   headerColor: colors.heading,
   bodyColor: colors.text,
-  plugins: [new CodePlugin()],
 };
 
 const typography = new Typography(_options);

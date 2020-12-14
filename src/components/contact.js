@@ -2,14 +2,12 @@
 import { jsx } from "theme-ui";
 import React, { useRef, useState } from "react";
 import styled from "@emotion/styled";
-
 import { MdSend as SendIcon } from "react-icons/md";
-
 import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org";
 import { themedInput, formInputFocus, buttonStyles } from "../utils/styles";
 import { rhythm } from "../utils/typography";
 
-const HomepageContainer = styled(`div`)`
+const ContactContainer = styled(`div`)`
   background: ${(p) => p.theme.colors.newsletter.background};
   border: 1px solid ${(p) => p.theme.colors.newsletter.border};
   border-radius: ${(p) => p.theme.radii[2]};
@@ -37,39 +35,6 @@ const Title = styled(`h1`)`
   line-height: ${(p) => p.theme.lineHeights.dense};
   margin: 0;
   margin-top: ${(p) => p.theme.space[1]};
-`;
-
-const ContactpageContainer = styled(`div`)`
-  background: ${(p) => p.theme.colors.newsletter.background};
-  box-shadow: ${(p) => p.theme.shadows.floating},
-    inset 0 0 0 1px ${(p) => p.theme.colors.newsletter.border};
-  border-radius: ${(p) => p.theme.radii[2]};
-  margin-top: ${(p) => p.theme.space[8]};
-  padding: calc(${(p) => p.theme.space[6]} * 1.2);
-  padding-bottom: calc(
-    ${(props) => rhythm(props.theme.space[6] * 1.2)} +
-      ${(p) => p.theme.space[1]}
-  );
-  position: relative;
-
-  :after {
-    border-radius: 0 0 ${(p) => p.theme.radii[2]} ${(p) => p.theme.radii[2]};
-    bottom: 0;
-    content: "";
-    height: ${(p) => p.theme.space[1]};
-    left: 0;
-    right: 0;
-    position: absolute;
-  }
-
-  ${mediaQueries.lg} {
-    flex-direction: row;
-    justify-content: space-between;
-
-    > * {
-      flex-basis: 50%;
-    }
-  }
 `;
 
 const StyledForm = styled(`form`)`
@@ -192,7 +157,7 @@ export default ({
   );
 
   return (
-    <HomepageContainer>
+    <ContactContainer>
       <header
         sx={{
           pb: `1rem`,
@@ -211,6 +176,6 @@ export default ({
           confirmMessage="Success! We'll be in touch soon!"
         />
       )}
-    </HomepageContainer>
+    </ContactContainer>
   );
 };

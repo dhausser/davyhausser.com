@@ -7,7 +7,6 @@ import styled from "@emotion/styled";
 import { globalStyles } from "../utils/styles/global";
 import { breakpoints, breakpointGutter } from "../utils/styles";
 import Navigation from "./navigation";
-import "prismjs/themes/prism.css";
 import "../utils/fonts/futura";
 
 const FadeOut = keyframes`

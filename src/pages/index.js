@@ -1,7 +1,5 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Link } from "gatsby";
-
 import Layout from "../components/layout";
 import ProjectRow from "../components/project-row";
 import PageMetadata from "../components/page-metadata";
