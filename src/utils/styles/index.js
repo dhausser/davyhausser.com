@@ -169,7 +169,6 @@ export const HeadingMain = styled.h1`
   @media (min-width: ${breakpoints.mobileMax}) {
     font-size: 60px;
     margin-bottom: 0;
-    margin-left: 50px;
   }
 
   .blue {

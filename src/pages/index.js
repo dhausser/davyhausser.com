@@ -10,8 +10,8 @@ import {
   HeadingMain,
   HeadingWrapCont,
   Container,
-  SkillTable,
   SubContainer,
+  SkillTable,
   TextContent,
   TextContentWrap,
   SkillContent,
@@ -122,17 +122,15 @@ export default ({ data }) => (
     <SubContainer>
       <Project data={data} />
     </SubContainer>
-    <Container>
-      <SubContainer>
-        <TextContent>
-          <Heading>Let's Build Something Together</Heading>
-          <Paragraph>
-            Feel free to reach out if you're looking for a developer, have a
-            question, or just want to connect.
-          </Paragraph>
-        </TextContent>
-      </SubContainer>
-    </Container>
+    <SubContainer>
+      <TextContent>
+        <Heading>Let's Build Something Together</Heading>
+        <Paragraph>
+          Feel free to reach out if you're looking for a developer, have a
+          question, or just want to connect.
+        </Paragraph>
+      </TextContent>
+    </SubContainer>
     <Contact />
   </Layout>
 );
