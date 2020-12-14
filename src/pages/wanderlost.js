@@ -1,11 +1,20 @@
 import React from "react";
-import { css } from "@emotion/core";
+import styled from "@emotion/styled";
 import { graphql } from "gatsby";
 import { Helmet } from "react-helmet";
 import Img from "gatsby-image";
 import Layout from "../components/Layout";
 import Contact from "../components/Contact";
 import { ProjectLink } from "../components/Project";
+
+const LinkRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  padding: 20px;
+`;
 
 export default ({ data }) => (
   <Layout>
@@ -20,15 +29,7 @@ export default ({ data }) => (
     </Helmet>
     <h1>Wanderlost</h1>
     <Img fluid={data.file.childImageSharp.fluid} />
-    <div
-      css={css`
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 100%;
-        align-items: center;
-      `}
-    >
+    <LinkRow>
       <a href="https://wanderlost.vercel.app">
         <ProjectLink>
           Live <span>&#8250;</span>
@@ -39,7 +40,7 @@ export default ({ data }) => (
           Code <span>&#8250;</span>
         </ProjectLink>
       </a>
-    </div>
+    </LinkRow>
     <ul>
       <li>Next.js</li>
       <li>GraphQL</li>
