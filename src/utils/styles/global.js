@@ -2,8 +2,6 @@ import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org";
 
 export const globalStyles = (t) => {
   return {
-    ...gatsbyHighlight(t),
-    ...gatsbyHighlightLanguageBadges(t),
     "html, body": {
       color: t.colors.text,
       MozOsxFontSmoothing: `grayscale`,
