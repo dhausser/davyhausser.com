@@ -4,9 +4,9 @@ import React from "react";
 import { Global, keyframes } from "@emotion/core";
 import styled from "@emotion/styled";
 
+import Navigation from "./Navigation";
 import { globalStyles } from "../utils/styles/global";
 import { breakpoints, breakpointGutter } from "../utils/styles";
-import Navigation from "./navigation";
 import "../utils/fonts/futura";
 
 const FadeOut = keyframes`
@@ -48,7 +48,6 @@ export default ({ children }) => (
     <Global styles={globalStyles} />
     <Navigation />
     <div
-      className={`main-body docSearch-content`}
       sx={{
         px: `env(safe-area-inset-left)`,
         pb: (t) => t.sizes.headerHeight,

@@ -1,16 +1,15 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-// import { useColorMode } from "theme-ui"
+import { Link } from "gatsby";
 import { GoMarkGithub as GithubIcon } from "react-icons/go";
 import {
   FaTwitter as TwitterIcon,
   FaLinkedin as LinkedinIcon,
 } from "react-icons/fa";
-
-import { Link } from "gatsby";
 import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org";
+
+import DarkModeToggle from "./DarkModeToggle";
 import { breakpointGutter } from "../utils/styles";
-import DarkModeToggle from "./dark-mode-toggle";
 
 const navItemTopOffset = `0.4rem`;
 const navItemHorizontalSpacing = [1, null, 2];

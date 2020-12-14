@@ -11,7 +11,6 @@ module.exports = {
     siteUrl: `https://davyhausser.com/`,
     twitter: `davyhausser`,
   },
-  flags: { PRESERVE_WEBPACK_CACHE: true },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,

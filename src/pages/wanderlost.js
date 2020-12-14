@@ -1,17 +1,21 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { Helmet } from "react-helmet";
 import Img from "gatsby-image";
-
-import Layout from "../components/layout";
-import Contact from "../components/contact";
-import PageMetadata from "../components/page-metadata";
+import Layout from "../components/Layout";
+import Contact from "../components/Contact";
 
 export default ({ data }) => (
   <Layout>
-    <PageMetadata
-      title={data.site.siteMetadata.author.name}
-      description={data.site.siteMetadata.description}
-    />
+    <Helmet>
+      <meta charSet="utf-8" />
+      <title>{`Wanderlost | ${data.site.siteMetadata.author.name}`}</title>
+      <meta name="description" content={data.site.siteMetadata.description} />
+      <link
+        rel="canonical"
+        href={`${data.site.siteMetadata.description}wanderlost`}
+      />
+    </Helmet>
     <h1>Wanderlost</h1>
     <Img fluid={data.file.childImageSharp.fluid} />
     <a href="https://wanderlost.vercel.app">Live</a>
@@ -36,6 +40,7 @@ export const query = graphql`
           name
         }
         description
+        siteUrl
       }
     }
     file(relativePath: { eq: "wanderlost-dark.png" }) {

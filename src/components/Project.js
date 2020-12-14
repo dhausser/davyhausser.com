@@ -9,7 +9,6 @@ const ProjectLink = styled(Paragraph)`
   font-size: 14px;
   line-height: 163.19%;
   display: inline;
-  color: black;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   border-bottom: 2px solid transparent;

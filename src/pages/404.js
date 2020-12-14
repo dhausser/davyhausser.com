@@ -1,16 +1,20 @@
 import React from "react";
 import { graphql } from "gatsby";
-
-import Layout from "../components/layout";
-import PageMetadata from "../components/page-metadata";
+import { Helmet } from "react-helmet";
+import Layout from "../components/Layout";
 
 const NotFoundPage = ({ data }) => {
   return (
     <Layout>
-      <PageMetadata
-        title={`404: Not Found | ${data.site.siteMetadata.title}`}
-        description={data.site.siteMetadata.description}
-      />
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>{`404: Not Found | ${data.site.siteMetadata.author.name}`}</title>
+        <meta name="description" content={data.site.siteMetadata.description} />
+        <link
+          rel="canonical"
+          href={`${data.site.siteMetadata.description}wanderlost`}
+        />
+      </Helmet>
       <h1>Not Found</h1>
       <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
     </Layout>
