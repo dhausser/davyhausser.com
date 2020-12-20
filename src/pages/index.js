@@ -120,7 +120,7 @@ export default ({ data }) => (
       </TextContent>
     </SubContainer>
     <SubContainer>
-      <Project data={data} />
+      <Project imageFluid={data.file.childImageSharp.fluid} />
     </SubContainer>
     <SubContainer>
       <TextContent>
@@ -147,7 +147,7 @@ export const query = graphql`
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
-        fluid(maxWidth: 1200) {
+        fluid {
           ...GatsbyImageSharpFluid
         }
       }

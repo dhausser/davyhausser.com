@@ -46,11 +46,11 @@ const ProjectParagraph = styled(Paragraph)`
   }
 `;
 
-function ProjectRow({ data }) {
+function ProjectRow({ imageFluid }) {
   return (
     <Project>
       <Link title="Wanderlost" to="/wanderlost">
-        <Img fluid={data.file.childImageSharp.fluid} />
+        <Img fluid={imageFluid} />
       </Link>
       <Link title="Wanderlost" to="/wanderlost">
         <SubHeading>Wanderlost</SubHeading>
