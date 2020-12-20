@@ -1,1 +1,1 @@
-import "../utils/fonts/futura";
+import "./src/utils/fonts/futura"

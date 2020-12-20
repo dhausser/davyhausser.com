@@ -2,13 +2,9 @@
 import { jsx } from "theme-ui"
 import { Link } from "gatsby"
 import { GoMarkGithub as GithubIcon } from "react-icons/go"
-import {
-  FaTwitter as TwitterIcon,
-  FaLinkedin as LinkedinIcon,
-} from "react-icons/fa"
+import { FaTwitter, FaLinkedin } from "react-icons/fa"
 import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
-
-import DarkModeToggle from "./DarkModeToggle"
+import DarkModeToggle from "./dark-mode-toggle"
 import { breakpointGutter } from "../utils/styles"
 
 const navItemTopOffset = `0.4rem`
@@ -132,13 +128,13 @@ const Navigation = ({ pathname }) => {
             href="https://www.twitter.com/davyhausser"
             title="Twitter"
           >
-            <TwitterIcon />
+            <FaTwitter />
           </SocialNavItem>
           <SocialNavItem
             href="https://www.linkedin.com/in/davyhausser"
             title="Linkedin"
           >
-            <LinkedinIcon />
+            <FaLinkedin />
           </SocialNavItem>
           <div
             sx={{

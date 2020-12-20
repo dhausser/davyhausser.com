@@ -16,47 +16,46 @@ const FadeOut = keyframes`
   }
 `
 
-// const Layout = styled.div`
-//   min-height: 100vh;
-//   padding: 20px;
-//   margin: 25px auto;
-//   opacity: 0;
-//   animation: ${FadeOut} 0.6s 0.3s ease-in-out forwards;
+const Container = styled.div`
+  min-height: 100vh;
+  padding: 20px;
+  margin: 25px auto;
+  opacity: 0;
+  animation: ${FadeOut} 0.6s 0.3s ease-in-out forwards;
 
-//   a {
-//     text-decoration: none;
-//   }
+  a {
+    text-decoration: none;
+  }
 
-//   @media (min-width: ${breakpoints.tabletMin}) {
-//     max-width: 940px;
-//     padding: 20px;
-//     margin: 75px auto;
-//   }
+  @media (min-width: ${breakpoints.tabletMin}) {
+    max-width: 940px;
+    padding: 20px;
+    margin: 75px auto;
+  }
 
-//   @media (min-width: ${breakpoints.desktopMin}) {
-//     max-width: 1200px;
-//     padding: 20px;
-//     margin: 75px auto;
-//   }
-// `
-
-// <Global styles={globalStyles} />
-// <Navigation />
-// <div
-//   sx={{
-//     px: `env(safe-area-inset-left)`,
-//     pb: (t) => t.sizes.headerHeight,
-//     [breakpointGutter]: {
-//       pt: (t) => t.sizes.headerHeight,
-//     },
-//   }}
-// >
-// </div>
+  @media (min-width: ${breakpoints.desktopMin}) {
+    max-width: 1200px;
+    padding: 20px;
+    margin: 75px auto;
+  }
+`
 
 export default function Layout({ children }) {
   return (
-    <div style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}>
-      {children}
+    <div>
+      <Global styles={globalStyles} />
+      <Navigation />
+      <div
+        sx={{
+          px: `env(safe-area-inset-left)`,
+          pb: (t) => t.sizes.headerHeight,
+          [breakpointGutter]: {
+            pt: (t) => t.sizes.headerHeight,
+          },
+        }}
+      >
+        <Container>{children}</Container>
+      </div>
     </div>
   )
 }
