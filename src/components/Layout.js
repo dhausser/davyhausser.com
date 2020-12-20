@@ -1,5 +1,5 @@
-import React from "react"
-import { Global, css, keyframes, ThemeProvider } from "@emotion/react"
+/** @jsx jsx */
+import { Global, jsx, css, keyframes, ThemeProvider } from "@emotion/react"
 import styled from "@emotion/styled"
 import Header from "./header"
 import { breakpoints, breakpointGutter } from "../utils/styles"
@@ -56,45 +56,61 @@ const FadeOut = keyframes`
   }
 `
 
-const Container = styled.div`
-  min-height: 100vh;
-  padding: 20px;
-  margin: 25px auto;
-  opacity: 0;
-  animation: ${FadeOut} 0.6s 0.3s ease-in-out forwards;
+// const Container = styled.div`
+//   min-height: 100vh;
+//   padding: 20px;
+//   margin: 25px auto;
+//   opacity: 0;
+//   animation: ${FadeOut} 0.6s 0.3s ease-in-out forwards;
 
-  a {
-    text-decoration: none;
-  }
+//   a {
+//     text-decoration: none;
+//   }
 
-  @media (min-width: ${breakpoints.tabletMin}) {
-    max-width: 940px;
-    padding: 20px;
-    margin: 75px auto;
-  }
+//   @media (min-width: ${breakpoints.tabletMin}) {
+//     max-width: 940px;
+//     padding: 20px;
+//     margin: 75px auto;
+//   }
 
-  @media (min-width: ${breakpoints.desktopMin}) {
-    max-width: 1200px;
-    padding: 20px;
-    margin: 75px auto;
-  }
-`
+//   @media (min-width: ${breakpoints.desktopMin}) {
+//     max-width: 1200px;
+//     padding: 20px;
+//     margin: 75px auto;
+//   }
+// `
 
-export default function Layout({ children }) {
+export default function Layout({ siteTitle = "Davy Hausser", children }) {
   return (
     <ThemeProvider theme={theme}>
       <Global styles={globalStyles} />
-      <Header />
+      <Header siteTitle={siteTitle} />
       <div
-        css={{
-          px: `env(safe-area-inset-left)`,
-          pb: (theme) => theme.sizes.headerHeight,
-          [breakpointGutter]: {
-            pt: (theme) => theme.sizes.headerHeight,
-          },
-        }}
+        css={css`
+          min-height: 100vh;
+          padding: 20px;
+          margin: 25px auto;
+          opacity: 0;
+          animation: ${FadeOut} 0.6s 0.3s ease-in-out forwards;
+
+          a {
+            text-decoration: none;
+          }
+
+          @media (min-width: ${breakpoints.tabletMin}) {
+            max-width: 940px;
+            padding: 20px;
+            margin: 75px auto;
+          }
+
+          @media (min-width: ${breakpoints.desktopMin}) {
+            max-width: 1200px;
+            padding: 20px;
+            margin: 75px auto;
+          }
+        `}
       >
-        <Container>{children}</Container>
+        {children}
       </div>
     </ThemeProvider>
   )
