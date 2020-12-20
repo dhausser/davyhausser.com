@@ -18,32 +18,33 @@ const LinkRow = styled.div`
 export default function Wanderlost({ data }) {
   const { siteMetadata } = data.site
   return (
-  <Layout>
-    <SEO title={siteMetadata.title} description={siteMetadata.description} />
-    <h1>Wanderlost</h1>
-    <Img fluid={data.file.childImageSharp.fluid} />
-    <LinkRow>
-      <a href="https://wanderlost.vercel.app">
-        <ProjectLink>
-          Live <span>&#8250;</span>
-        </ProjectLink>
-      </a>
-      <a href="https://github.com/dhausser/wanderlost">
-        <ProjectLink>
-          Code <span>&#8250;</span>
-        </ProjectLink>
-      </a>
-    </LinkRow>
-    <ul>
-      <li>Next.js</li>
-      <li>GraphQL</li>
-      <li>Prisma</li>
-      <li>TypeScript</li>
-    </ul>
-    <p>Build by: Davy Hausser</p>
-    <Contact isHomepage={true} />
-  </Layout>
-)
+    <Layout>
+      <SEO title={siteMetadata.title} description={siteMetadata.description} />
+      <h1>Wanderlost</h1>
+      <Img fluid={data.file.childImageSharp.fluid} />
+      <LinkRow>
+        <a href="https://wanderlost.vercel.app">
+          <ProjectLink>
+            Live <span>&#8250;</span>
+          </ProjectLink>
+        </a>
+        <a href="https://github.com/dhausser/wanderlost">
+          <ProjectLink>
+            Code <span>&#8250;</span>
+          </ProjectLink>
+        </a>
+      </LinkRow>
+      <ul>
+        <li>Next.js</li>
+        <li>GraphQL</li>
+        <li>Prisma</li>
+        <li>TypeScript</li>
+      </ul>
+      <p>Build by: Davy Hausser</p>
+      <Contact isHomepage={true} />
+    </Layout>
+  )
+}
 
 export const query = graphql`
   query {
