@@ -1,4 +1,4 @@
-const path = require(`path`);
+const path = require(`path`)
 
 module.exports = {
   siteMetadata: {
@@ -9,22 +9,13 @@ module.exports = {
     twitter: `davyhausser`,
   },
   plugins: [
-    `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-transformer-json`,
-    `gatsby-plugin-theme-ui`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `fonts`,
-        path: path.join(__dirname, `src`, `utils`, `fonts`),
-      },
-    },
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: path.join(__dirname, `src`, `images`),
+        path: `${__dirname}/src/images`,
       },
     },
     {
@@ -50,4 +41,4 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
   ],
-};
+}
