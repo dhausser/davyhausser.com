@@ -1,9 +1,9 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { Helmet } from "react-helmet";
-import Layout from "../components/Layout";
-import Contact from "../components/Contact";
-import Project from "../components/Project";
+import Layout from "../components/layout";
+import Contact from "../components/contact";
+import Project from "../components/project";
 
 import {
   Heading,

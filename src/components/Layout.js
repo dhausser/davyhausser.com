@@ -5,7 +5,6 @@ import { Global, keyframes } from "@emotion/core";
 import styled from "@emotion/styled";
 import Navigation from "./Navigation";
 import { globalStyles, breakpoints, breakpointGutter } from "../utils/styles";
-import "../utils/fonts/futura";
 
 const FadeOut = keyframes`
   0%{
