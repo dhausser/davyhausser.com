@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "@emotion/styled"
 import { graphql } from "gatsby"
-import { Helmet } from "react-helmet"
+import SEO from "../components/seo"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 import Contact from "../components/contact"
@@ -15,17 +15,11 @@ const LinkRow = styled.div`
   padding: 20px;
 `
 
-export default ({ data }) => (
+export default function Wanderlost({ data }) {
+  const { siteMetadata } = data.site
+  return (
   <Layout>
-    <Helmet>
-      <meta charSet="utf-8" />
-      <title>{`Wanderlost | ${data.site.siteMetadata.title}`}</title>
-      <meta name="description" content={data.site.siteMetadata.description} />
-      <link
-        rel="canonical"
-        href={`${data.site.siteMetadata.description}wanderlost`}
-      />
-    </Helmet>
+    <SEO title={siteMetadata.title} description={siteMetadata.description} />
     <h1>Wanderlost</h1>
     <Img fluid={data.file.childImageSharp.fluid} />
     <LinkRow>
