@@ -14,6 +14,8 @@
   },
   "license": "0BSD",
   "dependencies": {
+    "@emotion/react": "^11.1.2",
+    "@emotion/styled": "^11.0.0",
     "gatsby": "^2.24.53",
     "gatsby-design-tokens": "^2.0.11",
     "gatsby-image": "^2.4.16",
