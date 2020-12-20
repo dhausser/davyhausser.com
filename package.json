@@ -27,6 +27,7 @@
     "gatsby-source-filesystem": "^2.3.27",
     "gatsby-transformer-json": "^2.4.11",
     "gatsby-transformer-sharp": "^2.5.14",
+    "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",

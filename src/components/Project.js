@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "gatsby";
-import Img from "gatsby-image";
-import styled from "@emotion/styled";
-import { breakpoints, Heading, Paragraph } from "../utils/styles";
+import React from "react"
+import { Link } from "gatsby"
+import Img from "gatsby-image"
+import styled from "@emotion/styled"
+import { breakpoints, Heading, Paragraph } from "../utils/styles"
 
 export const ProjectLink = styled(Paragraph)`
   font-weight: 700;
@@ -21,20 +21,20 @@ export const ProjectLink = styled(Paragraph)`
   span {
     font-size: 20px;
   }
-`;
+`
 
 const Project = styled.div`
   width: 100%;
   height: auto;
   margin-bottom: 90px;
   transition-duration: 0.3s;
-`;
+`
 
 const SubHeading = styled(Heading)`
   font-size: 30px;
   margin-bottom: 0;
   margin-top: 30px;
-`;
+`
 
 const ProjectParagraph = styled(Paragraph)`
   margin-top: 10px;
@@ -44,7 +44,7 @@ const ProjectParagraph = styled(Paragraph)`
   @media (min-width: ${breakpoints.mobileMax}) {
     max-width: 70%;
   }
-`;
+`
 
 function ProjectRow({ imageFluid }) {
   return (
@@ -64,7 +64,7 @@ function ProjectRow({ imageFluid }) {
         </ProjectLink>
       </Link>
     </Project>
-  );
+  )
 }
 
-export default ProjectRow;
+export default ProjectRow

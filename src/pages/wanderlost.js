@@ -1,10 +1,10 @@
-import React from "react";
-import styled from "@emotion/styled";
-import { graphql } from "gatsby";
-import { Helmet } from "react-helmet";
-import Img from "gatsby-image";
-import Layout from "../components/layout";
-import Contact from "../components/contact";
+import React from "react"
+import styled from "@emotion/styled"
+import { graphql } from "gatsby"
+import { Helmet } from "react-helmet"
+import Img from "gatsby-image"
+import Layout from "../components/layout"
+import Contact from "../components/contact"
 
 const LinkRow = styled.div`
   display: flex;
@@ -13,7 +13,7 @@ const LinkRow = styled.div`
   width: 100%;
   align-items: center;
   padding: 20px;
-`;
+`
 
 export default ({ data }) => (
   <Layout>
@@ -49,7 +49,7 @@ export default ({ data }) => (
     <p>Build by: Davy Hausser</p>
     <Contact isHomepage={true} />
   </Layout>
-);
+)
 
 export const query = graphql`
   query {
@@ -70,4 +70,4 @@ export const query = graphql`
       }
     }
   }
-`;
+`

@@ -1,5 +1,5 @@
-import { keyframes } from "@emotion/core";
-import styled from "@emotion/styled";
+import { keyframes } from "@emotion/core"
+import styled from "@emotion/styled"
 
 import {
   colors,
@@ -9,19 +9,19 @@ import {
   fontSizes,
   fontWeights,
   fonts,
-} from "gatsby-design-tokens/dist/theme-gatsbyjs-org";
+} from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
 
-export { globalStyles } from "./global";
+export { globalStyles } from "./global"
 
 const stripeAnimation = keyframes({
   "0%": { backgroundPosition: `0 0` },
   "100%": { backgroundPosition: `${space[7]} ${space[11]}` },
-});
+})
 
 export const focusStyle = {
   outline: 0,
   boxShadow: `0 0 0 2px ${colors.input.focusBoxShadow}`,
-};
+}
 
 export const buttonStyles = (t) => {
   return {
@@ -62,14 +62,14 @@ export const buttonStyles = (t) => {
       color: `button.secondaryText`,
       fontWeight: `body`,
     },
-  };
-};
+  }
+}
 
 // form elements
 export const formInputFocus = {
   borderColor: colors.input.focusBorder,
   ...focusStyle,
-};
+}
 
 export const formInput = {
   backgroundColor: colors.white,
@@ -96,14 +96,14 @@ export const formInput = {
     cursor: `not-allowed`,
     opacity: `0.5`,
   },
-};
+}
 
 export const themedInputFocus = {
   bg: `themedInput.backgroundFocus`,
   boxShadow: (t) => `0 0 0 2px ${t.colors.themedInput.focusBoxShadow}`,
   outline: 0,
   width: `100%`,
-};
+}
 
 export const themedInput = {
   ...formInput,
@@ -119,11 +119,11 @@ export const themedInput = {
   "::placeholder": {
     color: `themedInput.placeholder`,
   },
-};
+}
 
 // Layout
-export const blogWidth = `42rem`;
-export const breakpointGutter = `@media (min-width: ${blogWidth})`;
+export const blogWidth = `42rem`
+export const breakpointGutter = `@media (min-width: ${blogWidth})`
 
 export const breakpoints = {
   mobileMin: "480px",
@@ -131,14 +131,14 @@ export const breakpoints = {
   tabletMin: "960px",
   tabletMax: "1199px",
   desktopMin: "1200px",
-};
+}
 
 export const pullIntoGutter = {
   marginLeft: `-${space[6]}`,
   marginRight: `-${space[6]}`,
   paddingLeft: space[6],
   paddingRight: space[6],
-};
+}
 
 export const Float = keyframes`
   from {
@@ -150,13 +150,13 @@ export const Float = keyframes`
     transform: translateY(0);
     opacity: 1;
   }
-`;
+`
 
 export const HeadingWrapCont = styled.div`
   padding-top: 40px;
   background-position: 0 0;
   background-repeat: no-repeat;
-`;
+`
 
 export const HeadingMain = styled.h1`
   font-weight: 700;
@@ -192,7 +192,7 @@ export const HeadingMain = styled.h1`
   > span:nth-child(3) {
     animation-delay: 0.4s;
   }
-`;
+`
 
 export const Container = styled.div`
   margin: 100px 0 200px 0;
@@ -205,7 +205,7 @@ export const Container = styled.div`
   @media (min-width: ${breakpoints.mobileMax}) {
     flex-wrap: nowrap;
   }
-`;
+`
 
 export const SkillTable = styled.div`
   width: 100%;
@@ -233,7 +233,7 @@ export const SkillTable = styled.div`
       margin-right: 5px;
     }
   }
-`;
+`
 
 export const SubContainer = styled.div`
   margin: 0px 0;
@@ -245,7 +245,7 @@ export const SubContainer = styled.div`
   @media (min-width: ${breakpoints.mobileMax}) {
     flex-wrap: nowrap;
   }
-`;
+`
 
 export const TextContent = styled.div`
   max-width: 700px;
@@ -259,7 +259,7 @@ export const TextContent = styled.div`
       }
     }
   }
-`;
+`
 
 export const TextContentWrap = styled(TextContent)`
   width: 100%;
@@ -267,11 +267,11 @@ export const TextContentWrap = styled(TextContent)`
   @media (min-width: ${breakpoints.mobileMax}) {
     width: 45%;
   }
-`;
+`
 
 export const SkillContent = styled.div`
   width: 100%;
-`;
+`
 
 export const Paragraph = styled.p`
   margin: 50px 0;
@@ -290,7 +290,7 @@ export const Paragraph = styled.p`
       border-bottom: 2px solid black;
     }
   }
-`;
+`
 
 export const Heading = styled.h1`
   width: 100%;
@@ -311,4 +311,4 @@ export const Heading = styled.h1`
   > span {
     color: #b4e0e8;
   }
-`;
+`

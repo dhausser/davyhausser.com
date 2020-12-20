@@ -1,7 +1,7 @@
-import React from "react";
-import { graphql } from "gatsby";
-import { Helmet } from "react-helmet";
-import Layout from "../components/layout";
+import React from "react"
+import { graphql } from "gatsby"
+import { Helmet } from "react-helmet"
+import Layout from "../components/layout"
 
 const NotFoundPage = ({ data }) => {
   return (
@@ -18,10 +18,10 @@ const NotFoundPage = ({ data }) => {
       <h1>Not Found</h1>
       <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
     </Layout>
-  );
-};
+  )
+}
 
-export default NotFoundPage;
+export default NotFoundPage
 
 export const pageQuery = graphql`
   query {
@@ -32,4 +32,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

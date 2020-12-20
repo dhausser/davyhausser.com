@@ -1,10 +1,10 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import React from "react";
-import { Global, keyframes } from "@emotion/core";
-import styled from "@emotion/styled";
-import Navigation from "./Navigation";
-import { globalStyles, breakpoints, breakpointGutter } from "../utils/styles";
+import { jsx } from "theme-ui"
+import React from "react"
+import { Global, keyframes } from "@emotion/core"
+import styled from "@emotion/styled"
+import Navigation from "./Navigation"
+import { globalStyles, breakpoints, breakpointGutter } from "../utils/styles"
 
 const FadeOut = keyframes`
   0%{
@@ -14,7 +14,7 @@ const FadeOut = keyframes`
   100%{
     opacity: 1;
   }
-`;
+`
 
 const Layout = styled.div`
   min-height: 100vh;
@@ -38,10 +38,10 @@ const Layout = styled.div`
     padding: 20px;
     margin: 75px auto;
   }
-`;
+`
 
 export default ({ children }) => (
-  <>
+  <div>
     <Global styles={globalStyles} />
     <Navigation />
     <div
@@ -55,5 +55,5 @@ export default ({ children }) => (
     >
       <Layout>{children}</Layout>
     </div>
-  </>
-);
+  </div>
+)

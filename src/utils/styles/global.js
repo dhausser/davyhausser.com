@@ -1,4 +1,4 @@
-import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org";
+import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
 
 export const globalStyles = (t) => {
   return {
@@ -169,5 +169,5 @@ export const globalStyles = (t) => {
         borderRadius: `0 0 ${t.radii[2]} ${t.radii[2]}`,
       },
     },
-  };
-};
+  }
+}

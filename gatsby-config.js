@@ -2,17 +2,13 @@ const path = require(`path`);
 
 module.exports = {
   siteMetadata: {
-    title: `Davy Hausser`,
-    author: {
-      name: `Davy Hausser`,
-      summary: `who lives and works in Warsaw building useful things.`,
-    },
+    title: `davyhausser.com`,
+    author: `Davy Hausser`,
     description: `Davy Hausser's portfolio`,
     siteUrl: `https://davyhausser.com/`,
     twitter: `davyhausser`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-transformer-json`,
@@ -37,6 +33,21 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Davy Hausser`,
+        short_name: `Davy Hausser`,
+        start_url: `/`,
+        background_color: `#6b37bf`,
+        theme_color: `#6b37bf`,
+        // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
+        // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
+        display: `standalone`,
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
+      },
+    },
     `gatsby-plugin-offline`,
+    `gatsby-plugin-react-helmet`,
   ],
 };

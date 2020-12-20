@@ -1,11 +1,11 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import React, { useRef, useState } from "react";
-import styled from "@emotion/styled";
-import { MdSend as SendIcon } from "react-icons/md";
-import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org";
-import { themedInput, formInputFocus, buttonStyles } from "../utils/styles";
-import { rhythm } from "../utils/typography";
+import { jsx } from "theme-ui"
+import React, { useRef, useState } from "react"
+import styled from "@emotion/styled"
+import { MdSend as SendIcon } from "react-icons/md"
+import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
+import { themedInput, formInputFocus, buttonStyles } from "../utils/styles"
+import { rhythm } from "../utils/typography"
 
 const ContactContainer = styled(`div`)`
   background: ${(p) => p.theme.colors.newsletter.background};
@@ -26,7 +26,7 @@ const ContactContainer = styled(`div`)`
       flex-basis: 50%;
     }
   }
-`;
+`
 
 const Title = styled(`h1`)`
   color: ${(p) => p.theme.colors.newsletter.heading};
@@ -35,7 +35,7 @@ const Title = styled(`h1`)`
   line-height: ${(p) => p.theme.lineHeights.dense};
   margin: 0;
   margin-top: ${(p) => p.theme.space[1]};
-`;
+`
 
 const StyledForm = styled(`form`)`
   margin: 0;
@@ -43,29 +43,29 @@ const StyledForm = styled(`form`)`
   ${mediaQueries.lg} {
     display: ${(props) => (props.isHomepage ? `flex` : `block`)};
   }
-`;
+`
 
 const ErrorMessage = styled(`div`)`
   color: ${(p) => p.theme.colors.warning};
   font-family: ${(p) => p.theme.fonts.system};
   font-size: ${(p) => p.theme.fontSizes[1]};
   margin: ${(p) => p.theme.space[2]} 0;
-`;
+`
 
 const SuccessMessage = styled(`div`)`
   font-family: ${(p) => p.theme.fonts.system};
-`;
+`
 
 function Form({ isHomepage, formId, onSuccess, confirmMessage }) {
-  const emailRef = useRef(null);
-  const formRef = useRef(null);
-  const [errorMessage, setErrorMessage] = useState("");
+  const emailRef = useRef(null)
+  const formRef = useRef(null)
+  const [errorMessage, setErrorMessage] = useState("")
 
   const onSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
-    const url = `${process.env.NETLIFY_FUNCTIONS_URL}/contact`;
-    const data = { email: emailRef.current.value, message: "sample message" };
+    const url = `${process.env.NETLIFY_FUNCTIONS_URL}/contact`
+    const data = { email: emailRef.current.value, message: "sample message" }
 
     const response = await fetch(url, {
       method: "POST",
@@ -73,14 +73,14 @@ function Form({ isHomepage, formId, onSuccess, confirmMessage }) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
-    });
+    })
 
     if (response.status === 200) {
-      onSuccess(confirmMessage);
+      onSuccess(confirmMessage)
     } else {
-      setErrorMessage(`${response.status}: ${response.statusText}`);
+      setErrorMessage(`${response.status}: ${response.statusText}`)
     }
-  };
+  }
 
   return (
     <StyledForm ref={formRef} onSubmit={onSubmit} isHomepage={isHomepage}>
@@ -141,7 +141,7 @@ function Form({ isHomepage, formId, onSuccess, confirmMessage }) {
         />
       )}
     </StyledForm>
-  );
+  )
 }
 
 export default ({
@@ -150,11 +150,11 @@ export default ({
   isHomepage = true,
   className = ``,
 }) => {
-  const [successMessage, setSuccessMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("")
 
   const FormComponent = (props) => (
     <Form onSuccess={setSuccessMessage} formId={formId} {...props} />
-  );
+  )
 
   return (
     <ContactContainer>
@@ -177,5 +177,5 @@ export default ({
         />
       )}
     </ContactContainer>
-  );
-};
+  )
+}

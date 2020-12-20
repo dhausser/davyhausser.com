@@ -1,24 +1,24 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Link } from "gatsby";
-import { GoMarkGithub as GithubIcon } from "react-icons/go";
+import { jsx } from "theme-ui"
+import { Link } from "gatsby"
+import { GoMarkGithub as GithubIcon } from "react-icons/go"
 import {
   FaTwitter as TwitterIcon,
   FaLinkedin as LinkedinIcon,
-} from "react-icons/fa";
-import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org";
+} from "react-icons/fa"
+import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
 
-import DarkModeToggle from "./DarkModeToggle";
-import { breakpointGutter } from "../utils/styles";
+import DarkModeToggle from "./DarkModeToggle"
+import { breakpointGutter } from "../utils/styles"
 
-const navItemTopOffset = `0.4rem`;
-const navItemHorizontalSpacing = [1, null, 2];
+const navItemTopOffset = `0.4rem`
+const navItemHorizontalSpacing = [1, null, 2]
 
 const overrideDefaultMdLineHeight = {
   [mediaQueries.md]: {
     lineHeight: (t) => t.sizes.headerHeight,
   },
-};
+}
 
 const navItemStyles = {
   borderBottom: `2px solid transparent`,
@@ -33,7 +33,7 @@ const navItemStyles = {
   textDecoration: `none`,
   zIndex: 1,
   "&:hover, &:focus": { color: `navigation.linkHover` },
-};
+}
 
 const SocialNavItem = ({ href, title, children }) => (
   <a
@@ -51,10 +51,10 @@ const SocialNavItem = ({ href, title, children }) => (
   >
     {children}
   </a>
-);
+)
 
 const Navigation = ({ pathname }) => {
-  const isHomepage = pathname === `/`;
+  const isHomepage = pathname === `/`
 
   return (
     <header
@@ -156,7 +156,7 @@ const Navigation = ({ pathname }) => {
         </div>
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default Navigation;
+export default Navigation
