@@ -1,5 +1,3 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui"
 import React, { useRef, useState } from "react"
 import styled from "@emotion/styled"
 import { MdSend as SendIcon } from "react-icons/md"

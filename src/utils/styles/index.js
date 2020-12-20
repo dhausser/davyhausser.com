@@ -1,4 +1,4 @@
-import { keyframes } from "@emotion/core"
+import { keyframes } from "@emotion/react"
 import styled from "@emotion/styled"
 
 import {
@@ -10,8 +10,6 @@ import {
   fontWeights,
   fonts,
 } from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
-
-export { globalStyles } from "./global"
 
 const stripeAnimation = keyframes({
   "0%": { backgroundPosition: `0 0` },

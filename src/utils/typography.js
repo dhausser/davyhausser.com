@@ -6,7 +6,6 @@ import {
 } from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
 
 const _options = {
-  // typography.js expects an array, theme-ui a CSS prop value
   bodyFontFamily: fonts.system.split(`, `),
   headerFontFamily: fonts.heading.split(`, `),
   baseLineHeight: lineHeights.body,

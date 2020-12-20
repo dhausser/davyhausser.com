@@ -1,7 +1,7 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui"
+import React from "react"
 import { Link } from "gatsby"
-import { GoMarkGithub as GithubIcon } from "react-icons/go"
+import { css } from "@emotion/react"
+import { GoMarkGithub } from "react-icons/go"
 import { FaTwitter, FaLinkedin } from "react-icons/fa"
 import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
 import DarkModeToggle from "./dark-mode-toggle"
@@ -37,7 +37,7 @@ const SocialNavItem = ({ href, title, children }) => (
     target="_blank"
     rel="noopener noreferrer"
     title={title}
-    sx={{
+    css={{
       ...navItemStyles,
       ...overrideDefaultMdLineHeight,
       transform: `translate(0px, 4px)`,
@@ -49,12 +49,10 @@ const SocialNavItem = ({ href, title, children }) => (
   </a>
 )
 
-const Navigation = ({ pathname }) => {
-  const isHomepage = pathname === `/`
-
+function Header() {
   return (
     <header
-      sx={{
+      css={{
         bg: `navigation.background`,
         height: `headerHeight`,
         left: 0,
@@ -63,12 +61,12 @@ const Navigation = ({ pathname }) => {
         right: 0,
         zIndex: `navigation`,
         [breakpointGutter]: {
-          position: isHomepage ? `absolute` : `fixed`,
+          position: `absolute`,
         },
       }}
     >
       <div
-        sx={{
+        css={{
           alignItems: `center`,
           display: `flex`,
           justifyContent: `space-between`,
@@ -79,7 +77,7 @@ const Navigation = ({ pathname }) => {
           position: `relative`,
           width: `100%`,
           "&:after": {
-            bg: isHomepage ? `transparent` : `ui.border`,
+            bg: `transparent`,
             bottom: 0,
             content: `''`,
             height: 1,
@@ -92,7 +90,7 @@ const Navigation = ({ pathname }) => {
       >
         <Link
           to="/"
-          sx={{
+          css={{
             alignItems: `center`,
             color: `inherit`,
             display: `flex`,
@@ -105,7 +103,7 @@ const Navigation = ({ pathname }) => {
           aria-label={`DH, Back to showcase`}
         >
           <h2
-            sx={{
+            style={{
               height: `logo`,
               width: `auto`,
               maxWidth: `none`,
@@ -116,13 +114,13 @@ const Navigation = ({ pathname }) => {
           </h2>
         </Link>
         <div
-          sx={{
+          css={{
             display: `flex`,
             alignSelf: `flex-end`,
           }}
         >
           <SocialNavItem href="https://github.com/dhausser" title="GitHub">
-            <GithubIcon />
+            <GoMarkGithub />
           </SocialNavItem>
           <SocialNavItem
             href="https://www.twitter.com/davyhausser"
@@ -137,7 +135,7 @@ const Navigation = ({ pathname }) => {
             <FaLinkedin />
           </SocialNavItem>
           <div
-            sx={{
+            css={{
               ...navItemStyles,
               ...overrideDefaultMdLineHeight,
               color: `navigation.socialLink`,
@@ -155,4 +153,4 @@ const Navigation = ({ pathname }) => {
   )
 }
 
-export default Navigation
+export default Header

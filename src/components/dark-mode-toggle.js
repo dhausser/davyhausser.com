@@ -1,6 +1,6 @@
 import React from "react"
+import { useTheme } from "@emotion/react"
 import styled from "@emotion/styled"
-import { useColorMode } from "theme-ui"
 import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
 
 // kudos to our friends at narative.co
@@ -121,13 +121,14 @@ const MoonMask = styled.div`
   width: 24px;
 `
 
-export default () => {
-  const [colorMode, setColorMode] = useColorMode()
-  const isDark = colorMode === `dark`
+export default function DarkModeToggle() {
+  const theme = useTheme()
+  console.log(theme.colors.modes.dark)
+  const isDark = theme.colors.modes.dark ? true : false
 
   function toggleColorMode(event) {
     event.preventDefault()
-    setColorMode(isDark ? `light` : `dark`)
+    // setColorMode(isDark ? `light` : `dark`)
   }
   const label = isDark ? `Activate light mode` : `Activate dark mode`
 

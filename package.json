@@ -33,8 +33,5 @@
     "react-icons": "^4.1.0",
     "react-typography": "^0.16.19",
     "typography": "^0.16.19"
-  },
-  "resolutions": {
-    "@emotion/core": "10.0.27"
   }
 }

@@ -1,10 +1,50 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui"
 import React from "react"
-import { Global, keyframes } from "@emotion/core"
+import { Global, css, keyframes, ThemeProvider } from "@emotion/react"
 import styled from "@emotion/styled"
-import Navigation from "./Navigation"
-import { globalStyles, breakpoints, breakpointGutter } from "../utils/styles"
+import Header from "./header"
+import { breakpoints, breakpointGutter } from "../utils/styles"
+import theme from "../../config/theme"
+
+export const globalStyles = css`
+    html, body, a {
+      color: ${theme.colors.text},
+      text-rendering: optimizelegibility,
+    },
+    a {
+      text-decoration: none,
+    },
+    h1 {
+      font-weight: ${theme.fontWeights.extraBold},
+    },
+    h1, h2, h3, h4, h5, h6 {
+      color: ${theme.colors.heading},
+      letter-spacing: ${theme.letterSpacings.tight},
+    },
+    h2: {
+      margin-top: ${theme.space[9]},
+    },
+    h3 {
+      margin-top: ${theme.space[9]},
+    },
+    h4, h5, h6: { font-size: ${theme.fontSizes[3]} },
+    h5, h6: { font-weight: ${theme.fontWeights.body} },
+    h6: { font-size: ${theme.fontSizes[2]} },
+    blockquote: {
+      padding-left: ${theme.space[6]},
+      margin-left: 0,
+      border-left: ${theme.space[1]} solid ${theme.colors.ui.border},
+    },
+    hr: {
+      background-color: ${theme.colors.ui.border},
+    },
+    iframe: {
+      border: 0,
+    },
+    th, td: {
+      border-color: ${theme.colors.ui.border},
+    },
+  }
+`
 
 const FadeOut = keyframes`
   0%{
@@ -42,20 +82,20 @@ const Container = styled.div`
 
 export default function Layout({ children }) {
   return (
-    <div>
+    <ThemeProvider theme={theme}>
       <Global styles={globalStyles} />
-      <Navigation />
+      <Header />
       <div
-        sx={{
+        css={{
           px: `env(safe-area-inset-left)`,
-          pb: (t) => t.sizes.headerHeight,
+          pb: (theme) => theme.sizes.headerHeight,
           [breakpointGutter]: {
-            pt: (t) => t.sizes.headerHeight,
+            pt: (theme) => theme.sizes.headerHeight,
           },
         }}
       >
         <Container>{children}</Container>
       </div>
-    </div>
+    </ThemeProvider>
   )
 }
