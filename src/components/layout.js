@@ -2,7 +2,7 @@
 import { Global, jsx, css, keyframes, ThemeProvider } from "@emotion/react"
 import styled from "@emotion/styled"
 import Header from "./header"
-import { breakpoints, breakpointGutter } from "../utils/styles"
+import { breakpoints } from "../utils/styles"
 import theme from "../../config/theme"
 
 export const globalStyles = css`
