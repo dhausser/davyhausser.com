@@ -14,7 +14,7 @@ const SocialNavItem = ({ href, title, children }) => (
   </a>
 )
 
-function Header({ siteTitle }) {
+function Header({ siteTitle, isDark, setIsDark }) {
   return (
     <header
       css={css`
@@ -43,7 +43,7 @@ function Header({ siteTitle }) {
         >
           <FaLinkedin />
         </SocialNavItem>
-        <DarkModeToggle />
+        <DarkModeToggle isDark={isDark} setIsDark={setIsDark} />
       </div>
     </header>
   )

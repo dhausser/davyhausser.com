@@ -121,16 +121,14 @@ const MoonMask = styled.div`
   width: 24px;
 `
 
-export default function DarkModeToggle() {
+export default function DarkModeToggle({ isDark, setIsDark }) {
   const theme = useTheme()
-  console.log(theme.colors.modes.dark)
-  const isDark = theme.colors.modes.dark ? true : false
+  const label = isDark ? `Activate light mode` : `Activate dark mode`
 
   function toggleColorMode(event) {
     event.preventDefault()
-    // setColorMode(isDark ? `light` : `dark`)
+    setIsDark(!isDark)
   }
-  const label = isDark ? `Activate light mode` : `Activate dark mode`
 
   return (
     <IconWrapper
