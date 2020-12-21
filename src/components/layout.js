@@ -18,6 +18,25 @@ const globalStyles = (theme) => css`
   a {
     text-decoration: none;
   }
+  button {
+    border-radius: 4px;
+    background-color: ${theme.colors.green};
+    border: none;
+    color: ${theme.colors.white};
+    padding: 8px 15px;
+    cursor: pointer;
+    border: 1px solid ${theme.colors.green};
+    transition: ${theme.transition.ease};
+    :hover:not(:disabled) {
+      background: ${theme.colors.link_color_hover};
+      border: 1px solid ${theme.colors.link_color_hover};
+      transition: ${theme.transition.ease};
+    }
+    :disabled {
+      opacity: 0.6;
+      cursor: auto;
+    }
+  }
 `
 
 const fadeIn = keyframes`
@@ -42,9 +61,10 @@ export default function Layout({ siteTitle = "Davy Hausser", children }) {
       }
     }
   `)
+
   const {
     site: {
-      siteMetaData: { title, description, author },
+      siteMetadata: { title, description },
     },
   } = data
   const [isDark, setIsDark] = useState(false)
@@ -60,7 +80,14 @@ export default function Layout({ siteTitle = "Davy Hausser", children }) {
         <script src="https://js.tito.io/v1" async />
         <noscript>This site runs best with JavaScript enabled.</noscript>
       </Helmet>
-      <div>
+      <div
+        css={css`
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          min-height: 100vh;
+        `}
+      >
         <Header siteTitle={siteTitle} isDark={isDark} setIsDark={setIsDark} />
         <div
           css={css`
