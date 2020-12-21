@@ -30,7 +30,7 @@ function Header({ siteTitle, isDark, setIsDark }) {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: stretch;
+        align-items: center;
         margin: 3rem 3rem;
       `}
     >
@@ -44,17 +44,9 @@ function Header({ siteTitle, isDark, setIsDark }) {
           align-items: center;
         `}
       >
-        <div
-          css={css`
-            height: 0px;
-          `}
-        >
+        <div>
           <SocialNavItem href="https://github.com/dhausser" title="GitHub">
-            <GoMarkGithub
-              css={css`
-                height: 50px;
-              `}
-            />
+            <GoMarkGithub />
           </SocialNavItem>
           <SocialNavItem
             href="https://www.twitter.com/davyhausser"
