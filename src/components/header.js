@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/react"
+import { Link } from "gatsby"
 import { GoMarkGithub } from "react-icons/go"
 import { FaTwitter, FaLinkedin } from "react-icons/fa"
 import DarkModeToggle from "./dark-mode-toggle"
@@ -19,9 +20,6 @@ const overrideDefaultMdLineHeight = css`
 const navItemStyles = css`
   border-bottom: 2px solid transparent;
   display: block;
-  svg {
-    color: hotpink;
-  }
   font-size: 3;
   line-height: ${headerHeight};
   @media (min-width: 720px) {
@@ -46,6 +44,8 @@ const SocialNavItem = ({ href, title, children }) => (
       ${overrideDefaultMdLineHeight}
       transform: translate(0px, 4px);
       padding: 0 ${navItemHorizontalSpacing};
+      display: inline-block;
+      margin-right: 1rem;
     `}
   >
     {children}
@@ -55,45 +55,48 @@ const SocialNavItem = ({ href, title, children }) => (
 function Header({ siteTitle, isDark, setIsDark }) {
   return (
     <header
-      css={css`
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        margin: 3rem 3rem;
+      style={css`
+        margin-bottom: 1.5rem;
       `}
     >
-      <nav>
-        <span>{siteTitle}</span>
-      </nav>
-      <div
+      <Link
+        to="/"
         css={css`
-          display: flex;
-          flex-direction: row;
-          align-items: center;
+          text-shadow: none;
+          background-image: none;
         `}
       >
-        <div>
-          <SocialNavItem href="https://github.com/dhausser" title="GitHub">
-            <GoMarkGithub />
-          </SocialNavItem>
-          <SocialNavItem
-            href="https://www.twitter.com/davyhausser"
-            title="Twitter"
-          >
-            <FaTwitter />
-          </SocialNavItem>
-          <SocialNavItem
-            href="https://www.linkedin.com/in/davyhausser"
-            title="Linkedin"
-          >
-            <FaLinkedin />
-          </SocialNavItem>
-        </div>
-        <div>
-          <DarkModeToggle isDark={isDark} setIsDark={setIsDark} />
-        </div>
-      </div>
+        <h2
+          css={css`
+            display: inline;
+          `}
+        >
+          {siteTitle}
+        </h2>
+      </Link>
+      <ul
+        css={css`
+          list-style: none;
+          float: right;
+        `}
+      >
+        <SocialNavItem href="https://github.com/dhausser" title="GitHub">
+          <GoMarkGithub />
+        </SocialNavItem>
+        <SocialNavItem
+          href="https://www.twitter.com/davyhausser"
+          title="Twitter"
+        >
+          <FaTwitter />
+        </SocialNavItem>
+        <SocialNavItem
+          href="https://www.linkedin.com/in/davyhausser"
+          title="Linkedin"
+        >
+          <FaLinkedin />
+        </SocialNavItem>
+        <DarkModeToggle isDark={isDark} setIsDark={setIsDark} />
+      </ul>
     </header>
   )
 }
