@@ -122,18 +122,11 @@ const MoonMask = styled.div`
 `
 
 export default function DarkModeToggle({ isDark, setIsDark }) {
-  const theme = useTheme()
   const label = isDark ? `Activate light mode` : `Activate dark mode`
-
-  function toggleColorMode(event) {
-    event.preventDefault()
-    setIsDark(!isDark)
-  }
-
   return (
     <IconWrapper
       isDark={isDark}
-      onClick={toggleColorMode}
+      onClick={() => setIsDark(!isDark)}
       aria-label={label}
       title={label}
     >
