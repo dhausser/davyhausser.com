@@ -55,8 +55,9 @@ const SocialNavItem = ({ href, title, children }) => (
 function Header({ siteTitle, isDark, setIsDark }) {
   return (
     <header
-      style={css`
-        margin-bottom: 1.5rem;
+      css={(theme) => css`
+        padding: 1.5rem 1.5rem;
+        border-bottom: solid ${theme.uiBorder} 1px;
       `}
     >
       <Link

@@ -84,8 +84,8 @@ export default function Layout({ siteTitle = "DH", children }) {
         <script src="https://js.tito.io/v1" async />
         <noscript>This site runs best with JavaScript enabled.</noscript>
       </Helmet>
+      <Header siteTitle={siteTitle} isDark={isDark} setIsDark={setIsDark} />
       <div style={{ margin: `3rem auto`, maxWidth: 1200, padding: `0 1rem` }}>
-        <Header siteTitle={siteTitle} isDark={isDark} setIsDark={setIsDark} />
         {children}
       </div>
       {/* <div

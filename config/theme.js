@@ -9,6 +9,7 @@ export const themeLight = {
   buttonBg: "rgba(0, 0, 0, 0)",
   buttonBgHover: "rgba(0, 0, 0, 1)",
   navigationSocial: "#78757a",
+  uiBorder: "#232129",
   ...theme,
 }
 
@@ -21,6 +22,7 @@ export const themeDark = {
   buttonBg: "rgba(255, 255, 255, 0)",
   buttonBgHover: "rgba(255, 255, 255, 1)",
   navigationSocial: "#78757a",
+  uiBorder: "#232129",
   ...theme,
 }
 
