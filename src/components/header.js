@@ -1,12 +1,8 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/react"
-import styled from "@emotion/styled"
-import { Link } from "gatsby"
 import { GoMarkGithub } from "react-icons/go"
 import { FaTwitter, FaLinkedin } from "react-icons/fa"
-import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
 import DarkModeToggle from "./dark-mode-toggle"
-import theme from "../../config/theme"
 
 const SocialNavItem = ({ href, title, children }) => (
   <a

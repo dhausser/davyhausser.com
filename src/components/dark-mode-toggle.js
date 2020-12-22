@@ -1,5 +1,4 @@
 import React from "react"
-import { useTheme } from "@emotion/react"
 import styled from "@emotion/styled"
 import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
 
