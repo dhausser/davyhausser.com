@@ -11,6 +11,8 @@ const navItemTopOffset = `0.4rem`
 
 const navItemHorizontalSpacing = [1, null, 2]
 
+const translateY = `4px`
+
 const overrideDefaultMdLineHeight = css`
   @media (min-width: 720px) {
     line-height: ${headerHeight};
@@ -42,7 +44,7 @@ const SocialNavItem = ({ href, title, children }) => (
     css={css`
       ${navItemStyles}
       ${overrideDefaultMdLineHeight}
-      transform: translate(0px, 4px);
+      transform: translate(0px, ${translateY});
       padding: 0 ${navItemHorizontalSpacing};
       display: inline-block;
       margin-right: 1rem;
@@ -79,6 +81,7 @@ function Header({ siteTitle, isDark, setIsDark }) {
         css={css`
           list-style: none;
           float: right;
+          transform: translate(0px, -${translateY});
         `}
       >
         <SocialNavItem href="https://github.com/dhausser" title="GitHub">

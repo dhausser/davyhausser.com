@@ -21,7 +21,7 @@ const IconWrapper = styled.button`
   border: 0;
   cursor: pointer;
   display: inline-flex;
-  height: 26px;
+  height: 40px;
   justify-content: center;
   /*
     roughly compensates for the additional whitespace of this specific
