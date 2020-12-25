@@ -4,7 +4,6 @@ import { Global, jsx, css, keyframes, ThemeProvider } from "@emotion/react"
 import { Helmet } from "react-helmet"
 import { graphql, useStaticQuery } from "gatsby"
 import Header from "./header"
-import { breakpoints } from "../utils/styles"
 import { themeDark, themeLight } from "../../config/theme"
 
 const globalStyles = (theme) => css`
@@ -40,16 +39,6 @@ const globalStyles = (theme) => css`
       opacity: 0.6;
       cursor: auto;
     }
-  }
-`
-
-const fadeIn = keyframes`
-  0%{
-    opacity: 0;
-  }
-
-  100%{
-    opacity: 1;
   }
 `
 
