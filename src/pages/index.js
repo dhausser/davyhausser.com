@@ -2,8 +2,8 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Contact from "../components/contact"
 import Project from "../components/project"
+import Footer from "../components/footer"
 
 import {
   Heading,
@@ -119,16 +119,7 @@ export default function HomePage({ data }) {
       <SubContainer>
         <Project imageFluid={data.file.childImageSharp.fluid} />
       </SubContainer>
-      <SubContainer>
-        <TextContent>
-          <Heading>Let's Build Something Together</Heading>
-          <Paragraph>
-            Feel free to reach out if you're looking for a developer, have a
-            question, or just want to connect.
-          </Paragraph>
-        </TextContent>
-      </SubContainer>
-      <Contact />
+      <Footer />
     </Layout>
   )
 }

@@ -1,4 +1,6 @@
-import React, { useRef, useState } from "react"
+/** @jsx jsx */
+import { jsx } from "@emotion/react"
+import { useRef, useState } from "react"
 import styled from "@emotion/styled"
 import { MdSend as SendIcon } from "react-icons/md"
 import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
@@ -6,8 +8,8 @@ import { themedInput, formInputFocus, buttonStyles } from "../utils/styles"
 import { rhythm } from "../utils/typography"
 
 const ContactContainer = styled(`div`)`
-  background: ${(p) => p.theme.colors.newsletter.background};
-  border: 1px solid ${(p) => p.theme.colors.newsletter.border};
+  background: ${(p) => p.theme.background};
+  border: 1px solid ${(p) => p.theme.navigationSocial};
   border-radius: ${(p) => p.theme.radii[2]};
   display: flex;
   flex-direction: column;
@@ -27,7 +29,6 @@ const ContactContainer = styled(`div`)`
 `
 
 const Title = styled(`h1`)`
-  color: ${(p) => p.theme.colors.newsletter.heading};
   font-size: ${(p) => p.theme.fontSizes[4]};
   font-weight: ${(p) => p.theme.fontWeights.heading};
   line-height: ${(p) => p.theme.lineHeights.dense};

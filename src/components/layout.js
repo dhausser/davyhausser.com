@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { useState } from "react"
-import { Global, jsx, css, keyframes, ThemeProvider } from "@emotion/react"
+import { Global, jsx, css, ThemeProvider } from "@emotion/react"
 import { Helmet } from "react-helmet"
 import { graphql, useStaticQuery } from "gatsby"
 import Header from "./header"
@@ -60,7 +60,7 @@ export default function Layout({ siteTitle = "DH", children }) {
       siteMetadata: { title, description },
     },
   } = data
-  const [isDark, setIsDark] = useState(false)
+  const [isDark, setIsDark] = useState(true)
   const theme = isDark ? themeDark : themeLight
   return (
     <ThemeProvider theme={isDark ? themeDark : themeLight}>
@@ -77,38 +77,6 @@ export default function Layout({ siteTitle = "DH", children }) {
       <div style={{ margin: `3rem auto`, maxWidth: 1200, padding: `0 1rem` }}>
         {children}
       </div>
-      {/* <div
-          css={css`
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            min-height: 100vh;
-          `}
-        >
-        <div
-          css={css`
-            min-height: 100vh;
-            padding: 20px;
-            margin: 25px auto;
-            opacity: 0;
-            animation: ${fadeIn} 0.6s 0.3s ease-in-out forwards;
-
-            @media (min-width: ${breakpoints.tabletMin}) {
-              max-width: 940px;
-              padding: 20px;
-              margin: 75px auto;
-            }
-
-            @media (min-width: ${breakpoints.desktopMin}) {
-              max-width: 1200px;
-              padding: 20px;
-              margin: 75px auto;
-            }
-          `}
-        >
-          {children}
-        </div>
-      </div> */}
     </ThemeProvider>
   )
 }

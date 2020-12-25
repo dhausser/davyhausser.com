@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
-import Contact from "../components/contact"
+import Footer from "../components/footer"
 import { Paragraph } from "../utils/styles"
 
 const LinkRow = styled.div`
@@ -62,7 +62,7 @@ export default function Wanderlost({ data }) {
         <li>TypeScript</li>
       </ul>
       <p>Build by: Davy Hausser</p>
-      <Contact isHomepage={true} />
+      <Footer />
     </Layout>
   )
 }
