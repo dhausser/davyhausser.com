@@ -4,6 +4,8 @@ import styled from '@emotion/styled'
 import { MdSend as SendIcon } from 'react-icons/md'
 import { rhythm } from '../utils/typography'
 
+import { space } from 'gatsby-design-tokens/dist/theme-gatsbyjs-org'
+
 const ContactContainer = styled.div`
   background: ${props => props.theme.background};
   border: 1px solid ${props => props.theme.border};
@@ -122,7 +124,7 @@ const StyledButton = styled.button`
       transparent
     );
     color: rgb(255, 255, 255);
-    animation: 2.8s linear 0s infinite normal none running animation-15lk19q;
+    animation: stripe-animation 2.8s linear infinite;
     border-color: var(--theme-ui-colors-gatsby, #663399);
   }
 
@@ -130,6 +132,16 @@ const StyledButton = styled.button`
     margin-left: 0.5rem;
     margin-top: 0rem;
     width: auto;
+  }
+
+  @keyframes stripe-animation {
+    from {
+      background-position: 0 0;
+    }
+
+    to {
+      background-position: ${space[7]} ${space[11]};
+    }
   }
 `
 
