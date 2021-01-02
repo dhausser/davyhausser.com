@@ -1,5 +1,6 @@
+import React from 'react'
 import { useState } from 'react'
-import { Global, jsx, css, ThemeProvider } from '@emotion/react'
+import { css, Global, ThemeProvider } from '@emotion/react'
 import { Helmet } from 'react-helmet'
 import { graphql, useStaticQuery } from 'gatsby'
 import Header from './header'

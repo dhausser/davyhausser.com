@@ -1,6 +1,5 @@
-/** @jsx jsx */
-import { jsx } from "@emotion/react"
-import Contact from "./contact"
+import React from 'react'
+import Contact from './contact'
 // import { Heading, SubContainer, TextContent, Paragraph } from "../utils/styles"
 
 export default function Footer() {

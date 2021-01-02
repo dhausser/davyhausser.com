@@ -1,9 +1,9 @@
-/** @jsx jsx */
-import { jsx, css } from "@emotion/react"
-import { Link } from "gatsby"
-import { GoMarkGithub } from "react-icons/go"
-import { FaTwitter, FaLinkedin } from "react-icons/fa"
-import DarkModeToggle from "./dark-mode-toggle"
+import React from 'react'
+import { css } from '@emotion/react'
+import { Link } from 'gatsby'
+import { GoMarkGithub } from 'react-icons/go'
+import { FaTwitter, FaLinkedin } from 'react-icons/fa'
+import DarkModeToggle from './dark-mode-toggle'
 
 const headerHeight = `1rem`
 
@@ -57,7 +57,7 @@ const SocialNavItem = ({ href, title, children }) => (
 function Header({ siteTitle, isDark, setIsDark }) {
   return (
     <header
-      css={(theme) => css`
+      css={theme => css`
         padding: 1.5rem 1.5rem;
         border-bottom: solid ${theme.uiBorder} 1px;
       `}
