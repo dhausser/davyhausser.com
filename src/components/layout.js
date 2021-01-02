@@ -1,12 +1,11 @@
-/** @jsx jsx */
-import { useState } from "react"
-import { Global, jsx, css, ThemeProvider } from "@emotion/react"
-import { Helmet } from "react-helmet"
-import { graphql, useStaticQuery } from "gatsby"
-import Header from "./header"
-import { themeDark, themeLight } from "../../config/theme"
+import { useState } from 'react'
+import { Global, jsx, css, ThemeProvider } from '@emotion/react'
+import { Helmet } from 'react-helmet'
+import { graphql, useStaticQuery } from 'gatsby'
+import Header from './header'
+import { themeDark, themeLight } from '../../config/theme'
 
-const globalStyles = (theme) => css`
+const globalStyles = theme => css`
   html,
   body,
   h1 {
@@ -42,7 +41,7 @@ const globalStyles = (theme) => css`
   }
 `
 
-export default function Layout({ siteTitle = "DH", children }) {
+export default function Layout({ siteTitle = 'DH', children }) {
   const data = useStaticQuery(graphql`
     {
       site {
@@ -67,7 +66,7 @@ export default function Layout({ siteTitle = "DH", children }) {
       <Global styles={globalStyles(theme)} />
       <Helmet
         title={title}
-        meta={[{ name: "description", content: description }]}
+        meta={[{ name: 'description', content: description }]}
       >
         <html lang="en" />
         <script src="https://js.tito.io/v1" async />
