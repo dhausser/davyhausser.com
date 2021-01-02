@@ -70,38 +70,38 @@ export default function HomePage({ data }) {
               </Paragraph>
             </TextContent>
             <SkillTable>
-              <row>
+              <div>
                 <Paragraph>
                   <span>&#9675;</span> JavaScript
                 </Paragraph>
                 <Paragraph>
                   <span>&#9675;</span> TypeScript
                 </Paragraph>
-              </row>
-              <row>
+              </div>
+              <div>
                 <Paragraph>
                   <span>&#9675;</span> React
                 </Paragraph>
                 <Paragraph>
                   <span>&#9675;</span> HTML & CSS
                 </Paragraph>
-              </row>
-              <row>
+              </div>
+              <div>
                 <Paragraph>
                   <span>&#9675;</span> GraphQL
                 </Paragraph>
                 <Paragraph>
                   <span>&#9675;</span> Node.js
                 </Paragraph>
-              </row>
-              <row>
+              </div>
+              <div>
                 <Paragraph>
                   <span>&#9675;</span> Git
                 </Paragraph>
                 <Paragraph>
                   <span>&#9675;</span> SQL & MongoDB
                 </Paragraph>
-              </row>
+              </div>
             </SkillTable>
           </SkillContent>
         </SubContainer>
