@@ -2,7 +2,6 @@ import React, { useRef, useState } from 'react'
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import { MdSend as SendIcon } from 'react-icons/md'
-import { mediaQueries } from 'gatsby-design-tokens/dist/theme-gatsbyjs-org'
 import { rhythm } from '../utils/typography'
 
 const ContactContainer = styled.div`
@@ -16,7 +15,7 @@ const ContactContainer = styled.div`
   padding-bottom: ${props => rhythm(props.theme.space[8] * 1.2)};
   position: relative;
 
-  ${mediaQueries.lg} {
+  @media (min-width: 1000px) {
     flex-direction: row;
     justify-content: space-between;
 
@@ -93,9 +92,11 @@ const StyledButton = styled.button`
   font-size: 1.125rem;
   margin-top: 0.75rem;
   width: 100%;
+
   svg {
     color: ${props => props.theme.text};
   }
+
   span {
     -webkit-box-align: center;
     align-items: center;
@@ -104,6 +105,7 @@ const StyledButton = styled.button`
     justify-content: space-between;
     width: 100%;
   }
+
   :hover {
     background-color: var(--theme-ui-colors-gatsby, #663399);
     background-image: linear-gradient(
@@ -119,6 +121,12 @@ const StyledButton = styled.button`
     color: rgb(255, 255, 255);
     animation: 2.8s linear 0s infinite normal none running animation-15lk19q;
     border-color: var(--theme-ui-colors-gatsby, #663399);
+  }
+
+  @media (min-width: 1000px) {
+    margin-left: 2;
+    margin-top: 0;
+    width: auto;
   }
 `
 
