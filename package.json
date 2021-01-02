@@ -36,6 +36,7 @@
     "typography": "^0.16.19"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.10",
     "eslint": "^7.17.0",
     "eslint-config-kentcdodds": "^17.3.0",
     "husky": ">=4",
