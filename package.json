@@ -34,5 +34,10 @@
     "react-icons": "^4.1.0",
     "react-typography": "^0.16.19",
     "typography": "^0.16.19"
+  },
+  "devDependencies": {
+    "eslint": "^7.17.0",
+    "eslint-config-kentcdodds": "^17.3.0",
+    "prettier": "^2.2.1"
   }
 }

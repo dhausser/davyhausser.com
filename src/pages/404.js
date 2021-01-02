@@ -1,7 +1,7 @@
-import React from "react"
-import { graphql } from "gatsby"
-import SEO from "../components/seo"
-import Layout from "../components/layout"
+import React from 'react'
+import { graphql } from 'gatsby'
+import SEO from '../components/seo'
+import Layout from '../components/layout'
 
 export default function NotFoundPage({ data }) {
   const { siteMetadata } = data.site

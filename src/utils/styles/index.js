@@ -1,5 +1,5 @@
-import { keyframes } from "@emotion/react"
-import styled from "@emotion/styled"
+import { keyframes } from '@emotion/react'
+import styled from '@emotion/styled'
 
 import {
   colors,
@@ -9,11 +9,11 @@ import {
   fontSizes,
   fontWeights,
   fonts,
-} from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
+} from 'gatsby-design-tokens/dist/theme-gatsbyjs-org'
 
 const stripeAnimation = keyframes({
-  "0%": { backgroundPosition: `0 0` },
-  "100%": { backgroundPosition: `${space[7]} ${space[11]}` },
+  '0%': { backgroundPosition: `0 0` },
+  '100%': { backgroundPosition: `${space[7]} ${space[11]}` },
 })
 
 export const focusStyle = {
@@ -21,7 +21,7 @@ export const focusStyle = {
   boxShadow: `0 0 0 2px ${colors.input.focusBoxShadow}`,
 }
 
-export const buttonStyles = (t) => {
+export const buttonStyles = t => {
   return {
     default: {
       alignItems: `center`,
@@ -41,18 +41,18 @@ export const buttonStyles = (t) => {
       whiteSpace: `nowrap`,
       px: 3,
       height: `36px`,
-      backgroundSize: (t) => `${t.space[7]} ${t.space[7]}`,
-      transition: (t) => `all ${t.transition.default}`,
-      ":hover, :focus": {
+      backgroundSize: t => `${t.space[7]} ${t.space[7]}`,
+      transition: t => `all ${t.transition.default}`,
+      ':hover, :focus': {
         backgroundColor: `gatsby`,
         backgroundImage: `linear-gradient(135deg, rgba(0,0,0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0,0,0, 0.1) 50%, rgba(0,0,0, 0.1) 75%, transparent 75%, transparent)`,
         color: colors.white,
         animation: `${stripeAnimation} 2.8s linear infinite`,
         borderColor: `gatsby`,
       },
-      ":focus": { ...focusStyle },
-      ":after": { content: `''`, display: `block` },
-      "& svg": { marginLeft: `.2em` },
+      ':focus': { ...focusStyle },
+      ':after': { content: `''`, display: `block` },
+      '& svg': { marginLeft: `.2em` },
     },
     secondary: {
       borderColor: `button.secondaryBorder`,
@@ -83,14 +83,14 @@ export const formInput = {
   transition: `box-shadow ${transition.speed.default} ${transition.curve.default}`,
   verticalAlign: `middle`,
   width: `100%`,
-  "::placeholder": {
+  '::placeholder': {
     color: colors.input.placeholder,
     opacity: 1,
   },
-  "&:focus": {
+  '&:focus': {
     ...formInputFocus,
   },
-  "&:disabled": {
+  '&:disabled': {
     cursor: `not-allowed`,
     opacity: `0.5`,
   },
@@ -98,7 +98,7 @@ export const formInput = {
 
 export const themedInputFocus = {
   bg: `themedInput.backgroundFocus`,
-  boxShadow: (t) => `0 0 0 2px ${t.colors.themedInput.focusBoxShadow}`,
+  boxShadow: t => `0 0 0 2px ${t.colors.themedInput.focusBoxShadow}`,
   outline: 0,
   width: `100%`,
 }
@@ -111,10 +111,10 @@ export const themedInput = {
   color: `text`,
   overflow: `hidden`,
   px: 3,
-  ":focus": {
+  ':focus': {
     ...themedInputFocus,
   },
-  "::placeholder": {
+  '::placeholder': {
     color: `themedInput.placeholder`,
   },
 }
@@ -124,11 +124,11 @@ export const blogWidth = `42rem`
 export const breakpointGutter = `@media (min-width: ${blogWidth})`
 
 export const breakpoints = {
-  mobileMin: "480px",
-  mobileMax: "959px",
-  tabletMin: "960px",
-  tabletMax: "1199px",
-  desktopMin: "1200px",
+  mobileMin: '480px',
+  mobileMax: '959px',
+  tabletMin: '960px',
+  tabletMax: '1199px',
+  desktopMin: '1200px',
 }
 
 export const pullIntoGutter = {

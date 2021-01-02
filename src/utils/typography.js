@@ -1,9 +1,9 @@
-import Typography from "typography"
+import Typography from 'typography'
 import {
   colors,
   lineHeights,
   fonts,
-} from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
+} from 'gatsby-design-tokens/dist/theme-gatsbyjs-org'
 
 const _options = {
   bodyFontFamily: fonts.system.split(`, `),
