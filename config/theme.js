@@ -9,14 +9,14 @@ export const themeLight = {
   buttonBg: 'rgba(0, 0, 0, 0)',
   buttonBgHover: 'rgba(0, 0, 0, 1)',
   navigationSocial: '#78757a',
-  uiBorder: '#232129',
+  border: 'var(--theme-ui-colors-newsletter-border)',
   radii: ['1px', '2px', '3px', '4px'],
   space: [...Array(10).keys()],
   // TO FIX
-  gatsby: 'fff',
-  primaryBg: '#fff',
-  primaryBorder: '#fff',
-  primaryText: '#fff',
+  gatsby: theme.gatsby,
+  primaryBg: theme.primaryBg,
+  primaryBorder: theme.primaryBorder,
+  primaryText: theme.primaryText,
   ...theme,
 }
 
@@ -29,7 +29,7 @@ export const themeDark = {
   buttonBg: 'rgba(255, 255, 255, 0)',
   buttonBgHover: 'rgba(255, 255, 255, 1)',
   navigationSocial: '#78757a',
-  uiBorder: '#232129',
+  border: '#232129',
   radii: ['1px', '2px', '3px', '4px'],
   space: [...Array(10).keys()],
   ...theme,

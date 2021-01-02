@@ -33,6 +33,9 @@ const navItemStyles = css`
   &:hover, &:focus: {
     color: hotpink;
   }
+  svg {
+        color: ${props => props.theme.navigationSocial};
+      }
 `
 
 const SocialNavItem = ({ href, title, children }) => (
@@ -59,7 +62,7 @@ function Header({ siteTitle, isDark, setIsDark }) {
     <header
       css={theme => css`
         padding: 1.5rem 1.5rem;
-        border-bottom: solid ${theme.uiBorder} 1px;
+        border-bottom: solid ${theme.border} 1px;
       `}
     >
       <Link

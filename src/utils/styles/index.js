@@ -21,48 +21,6 @@ export const focusStyle = {
   boxShadow: `0 0 0 2px ${colors.input.focusBoxShadow}`,
 }
 
-// export const buttonStyles = t => {
-//   return {
-//     default: {
-//       alignItems: `center`,
-//       backgroundColor: `button.primaryBg`,
-//       borderRadius: 2,
-//       borderWidth: 1,
-//       borderStyle: `solid`,
-//       borderColor: `button.primaryBorder`,
-//       color: `button.primaryText`,
-//       cursor: `pointer`,
-//       display: `inline-flex`,
-//       fontFamily: `heading`,
-//       fontWeight: `bold`,
-//       flexShrink: 0,
-//       lineHeight: `solid`,
-//       textDecoration: `none`,
-//       whiteSpace: `nowrap`,
-//       px: 3,
-//       height: `36px`,
-//       backgroundSize: t => `${t.space[7]} ${t.space[7]}`,
-//       transition: t => `all ${t.transition.default}`,
-//       ':hover, :focus': {
-//         backgroundColor: `gatsby`,
-//         backgroundImage: `linear-gradient(135deg, rgba(0,0,0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0,0,0, 0.1) 50%, rgba(0,0,0, 0.1) 75%, transparent 75%, transparent)`,
-//         color: colors.white,
-//         animation: `${stripeAnimation} 2.8s linear infinite`,
-//         borderColor: `gatsby`,
-//       },
-//       ':focus': { ...focusStyle },
-//       ':after': { content: `''`, display: `block` },
-//       '& svg': { marginLeft: `.2em` },
-//     },
-//     secondary: {
-//       borderColor: `button.secondaryBorder`,
-//       backgroundColor: `button.secondaryBg`,
-//       color: `button.secondaryText`,
-//       fontWeight: `body`,
-//     },
-//   }
-// }
-
 export const StyledButton = styled.button`
   align-items: center;
   background-color: ${props => props.theme.primaryBg};
