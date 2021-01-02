@@ -17,11 +17,8 @@ const ContactContainer = styled.div`
 
   @media (min-width: 1000px) {
     flex-direction: row;
+    -webkit-box-pack: justify;
     justify-content: space-between;
-
-    > * {
-      flex-basis: 50%;
-    }
   }
 `
 
@@ -33,14 +30,16 @@ const Title = styled.h1`
 `
 
 const StyledForm = styled.form`
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
+  margin: 0px;
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.5rem;
+
+  @media (min-width: 1000px) {
+    display: flex;
+    flex-basis: 50%;
+  }
 `
 
 const StyledInput = styled.input`
@@ -48,6 +47,9 @@ const StyledInput = styled.input`
   border: 0px;
   border-radius: 4px;
   display: block;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   font-size: 1rem;
   font-weight: 400;
   line-height: 2.25rem;
@@ -58,6 +60,7 @@ const StyledInput = styled.input`
   appearance: none;
   color: var(--theme-ui-colors-text, #d9d7e0);
   overflow: hidden;
+
   :focus {
     background-color: var(--theme-ui-colors-themedInput-backgroundFocus, black);
     box-shadow: 0 0 0 2px
@@ -124,8 +127,8 @@ const StyledButton = styled.button`
   }
 
   @media (min-width: 1000px) {
-    margin-left: 2;
-    margin-top: 0;
+    margin-left: 0.5rem;
+    margin-top: 0rem;
     width: auto;
   }
 `
@@ -180,26 +183,7 @@ function Form({ onSuccess, confirmMessage }) {
         placeholder="Email"
       />
       {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
-
-      <StyledButton
-        type="submit"
-        // css={css`
-        //   font-size: 3;
-        //   margin-top: 3;
-        //   width: 100%;
-        //   span: {
-        //     align-items: center;
-        //     display: flex;
-        //     justify-content: space-between;
-        //     width: 100%;
-        //   }
-        //   @media (min-width: 1000px) {
-        //     margin-left: 2;
-        //     margin-top: 0;
-        //     width: auto;
-        //   } ;
-        // `}
-      >
+      <StyledButton type="submit">
         <span>
           Send
           <SendIcon />
@@ -221,6 +205,7 @@ export default function Contact() {
         css={css`
           padding-bottom: 1rem;
           @media (min-width: 1000px) {
+            flex-basis: 50%;
             padding-bottom: 0;
           }
         `}

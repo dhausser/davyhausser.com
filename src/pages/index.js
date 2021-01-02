@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Project from '../components/project'
-import Footer from '../components/footer'
+import Contact from '../components/contact'
 
 import {
   Heading,
@@ -119,7 +119,7 @@ export default function HomePage({ data }) {
       <SubContainer>
         <Project imageFluid={data.file.childImageSharp.fluid} />
       </SubContainer>
-      <Footer />
+      <Contact />
     </Layout>
   )
 }
