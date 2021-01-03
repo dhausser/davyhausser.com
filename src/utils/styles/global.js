@@ -8,6 +8,7 @@ export const globalStyles = theme => css`
     --bg-color: #fff;
     --heading-color: #292922;
   }
+
   [data-theme='dark'] {
     --primary-color: #9a97f3;
     --secondary-color: #818cab;
@@ -15,6 +16,7 @@ export const globalStyles = theme => css`
     --bg-color: #161625;
     --heading-color: #818cab;
   }
+
   html,
   body {
     background-color: var(--bg-color);
@@ -22,18 +24,21 @@ export const globalStyles = theme => css`
     text-rendering: optimizelegibility;
     -webkit-font-smoothing: antialiased;
   }
+
   * {
     box-sizing: border-box;
   }
+
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    color: ${theme.heading};
+    color: var(---heading-color);
     letter-spacing: -0.015em;
   }
+
   h2 {
     margin-left: 0;
     margin-right: 0;
@@ -48,16 +53,19 @@ export const globalStyles = theme => css`
     font-size: 1.51572rem;
     line-height: 1.25;
   }
+
   a {
     text-decoration: none;
   }
+
   header {
     display: block;
   }
-  ,
+
   svg {
     color: ${theme.navigationSocial};
   }
+
   button,
   select {
     text-transform: none;
