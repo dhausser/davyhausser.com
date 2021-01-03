@@ -1,17 +1,13 @@
 import Typography from 'typography'
-import {
-  colors,
-  lineHeights,
-  fonts,
-} from 'gatsby-design-tokens/dist/theme-gatsbyjs-org'
+import * as theme from 'gatsby-design-tokens/dist/theme-gatsbyjs-org'
 
 const _options = {
-  bodyFontFamily: fonts.system.split(`, `),
-  headerFontFamily: fonts.heading.split(`, `),
-  baseLineHeight: lineHeights.body,
-  headerLineHeight: lineHeights.heading,
-  headerColor: colors.heading,
-  bodyColor: colors.text,
+  bodyFontFamily: theme.fonts.system.split(`, `),
+  headerFontFamily: theme.fonts.heading.split(`, `),
+  baseLineHeight: theme.lineHeights.body,
+  headerLineHeight: theme.lineHeights.heading,
+  headerColor: theme.colors.heading,
+  bodyColor: theme.colors.text,
 }
 
 const typography = new Typography(_options)
