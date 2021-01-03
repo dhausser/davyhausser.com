@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import { GoMarkGithub } from 'react-icons/go'
 import { FaTwitter, FaLinkedin } from 'react-icons/fa'
-import DarkModeToggle from './dark-mode-toggle'
+import Switch from './switch'
 
 const StyledHeader = styled.header`
   background-color: var(--bg-color);
@@ -73,7 +73,7 @@ const StyledSocialNav = styled.div`
 
 const StyledSocialNavItem = styled.a`
   border-bottom: 2px solid transparent;
-  color: ${props => props.theme.navigationSocial};
+  color: var(--navigation-color);
   display: block;
   font-size: 1.125rem;
   line-height: 4rem;
@@ -94,9 +94,9 @@ const StyledSocialNavItem = styled.a`
   }
 `
 
-const DarkModeToggleWrapper = styled.div`
+const SwitchWrapper = styled.div`
   border-bottom: 2px solid transparent;
-  color: var(--theme-ui-colors-navigation-socialLink, #78757a);
+  color: var(--navigation-color #78757a);
   display: block;
   font-size: 1.125rem;
   line-height: 4rem;
@@ -125,7 +125,7 @@ const SocialNavItem = ({ href, title, children }) => (
   </StyledSocialNavItem>
 )
 
-function Header({ siteTitle, isDark, setIsDark }) {
+function Header({ siteTitle }) {
   return (
     <StyledHeader>
       <HeaderContainer>
@@ -148,9 +148,9 @@ function Header({ siteTitle, isDark, setIsDark }) {
           >
             <FaLinkedin />
           </SocialNavItem>
-          <DarkModeToggleWrapper>
-            <DarkModeToggle isDark={isDark} setIsDark={setIsDark} />
-          </DarkModeToggleWrapper>
+          <SwitchWrapper>
+            <Switch />
+          </SwitchWrapper>
         </StyledSocialNav>
       </HeaderContainer>
     </StyledHeader>

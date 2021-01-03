@@ -7,7 +7,7 @@ export default css`
     --font-color: #424242;
     --bg-color: #fff;
     --heading-color: #292922;
-    --navigation-social-link-color: #78757a;
+    --navigation-color: #78757a;
   }
 
   [data-theme='dark'] {

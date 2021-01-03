@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
-import { Global, ThemeProvider } from '@emotion/react'
+import React from 'react'
+import { Global } from '@emotion/react'
 import styled from '@emotion/styled'
 import { Helmet } from 'react-helmet'
 import { graphql, useStaticQuery } from 'gatsby'
 import Header from './header'
-import { themeDark, themeLight } from '../../config/theme'
 import { globalStyles } from '../utils/styles'
 
 const Container = styled.div`
@@ -52,9 +51,9 @@ export default function Layout({ siteTitle = 'DH', children }) {
       siteMetadata: { title, description },
     },
   } = data
-  const [isDark, setIsDark] = useState(true)
+
   return (
-    <ThemeProvider theme={isDark ? themeDark : themeLight}>
+    <>
       <Global styles={globalStyles} />
       <Helmet
         title={title}
@@ -64,10 +63,10 @@ export default function Layout({ siteTitle = 'DH', children }) {
         <script src="https://js.tito.io/v1" async />
         <noscript>This site runs best with JavaScript enabled.</noscript>
       </Helmet>
-      <Header siteTitle={siteTitle} isDark={isDark} setIsDark={setIsDark} />
+      <Header siteTitle={siteTitle} />
       <Container>
         <Wrapper>{children}</Wrapper>
       </Container>
-    </ThemeProvider>
+    </>
   )
 }

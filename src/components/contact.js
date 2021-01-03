@@ -6,7 +6,7 @@ import { MdSend } from 'react-icons/md'
 import { rhythm } from '../utils/typography'
 
 const ContactContainer = styled.div`
-  background: ${props => props.theme.background};
+  background: var(--bg-color);
   border: 1px solid ${props => props.theme.border};
   border-radius: ${props => props.theme.radii[2]};
   display: flex;

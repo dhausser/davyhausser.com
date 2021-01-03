@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from '@emotion/styled'
 
 // kudos to our friends at narative.co
@@ -56,7 +56,7 @@ const IconWrapper = styled.button`
 
 const MoonOrSun = styled.div`
   border: ${props => (props.isDark ? `4px` : `2px`)} solid #888;
-  background: ${props => props.theme.colors.navigation.socialLink};
+  background: var(--navigation-color);
   border-radius: 50%;
   height: 24px;
   overflow: ${props => (props.isDark ? `visible` : `hidden`)};
@@ -81,14 +81,11 @@ const MoonOrSun = styled.div`
 
   &::after {
     border-radius: 50%;
-    box-shadow: 0 -23px 0 ${props => props.theme.colors.navigation.socialLink},
-      0 23px 0 ${props => props.theme.colors.navigation.socialLink},
-      23px 0 0 ${props => props.theme.colors.navigation.socialLink},
-      -23px 0 0 ${props => props.theme.colors.navigation.socialLink},
-      15px 15px 0 ${props => props.theme.colors.navigation.socialLink},
-      -15px 15px 0 ${props => props.theme.colors.navigation.socialLink},
-      15px -15px 0 ${props => props.theme.colors.navigation.socialLink},
-      -15px -15px 0 ${props => props.theme.colors.navigation.socialLink};
+    box-shadow: 0 -23px 0 var(--navigation-color),
+      0 23px 0 var(--navigation-color), 23px 0 0 var(--navigation-color),
+      -23px 0 0 var(--navigation-color), 15px 15px 0 var(--navigation-color),
+      -15px 15px 0 var(--navigation-color), 15px -15px 0 var(--navigation-color),
+      -15px -15px 0 var(--navigation-color);
     content: '';
     height: 8px;
     left: 50%;
@@ -99,7 +96,7 @@ const MoonOrSun = styled.div`
     transform: scale(${props => (props.isDark ? 1 : 0)});
     transition: all 0.35s ease;
 
-    ${props => props.theme.mediaQueries.md} {
+    @media (min-width: 750px) {
       transform: scale(${props => (props.isDark ? 0.92 : 0)});
     }
   }
@@ -119,17 +116,41 @@ const MoonMask = styled.div`
   width: 24px;
 `
 
-export default function DarkModeToggle({ isDark, setIsDark }) {
+function setLightTheme() {
+  document.documentElement.setAttribute('data-theme', 'light')
+}
+
+function setDarkTheme() {
+  document.documentElement.setAttribute('data-theme', 'dark')
+}
+
+function switchTheme(isDark) {
+  if (isDark) {
+    setLightTheme()
+    localStorage.setItem('theme', 'light')
+  } else {
+    setDarkTheme()
+    localStorage.setItem('theme', 'dark')
+  }
+}
+
+export default function Switch() {
+  const [isDark, setIsDark] = useState(() => {
+    const theme = localStorage.getItem('theme')
+    if (theme === 'dark') {
+      setDarkTheme()
+      return true
+    }
+    return false
+  })
+
   const label = isDark ? `Activate light mode` : `Activate dark mode`
+
   return (
     <IconWrapper
       isDark={isDark}
       onClick={() => {
-        if (isDark) {
-          document.documentElement.setAttribute('data-theme', 'light')
-        } else {
-          document.documentElement.setAttribute('data-theme', 'dark')
-        }
+        switchTheme(isDark)
         setIsDark(!isDark)
       }}
       aria-label={label}
