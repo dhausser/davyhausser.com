@@ -53,10 +53,9 @@ export default function Layout({ siteTitle = 'DH', children }) {
     },
   } = data
   const [isDark, setIsDark] = useState(true)
-  const theme = isDark ? themeDark : themeLight
   return (
     <ThemeProvider theme={isDark ? themeDark : themeLight}>
-      <Global styles={globalStyles(theme)} />
+      <Global styles={globalStyles} />
       <Helmet
         title={title}
         meta={[{ name: 'description', content: description }]}

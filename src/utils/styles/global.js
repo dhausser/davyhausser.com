@@ -1,12 +1,13 @@
 import { css } from '@emotion/react'
 
-export const globalStyles = theme => css`
+export default css`
   :root {
     --primary-color: #302ae6;
     --secondary-color: #536390;
     --font-color: #424242;
     --bg-color: #fff;
     --heading-color: #292922;
+    --navigation-social-link-color: #78757a;
   }
 
   [data-theme='dark'] {
@@ -63,7 +64,7 @@ export const globalStyles = theme => css`
   }
 
   svg {
-    color: ${theme.navigationSocial};
+    color: var(--navigation-social-link-color);
   }
 
   button,
