@@ -136,6 +136,7 @@ function switchTheme(isDark) {
 
 export default function Switch() {
   const [isDark, setIsDark] = useState(() => {
+    // TO FIX: "localStorage" is not available during server side rendering.
     const theme = localStorage.getItem('theme')
     if (theme === 'dark') {
       setDarkTheme()
