@@ -124,7 +124,14 @@ export default function DarkModeToggle({ isDark, setIsDark }) {
   return (
     <IconWrapper
       isDark={isDark}
-      onClick={() => setIsDark(!isDark)}
+      onClick={() => {
+        if (isDark) {
+          document.documentElement.setAttribute('data-theme', 'light')
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark')
+        }
+        setIsDark(!isDark)
+      }}
       aria-label={label}
       title={label}
     >

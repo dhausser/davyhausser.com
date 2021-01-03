@@ -6,6 +6,7 @@ import { FaTwitter, FaLinkedin } from 'react-icons/fa'
 import DarkModeToggle from './dark-mode-toggle'
 
 const StyledHeader = styled.header`
+  background-color: var(--bg-color);
   height: 4rem;
   left: 0rem;
   padding-left: env(safe-area-inset-left);

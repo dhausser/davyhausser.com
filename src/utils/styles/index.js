@@ -11,6 +11,8 @@ import {
   fonts,
 } from 'gatsby-design-tokens/dist/theme-gatsbyjs-org'
 
+export { globalStyles } from './global'
+
 const stripeAnimation = keyframes({
   '0%': { backgroundPosition: `0 0` },
   '100%': { backgroundPosition: `${space[7]} ${space[11]}` },

@@ -1,7 +1,7 @@
 import * as theme from 'gatsby-design-tokens/dist/theme-gatsbyjs-org'
 
 export const themeLight = {
-  text: '#000',
+  text: '#36313d',
   background: '#fff',
   buttonText: '#000',
   buttonTextHover: '#fff',
@@ -22,7 +22,7 @@ export const themeLight = {
 }
 
 export const themeDark = {
-  text: '#fff',
+  text: '#d9d7e0',
   background: '#121212',
   buttonText: '#fff',
   buttonTextHover: '#000',

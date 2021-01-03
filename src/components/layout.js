@@ -1,60 +1,11 @@
 import React, { useState } from 'react'
-import { css, Global, ThemeProvider } from '@emotion/react'
+import { Global, ThemeProvider } from '@emotion/react'
 import styled from '@emotion/styled'
 import { Helmet } from 'react-helmet'
 import { graphql, useStaticQuery } from 'gatsby'
 import Header from './header'
 import { themeDark, themeLight } from '../../config/theme'
-
-const globalStyles = theme => css`
-  :root {
-    --theme-ui-colors-newsletter-background: #131217;
-    --theme-ui-colors-newsletter-border: #232129;
-  }
-  html,
-  body,
-  h1 {
-    background-color: ${theme.background};
-    color: ${theme.text};
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: ${theme.heading};
-    letter-spacing: -0.015em;
-  }
-  h2 {
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 0;
-    padding-bottom: 0;
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 0;
-    margin-bottom: 1.5rem;
-    font-weight: bold;
-    text-rendering: optimizeLegibility;
-    font-size: 1.51572rem;
-    line-height: 1.25;
-  }
-  a {
-    text-decoration: none;
-  }
-  header {
-    display: block;
-  }
-  ,
-  svg {
-    color: ${theme.navigationSocial};
-  }
-  button,
-  select {
-    text-transform: none;
-  }
-`
+import { globalStyles } from '../utils/styles'
 
 const Container = styled.div`
   padding-left: env(safe-area-inset-left);
