@@ -54,7 +54,7 @@ const StyledInput = styled.input`
   vertical-align: middle;
   width: 100%;
   appearance: none;
-  color: var(--theme-ui-colors-text, #d9d7e0);
+  color: var(--text-color, #d9d7e0);
   overflow: hidden;
 
   :focus {

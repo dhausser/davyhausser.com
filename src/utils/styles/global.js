@@ -5,6 +5,7 @@ export default css`
     --primary-color: #302ae6;
     --secondary-color: #536390;
     --font-color: #424242;
+    --text-color: #36313d;
     --bg-color: #fff;
     --warning-colors: #da0013;
     --heading-color: #292922;
@@ -47,6 +48,7 @@ export default css`
     --primary-color: #9a97f3;
     --secondary-color: #818cab;
     --font-color: #e1e1ff;
+    --text-color: #d9d7e0;
     --bg-color: #161625;
     --heading-color: #818cab;
     --border: #232129;
