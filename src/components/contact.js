@@ -3,17 +3,14 @@ import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import { MdSend } from 'react-icons/md'
 
-import { rhythm } from '../utils/typography'
-
 const ContactContainer = styled.div`
   background: var(--bg-color);
-  border: 1px solid ${props => props.theme.border};
-  border-radius: ${props => props.theme.radii[2]};
+  border: 1px solid var(--border);
+  border-radius: var(--radii);
   display: flex;
   flex-direction: column;
-  margin-bottom: ${props => props.theme.space[8]};
-  padding: calc(${props => props.theme.space[8]} * 1.2);
-  padding-bottom: ${props => rhythm(props.theme.space[8] * 1.2)};
+  margin-bottom: var(--space-8);
+  padding: calc(var(--space-8) * 1.2);
   position: relative;
 
   @media (min-width: 1000px) {
@@ -24,9 +21,9 @@ const ContactContainer = styled.div`
 `
 
 const Title = styled.h1`
-  font-size: ${p => p.theme.fontSizes[4]};
-  font-weight: ${p => p.theme.fontWeights.heading};
-  line-height: ${p => p.theme.lineHeights.dense};
+  font-size: var(--font-size-4);
+  font-weight: var(--font-weight-heading);
+  line-height: var(--line-height-dense);
   margin: 0.25rem 0px 0px;
 `
 
@@ -44,13 +41,11 @@ const StyledForm = styled.form`
 `
 
 const StyledInput = styled.input`
-  background-color: var(--theme-ui-colors-themedInput-background, #232129);
+  background-color: var(--themed-input-background, #232129);
   border: 0px;
   border-radius: 4px;
   display: block;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family: var(--fonts-sytem)
   font-size: 1rem;
   font-weight: 400;
   line-height: 2.25rem;
@@ -63,9 +58,9 @@ const StyledInput = styled.input`
   overflow: hidden;
 
   :focus {
-    background-color: var(--theme-ui-colors-themedInput-backgroundFocus, black);
+    background-color: var(--themed-input-background-focus, black);
     box-shadow: 0 0 0 2px
-      var(--theme-ui-colors-themedInput-focusBoxShadow, #663399);
+      var(--themed-input-background-focus-box-shadow, #663399);
     outline: 0px;
     width: 100%;
   }
@@ -74,12 +69,12 @@ const StyledInput = styled.input`
 const StyledButton = styled.button`
   -webkit-box-align: center;
   align-items: center;
-  background-color: var(--theme-ui-colors-button-primaryBg, #663399);
+  background-color: var(--button-primary-bg);
   border-radius: 4px;
   border-width: 1px;
   border-style: solid;
-  border-color: var(--theme-ui-colors-button-primaryBorder, #663399);
-  color: var(--theme-ui-colors-button-primaryText, #ffffff);
+  border-color: var(--button-primary-border, #663399);
+  color: var(--button-primary-text, #ffffff);
   cursor: pointer;
   display: inline-flex;
   font-weight: 700;
@@ -97,10 +92,6 @@ const StyledButton = styled.button`
   margin-top: 0.75rem;
   width: 100%;
 
-  svg {
-    color: ${props => props.theme.text};
-  }
-
   span {
     -webkit-box-align: center;
     align-items: center;
@@ -111,7 +102,7 @@ const StyledButton = styled.button`
   }
 
   :hover {
-    background-color: var(--theme-ui-colors-gatsby, #663399);
+    background-color: var(--button-primary-bg);
     background-image: linear-gradient(
       135deg,
       rgba(0, 0, 0, 0.1) 25%,
@@ -124,7 +115,7 @@ const StyledButton = styled.button`
     );
     color: rgb(255, 255, 255);
     animation: stripe-animation 2.8s linear infinite;
-    border-color: var(--theme-ui-colors-gatsby, #663399);
+    border-color: var(--button-primary-bg);
   }
 
   @media (min-width: 1000px) {
@@ -139,21 +130,20 @@ const StyledButton = styled.button`
     }
 
     to {
-      background-position: ${props => props.theme.space[7]}
-        ${props => props.theme.space[11]};
+      background-position: var(--space-7) var(--space-11);
     }
   }
 `
 
 const ErrorMessage = styled.div`
-  color: ${p => p.theme.colors.warning};
+  color: var(--warning-colors);
   font-family: ${p => p.theme.fonts.system};
-  font-size: ${p => p.theme.fontSizes[1]};
-  margin: ${p => p.theme.space[2]} 0;
+  font-size: var(--font-size-1);
+  margin: var(--space-11) 0;
 `
 
 const SuccessMessage = styled.div`
-  font-family: ${p => p.theme.fonts.system};
+  font-family: var(--fonts-sytem);
 `
 
 function Form({ onSuccess, confirmMessage }) {

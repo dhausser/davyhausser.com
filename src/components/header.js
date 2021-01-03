@@ -32,7 +32,7 @@ const HeaderContainer = styled.div`
   width: 100%;
 
   ::after {
-    background-color: ${props => props.theme.border};
+    background-color: var(--border);
     bottom: 0rem;
     content: '';
     height: 1px;
