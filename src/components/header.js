@@ -1,110 +1,158 @@
 import React from 'react'
-import { css } from '@emotion/react'
+import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import { GoMarkGithub } from 'react-icons/go'
 import { FaTwitter, FaLinkedin } from 'react-icons/fa'
 import DarkModeToggle from './dark-mode-toggle'
 
-const headerHeight = `1rem`
+const StyledHeader = styled.header`
+  height: 4rem;
+  left: 0rem;
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-left);
+  position: relative;
+  right: 0rem;
+  z-index: 5;
 
-const navItemTopOffset = `0.4rem`
-
-const navItemHorizontalSpacing = [1, null, 2]
-
-const translateY = `4px`
-
-const overrideDefaultMdLineHeight = css`
-  @media (min-width: 720px) {
-    line-height: ${headerHeight};
-  },
+  @media (min-width: 42rem) {
+    position: fixed;
+  }
 `
 
-const navItemStyles = css`
+const HeaderContainer = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  margin: 0px auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  position: relative;
+  width: 100%;
+
+  ::after {
+    background-color: ${props => props.theme.border};
+    bottom: 0rem;
+    content: '';
+    height: 1px;
+    left: 0rem;
+    position: absolute;
+    right: 0rem;
+    z-index: -1;
+  }
+`
+
+const StyledLink = styled(Link)`
+  align-items: center;
+  color: inherit;
+  display: flex;
+  flex-shrink: 0;
+  height: 1.5rem;
+  margin-right: 0.25rem;
+  text-decoration: none;
+  overflow: hidden;
+
+  @media screen and (min-width: 550px) {
+    margin-right: 0.75rem;
+    overflow: visible;
+  }
+`
+
+const StyledTitled = styled.h2`
+  height: 1.5rem;
+  width: auto;
+  max-width: none;
+  margin: 0rem;
+`
+
+const StyledSocialNav = styled.div`
+  display: flex;
+  align-self: flex-end;
+`
+
+const StyledSocialNavItem = styled.a`
   border-bottom: 2px solid transparent;
+  color: ${props => props.theme.navigationSocial};
   display: block;
-  font-size: 3;
-  line-height: ${headerHeight};
-  @media (min-width: 720px) {
-    line-height: (t) => calc(${headerHeight} - ${navItemTopOffset}),
-  },
+  font-size: 1.125rem;
+  line-height: 4rem;
   position: relative;
   text-decoration: none;
   z-index: 1;
-  &:hover, &:focus: {
-    color: hotpink;
+  transform: translate(0px, 4px);
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+
+  @media (min-width: 750px) {
+    line-height: 4rem;
   }
-  svg {
-        color: ${props => props.theme.navigationSocial};
-      }
+
+  @media screen and (min-width: 550px) {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+`
+
+const DarkModeToggleWrapper = styled.div`
+  border-bottom: 2px solid transparent;
+  color: var(--theme-ui-colors-navigation-socialLink, #78757a);
+  display: block;
+  font-size: 1.125rem;
+  line-height: 4rem;
+  position: relative;
+  text-decoration: none;
+  z-index: 1;
+  margin-left: 0.25rem;
+
+  @media (min-width: 750px) {
+    line-height: 4rem;
+  }
+
+  @media screen and (min-width: 550px) {
+    margin-left: 0.5rem;
+  }
 `
 
 const SocialNavItem = ({ href, title, children }) => (
-  <a
+  <StyledSocialNavItem
     href={href}
     target="_blank"
     rel="noopener noreferrer"
     title={title}
-    css={css`
-      ${navItemStyles}
-      ${overrideDefaultMdLineHeight}
-      transform: translate(0px, ${translateY});
-      padding: 0 ${navItemHorizontalSpacing};
-      display: inline-block;
-      margin-right: 1rem;
-    `}
   >
     {children}
-  </a>
+  </StyledSocialNavItem>
 )
 
 function Header({ siteTitle, isDark, setIsDark }) {
   return (
-    <header
-      css={theme => css`
-        padding: 1.5rem 1.5rem;
-        border-bottom: solid ${theme.border} 1px;
-      `}
-    >
-      <Link
-        to="/"
-        css={css`
-          text-shadow: none;
-          background-image: none;
-        `}
-      >
-        <h2
-          css={css`
-            display: inline;
-          `}
-        >
-          {siteTitle}
-        </h2>
-      </Link>
-      <ul
-        css={css`
-          list-style: none;
-          float: right;
-          transform: translate(0px, -${translateY});
-        `}
-      >
-        <SocialNavItem href="https://github.com/dhausser" title="GitHub">
-          <GoMarkGithub />
-        </SocialNavItem>
-        <SocialNavItem
-          href="https://www.twitter.com/davyhausser"
-          title="Twitter"
-        >
-          <FaTwitter />
-        </SocialNavItem>
-        <SocialNavItem
-          href="https://www.linkedin.com/in/davyhausser"
-          title="Linkedin"
-        >
-          <FaLinkedin />
-        </SocialNavItem>
-        <DarkModeToggle isDark={isDark} setIsDark={setIsDark} />
-      </ul>
-    </header>
+    <StyledHeader>
+      <HeaderContainer>
+        <StyledLink to="/">
+          <StyledTitled>{siteTitle}</StyledTitled>
+        </StyledLink>
+        <StyledSocialNav>
+          <SocialNavItem href="https://github.com/dhausser" title="GitHub">
+            <GoMarkGithub />
+          </SocialNavItem>
+          <SocialNavItem
+            href="https://www.twitter.com/davyhausser"
+            title="Twitter"
+          >
+            <FaTwitter />
+          </SocialNavItem>
+          <SocialNavItem
+            href="https://www.linkedin.com/in/davyhausser"
+            title="Linkedin"
+          >
+            <FaLinkedin />
+          </SocialNavItem>
+          <DarkModeToggleWrapper>
+            <DarkModeToggle isDark={isDark} setIsDark={setIsDark} />
+          </DarkModeToggleWrapper>
+        </StyledSocialNav>
+      </HeaderContainer>
+    </StyledHeader>
   )
 }
 

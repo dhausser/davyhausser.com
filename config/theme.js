@@ -8,8 +8,9 @@ export const themeLight = {
   buttonBorder: '#000',
   buttonBg: 'rgba(0, 0, 0, 0)',
   buttonBgHover: 'rgba(0, 0, 0, 1)',
+  heading: '#000000',
   navigationSocial: '#78757a',
-  border: 'var(--theme-ui-colors-newsletter-border)',
+  border: '#f0f0f2',
   radii: ['1px', '2px', '3px', '4px'],
   space: [...Array(10).keys()],
   // TO FIX
@@ -28,6 +29,7 @@ export const themeDark = {
   buttonBorder: '#fff',
   buttonBg: 'rgba(255, 255, 255, 0)',
   buttonBgHover: 'rgba(255, 255, 255, 1)',
+  heading: 'rgba(255,255,255,0.8)',
   navigationSocial: '#78757a',
   border: '#232129',
   radii: ['1px', '2px', '3px', '4px'],
