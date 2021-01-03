@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { mediaQueries } from 'gatsby-design-tokens/dist/theme-gatsbyjs-org'
 
 // kudos to our friends at narative.co
 // https://github.com/narative/gatsby-theme-novela/blob/fb38329e17595df6e846be1d33517ff6125cde4e/src/components/Navigation/Navigation.Header.tsx
@@ -56,13 +55,13 @@ const IconWrapper = styled.button`
 `
 
 const MoonOrSun = styled.div`
-  border: ${p => (p.isDark ? `4px` : `2px`)} solid #888;
-  background: ${p => p.theme.colors.navigation.socialLink};
+  border: ${props => (props.isDark ? `4px` : `2px`)} solid #888;
+  background: ${props => props.theme.colors.navigation.socialLink};
   border-radius: 50%;
   height: 24px;
-  overflow: ${p => (p.isDark ? `visible` : `hidden`)};
+  overflow: ${props => (props.isDark ? `visible` : `hidden`)};
   position: relative;
-  transform: scale(${p => (p.isDark ? 0.55 : 1)});
+  transform: scale(${props => (props.isDark ? 0.55 : 1)});
   transition: all 0.45s ease;
   width: 24px;
 
@@ -71,25 +70,25 @@ const MoonOrSun = styled.div`
     border: 2px solid #888;
     content: '';
     height: 24px;
-    opacity: ${p => (p.isDark ? 0 : 1)};
+    opacity: ${props => (props.isDark ? 0 : 1)};
     position: absolute;
     right: -9px;
     top: -9px;
-    transform: translate(${p => (p.isDark ? `14px, -14px` : `0, 0`)});
+    transform: translate(${props => (props.isDark ? `14px, -14px` : `0, 0`)});
     transition: transform 0.45s ease;
     width: 24px;
   }
 
   &::after {
     border-radius: 50%;
-    box-shadow: 0 -23px 0 ${p => p.theme.colors.navigation.socialLink},
-      0 23px 0 ${p => p.theme.colors.navigation.socialLink},
-      23px 0 0 ${p => p.theme.colors.navigation.socialLink},
-      -23px 0 0 ${p => p.theme.colors.navigation.socialLink},
-      15px 15px 0 ${p => p.theme.colors.navigation.socialLink},
-      -15px 15px 0 ${p => p.theme.colors.navigation.socialLink},
-      15px -15px 0 ${p => p.theme.colors.navigation.socialLink},
-      -15px -15px 0 ${p => p.theme.colors.navigation.socialLink};
+    box-shadow: 0 -23px 0 ${props => props.theme.colors.navigation.socialLink},
+      0 23px 0 ${props => props.theme.colors.navigation.socialLink},
+      23px 0 0 ${props => props.theme.colors.navigation.socialLink},
+      -23px 0 0 ${props => props.theme.colors.navigation.socialLink},
+      15px 15px 0 ${props => props.theme.colors.navigation.socialLink},
+      -15px 15px 0 ${props => props.theme.colors.navigation.socialLink},
+      15px -15px 0 ${props => props.theme.colors.navigation.socialLink},
+      -15px -15px 0 ${props => props.theme.colors.navigation.socialLink};
     content: '';
     height: 8px;
     left: 50%;
@@ -97,11 +96,11 @@ const MoonOrSun = styled.div`
     position: absolute;
     top: 50%;
     width: 8px;
-    transform: scale(${p => (p.isDark ? 1 : 0)});
+    transform: scale(${props => (props.isDark ? 1 : 0)});
     transition: all 0.35s ease;
 
-    ${mediaQueries.md} {
-      transform: scale(${p => (p.isDark ? 0.92 : 0)});
+    ${props => props.theme.mediaQueries.md} {
+      transform: scale(${props => (props.isDark ? 0.92 : 0)});
     }
   }
 `
@@ -111,11 +110,11 @@ const MoonMask = styled.div`
   border-radius: 50%;
   border: 0;
   height: 24px;
-  opacity: ${p => (p.isDark ? 0 : 1)};
+  opacity: ${props => (props.isDark ? 0 : 1)};
   position: absolute;
   right: 0;
   top: 0;
-  transform: translate(${p => (p.isDark ? `14px, -14px` : `0, 0`)});
+  transform: translate(${props => (props.isDark ? `14px, -14px` : `0, 0`)});
   transition: background 0.25s ease, transform 0.45s ease;
   width: 24px;
 `

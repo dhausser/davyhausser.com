@@ -1,10 +1,9 @@
 import React, { useRef, useState } from 'react'
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
-import { MdSend as SendIcon } from 'react-icons/md'
-import { rhythm } from '../utils/typography'
+import { MdSend } from 'react-icons/md'
 
-import { space } from 'gatsby-design-tokens/dist/theme-gatsbyjs-org'
+import { rhythm } from '../utils/typography'
 
 const ContactContainer = styled.div`
   background: ${props => props.theme.background};
@@ -140,7 +139,8 @@ const StyledButton = styled.button`
     }
 
     to {
-      background-position: ${space[7]} ${space[11]};
+      background-position: ${props => props.theme.space[7]}
+        ${props => props.theme.space[11]};
     }
   }
 `
@@ -198,7 +198,7 @@ function Form({ onSuccess, confirmMessage }) {
       <StyledButton type="submit">
         <span>
           Send
-          <SendIcon />
+          <MdSend />
         </span>
       </StyledButton>
     </StyledForm>
