@@ -53,7 +53,7 @@ export default css`
     --heading-color: #818cab;
     --border: #232129;
     --themed-input-background: #232129;
-    --themed-input-background-focus: #ffffff;
+    --themed-input-background-focus: black;
     --themed-input-focus-border: #663399;
     --themed-input-focus-box-shadow: #d9bae8;
     --themed-input-icon: #78757a;
