@@ -6751,10 +6751,10 @@ gatsby-core-utils@^1.8.0:
     tmp "^0.2.1"
     xdg-basedir "^4.0.0"
 
-gatsby-design-tokens@^2.0.11:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/gatsby-design-tokens/-/gatsby-design-tokens-2.4.0.tgz#9ac910bf5de6a1074f63fa91a169b0b872c4a058"
-  integrity sha512-mcG6jlk8wYUJ0EzJtFZ5Fzv0pv1Aowt1+QrlIYev09+KipB7sqFyBIuHIFrsTqZ853RgyfBKRkYzL3VY9AgPUg==
+gatsby-design-tokens@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/gatsby-design-tokens/-/gatsby-design-tokens-2.5.0.tgz#e103fcbe15de8e22e4c78af66813163d5b2fbeba"
+  integrity sha512-dyTMkI2WLOyRH4JvmUrxe/ERfoucHJdSyn6gixI+Oi3mbVDIAcR017JjEgjM6VIBOCYuFqLTdfw4V35qLT3eYA==
   dependencies:
     hex2rgba "^0.0.1"
 
