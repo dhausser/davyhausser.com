@@ -125,6 +125,7 @@ function setDarkTheme() {
 }
 
 function switchTheme(isDark) {
+  if (typeof window === 'undefined') return
   if (isDark) {
     setLightTheme()
     localStorage.setItem('theme', 'light')
@@ -136,7 +137,7 @@ function switchTheme(isDark) {
 
 export default function Switch() {
   const [isDark, setIsDark] = useState(() => {
-    // TO FIX: "localStorage" is not available during server side rendering.
+    if (typeof window === 'undefined') return
     const theme = localStorage.getItem('theme')
     if (theme === 'dark') {
       setDarkTheme()
