@@ -5,9 +5,9 @@ export default function useSiteMetadata() {
     query SiteMetadata {
       site {
         siteMetadata {
-          siteUrl
           title
-          twitter
+          description
+          author
         }
       }
     }
