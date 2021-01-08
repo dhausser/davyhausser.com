@@ -70,6 +70,9 @@ export default css`
     color: var(--font-color);
     text-rendering: optimizelegibility;
     -webkit-font-smoothing: antialiased;
+    font: 100%/1.5 -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto',
+      'Helvetica Neue', 'Arial', 'Noto Sans', sans-serif, 'Apple Color Emoji',
+      'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   }
 
   * {
