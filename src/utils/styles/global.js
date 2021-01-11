@@ -66,8 +66,9 @@ export default css`
 
   html,
   body {
-    background-color: var(--bg-color);
+    margin: 0rem;
     color: var(--font-color);
+    background-color: var(--bg-color);
     text-rendering: optimizelegibility;
     -webkit-font-smoothing: antialiased;
     font: 100%/1.5 -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto',
