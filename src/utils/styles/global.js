@@ -1,4 +1,4 @@
-import { css } from '@emotion/react'
+import { css } from "@emotion/react"
 
 export default css`
   :root {
@@ -16,9 +16,9 @@ export default css`
     --space-7: 2rem;
     --space-8: 2.5rem;
     --space-11: 4rem;
-    --fonts-sytem: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-      'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
-      'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --fonts-sytem: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-size-1: 0.875rem;
     --font-size-4: 1.25rem;
     --font-weight-body: 400;
@@ -44,7 +44,7 @@ export default css`
     --button-primary-text: #ffffff;
   }
 
-  [data-theme='dark'] {
+  [data-theme="dark"] {
     --primary-color: #9a97f3;
     --secondary-color: #818cab;
     --font-color: #e1e1ff;
@@ -71,9 +71,9 @@ export default css`
     background-color: var(--bg-color);
     text-rendering: optimizelegibility;
     -webkit-font-smoothing: antialiased;
-    font: 100%/1.5 -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto',
-      'Helvetica Neue', 'Arial', 'Noto Sans', sans-serif, 'Apple Color Emoji',
-      'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    font: 100%/1.5 -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto",
+      "Helvetica Neue", "Arial", "Noto Sans", sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
   * {

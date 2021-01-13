@@ -1,9 +1,9 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import Project from '../components/project'
-import Contact from '../components/contact'
+import React from "react"
+import { graphql } from "gatsby"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import Project from "../components/project"
+import Contact from "../components/contact"
 
 import {
   Heading,
@@ -16,7 +16,7 @@ import {
   TextContentWrap,
   SkillContent,
   Paragraph,
-} from '../utils/styles'
+} from "../utils/styles"
 
 export default function HomePage({ data }) {
   const { siteMetadata } = data.site
@@ -33,9 +33,9 @@ export default function HomePage({ data }) {
       </HeadingWrapCont>
       <Container
         style={{
-          alignItems: 'start',
+          alignItems: "start",
           margin: 0,
-          justifyContent: 'space-between',
+          justifyContent: "space-between",
         }}
       >
         <TextContentWrap>

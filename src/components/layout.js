@@ -1,10 +1,10 @@
-import React from 'react'
-import { Global } from '@emotion/react'
-import styled from '@emotion/styled'
-import { Helmet } from 'react-helmet'
-import { graphql, useStaticQuery } from 'gatsby'
-import Header from './header'
-import { globalStyles } from '../utils/styles'
+import React from "react"
+import { Global } from "@emotion/react"
+import styled from "@emotion/styled"
+import { Helmet } from "react-helmet"
+import { graphql, useStaticQuery } from "gatsby"
+import Header from "./header"
+import { globalStyles } from "../utils/styles"
 
 const Container = styled.div`
   padding-left: env(safe-area-inset-left);
@@ -37,7 +37,7 @@ const Wrapper = styled.div`
   }
 `
 
-export default function Layout({ siteTitle = 'DH', children }) {
+export default function Layout({ siteTitle = "DH", children }) {
   const data = useStaticQuery(graphql`
     {
       site {
@@ -61,7 +61,7 @@ export default function Layout({ siteTitle = 'DH', children }) {
       <Global styles={globalStyles} />
       <Helmet
         title={title}
-        meta={[{ name: 'description', content: description }]}
+        meta={[{ name: "description", content: description }]}
       >
         <html lang="en" />
         <script src="https://js.tito.io/v1" async />

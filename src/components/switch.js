@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import styled from '@emotion/styled'
+import React, { useState } from "react"
+import styled from "@emotion/styled"
 
 // kudos to our friends at narative.co
 // https://github.com/narative/gatsby-theme-novela/blob/fb38329e17595df6e846be1d33517ff6125cde4e/src/components/Navigation/Navigation.Header.tsx
@@ -68,7 +68,7 @@ const MoonOrSun = styled.div`
   &::before {
     border-radius: 50%;
     border: 2px solid #888;
-    content: '';
+    content: "";
     height: 24px;
     opacity: ${props => (props.isDark ? 0 : 1)};
     position: absolute;
@@ -86,7 +86,7 @@ const MoonOrSun = styled.div`
       -23px 0 0 var(--navigation-color), 15px 15px 0 var(--navigation-color),
       -15px 15px 0 var(--navigation-color), 15px -15px 0 var(--navigation-color),
       -15px -15px 0 var(--navigation-color);
-    content: '';
+    content: "";
     height: 8px;
     left: 50%;
     margin: -4px 0 0 -4px;
@@ -117,29 +117,29 @@ const MoonMask = styled.div`
 `
 
 function setLightTheme() {
-  document.documentElement.setAttribute('data-theme', 'light')
+  document.documentElement.setAttribute("data-theme", "light")
 }
 
 function setDarkTheme() {
-  document.documentElement.setAttribute('data-theme', 'dark')
+  document.documentElement.setAttribute("data-theme", "dark")
 }
 
 function switchTheme(isDark) {
-  if (typeof window === 'undefined') return
+  if (typeof window === "undefined") return
   if (isDark) {
     setLightTheme()
-    localStorage.setItem('theme', 'light')
+    localStorage.setItem("theme", "light")
   } else {
     setDarkTheme()
-    localStorage.setItem('theme', 'dark')
+    localStorage.setItem("theme", "dark")
   }
 }
 
 export default function Switch() {
   const [isDark, setIsDark] = useState(() => {
-    if (typeof window === 'undefined') return
-    const theme = localStorage.getItem('theme')
-    if (theme === 'dark') {
+    if (typeof window === "undefined") return
+    const theme = localStorage.getItem("theme")
+    if (theme === "dark") {
       setDarkTheme()
       return true
     }

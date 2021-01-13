@@ -1,7 +1,7 @@
-import React, { useRef, useState } from 'react'
-import { css } from '@emotion/react'
-import styled from '@emotion/styled'
-import { MdSend } from 'react-icons/md'
+import React, { useRef, useState } from "react"
+import { css } from "@emotion/react"
+import styled from "@emotion/styled"
+import { MdSend } from "react-icons/md"
 
 const ContactContainer = styled.div`
   background: var(--bg-color);
@@ -149,18 +149,18 @@ const SuccessMessage = styled.div`
 function Form({ onSuccess, confirmMessage }) {
   const emailRef = useRef(null)
   const formRef = useRef(null)
-  const [errorMessage, setErrorMessage] = useState('')
+  const [errorMessage, setErrorMessage] = useState("")
 
   const onSubmit = async e => {
     e.preventDefault()
 
     const url = `${process.env.NETLIFY_FUNCTIONS_URL}/contact`
-    const data = { email: emailRef.current.value, message: 'sample message' }
+    const data = { email: emailRef.current.value, message: "sample message" }
 
     const response = await fetch(url, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     })
@@ -196,7 +196,7 @@ function Form({ onSuccess, confirmMessage }) {
 }
 
 export default function Contact() {
-  const [successMessage, setSuccessMessage] = useState('')
+  const [successMessage, setSuccessMessage] = useState("")
   const FormComponent = props => (
     <Form onSuccess={setSuccessMessage} {...props} />
   )
