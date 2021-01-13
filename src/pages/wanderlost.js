@@ -5,7 +5,7 @@ import SEO from '../components/seo'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import Contact from '../components/contact'
-import { Paragraph } from '../utils/styles'
+import { ProjectLink } from '../utils/styles'
 
 const LinkRow = styled.div`
   display: flex;
@@ -14,26 +14,6 @@ const LinkRow = styled.div`
   width: 100%;
   align-items: center;
   padding: 20px;
-`
-
-const ProjectLink = styled(Paragraph)`
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 163.19%;
-  display: inline;
-  color: black;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  border-bottom: 2px solid transparent;
-  transition: border-bottom 0.3s;
-
-  :hover {
-    border-bottom: 2px solid black;
-  }
-
-  span {
-    font-size: 20px;
-  }
 `
 
 export default function Wanderlost({ data }) {

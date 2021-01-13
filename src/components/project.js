@@ -2,26 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from '@emotion/styled'
-import { breakpoints, Heading, Paragraph } from '../utils/styles'
-
-export const ProjectLink = styled(Paragraph)`
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 163.19%;
-  display: inline;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  border-bottom: 2px solid transparent;
-  transition: border-bottom 0.3s;
-
-  :hover {
-    border-bottom: 2px solid;
-  }
-
-  span {
-    font-size: 20px;
-  }
-`
+import { breakpoints, Heading, Paragraph, ProjectLink } from '../utils/styles'
 
 const Project = styled.div`
   width: 100%;

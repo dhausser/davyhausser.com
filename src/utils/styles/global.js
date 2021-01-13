@@ -106,7 +106,12 @@ export default css`
   }
 
   a {
+    color: var(--font-color);
     text-decoration: none;
+  }
+
+  a:visited {
+    color: var(----font-color);
   }
 
   header {

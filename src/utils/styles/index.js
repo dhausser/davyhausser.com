@@ -183,3 +183,22 @@ export const Paragraph = styled.p`
     }
   }
 `
+
+export const ProjectLink = styled(Paragraph)`
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 163.19%;
+  display: inline;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.3s;
+
+  :hover {
+    border-bottom: 2px solid;
+  }
+
+  span {
+    font-size: 20px;
+  }
+`
