@@ -136,7 +136,7 @@ export const query = graphql`
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
-        fluid(maxWidth: 1200, srcSetBreakpoints: [480, 959, 960, 199, 200]) {
+        fluid(maxWidth: 1200) {
           ...GatsbyImageSharpFluid
         }
       }
