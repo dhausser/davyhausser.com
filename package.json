@@ -26,7 +26,6 @@
     "gatsby-plugin-sharp": "^2.12.1",
     "gatsby-source-filesystem": "^2.9.0",
     "gatsby-transformer-sharp": "^2.10.1",
-    "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
@@ -34,8 +33,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
-    "eslint": "^7.17.0",
-    "eslint-config-kentcdodds": "^17.3.0",
     "husky": ">=4",
     "lint-staged": ">=10",
     "prettier": "^2.2.1"

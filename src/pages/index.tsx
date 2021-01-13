@@ -18,8 +18,24 @@ import {
   Paragraph,
 } from "../utils/styles"
 
-export default function HomePage({ data }) {
-  const { siteMetadata } = data.site
+// interface Props extends PageProps {
+//   data: {
+//     site: {
+//       siteMetadata: {
+//         title: string
+//         description: string
+//       }
+//     }
+//     file: {
+//       childImageSharp: {
+//         fluid: any
+//       }
+//     }
+//   }
+// }
+
+export default function HomePage(props) {
+  const { siteMetadata } = props.data.site
   return (
     <Layout>
       <SEO title={siteMetadata.title} description={siteMetadata.description} />
@@ -117,7 +133,7 @@ export default function HomePage({ data }) {
         </TextContent>
       </SubContainer>
       <SubContainer>
-        <Project imageFluid={data.file.childImageSharp.fluid} />
+        <Project imageFluid={props.data.file.childImageSharp.fluid} />
       </SubContainer>
       <Contact />
     </Layout>
