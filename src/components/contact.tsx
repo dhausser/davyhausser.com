@@ -160,13 +160,16 @@ interface FormProps {
 }
 
 function Form({ onSuccess, confirmMessage }: FormProps) {
-  const emailRef = useRef(null)
-  const formRef = useRef(null)
+  const [email, setEmail] = useState("")
   const [errorMessage, setErrorMessage] = useState("")
 
-  const onSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
-    e.preventDefault()
-    console.log(e.currentTarget.value)
+  function handleChange(event: ChangeEvent<HTMLInputElement>) {
+    setEmail(event.target.value)
+  }
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    console.log(email)
+    event.preventDefault()
     /**
      * TODO: Contact form submission handling
      */
@@ -182,7 +185,7 @@ function Form({ onSuccess, confirmMessage }: FormProps) {
     // })
 
     // if (response.status === 200) {
-    if (e.currentTarget.value) {
+    if (email) {
       onSuccess(confirmMessage)
     } else {
       // setErrorMessage(`${response.status}: ${response.statusText}`)
@@ -191,14 +194,15 @@ function Form({ onSuccess, confirmMessage }: FormProps) {
   }
 
   return (
-    <StyledForm ref={formRef} onSubmit={onSubmit}>
+    <StyledForm onSubmit={handleSubmit}>
       <StyledInput
         id="email"
         name="email"
         type="email"
         required
         autoComplete="email"
-        ref={emailRef}
+        value={email}
+        onChange={handleChange}
         aria-label="Email"
         placeholder="Email"
       />
