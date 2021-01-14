@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, PageProps } from "gatsby"
+import { FluidObject } from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Project from "../components/project"
@@ -18,20 +19,26 @@ import {
   Paragraph,
 } from "../utils/styles"
 
-interface Props extends PageProps {
-  data: {
-    site: {
-      siteMetadata: {
-        title: string
-        description: string
-      }
-    }
-    file: {
-      childImageSharp: {
-        fluid: string
-      }
-    }
+export interface SiteMetaData {
+  title: string
+  description: string
+}
+
+export interface FileData {
+  childImageSharp: {
+    fluid: FluidObject | FluidObject[]
   }
+}
+
+export interface Data {
+  site: {
+    siteMetadata: SiteMetaData
+  }
+  file: FileData
+}
+
+export interface Props extends PageProps {
+  data: Data
 }
 
 export default function HomePage(props: Props): JSX.Element {

@@ -6,7 +6,10 @@ interface Props {
   title: string
   description: string
   lang?: string
-  meta?: Array<Record<string, unknown>>
+  meta?: ConcatArray<
+    | { name: string; content: string; property?: undefined }
+    | { property: string; content: string; name?: undefined }
+  >
 }
 
 function SEO({

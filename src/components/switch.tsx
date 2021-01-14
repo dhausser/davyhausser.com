@@ -54,7 +54,7 @@ const IconWrapper = styled.button`
   }
 `
 
-const MoonOrSun = styled.div`
+const MoonOrSun = styled.div<{ isDark: boolean }>`
   border: ${props => (props.isDark ? `4px` : `2px`)} solid #888;
   background: var(--navigation-color);
   border-radius: 50%;
@@ -102,7 +102,7 @@ const MoonOrSun = styled.div`
   }
 `
 
-const MoonMask = styled.div`
+const MoonMask = styled.div<{ isDark: boolean }>`
   background: #fff;
   border-radius: 50%;
   border: 0;
@@ -124,7 +124,7 @@ function setDarkTheme() {
   document.documentElement.setAttribute("data-theme", "dark")
 }
 
-function switchTheme(isDark) {
+function switchTheme(isDark: boolean) {
   if (typeof window === "undefined") return
   if (isDark) {
     setLightTheme()
@@ -135,9 +135,9 @@ function switchTheme(isDark) {
   }
 }
 
-export default function Switch() {
-  const [isDark, setIsDark] = useState(() => {
-    if (typeof window === "undefined") return
+export default function Switch(): JSX.Element {
+  const [isDark, setIsDark] = useState<boolean>(() => {
+    if (typeof window === "undefined") return false
     const theme = localStorage.getItem("theme")
     if (theme === "dark") {
       setDarkTheme()
@@ -150,7 +150,6 @@ export default function Switch() {
 
   return (
     <IconWrapper
-      isDark={isDark}
       onClick={() => {
         switchTheme(isDark)
         setIsDark(!isDark)

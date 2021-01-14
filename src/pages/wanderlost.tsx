@@ -2,10 +2,11 @@ import React from "react"
 import styled from "@emotion/styled"
 import { graphql } from "gatsby"
 import SEO from "../components/seo"
-import Img from "gatsby-image"
+import Img, { FluidObject } from "gatsby-image"
 import Layout from "../components/layout"
 import Contact from "../components/contact"
 import { ProjectLink } from "../utils/styles"
+import { Data } from "."
 
 const LinkRow = styled.div`
   display: flex;
@@ -16,7 +17,7 @@ const LinkRow = styled.div`
   padding: 20px;
 `
 
-export default function Wanderlost({ data }) {
+export default function Wanderlost({ data }: { data: Data }): JSX.Element {
   const { siteMetadata } = data.site
   return (
     <Layout>
