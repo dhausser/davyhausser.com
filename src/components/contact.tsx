@@ -1,5 +1,4 @@
-import React, { ChangeEvent, FormEvent, useRef, useState } from "react"
-import { css } from "@emotion/react"
+import React, { useState, ChangeEvent, FormEvent } from "react"
 import styled from "@emotion/styled"
 import { MdSend } from "react-icons/md"
 
