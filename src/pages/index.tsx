@@ -140,7 +140,7 @@ export default function HomePage(props: Props): JSX.Element {
         </TextContent>
       </SubContainer>
       <SubContainer>
-        <Project imageFluid={props.data.file.childImageSharp.fluid} />
+        <Project fluidImg={props.data.file.childImageSharp.fluid} />
       </SubContainer>
       <Contact />
     </Layout>

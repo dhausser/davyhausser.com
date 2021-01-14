@@ -1,8 +1,12 @@
 import React from "react"
 import { Link } from "gatsby"
-import Img from "gatsby-image"
+import Img, { FluidObject } from "gatsby-image"
 import styled from "@emotion/styled"
 import { breakpoints, Heading, Paragraph, ProjectLink } from "../utils/styles"
+
+interface Props {
+  fluidImg: FluidObject | FluidObject[]
+}
 
 const Project = styled.div`
   width: 100%;
@@ -27,11 +31,11 @@ const ProjectParagraph = styled(Paragraph)`
   }
 `
 
-function ProjectRow({ imageFluid }) {
+function ProjectRow({ fluidImg }: Props): JSX.Element {
   return (
     <Project>
       <Link title="Wanderlost" to="/wanderlost">
-        <Img fluid={imageFluid} />
+        <Img fluid={fluidImg} />
       </Link>
       <Link title="Wanderlost" to="/wanderlost">
         <SubHeading>Wanderlost</SubHeading>
