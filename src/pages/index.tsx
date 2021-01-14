@@ -28,13 +28,13 @@ interface Props extends PageProps {
     }
     file: {
       childImageSharp: {
-        fluid: any
+        fluid: string
       }
     }
   }
 }
 
-export default function HomePage(props: Props) {
+export default function HomePage(props: Props): JSX.Element {
   const { siteMetadata } = props.data.site
   return (
     <Layout>

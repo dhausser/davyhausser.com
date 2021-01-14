@@ -2,14 +2,19 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import useSiteMetadata from "../hooks/use-site-metadata"
 
-// interface Props {
-//   description: string
-//   lang: string
-//   meta: any
-//   title: string
-// }
+interface Props {
+  title: string
+  description: string
+  lang?: string
+  meta?: Array<Record<string, unknown>>
+}
 
-function SEO({ description, title, lang = "en", meta = [] }) {
+function SEO({
+  description,
+  title,
+  lang = "en",
+  meta = [],
+}: Props): JSX.Element {
   const siteMetadata = useSiteMetadata()
 
   const metaDescription = description || siteMetadata.description
