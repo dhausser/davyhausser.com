@@ -6,6 +6,10 @@ import { graphql, useStaticQuery } from "gatsby"
 import Header from "./header"
 import { globalStyles } from "../utils/styles"
 
+interface Props {
+  children: JSX.Element | JSX.Element[]
+}
+
 const Container = styled.div`
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-left);
@@ -37,7 +41,7 @@ const Wrapper = styled.div`
   }
 `
 
-export default function Layout({ siteTitle = "DH", children }) {
+export default function Layout({ children }: Props): JSX.Element {
   const data = useStaticQuery(graphql`
     {
       site {
@@ -64,10 +68,9 @@ export default function Layout({ siteTitle = "DH", children }) {
         meta={[{ name: "description", content: description }]}
       >
         <html lang="en" />
-        <script src="https://js.tito.io/v1" async />
         <noscript>This site runs best with JavaScript enabled.</noscript>
       </Helmet>
-      <Header siteTitle={siteTitle} />
+      <Header siteTitle={title} />
       <Container>
         <Wrapper>{children}</Wrapper>
       </Container>

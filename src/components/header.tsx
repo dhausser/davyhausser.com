@@ -5,6 +5,16 @@ import { GoMarkGithub } from "react-icons/go"
 import { FaTwitter, FaLinkedin } from "react-icons/fa"
 import Switch from "./switch"
 
+interface Props {
+  siteTitle: string
+}
+
+interface NavItemProps {
+  href: string
+  title: string
+  children: JSX.Element | JSX.Element[]
+}
+
 const StyledHeader = styled.header`
   background-color: var(--bg-color);
   height: 4rem;
@@ -114,7 +124,7 @@ const SwitchWrapper = styled.div`
   }
 `
 
-const SocialNavItem = ({ href, title, children }) => (
+const SocialNavItem = ({ href, title, children }: NavItemProps) => (
   <StyledSocialNavItem
     href={href}
     target="_blank"
@@ -125,7 +135,7 @@ const SocialNavItem = ({ href, title, children }) => (
   </StyledSocialNavItem>
 )
 
-function Header({ siteTitle }) {
+function Header({ siteTitle }: Props): JSX.Element {
   return (
     <StyledHeader>
       <HeaderContainer>
