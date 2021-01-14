@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, PageProps } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Project from "../components/project"
@@ -18,23 +18,23 @@ import {
   Paragraph,
 } from "../utils/styles"
 
-// interface Props extends PageProps {
-//   data: {
-//     site: {
-//       siteMetadata: {
-//         title: string
-//         description: string
-//       }
-//     }
-//     file: {
-//       childImageSharp: {
-//         fluid: any
-//       }
-//     }
-//   }
-// }
+interface Props extends PageProps {
+  data: {
+    site: {
+      siteMetadata: {
+        title: string
+        description: string
+      }
+    }
+    file: {
+      childImageSharp: {
+        fluid: any
+      }
+    }
+  }
+}
 
-export default function HomePage(props) {
+export default function HomePage(props: Props) {
   const { siteMetadata } = props.data.site
   return (
     <Layout>

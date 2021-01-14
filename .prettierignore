@@ -36,3 +36,4 @@ cypress/screenshots
 .env
 
 .netlify
+tsconfig.json
