@@ -45,7 +45,7 @@ const StyledInput = styled.input`
   border: 0px;
   border-radius: 4px;
   display: block;
-  font-family: var(--fonts-sytem)
+  font-family: var(--font-family)
   font-size: 1rem;
   font-weight: 400;
   line-height: 2.25rem;
@@ -137,13 +137,13 @@ const StyledButton = styled.button`
 
 const ErrorMessage = styled.div`
   color: var(--warning-colors);
-  font-family: ${p => p.theme.fonts.system};
+  font-family: var(--font-family);
   font-size: var(--font-size-1);
   margin: var(--space-11) 0;
 `
 
 const SuccessMessage = styled.div`
-  font-family: var(--fonts-sytem);
+  font-family: var(--font-family);
 `
 
 function Form({ onSuccess, confirmMessage }) {

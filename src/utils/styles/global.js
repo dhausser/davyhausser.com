@@ -16,7 +16,7 @@ export default css`
     --space-7: 2rem;
     --space-8: 2.5rem;
     --space-11: 4rem;
-    --fonts-sytem: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
       "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-size-1: 0.875rem;
