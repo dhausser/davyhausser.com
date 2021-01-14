@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react"
+import React, { ChangeEvent, FormEvent, useRef, useState } from "react"
 import { css } from "@emotion/react"
 import styled from "@emotion/styled"
 import { MdSend } from "react-icons/md"
@@ -45,13 +45,13 @@ const StyledInput = styled.input`
   border: 0px;
   border-radius: 4px;
   display: block;
-  font-family: var(--font-family)
+  font-family: var(--font-family);
   font-size: 1rem;
   font-weight: 400;
   line-height: 2.25rem;
   padding: 0rem 0.75rem;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
-  vertical-align: middle;
+  /* vertical-align: middle; */
   width: 100%;
   appearance: none;
   color: var(--text-color, #d9d7e0);
@@ -135,6 +135,14 @@ const StyledButton = styled.button`
   }
 `
 
+const FormHeader = styled.header`
+  padding-bottom: 1rem;
+  @media (min-width: 1000px) {
+    flex-basis: 50%;
+    padding-bottom: 0;
+  }
+`
+
 const ErrorMessage = styled.div`
   color: var(--warning-colors);
   font-family: var(--font-family);
@@ -146,29 +154,39 @@ const SuccessMessage = styled.div`
   font-family: var(--font-family);
 `
 
-function Form({ onSuccess, confirmMessage }) {
+interface FormProps {
+  onSuccess: React.Dispatch<React.SetStateAction<string>>
+  confirmMessage: string
+}
+
+function Form({ onSuccess, confirmMessage }: FormProps) {
   const emailRef = useRef(null)
   const formRef = useRef(null)
   const [errorMessage, setErrorMessage] = useState("")
 
-  const onSubmit = async e => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault()
+    console.log(e.currentTarget.value)
+    /**
+     * TODO: Contact form submission handling
+     */
+    // const url = `${process.env.NETLIFY_FUNCTIONS_URL}/contact`
+    // const data = { email: emailRef.current.value, message: "sample message" }
 
-    const url = `${process.env.NETLIFY_FUNCTIONS_URL}/contact`
-    const data = { email: emailRef.current.value, message: "sample message" }
+    // const response = await fetch(url, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(data),
+    // })
 
-    const response = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-
-    if (response.status === 200) {
+    // if (response.status === 200) {
+    if (e.currentTarget.value) {
       onSuccess(confirmMessage)
     } else {
-      setErrorMessage(`${response.status}: ${response.statusText}`)
+      // setErrorMessage(`${response.status}: ${response.statusText}`)
+      setErrorMessage("there was an error")
     }
   }
 
@@ -195,25 +213,17 @@ function Form({ onSuccess, confirmMessage }) {
   )
 }
 
-export default function Contact() {
+export default function Contact(): JSX.Element {
   const [successMessage, setSuccessMessage] = useState("")
-  const FormComponent = props => (
-    <Form onSuccess={setSuccessMessage} {...props} />
+  const FormComponent = ({ confirmMessage }: { confirmMessage: string }) => (
+    <Form onSuccess={setSuccessMessage} confirmMessage={confirmMessage} />
   )
 
   return (
     <ContactContainer>
-      <header
-        css={css`
-          padding-bottom: 1rem;
-          @media (min-width: 1000px) {
-            flex-basis: 50%;
-            padding-bottom: 0;
-          }
-        `}
-      >
+      <FormHeader>
         <Title>Need an app or website? Get in touch!</Title>
-      </header>
+      </FormHeader>
       {successMessage ? (
         <SuccessMessage dangerouslySetInnerHTML={{ __html: successMessage }} />
       ) : (
