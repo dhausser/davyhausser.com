@@ -11,6 +11,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "lint": "eslint --fix .",
     "format": "prettier --write ."
   },
   "license": "0BSD",
@@ -38,6 +39,7 @@
     "@types/react-dom": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^4.13.0",
     "@typescript-eslint/parser": "^4.13.0",
+    "eslint-config-prettier": "^7.1.0",
     "husky": ">=4",
     "lint-staged": ">=10",
     "prettier": "^2.2.1",
