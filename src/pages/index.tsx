@@ -1,10 +1,11 @@
 import React from "react"
-import { graphql, PageProps } from "gatsby"
-import { FluidObject } from "gatsby-image"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Project from "../components/project"
 import Contact from "../components/contact"
+import ProjectPreview from "../components/project-preview"
+import { Props } from "../types"
 
 import {
   Heading,
@@ -19,30 +20,8 @@ import {
   Paragraph,
 } from "../utils/styles"
 
-export interface SiteMetaData {
-  title: string
-  description: string
-}
-
-export interface FileData {
-  childImageSharp: {
-    fluid: FluidObject | FluidObject[]
-  }
-}
-
-export interface Data {
-  site: {
-    siteMetadata: SiteMetaData
-  }
-  file: FileData
-}
-
-export interface Props extends PageProps {
-  data: Data
-}
-
-export default function HomePage(props: Props): JSX.Element {
-  const { siteMetadata } = props.data.site
+export default function HomePage({ data }: Props): JSX.Element {
+  const { siteMetadata } = data.site
   return (
     <Layout>
       <SEO title={siteMetadata.title} description={siteMetadata.description} />
@@ -140,7 +119,15 @@ export default function HomePage(props: Props): JSX.Element {
         </TextContent>
       </SubContainer>
       <SubContainer>
-        <Project fluidImg={props.data.file.childImageSharp.fluid} />
+        {data.allProjectsJson.edges.map(({ node: project }) => (
+          <ProjectPreview
+            key={`preview-${project.slug}`}
+            title={project.title}
+            description={project.description}
+            slug={project.slug}
+            imageData={project.image.childImageSharp.fluid}
+          />
+        ))}
       </SubContainer>
       <Contact />
     </Layout>
@@ -148,21 +135,48 @@ export default function HomePage(props: Props): JSX.Element {
 }
 
 export const query = graphql`
-  query {
+  {
     site {
       siteMetadata {
         title
         description
       }
     }
-    file(relativePath: { eq: "wanderlost-dark.png" }) {
-      childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
-        fluid(maxWidth: 1200) {
-          ...GatsbyImageSharpFluid
+    allProjectsJson {
+      edges {
+        node {
+          title
+          description
+          slug
+          image {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }
   }
 `
+
+// export const query = graphql`
+//   query {
+//     site {
+//       siteMetadata {
+//         title
+//         description
+//       }
+//     }
+//     file(relativePath: { eq: "wanderlost-dark.png" }) {
+//       childImageSharp {
+//         # Specify the image processing specifications right in the query.
+//         # Makes it trivial to update as your page's design changes.
+//         fluid(maxWidth: 1200) {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//   }
+// `

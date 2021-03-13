@@ -1,4 +1,5 @@
 import { FluidObject } from "gatsby-image"
+import { PageProps } from "gatsby"
 
 export interface ProjectProps {
   data: {
@@ -16,8 +17,31 @@ export interface ProjectProps {
 export interface ProjectData {
   title: string
   description: string
-  tags: [string]
+  tags?: [string]
   slug?: string
-  url: string
+  url?: string
   imageData: FluidObject
+}
+
+export interface SiteMetaData {
+  title: string
+  description: string
+}
+
+export interface FileData {
+  childImageSharp: {
+    fluid: FluidObject | FluidObject[]
+  }
+}
+
+export interface Data {
+  site: {
+    siteMetadata: SiteMetaData
+  }
+  file: FileData
+  allProjectsJson: { edges: [{ node: any }] }
+}
+
+export interface Props extends PageProps {
+  data: Data
 }
