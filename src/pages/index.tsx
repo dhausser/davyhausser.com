@@ -22,6 +22,7 @@ import {
 
 export default function HomePage({ data }: Props): JSX.Element {
   const { siteMetadata } = data.site
+  const project = data.allProjectsJson.edges[2].node
   return (
     <Layout>
       <SEO title={siteMetadata.title} description={siteMetadata.description} />
@@ -119,16 +120,16 @@ export default function HomePage({ data }: Props): JSX.Element {
         </TextContent>
       </SubContainer>
       <SubContainer>
-        {data.allProjectsJson.edges.map(({ node: project }) => (
-          <ProjectPreview
-            key={`preview-${project.slug}`}
-            title={project.title}
-            description={project.description}
-            slug={project.slug}
-            imageData={project.image}
-            // imageData={project.image.childImageSharp.fluid}
-          />
-        ))}
+        {/* {data.allProjectsJson.edges.map(({ node: project }) => ( */}
+        <ProjectPreview
+          key={`preview-${project.slug}`}
+          title={project.title}
+          description={project.description}
+          slug={project.slug}
+          imageData={data.file.childImageSharp.fluid}
+          url={project.url}
+        />
+        {/* ))} */}
       </SubContainer>
       <Contact />
     </Layout>
@@ -157,6 +158,15 @@ export const query = graphql`
           #     }
           #   }
           # }
+        }
+      }
+    }
+    file(relativePath: { eq: "images/roadmap.png" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fluid {
+          ...GatsbyImageSharpFluid
         }
       }
     }

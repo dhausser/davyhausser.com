@@ -20,19 +20,26 @@ export const query = graphql`
       #   }
       # }
     }
+    file(relativePath: { eq: "images/roadmap.png" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
   }
 `
 
-function ProjectPage(props: ProjectProps) {
-  const {
-    data: { projectsJson: project },
-  } = props
+function ProjectPage({ data }: ProjectProps) {
+  const { projectsJson: project } = data
   return (
     <Layout>
       <Project
         title={project.title}
-        imageData={project.image}
-        // imageData={project.image.childImageSharp.fluid}
+        // imageData={project.image}
+        imageData={data.file.childImageSharp.fluid}
         description={project.description}
         tags={project.tags}
         url={project.url}
