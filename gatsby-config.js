@@ -7,6 +7,7 @@ module.exports = {
     twitter: `davyhausser`,
   },
   plugins: [
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     "gatsby-transformer-json",

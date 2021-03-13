@@ -5,7 +5,7 @@ export interface ProjectProps {
   data: {
     projectsJson: {
       title: string
-      image: { childImageSharp: { fluid: FluidObject } }
+      image: { childImageSharp: any }
       imageData: any
       description: string
       tags: [string]
@@ -20,7 +20,7 @@ export interface ProjectData {
   tags?: [string]
   slug?: string
   url?: string
-  imageData: FluidObject
+  imageData: any
 }
 
 export interface SiteMetaData {
@@ -29,9 +29,7 @@ export interface SiteMetaData {
 }
 
 export interface FileData {
-  childImageSharp: {
-    fluid: FluidObject | FluidObject[]
-  }
+  childImageSharp: any
 }
 
 export interface Data {
@@ -39,7 +37,7 @@ export interface Data {
     siteMetadata: SiteMetaData
   }
   file: FileData
-  allProjectsJson: { edges: [{ node: any }] }
+  allProjectsJson: { edges: Array<{ node: any }> }
 }
 
 export interface Props extends PageProps {

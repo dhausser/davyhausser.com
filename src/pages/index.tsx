@@ -22,7 +22,8 @@ import {
 
 export default function HomePage({ data }: Props): JSX.Element {
   const { siteMetadata } = data.site
-  const project = data.allProjectsJson.edges[2].node
+  const projects = data.allProjectsJson.edges
+  const [, , { node: project }] = projects
   return (
     <Layout>
       <SEO title={siteMetadata.title} description={siteMetadata.description} />
@@ -126,7 +127,7 @@ export default function HomePage({ data }: Props): JSX.Element {
           title={project.title}
           description={project.description}
           slug={project.slug}
-          imageData={data.file.childImageSharp.fluid}
+          imageData={data.file.childImageSharp.gatsbyImageData}
           url={project.url}
         />
         {/* ))} */}
@@ -135,6 +136,9 @@ export default function HomePage({ data }: Props): JSX.Element {
     </Layout>
   )
 }
+
+// 1:23:52 PM: warning [gatsby-transformer-sharp] The "fixed" and "fluid" resolvers are now deprecated. Switch to "gatsby-plugin-image" for better performance and a simpler API.
+// See https://gatsby.dev/migrate-images to learn how.
 
 export const query = graphql`
   {
@@ -153,9 +157,7 @@ export const query = graphql`
           image
           # {
           #   childImageSharp {
-          #     fluid {
-          #       ...GatsbyImageSharpFluid
-          #     }
+          #     gatsbyImageData(layout: FIXED)
           #   }
           # }
         }
@@ -163,32 +165,8 @@ export const query = graphql`
     }
     file(relativePath: { eq: "images/roadmap.png" }) {
       childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FIXED)
       }
     }
   }
 `
-
-// export const query = graphql`
-//   query {
-//     site {
-//       siteMetadata {
-//         title
-//         description
-//       }
-//     }
-//     file(relativePath: { eq: "wanderlost-dark.png" }) {
-//       childImageSharp {
-//         # Specify the image processing specifications right in the query.
-//         # Makes it trivial to update as your page's design changes.
-//         fluid(maxWidth: 1200) {
-//           ...GatsbyImageSharpFluid
-//         }
-//       }
-//     }
-//   }
-// `

@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import Img, { FluidObject } from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import styled from "@emotion/styled"
 import { breakpoints, Heading, Paragraph, ProjectLink } from "../utils/styles"
 import { ProjectData } from "../types"
@@ -37,7 +37,7 @@ function ProjectRow(props: ProjectData): JSX.Element {
   return (
     <Project>
       <Link title={title} to={slug}>
-        <Img fluid={imageData} />
+        <GatsbyImage image={imageData} alt={title} />
       </Link>
       <Link title={title} to={slug}>
         <SubHeading>{title}</SubHeading>
