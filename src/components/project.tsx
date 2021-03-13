@@ -31,7 +31,7 @@ const ProjectParagraph = styled(Paragraph)`
   }
 `
 
-function ProjectRow({ fluidImg }: Props): JSX.Element {
+function ProjectRow({ fluidImg }: any): JSX.Element {
   return (
     <Project>
       <Link title="Wanderlost" to="/wanderlost">
