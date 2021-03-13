@@ -125,7 +125,8 @@ export default function HomePage({ data }: Props): JSX.Element {
             title={project.title}
             description={project.description}
             slug={project.slug}
-            imageData={project.image.childImageSharp.fluid}
+            imageData={project.image}
+            // imageData={project.image.childImageSharp.fluid}
           />
         ))}
       </SubContainer>
@@ -148,13 +149,14 @@ export const query = graphql`
           title
           description
           slug
-          image {
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
+          image
+          # {
+          #   childImageSharp {
+          #     fluid {
+          #       ...GatsbyImageSharpFluid
+          #     }
+          #   }
+          # }
         }
       }
     }

@@ -11,13 +11,14 @@ export const query = graphql`
       description
       url
       tags
-      image {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
+      image
+      # {
+      #   childImageSharp {
+      #     fluid {
+      #       ...GatsbyImageSharpFluid
+      #     }
+      #   }
+      # }
     }
   }
 `
@@ -30,7 +31,8 @@ function ProjectPage(props: ProjectProps) {
     <Layout>
       <Project
         title={project.title}
-        imageData={project.image.childImageSharp.fluid}
+        imageData={project.image}
+        // imageData={project.image.childImageSharp.fluid}
         description={project.description}
         tags={project.tags}
         url={project.url}
