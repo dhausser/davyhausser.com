@@ -22,7 +22,7 @@ import {
 export default function HomePage({ data }: Props): JSX.Element {
   const { siteMetadata } = data.site
   const projects = data.allProjectsJson.edges
-  const [, , { node: project }] = projects
+  const [{ node: project }] = projects
   return (
     <Layout>
       <SEO title={siteMetadata.title} description={siteMetadata.description} />

@@ -14,12 +14,12 @@ const LinkRow = styled.div`
   padding: 20px;
 `
 
-export function Project({ data }: any) {
-  const { title, description, url, imageData, tags, slug } = data
+export function Project(props: any) {
+  const { title, description, url, imageData, tags, slug } = props
   return (
     <Layout>
       <h1>{title}</h1>
-      <GatsbyImage image={data.file.childImageSharp.fluid} alt={title} />
+      <GatsbyImage image={imageData} alt={title} />
       <LinkRow>
         <a href={url}>
           <ProjectLink>
@@ -32,6 +32,7 @@ export function Project({ data }: any) {
           </ProjectLink>
         </a>
       </LinkRow>
+      <p>{description}</p>
       <ul>
         {tags.map((tag: string) => (
           <li>{tag}</li>

@@ -11,6 +11,7 @@ export const query = graphql`
       url
       tags
       image
+      slug
     }
     file(relativePath: { eq: "images/roadmap.png" }) {
       childImageSharp {
@@ -23,15 +24,14 @@ export const query = graphql`
 function ProjectPage({ data }: any) {
   const { projectsJson: project } = data
   return (
-    <Layout>
-      <Project
-        title={project.title}
-        imageData={data.file.childImageSharp.gatsbyImageData}
-        description={project.description}
-        tags={project.tags}
-        url={project.url}
-      />
-    </Layout>
+    <Project
+      title={project.title}
+      imageData={data.file.childImageSharp.gatsbyImageData}
+      description={project.description}
+      tags={project.tags}
+      slug={project.slug}
+      url={project.url}
+    />
   )
 }
 
