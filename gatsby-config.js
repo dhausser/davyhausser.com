@@ -13,17 +13,10 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: "./data/",
+        path: `${__dirname}/data/`,
       },
     },
     "gatsby-plugin-emotion",
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
