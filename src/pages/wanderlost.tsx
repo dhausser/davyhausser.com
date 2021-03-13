@@ -6,22 +6,22 @@ import Img, { FluidObject } from "gatsby-image"
 import Layout from "../components/layout"
 import Contact from "../components/contact"
 import { ProjectLink } from "../utils/styles"
-import { Data } from "."
+// import { Data } from "."
 
-const LinkRow = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-  align-items: center;
-  padding: 20px;
-`
+// const LinkRow = styled.div`
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   width: 100%;
+//   align-items: center;
+//   padding: 20px;
+// `
 
-export default function Wanderlost({ data }: { data: Data }): JSX.Element {
-  const { siteMetadata } = data.site
+export default function Wanderlost(): JSX.Element {
+  // const { siteMetadata } = data.site
   return (
     <Layout>
-      <SEO title={siteMetadata.title} description={siteMetadata.description} />
+      {/* <SEO title={siteMetadata.title} description={siteMetadata.description} />
       <h1>Wanderlost</h1>
       <Img fluid={data.file.childImageSharp.fluid} />
       <LinkRow>
@@ -43,28 +43,28 @@ export default function Wanderlost({ data }: { data: Data }): JSX.Element {
         <li>TypeScript</li>
       </ul>
       <p>Build by: Davy Hausser</p>
-      <Contact />
+      <Contact /> */}
     </Layout>
   )
 }
 
-export const query = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-        description
-        siteUrl
-      }
-    }
-    file(relativePath: { eq: "wanderlost-dark.png" }) {
-      childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
-        fluid(maxWidth: 1200) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`
+// export const query = graphql`
+//   query {
+//     site {
+//       siteMetadata {
+//         title
+//         description
+//         siteUrl
+//       }
+//     }
+//     file(relativePath: { eq: "wanderlost-dark.png" }) {
+//       childImageSharp {
+//         # Specify the image processing specifications right in the query.
+//         # Makes it trivial to update as your page's design changes.
+//         fluid(maxWidth: 1200) {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//   }
+// `
