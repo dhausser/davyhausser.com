@@ -2,9 +2,8 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Project from "../components/project"
-import Contact from "../components/contact"
-import ProjectPreview from "../components/project-preview"
+import { Contact } from "../components/contact"
+import { ProjectPreview } from "../components/project-preview"
 import { Props } from "../types"
 
 import {
@@ -121,7 +120,6 @@ export default function HomePage({ data }: Props): JSX.Element {
         </TextContent>
       </SubContainer>
       <SubContainer>
-        {/* {data.allProjectsJson.edges.map(({ node: project }) => ( */}
         <ProjectPreview
           key={`preview-${project.slug}`}
           title={project.title}
@@ -130,15 +128,11 @@ export default function HomePage({ data }: Props): JSX.Element {
           imageData={data.file.childImageSharp.gatsbyImageData}
           url={project.url}
         />
-        {/* ))} */}
       </SubContainer>
       <Contact />
     </Layout>
   )
 }
-
-// 1:23:52 PM: warning [gatsby-transformer-sharp] The "fixed" and "fluid" resolvers are now deprecated. Switch to "gatsby-plugin-image" for better performance and a simpler API.
-// See https://gatsby.dev/migrate-images to learn how.
 
 export const query = graphql`
   {
@@ -155,11 +149,6 @@ export const query = graphql`
           description
           slug
           image
-          # {
-          #   childImageSharp {
-          #     gatsbyImageData(layout: FIXED)
-          #   }
-          # }
         }
       }
     }

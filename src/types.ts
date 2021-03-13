@@ -18,7 +18,7 @@ export interface ProjectData {
   title: string
   description: string
   tags?: [string]
-  slug?: string
+  slug: string
   url?: string
   imageData: any
 }
