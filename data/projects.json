@@ -20,7 +20,7 @@
     "slug": "planning-app",
     "url": "https://davyhausser.com/",
     "image": "./images/roadmap.jpg",
-    "description": "This one is also good.",
+    "description": "Planning application on top of Jira",
     "tags": ["GraphQL"]
   }
 ]

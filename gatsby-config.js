@@ -7,8 +7,15 @@ module.exports = {
     twitter: `davyhausser`,
   },
   plugins: [
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    "gatsby-transformer-json",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: "./data/",
+      },
+    },
     "gatsby-plugin-emotion",
     {
       resolve: `gatsby-source-filesystem`,
