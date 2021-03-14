@@ -28,8 +28,9 @@ export default function HomePage({ data }: PageProps<DataType>) {
         <HeadingMain>
           <span>Hi there, I’m Davy.</span>
           <br />
-          <span>Full Stack Developer</span>
+          <span>Product Manager</span>
           <br />
+          <span>Software Engineer</span>
         </HeadingMain>
       </HeadingWrapCont>
       <Container
@@ -41,20 +42,8 @@ export default function HomePage({ data }: PageProps<DataType>) {
       >
         <TextContentWrap>
           <Paragraph>
-            I&apos;m a freelance software developer currently studying web
-            development and design.
-            <br />
-            <br />
-            As I&apos;ve grown as a developer, I&apos;ve worked alongside senior
-            designers and developers who have raised my standards for whats
-            expected of any web application.
-          </Paragraph>
-        </TextContentWrap>
-        <TextContentWrap>
-          <Paragraph>
-            Through these experiences, I&apos;ve had the opportunity to create
-            memorable products that are not only enjoyable to use but are
-            written in code that&apos;s maintainable and easy to understand.
+            I&apos;m an experienced product manager and engineer with a passion
+            for innovation and technology.
           </Paragraph>
         </TextContentWrap>
       </Container>
@@ -62,12 +51,12 @@ export default function HomePage({ data }: PageProps<DataType>) {
         <SubContainer>
           <SkillContent>
             <TextContent>
-              <Heading>My Skills</Heading>
+              <Heading>Skills</Heading>
               <Paragraph>
-                Through my studies, I&apos;ve gained a solid understanding of
-                computer science and web development concepts, and have
-                dedicated a lot of my free time to apply these concepts to
-                real-world scenarios and applications.
+                Through my self teching journey and experience, I&apos;ve gained
+                a solid understanding of computer science and web development
+                concepts, and have dedicated a lot of my free time to apply
+                these concepts to real-world scenarios and applications.
               </Paragraph>
             </TextContent>
             <SkillTable>
@@ -109,7 +98,7 @@ export default function HomePage({ data }: PageProps<DataType>) {
       </Container>
       <SubContainer>
         <TextContent>
-          <Heading>What I&apos;ve been working on </Heading>
+          <Heading>Work</Heading>
           <Paragraph>
             I like to stay busy and always have a project in the works. Take a
             look at some of the applications, articles, and companies I&apos;ve
@@ -151,7 +140,7 @@ export const query = graphql`
           image {
             childImageSharp {
               gatsbyImageData(
-                width: 920
+                width: 960
                 placeholder: DOMINANT_COLOR
                 formats: [AUTO, WEBP, AVIF]
               )
