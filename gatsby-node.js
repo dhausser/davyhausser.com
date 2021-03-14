@@ -41,7 +41,6 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         hooks: path.resolve(__dirname, 'src/hooks'),
         utils: path.resolve(__dirname, 'src/utils'),
         types: path.resolve(__dirname, 'src/types'),
-        // src: path.resolve(__dirname, 'src'),
       },
     },
   })
