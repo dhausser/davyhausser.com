@@ -14,10 +14,7 @@ import { DataType } from 'types'
 export default function HomePage({ data }: PageProps<DataType>) {
   return (
     <Layout>
-      <SEO
-        title={data.site.siteMetadata.title}
-        description={data.site.siteMetadata.description}
-      />
+      <SEO title="Portfolio" description={data.site.siteMetadata.description} />
       <Intro />
       <About />
       <Skills />

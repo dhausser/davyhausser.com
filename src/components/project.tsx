@@ -1,8 +1,8 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
 import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image'
-import { Layout, Contact } from 'components'
-import { ProjectLink } from 'styles'
+import { Layout, SEO, Contact } from 'components'
+import { HeadingMain, HeadingWrapCont, ProjectLink } from 'styles'
 import { ProjectData } from 'types'
 
 const LinkRow = styled.div`
@@ -19,7 +19,14 @@ function Project(props: ProjectData) {
   const image = getImage(props.image) as IGatsbyImageData
   return (
     <Layout>
-      <h1>{title}</h1>
+      <SEO title={title} description={description} />
+      <HeadingWrapCont>
+        <HeadingMain>
+          <span>{title}</span>
+          <br />
+          <br />
+        </HeadingMain>
+      </HeadingWrapCont>
       <GatsbyImage image={image} alt={title} />
       <LinkRow>
         <a href={url}>

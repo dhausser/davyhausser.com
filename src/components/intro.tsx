@@ -5,11 +5,11 @@ function Intro() {
   return (
     <HeadingWrapCont>
       <HeadingMain>
-        <span>Hi there, I’m Davy.</span>
+        <span>Davy Hausser.</span>
         <br />
-        <span>Product Manager</span>
+        <span>Product Manager.</span>
         <br />
-        <span>Software Engineer</span>
+        <span>Software Engineer.</span>
       </HeadingMain>
     </HeadingWrapCont>
   )

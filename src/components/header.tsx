@@ -17,11 +17,12 @@ interface NavItemProps {
 
 const StyledHeader = styled.header`
   background-color: var(--bg-color);
+  top: 0;
   height: 4rem;
   left: 0rem;
   position: relative;
   right: 0rem;
-  z-index: 5;
+  z-index: 1;
 
   ::after {
     background-color: var(--border);
