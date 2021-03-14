@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { StaticImage, GatsbyImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image'
 import Layout from '../components/layout'
 import { Contact } from '../components/contact'
 import { ProjectLink } from '../utils/styles'
+import { ProjectData } from '../types'
 
 const LinkRow = styled.div`
   display: flex;
@@ -14,20 +15,20 @@ const LinkRow = styled.div`
   padding: 20px;
 `
 
-export function Project(props: any) {
-  const { title, description, url, imageData, tags, slug } = props
+export function Project(props: ProjectData) {
+  const { title, description, url, tags, repository } = props
+  const image = getImage(props.image) as IGatsbyImageData
   return (
     <Layout>
       <h1>{title}</h1>
-      <StaticImage src="../images/roadmap.png" alt="A roadmap page" />
-      {/* <GatsbyImage image={imageData} alt={title} /> */}
+      <GatsbyImage image={image} alt={title} />
       <LinkRow>
         <a href={url}>
           <ProjectLink>
             Live <span>&#8250;</span>
           </ProjectLink>
         </a>
-        <a href={`https://github.com/dhausser/${slug}`}>
+        <a href={repository}>
           <ProjectLink>
             Code <span>&#8250;</span>
           </ProjectLink>
@@ -36,7 +37,7 @@ export function Project(props: any) {
       <p>{description}</p>
       <ul>
         {tags.map((tag: string) => (
-          <li>{tag}</li>
+          <li key={tag}>{tag}</li>
         ))}
       </ul>
       <p>Build by: Davy Hausser</p>

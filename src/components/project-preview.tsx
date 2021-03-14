@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { StaticImage, GatsbyImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image'
 import styled from '@emotion/styled'
 import { breakpoints, Heading, Paragraph, ProjectLink } from '../utils/styles'
 import { ProjectData } from '../types'
@@ -28,13 +28,13 @@ const ProjectParagraph = styled(Paragraph)`
   }
 `
 
-function ProjectPreview(props: ProjectData) {
-  const { title, description, slug, imageData } = props
+function ProjectPreview(props: Omit<ProjectData, 'tags' | 'repository'>) {
+  const { title, description, slug } = props
+  const image = getImage(props.image) as IGatsbyImageData
   return (
     <Project>
       <Link title={title} to={slug}>
-        <StaticImage src="../images/roadmap.png" alt="A roadmap page" />
-        {/* <GatsbyImage image={imageData} alt={title} /> */}
+        <GatsbyImage image={image} alt={title} />
       </Link>
       <Link title={title} to={slug}>
         <SubHeading>{title}</SubHeading>

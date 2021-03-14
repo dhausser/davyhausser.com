@@ -3,6 +3,7 @@
     "title": "Planning App",
     "slug": "planning-app",
     "url": "https://planning-app-dhausser.netlify.app/",
+    "repository": "https://github.com/dhausser/planning-app",
     "image": "../images/roadmap.png",
     "description": "Planning application on top of Jira",
     "tags": ["TypeScript", "React", "GraphQL"]
