@@ -31,7 +31,11 @@ export const query = graphql`
       tags
       image {
         childImageSharp {
-          gatsbyImageData(layout: FIXED)
+          gatsbyImageData(
+            width: 920
+            placeholder: DOMINANT_COLOR
+            formats: [AUTO, WEBP, AVIF]
+          )
         }
       }
     }

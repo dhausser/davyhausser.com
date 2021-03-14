@@ -4,6 +4,7 @@ import { Link } from 'gatsby'
 import { GoMarkGithub } from 'react-icons/go'
 import { FaTwitter, FaLinkedin } from 'react-icons/fa'
 import Switch from './switch'
+// import { Wrapper } from './layout'
 
 interface Props {
   siteTitle: string
@@ -19,27 +20,9 @@ const StyledHeader = styled.header`
   background-color: var(--bg-color);
   height: 4rem;
   left: 0rem;
-  padding-left: env(safe-area-inset-left);
-  padding-right: env(safe-area-inset-left);
   position: relative;
   right: 0rem;
   z-index: 5;
-
-  @media (min-width: 42rem) {
-    position: fixed;
-  }
-`
-
-const HeaderContainer = styled.div`
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  height: 100%;
-  margin: 0px auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  position: relative;
-  width: 100%;
 
   ::after {
     background-color: var(--border);
@@ -51,6 +34,22 @@ const HeaderContainer = styled.div`
     right: 0rem;
     z-index: -1;
   }
+
+  @media (min-width: 42rem) {
+    position: fixed;
+  }
+`
+
+const HeaderContainer = styled.div`
+  margin: 0 auto;
+  max-width: var(--width);
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  margin: 0px auto;
+  position: relative;
+  width: 100%;
 `
 
 const StyledLink = styled(Link)`

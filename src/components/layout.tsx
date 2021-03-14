@@ -10,20 +10,10 @@ interface Props {
   children: JSX.Element | JSX.Element[]
 }
 
-const Container = styled.div`
-  padding-left: env(safe-area-inset-left);
-  padding-right: env(safe-area-inset-left);
-  padding-bottom: 4rem;
-
-  @media (min-width: 42rem) {
-    padding-top: 4rem;
-  }
-`
-
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   min-height: 100vh;
-  padding: 20px;
-  margin: 25px auto;
+  margin: 0 auto;
+  max-width: var(--width);
   opacity: 0;
   animation: 0.6s ease-in-out 0.3s 1 normal forwards running fade-in;
 
@@ -34,10 +24,6 @@ const Wrapper = styled.div`
     to {
       opacity: 1;
     }
-  }
-
-  @media (min-width: 1200px) {
-    width: 1200px;
   }
 `
 
@@ -71,9 +57,7 @@ export default function Layout({ children }: Props): JSX.Element {
         <noscript>This site runs best with JavaScript enabled.</noscript>
       </Helmet>
       <Header siteTitle={title} />
-      <Container>
-        <Wrapper>{children}</Wrapper>
-      </Container>
+      <Wrapper>{children}</Wrapper>
     </>
   )
 }

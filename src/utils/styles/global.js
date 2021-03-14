@@ -11,6 +11,7 @@ export default css`
     --heading-color: #292922;
     --navigation-color: #78757a;
     --border: #f0f0f2;
+    --width: 60rem;
     --radii: 3px;
     --space-2: 0.5rem;
     --space-7: 2rem;
