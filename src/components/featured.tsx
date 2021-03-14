@@ -1,12 +1,6 @@
 import React from 'react'
-import { ProjectPreview } from 'components'
-import {
-  Container,
-  SubContainer,
-  TextContent,
-  Heading,
-  Paragraph,
-} from 'utils/styles'
+import { ProjectPreview } from '../components'
+import { SubContainer, TextContent, Heading, Paragraph } from '../utils/styles'
 import { ProjectData } from 'types'
 
 interface Props {
@@ -15,7 +9,7 @@ interface Props {
 
 function Featured({ projects }: Props) {
   return (
-    <Container>
+    <>
       <SubContainer>
         <TextContent>
           <Heading>Work</Heading>
@@ -38,7 +32,7 @@ function Featured({ projects }: Props) {
           />
         ))}
       </SubContainer>
-    </Container>
+    </>
   )
 }
 

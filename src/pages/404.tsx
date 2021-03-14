@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql, PageProps } from 'gatsby'
-import { Layout, SEO } from 'components'
-import { DataType } from 'types'
+import { Layout, SEO } from '../components'
+import { DataType } from '../types'
 
 export default function NotFoundPage({ data }: PageProps<DataType>) {
   const { siteMetadata } = data.site
