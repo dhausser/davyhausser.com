@@ -1,5 +1,5 @@
 import React from 'react'
-import { HeadingMain, HeadingWrapCont } from '../utils/styles'
+import { HeadingMain, HeadingWrapCont } from '@utils/styles'
 
 function Intro() {
   return (

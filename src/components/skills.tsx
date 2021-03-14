@@ -7,7 +7,7 @@ import {
   TextContent,
   SkillContent,
   Paragraph,
-} from '../utils/styles'
+} from '@utils/styles'
 
 function Skills() {
   return (
