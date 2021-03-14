@@ -3,8 +3,8 @@ import { Global } from '@emotion/react'
 import styled from '@emotion/styled'
 import { Helmet } from 'react-helmet'
 import { graphql, useStaticQuery } from 'gatsby'
-import Header from './header'
-import { globalStyles } from '../utils/styles'
+import { Header } from 'components'
+import { globalStyles } from 'utils/styles'
 
 interface Props {
   children: JSX.Element | JSX.Element[]

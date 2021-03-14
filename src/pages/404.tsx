@@ -1,10 +1,9 @@
 import React from 'react'
-import { graphql } from 'gatsby'
-import SEO from '../components/seo'
-import Layout from '../components/layout'
-import { Data } from '../types'
+import { graphql, PageProps } from 'gatsby'
+import { Layout, SEO } from 'components'
+import { DataType } from 'types'
 
-export default function NotFoundPage({ data }: { data: Data }): JSX.Element {
+export default function NotFoundPage({ data }: PageProps<DataType>) {
   const { siteMetadata } = data.site
   return (
     <Layout>

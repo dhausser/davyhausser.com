@@ -3,8 +3,7 @@ import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import { GoMarkGithub } from 'react-icons/go'
 import { FaTwitter, FaLinkedin } from 'react-icons/fa'
-import Switch from './switch'
-// import { Wrapper } from './layout'
+import { Switch } from 'components'
 
 interface Props {
   siteTitle: string
