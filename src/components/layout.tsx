@@ -27,7 +27,7 @@ export const Wrapper = styled.div`
   }
 `
 
-export default function Layout({ children }: Props): JSX.Element {
+function Layout({ children }: Props): JSX.Element {
   const data = useStaticQuery(graphql`
     {
       site {
@@ -61,3 +61,5 @@ export default function Layout({ children }: Props): JSX.Element {
     </>
   )
 }
+
+export default Layout

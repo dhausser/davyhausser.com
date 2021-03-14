@@ -216,7 +216,7 @@ function Form({ onSuccess, confirmMessage }: FormProps) {
   )
 }
 
-export function Contact(): JSX.Element {
+function Contact(): JSX.Element {
   const [successMessage, setSuccessMessage] = useState('')
   const FormComponent = ({ confirmMessage }: { confirmMessage: string }) => (
     <Form onSuccess={setSuccessMessage} confirmMessage={confirmMessage} />
@@ -235,3 +235,5 @@ export function Contact(): JSX.Element {
     </ContactContainer>
   )
 }
+
+export default Contact

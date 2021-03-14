@@ -2,8 +2,7 @@ import React from 'react'
 import { graphql, PageProps } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { Contact } from '../components/contact'
-import { ProjectPreview } from '../components/project-preview'
+import { Featured, Contact } from '@components'
 import { DataType } from '../types'
 
 import {

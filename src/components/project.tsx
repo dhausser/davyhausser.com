@@ -15,7 +15,7 @@ const LinkRow = styled.div`
   padding: 20px;
 `
 
-export function Project(props: ProjectData) {
+function Project(props: ProjectData) {
   const { title, description, url, tags, repository } = props
   const image = getImage(props.image) as IGatsbyImageData
   return (
@@ -45,3 +45,5 @@ export function Project(props: ProjectData) {
     </Layout>
   )
 }
+
+export default Project

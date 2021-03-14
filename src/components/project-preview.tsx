@@ -49,4 +49,4 @@ function ProjectPreview(props: Omit<ProjectData, 'tags' | 'repository'>) {
   )
 }
 
-export { ProjectPreview }
+export default ProjectPreview
