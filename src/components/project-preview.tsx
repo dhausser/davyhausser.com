@@ -33,7 +33,8 @@ function ProjectPreview(props: ProjectData) {
   return (
     <Project>
       <Link title={title} to={slug}>
-        <GatsbyImage image={imageData} alt={title} />
+        <StaticImage src="../images/roadmap.png" alt="A roadmap page" />
+        {/* <GatsbyImage image={imageData} alt={title} /> */}
       </Link>
       <Link title={title} to={slug}>
         <SubHeading>{title}</SubHeading>

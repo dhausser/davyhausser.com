@@ -19,7 +19,8 @@ export function Project(props: any) {
   return (
     <Layout>
       <h1>{title}</h1>
-      <GatsbyImage image={imageData} alt={title} />
+      <StaticImage src="../images/roadmap.png" alt="A roadmap page" />
+      {/* <GatsbyImage image={imageData} alt={title} /> */}
       <LinkRow>
         <a href={url}>
           <ProjectLink>
