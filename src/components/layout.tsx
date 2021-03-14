@@ -1,10 +1,10 @@
-import React from 'react'
+import * as React from 'react'
 import { Global } from '@emotion/react'
 import styled from '@emotion/styled'
 import { Helmet } from 'react-helmet'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Header } from 'components'
-import { globalStyles } from 'utils/styles'
+import { globalStyles } from 'styles'
 
 interface Props {
   children: JSX.Element | JSX.Element[]

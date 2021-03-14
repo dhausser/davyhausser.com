@@ -1,8 +1,8 @@
-import React from 'react'
+import * as React from 'react'
 import styled from '@emotion/styled'
 import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image'
 import { Layout, Contact } from 'components'
-import { ProjectLink } from 'utils/styles'
+import { ProjectLink } from 'styles'
 import { ProjectData } from 'types'
 
 const LinkRow = styled.div`

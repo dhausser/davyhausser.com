@@ -1,6 +1,6 @@
-import React from 'react'
+import * as React from 'react'
 import { ProjectPreview } from 'components'
-import { SubContainer, TextContent, Heading, Paragraph } from 'utils/styles'
+import { SubContainer, TextContent, Heading, Paragraph } from 'styles'
 import { ProjectData } from 'types'
 
 interface Props {

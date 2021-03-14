@@ -1,5 +1,5 @@
-import React from 'react'
-import { Container, TextContentWrap, Paragraph } from 'utils/styles'
+import * as React from 'react'
+import { Container, TextContentWrap, Paragraph } from 'styles'
 
 function About() {
   return (

@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import {
   Heading,
   Container,
@@ -7,7 +7,7 @@ import {
   TextContent,
   SkillContent,
   Paragraph,
-} from 'utils/styles'
+} from 'styles'
 
 function Skills() {
   return (

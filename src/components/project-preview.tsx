@@ -1,8 +1,8 @@
-import React from 'react'
+import * as React from 'react'
 import { Link } from 'gatsby'
 import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image'
 import styled from '@emotion/styled'
-import { breakpoints, Heading, Paragraph, ProjectLink } from 'utils/styles'
+import { breakpoints, Heading, Paragraph, ProjectLink } from 'styles'
 import { ProjectData } from 'types'
 
 const Project = styled.div`
