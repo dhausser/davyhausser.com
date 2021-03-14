@@ -1,9 +1,9 @@
-import React from "react"
-import styled from "@emotion/styled"
-import { Link } from "gatsby"
-import { GoMarkGithub } from "react-icons/go"
-import { FaTwitter, FaLinkedin } from "react-icons/fa"
-import Switch from "./switch"
+import React from 'react'
+import styled from '@emotion/styled'
+import { Link } from 'gatsby'
+import { GoMarkGithub } from 'react-icons/go'
+import { FaTwitter, FaLinkedin } from 'react-icons/fa'
+import Switch from './switch'
 
 interface Props {
   siteTitle: string
@@ -44,7 +44,7 @@ const HeaderContainer = styled.div`
   ::after {
     background-color: var(--border);
     bottom: 0rem;
-    content: "";
+    content: '';
     height: 1px;
     left: 0rem;
     position: absolute;

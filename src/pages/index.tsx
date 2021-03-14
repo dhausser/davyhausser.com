@@ -1,10 +1,10 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { Contact } from "../components/contact"
-import { ProjectPreview } from "../components/project-preview"
-import { Props } from "../types"
+import React from 'react'
+import { graphql } from 'gatsby'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import { Contact } from '../components/contact'
+import { ProjectPreview } from '../components/project-preview'
+import { Props } from '../types'
 
 import {
   Heading,
@@ -17,7 +17,7 @@ import {
   TextContentWrap,
   SkillContent,
   Paragraph,
-} from "../utils/styles"
+} from '../utils/styles'
 
 export default function HomePage({ data }: Props): JSX.Element {
   const { siteMetadata } = data.site
@@ -36,9 +36,9 @@ export default function HomePage({ data }: Props): JSX.Element {
       </HeadingWrapCont>
       <Container
         style={{
-          alignItems: "start",
+          alignItems: 'start',
           margin: 0,
-          justifyContent: "space-between",
+          justifyContent: 'space-between',
         }}
       >
         <TextContentWrap>
@@ -125,7 +125,7 @@ export default function HomePage({ data }: Props): JSX.Element {
           title={project.title}
           description={project.description}
           slug={project.slug}
-          imageData={data.file.childImageSharp.gatsbyImageData}
+          imageData={project.image.childImageSharp.gatsbyImageData}
           url={project.url}
         />
       </SubContainer>
@@ -148,13 +148,12 @@ export const query = graphql`
           title
           description
           slug
-          image
+          image {
+            childImageSharp {
+              gatsbyImageData(layout: FIXED)
+            }
+          }
         }
-      }
-    }
-    file(relativePath: { eq: "images/roadmap.png" }) {
-      childImageSharp {
-        gatsbyImageData(layout: FIXED)
       }
     }
   }

@@ -1,14 +1,14 @@
-import { keyframes } from "@emotion/react"
-import styled from "@emotion/styled"
+import { keyframes } from '@emotion/react'
+import styled from '@emotion/styled'
 
-export { default as globalStyles } from "./global"
+export { default as globalStyles } from './global'
 
 export const breakpoints = {
-  mobileMin: "480px",
-  mobileMax: "959px",
-  tabletMin: "960px",
-  tabletMax: "1199px",
-  desktopMin: "1200px",
+  mobileMin: '480px',
+  mobileMax: '959px',
+  tabletMin: '960px',
+  tabletMax: '1199px',
+  desktopMin: '1200px',
 }
 
 export const Float = keyframes`

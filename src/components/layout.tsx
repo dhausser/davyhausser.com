@@ -1,10 +1,10 @@
-import React from "react"
-import { Global } from "@emotion/react"
-import styled from "@emotion/styled"
-import { Helmet } from "react-helmet"
-import { graphql, useStaticQuery } from "gatsby"
-import Header from "./header"
-import { globalStyles } from "../utils/styles"
+import React from 'react'
+import { Global } from '@emotion/react'
+import styled from '@emotion/styled'
+import { Helmet } from 'react-helmet'
+import { graphql, useStaticQuery } from 'gatsby'
+import Header from './header'
+import { globalStyles } from '../utils/styles'
 
 interface Props {
   children: JSX.Element | JSX.Element[]
@@ -65,7 +65,7 @@ export default function Layout({ children }: Props): JSX.Element {
       <Global styles={globalStyles} />
       <Helmet
         title={title}
-        meta={[{ name: "description", content: description }]}
+        meta={[{ name: 'description', content: description }]}
       >
         <html lang="en" />
         <noscript>This site runs best with JavaScript enabled.</noscript>

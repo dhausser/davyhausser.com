@@ -1,7 +1,6 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import { Project } from "../components/project"
+import React from 'react'
+import { graphql } from 'gatsby'
+import { Project } from '../components/project'
 
 export const query = graphql`
   query($slug: String!) {
@@ -10,13 +9,12 @@ export const query = graphql`
       description
       url
       tags
-      image
-      slug
-    }
-    file(relativePath: { eq: "images/roadmap.png" }) {
-      childImageSharp {
-        gatsbyImageData(layout: FIXED)
+      image {
+        childImageSharp {
+          gatsbyImageData(layout: FIXED)
+        }
       }
+      slug
     }
   }
 `
@@ -26,7 +24,7 @@ function ProjectPage({ data }: any) {
   return (
     <Project
       title={project.title}
-      imageData={data.file.childImageSharp.gatsbyImageData}
+      imageData={project.image.childImageSharp.gatsbyImageData}
       description={project.description}
       tags={project.tags}
       slug={project.slug}

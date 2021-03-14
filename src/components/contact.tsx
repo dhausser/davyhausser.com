@@ -1,6 +1,6 @@
-import React, { useState, ChangeEvent, FormEvent } from "react"
-import styled from "@emotion/styled"
-import { MdSend } from "react-icons/md"
+import React, { useState, ChangeEvent, FormEvent } from 'react'
+import styled from '@emotion/styled'
+import { MdSend } from 'react-icons/md'
 
 const ContactContainer = styled.div`
   background: var(--bg-color);
@@ -159,8 +159,8 @@ interface FormProps {
 }
 
 function Form({ onSuccess, confirmMessage }: FormProps) {
-  const [email, setEmail] = useState("")
-  const [errorMessage, setErrorMessage] = useState("")
+  const [email, setEmail] = useState('')
+  const [errorMessage, setErrorMessage] = useState('')
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     setEmail(event.target.value)
@@ -188,7 +188,7 @@ function Form({ onSuccess, confirmMessage }: FormProps) {
       onSuccess(confirmMessage)
     } else {
       // setErrorMessage(`${response.status}: ${response.statusText}`)
-      setErrorMessage("there was an error")
+      setErrorMessage('there was an error')
     }
   }
 
@@ -217,7 +217,7 @@ function Form({ onSuccess, confirmMessage }: FormProps) {
 }
 
 export function Contact(): JSX.Element {
-  const [successMessage, setSuccessMessage] = useState("")
+  const [successMessage, setSuccessMessage] = useState('')
   const FormComponent = ({ confirmMessage }: { confirmMessage: string }) => (
     <Form onSuccess={setSuccessMessage} confirmMessage={confirmMessage} />
   )

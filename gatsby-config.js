@@ -10,14 +10,14 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    "gatsby-transformer-json",
+    'gatsby-transformer-json',
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/data/`,
+        path: `${__dirname}/src/data/`,
       },
     },
-    "gatsby-plugin-emotion",
+    'gatsby-plugin-emotion',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

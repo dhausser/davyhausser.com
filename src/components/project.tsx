@@ -1,9 +1,9 @@
-import React from "react"
-import styled from "@emotion/styled"
-import { GatsbyImage } from "gatsby-plugin-image"
-import Layout from "../components/layout"
-import { Contact } from "../components/contact"
-import { ProjectLink } from "../utils/styles"
+import React from 'react'
+import styled from '@emotion/styled'
+import { StaticImage, GatsbyImage } from 'gatsby-plugin-image'
+import Layout from '../components/layout'
+import { Contact } from '../components/contact'
+import { ProjectLink } from '../utils/styles'
 
 const LinkRow = styled.div`
   display: flex;

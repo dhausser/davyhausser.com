@@ -1,9 +1,9 @@
-import React from "react"
-import { Link } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
-import styled from "@emotion/styled"
-import { breakpoints, Heading, Paragraph, ProjectLink } from "../utils/styles"
-import { ProjectData } from "../types"
+import React from 'react'
+import { Link } from 'gatsby'
+import { StaticImage, GatsbyImage } from 'gatsby-plugin-image'
+import styled from '@emotion/styled'
+import { breakpoints, Heading, Paragraph, ProjectLink } from '../utils/styles'
+import { ProjectData } from '../types'
 
 const Project = styled.div`
   width: 100%;

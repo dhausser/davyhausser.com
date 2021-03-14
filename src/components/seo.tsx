@@ -1,6 +1,6 @@
-import React from "react"
-import { Helmet } from "react-helmet"
-import useSiteMetadata from "../hooks/use-site-metadata"
+import React from 'react'
+import { Helmet } from 'react-helmet'
+import useSiteMetadata from '../hooks/use-site-metadata'
 
 interface Props {
   title: string
@@ -15,7 +15,7 @@ interface Props {
 function SEO({
   description,
   title,
-  lang = "en",
+  lang = 'en',
   meta = [],
 }: Props): JSX.Element {
   const siteMetadata = useSiteMetadata()

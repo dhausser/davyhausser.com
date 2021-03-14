@@ -1,4 +1,4 @@
-import { PageProps } from "gatsby"
+import { PageProps } from 'gatsby'
 
 export interface SiteMetaData {
   title: string

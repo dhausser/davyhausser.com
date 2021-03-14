@@ -1,5 +1,5 @@
-import React, { useState } from "react"
-import styled from "@emotion/styled"
+import React, { useState } from 'react'
+import styled from '@emotion/styled'
 
 // kudos to our friends at narative.co
 // https://github.com/narative/gatsby-theme-novela/blob/fb38329e17595df6e846be1d33517ff6125cde4e/src/components/Navigation/Navigation.Header.tsx
@@ -55,26 +55,26 @@ const IconWrapper = styled.button`
 `
 
 const MoonOrSun = styled.div<{ isDark: boolean }>`
-  border: ${props => (props.isDark ? `4px` : `2px`)} solid #888;
+  border: ${(props) => (props.isDark ? `4px` : `2px`)} solid #888;
   background: var(--navigation-color);
   border-radius: 50%;
   height: 24px;
-  overflow: ${props => (props.isDark ? `visible` : `hidden`)};
+  overflow: ${(props) => (props.isDark ? `visible` : `hidden`)};
   position: relative;
-  transform: scale(${props => (props.isDark ? 0.55 : 1)});
+  transform: scale(${(props) => (props.isDark ? 0.55 : 1)});
   transition: all 0.45s ease;
   width: 24px;
 
   &::before {
     border-radius: 50%;
     border: 2px solid #888;
-    content: "";
+    content: '';
     height: 24px;
-    opacity: ${props => (props.isDark ? 0 : 1)};
+    opacity: ${(props) => (props.isDark ? 0 : 1)};
     position: absolute;
     right: -9px;
     top: -9px;
-    transform: translate(${props => (props.isDark ? `14px, -14px` : `0, 0`)});
+    transform: translate(${(props) => (props.isDark ? `14px, -14px` : `0, 0`)});
     transition: transform 0.45s ease;
     width: 24px;
   }
@@ -86,18 +86,18 @@ const MoonOrSun = styled.div<{ isDark: boolean }>`
       -23px 0 0 var(--navigation-color), 15px 15px 0 var(--navigation-color),
       -15px 15px 0 var(--navigation-color), 15px -15px 0 var(--navigation-color),
       -15px -15px 0 var(--navigation-color);
-    content: "";
+    content: '';
     height: 8px;
     left: 50%;
     margin: -4px 0 0 -4px;
     position: absolute;
     top: 50%;
     width: 8px;
-    transform: scale(${props => (props.isDark ? 1 : 0)});
+    transform: scale(${(props) => (props.isDark ? 1 : 0)});
     transition: all 0.35s ease;
 
     @media (min-width: 750px) {
-      transform: scale(${props => (props.isDark ? 0.92 : 0)});
+      transform: scale(${(props) => (props.isDark ? 0.92 : 0)});
     }
   }
 `
@@ -107,39 +107,39 @@ const MoonMask = styled.div<{ isDark: boolean }>`
   border-radius: 50%;
   border: 0;
   height: 24px;
-  opacity: ${props => (props.isDark ? 0 : 1)};
+  opacity: ${(props) => (props.isDark ? 0 : 1)};
   position: absolute;
   right: 0;
   top: 0;
-  transform: translate(${props => (props.isDark ? `14px, -14px` : `0, 0`)});
+  transform: translate(${(props) => (props.isDark ? `14px, -14px` : `0, 0`)});
   transition: background 0.25s ease, transform 0.45s ease;
   width: 24px;
 `
 
 function setLightTheme() {
-  document.documentElement.setAttribute("data-theme", "light")
+  document.documentElement.setAttribute('data-theme', 'light')
 }
 
 function setDarkTheme() {
-  document.documentElement.setAttribute("data-theme", "dark")
+  document.documentElement.setAttribute('data-theme', 'dark')
 }
 
 function switchTheme(isDark: boolean) {
-  if (typeof window === "undefined") return
+  if (typeof window === 'undefined') return
   if (isDark) {
     setLightTheme()
-    localStorage.setItem("theme", "light")
+    localStorage.setItem('theme', 'light')
   } else {
     setDarkTheme()
-    localStorage.setItem("theme", "dark")
+    localStorage.setItem('theme', 'dark')
   }
 }
 
 export default function Switch(): JSX.Element {
   const [isDark, setIsDark] = useState<boolean>(() => {
-    if (typeof window === "undefined") return false
-    const theme = localStorage.getItem("theme")
-    if (theme === "dark") {
+    if (typeof window === 'undefined') return false
+    const theme = localStorage.getItem('theme')
+    if (theme === 'dark') {
       setDarkTheme()
       return true
     }
