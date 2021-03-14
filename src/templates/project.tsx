@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Project } from '@components'
-import { ProjectProps } from '@types'
+import { Project } from 'components'
+import { ProjectProps } from 'types'
 
 function ProjectPage({ data }: ProjectProps) {
   const { projectsJson: project } = data

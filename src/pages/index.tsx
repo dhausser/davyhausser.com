@@ -8,8 +8,8 @@ import {
   Skills,
   Featured,
   Contact,
-} from '@components'
-import { DataType } from '@types'
+} from 'components'
+import { DataType } from 'types'
 
 export default function HomePage({ data }: PageProps<DataType>) {
   return (
