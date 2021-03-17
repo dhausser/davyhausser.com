@@ -9,7 +9,7 @@ interface LayoutProps {
 function Layout({ children }: LayoutProps) {
   return (
     <div>
-      <Header siteTitle="DH" />
+      <Header siteTitle="" />
       <main>{children}</main>
     </div>
   )
