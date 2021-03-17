@@ -2,14 +2,14 @@ import * as React from 'react'
 import { Header } from 'components'
 import 'styles/index.css'
 
-interface Props {
+interface LayoutProps {
   children: React.ReactElement | Array<React.ReactElement>
 }
 
-function Layout({ children }: Props) {
+function Layout({ children }: LayoutProps) {
   return (
     <div>
-      <Header siteTitle="TITLE" />
+      <Header siteTitle="DH" />
       <main>{children}</main>
     </div>
   )
