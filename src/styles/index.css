@@ -249,7 +249,11 @@ select {
 }
 
 .text-content {
-  max-width: 700px;
+  max-width: 40rem;
+}
+
+.text-content-short {
+  max-width: 25rem;
 }
 
 .text-content > p > a {
