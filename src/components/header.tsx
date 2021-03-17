@@ -4,6 +4,7 @@ import { Link } from 'gatsby'
 import { GoMarkGithub } from 'react-icons/go'
 import { FaTwitter, FaLinkedin } from 'react-icons/fa'
 import { Switch } from 'components'
+import 'styles/header.css'
 
 interface Props {
   siteTitle: string
@@ -42,7 +43,7 @@ const StyledHeader = styled.header`
 
 const HeaderContainer = styled.div`
   margin: 0 auto;
-  max-width: var(--width);
+  max-width: var(--tablet-min);
   align-items: center;
   display: flex;
   justify-content: space-between;

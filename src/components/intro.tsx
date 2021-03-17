@@ -3,15 +3,15 @@ import { HeadingMain, HeadingWrapCont } from 'styles'
 
 function Intro() {
   return (
-    <HeadingWrapCont>
-      <HeadingMain>
+    <div className="heading-wrap-content">
+      <div className="heading-main">
         <span>Davy Hausser.</span>
         <br />
         <span>Product Manager.</span>
         <br />
         <span>Software Engineer.</span>
-      </HeadingMain>
-    </HeadingWrapCont>
+      </div>
+    </div>
   )
 }
 

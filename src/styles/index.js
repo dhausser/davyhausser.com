@@ -1,7 +1,7 @@
 import { keyframes } from '@emotion/react'
 import styled from '@emotion/styled'
 
-export { default as globalStyles } from './global'
+// export { default as globalStyles } from './global'
 
 export const breakpoints = {
   mobileMin: '480px',
