@@ -5,9 +5,7 @@ nav {
   background-color: var(--bg-color);
   z-index: 1;
   width: 100%;
-  /* border-bottom: 1px solid var(--border); */
   text-align: center;
-  opacity: 90%;
 }
 
 .nav-wrapper {
