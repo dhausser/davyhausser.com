@@ -1,169 +1,52 @@
 import * as React from 'react'
-import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import { GoMarkGithub } from 'react-icons/go'
 import { FaTwitter, FaLinkedin } from 'react-icons/fa'
 import { Switch } from 'components'
 import 'styles/header.css'
 
-interface Props {
+interface HeaderProps {
   siteTitle: string
 }
 
-interface NavItemProps {
-  href: string
-  title: string
-  children: JSX.Element | JSX.Element[]
-}
-
-const StyledHeader = styled.header`
-  background-color: var(--bg-color);
-  top: 0;
-  height: var(--header-height);
-  left: 0rem;
-  position: relative;
-  right: 0rem;
-  z-index: 1;
-
-  ::after {
-    background-color: var(--border);
-    bottom: 0rem;
-    content: '';
-    height: 1px;
-    left: 0rem;
-    position: absolute;
-    right: 0rem;
-    z-index: -1;
-  }
-
-  @media (min-width: 42rem) {
-    position: fixed;
-  }
-`
-
-const HeaderContainer = styled.div`
-  margin: 0 auto;
-  max-width: var(--tablet-min);
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  height: 100%;
-  margin: 0px auto;
-  position: relative;
-  width: 100%;
-`
-
-const StyledLink = styled(Link)`
-  align-items: center;
-  color: inherit;
-  display: flex;
-  flex-shrink: 0;
-  height: 1.5rem;
-  margin-right: 0.25rem;
-  text-decoration: none;
-  overflow: hidden;
-
-  @media screen and (min-width: 550px) {
-    margin-right: 0.75rem;
-    overflow: visible;
-  }
-`
-
-const StyledTitled = styled.h2`
-  height: 1.5rem;
-  width: auto;
-  max-width: none;
-  margin: 0rem;
-`
-
-const StyledSocialNav = styled.div`
-  display: flex;
-  align-self: flex-end;
-`
-
-const StyledSocialNavItem = styled.a`
-  border-bottom: 2px solid transparent;
-  color: var(--navigation-color);
-  display: block;
-  font-size: 1.125rem;
-  line-height: 4rem;
-  position: relative;
-  text-decoration: none;
-  z-index: 1;
-  transform: translate(0px, 4px);
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-
-  @media (min-width: 750px) {
-    line-height: 4rem;
-  }
-
-  @media screen and (min-width: 550px) {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-`
-
-const SwitchWrapper = styled.div`
-  border-bottom: 2px solid transparent;
-  color: var(--navigation-color #78757a);
-  display: block;
-  font-size: 1.125rem;
-  line-height: 4rem;
-  position: relative;
-  text-decoration: none;
-  z-index: 1;
-  margin-left: 0.25rem;
-
-  @media (min-width: 750px) {
-    line-height: 4rem;
-  }
-
-  @media screen and (min-width: 550px) {
-    margin-left: 0.5rem;
-  }
-`
-
-const SocialNavItem = ({ href, title, children }: NavItemProps) => (
-  <StyledSocialNavItem
-    href={href}
-    target="_blank"
-    rel="noopener noreferrer"
-    title={title}
-  >
-    {children}
-  </StyledSocialNavItem>
-)
-
-function Header({ siteTitle }: Props): JSX.Element {
+function Header({ siteTitle }: HeaderProps) {
   return (
-    <StyledHeader>
-      <HeaderContainer>
-        <StyledLink to="/">
-          <StyledTitled>{siteTitle}</StyledTitled>
-        </StyledLink>
-        <StyledSocialNav>
-          <SocialNavItem href="https://github.com/dhausser" title="GitHub">
+    <header>
+      <div className="header-container">
+        <Link className="styled-link" to="/">
+          <h2>{siteTitle}</h2>
+        </Link>
+        <div className="styled-social-nav">
+          <a
+            href="https://github.com/dhausser"
+            title="GitHub"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <GoMarkGithub />
-          </SocialNavItem>
-          <SocialNavItem
+          </a>
+          <a
             href="https://www.twitter.com/davyhausser"
             title="Twitter"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <FaTwitter />
-          </SocialNavItem>
-          <SocialNavItem
+          </a>
+          <a
             href="https://www.linkedin.com/in/davyhausser"
             title="Linkedin"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <FaLinkedin />
-          </SocialNavItem>
-          <SwitchWrapper>
+          </a>
+          <div className="switch-wrapper">
             <Switch />
-          </SwitchWrapper>
-        </StyledSocialNav>
-      </HeaderContainer>
-    </StyledHeader>
+          </div>
+        </div>
+      </div>
+    </header>
   )
 }
 
