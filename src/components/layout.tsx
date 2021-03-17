@@ -1,31 +1,32 @@
 import * as React from 'react'
-import { Global } from '@emotion/react'
-import styled from '@emotion/styled'
+// import { Global } from '@emotion/react'
+// import styled from '@emotion/styled'
 import { Helmet } from 'react-helmet'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Header } from 'components'
-import { globalStyles } from 'styles'
+// import { globalStyles } from 'styles'
+import 'styles/index.css'
 
 interface Props {
   children: JSX.Element | JSX.Element[]
 }
 
-export const Wrapper = styled.div`
-  min-height: 100vh;
-  margin: var(--header-height) auto;
-  max-width: var(--width);
-  opacity: 0;
-  animation: 0.6s ease-in-out 0.3s 1 normal forwards running fade-in;
+// export const Wrapper = styled.div`
+//   min-height: 100vh;
+//   margin: var(--header-height) auto;
+//   max-width: var(--width);
+//   opacity: 0;
+//   animation: 0.6s ease-in-out 0.3s 1 normal forwards running fade-in;
 
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-`
+//   @keyframes fade-in {
+//     from {
+//       opacity: 0;
+//     }
+//     to {
+//       opacity: 1;
+//     }
+//   }
+// `
 
 function Layout({ children }: Props): JSX.Element {
   const data = useStaticQuery(graphql`
@@ -48,7 +49,7 @@ function Layout({ children }: Props): JSX.Element {
 
   return (
     <>
-      <Global styles={globalStyles} />
+      {/* <Global styles={globalStyles} /> */}
       <Helmet
         title={title}
         meta={[{ name: 'description', content: description }]}
@@ -57,7 +58,7 @@ function Layout({ children }: Props): JSX.Element {
         <noscript>This site runs best with JavaScript enabled.</noscript>
       </Helmet>
       <Header siteTitle={title} />
-      <Wrapper>{children}</Wrapper>
+      <main>{children}</main>
     </>
   )
 }

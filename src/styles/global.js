@@ -50,12 +50,28 @@ export default css`
     --primary-color: #9a97f3;
     --secondary-color: #818cab;
     --font-color: #e1e1ff;
-    --text-color: #d9d7e0;
     --bg-color: #161625;
     --heading-color: #818cab;
     --border: #232129;
+    --radii: [ 1px, 2px, 3px, 4px ];
+    --space: [ 0rem, 0.25rem, 0.5rem, 0.75rem, 1rem, 1.25rem, 1.5rem, 2rem,
+      2.5rem, 3rem, 3.5rem, 4rem, 4.5rem ];
+    --font-sizes: [ 0.75rem, 0.875rem, 1rem, 1.125rem, 1.25rem, 1.5rem, 1.75rem,
+      2rem, 2.25rem, 2.625rem, 3rem, 3.375rem, 3.75rem, 4.25rem, 4.75rem,
+      5.25rem, 5.75rem ];
+    --font-weight-body: 400;
+    --font-weight-bold: 700;
+    --font-weight-extra-bold: 800;
+    --font-weight-heading: 700;
+    --font-weight-semi-bold: 600;
+    --line-height-body: 1.5;
+    --line-height-default: 1.5;
+    --line-height-dense: 1.25;
+    --line-height-heading: 1.25;
+    --line-height-loose: 1.75;
+    --line-height-solid: 1;
     --themed-input-background: #232129;
-    --themed-input-background-focus: black;
+    --themed-input-background-focus: #ffffff;
     --themed-input-focus-border: #663399;
     --themed-input-focus-box-shadow: #d9bae8;
     --themed-input-icon: #78757a;
