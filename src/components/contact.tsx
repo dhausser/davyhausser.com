@@ -1,6 +1,7 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
 import { MdSend } from 'react-icons/md'
+import 'styles/contact.css'
 
 const ContactContainer = styled.div`
   background: var(--bg-color);

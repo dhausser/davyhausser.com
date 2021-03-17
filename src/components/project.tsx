@@ -1,18 +1,7 @@
 import * as React from 'react'
-import styled from '@emotion/styled'
 import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image'
 import { Layout, SEO } from 'components'
-import { HeadingMain, HeadingWrapCont, ProjectLink } from 'styles'
 import { ProjectData } from 'types'
-
-const LinkRow = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-  align-items: center;
-  padding: 20px;
-`
 
 function Project(props: ProjectData) {
   const { title, description, url, tags, repository } = props
@@ -21,26 +10,26 @@ function Project(props: ProjectData) {
     <Layout>
       <SEO title={title} description={description} />
       <div className="full-height">
-        <HeadingWrapCont>
-          <HeadingMain>
+        <div className="heading-wrap-content">
+          <div className="heading-main">
             <span>{title}</span>
             <br />
             <br />
-          </HeadingMain>
-        </HeadingWrapCont>
+          </div>
+        </div>
         <GatsbyImage image={image} alt={title} />
-        <LinkRow>
+        <div className="link-row">
           <a href={url}>
-            <ProjectLink>
+            <div className="project-link">
               Live <span>&#8250;</span>
-            </ProjectLink>
+            </div>
           </a>
           <a href={repository}>
-            <ProjectLink>
+            <div className="project-link">
               Code <span>&#8250;</span>
-            </ProjectLink>
+            </div>
           </a>
-        </LinkRow>
+        </div>
         <p>{description}</p>
         <ul>
           {tags.map((tag: string) => (

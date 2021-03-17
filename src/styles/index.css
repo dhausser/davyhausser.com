@@ -303,6 +303,15 @@ p > a:hover {
   font-size: 20px;
 }
 
+.link-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  padding: 20px;
+}
+
 .full-height {
   min-height: 100vh;
   display: flex;
