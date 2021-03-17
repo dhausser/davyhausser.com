@@ -9,16 +9,15 @@ interface Props {
 function Featured({ projects }: Props) {
   return (
     <div className="full-height">
-      <div>
-        <div className="text-content">
-          <div className="heading">Work</div>
-          <p>
-            I like to stay busy and always have a project in the works. Take a
-            look at some of the applications, articles, and companies I&apos;ve
-            dedicated my time to.
-          </p>
-        </div>
+      <div className="text-content">
+        <div className="heading">Work</div>
+        <p>
+          I like to stay busy and always have a project in the works. Take a
+          look at some of the applications, articles, and companies I&apos;ve
+          dedicated my time to.
+        </p>
       </div>
+
       <div>
         {projects.map(({ node: project }) => (
           <ProjectPreview

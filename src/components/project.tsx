@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
 import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image'
-import { Layout, SEO, Contact } from 'components'
+import { Layout, SEO } from 'components'
 import { HeadingMain, HeadingWrapCont, ProjectLink } from 'styles'
 import { ProjectData } from 'types'
 
@@ -20,34 +20,35 @@ function Project(props: ProjectData) {
   return (
     <Layout>
       <SEO title={title} description={description} />
-      <HeadingWrapCont>
-        <HeadingMain>
-          <span>{title}</span>
-          <br />
-          <br />
-        </HeadingMain>
-      </HeadingWrapCont>
-      <GatsbyImage image={image} alt={title} />
-      <LinkRow>
-        <a href={url}>
-          <ProjectLink>
-            Live <span>&#8250;</span>
-          </ProjectLink>
-        </a>
-        <a href={repository}>
-          <ProjectLink>
-            Code <span>&#8250;</span>
-          </ProjectLink>
-        </a>
-      </LinkRow>
-      <p>{description}</p>
-      <ul>
-        {tags.map((tag: string) => (
-          <li key={tag}>{tag}</li>
-        ))}
-      </ul>
-      <p>Build by: Davy Hausser</p>
-      <Contact />
+      <div className="full-height">
+        <HeadingWrapCont>
+          <HeadingMain>
+            <span>{title}</span>
+            <br />
+            <br />
+          </HeadingMain>
+        </HeadingWrapCont>
+        <GatsbyImage image={image} alt={title} />
+        <LinkRow>
+          <a href={url}>
+            <ProjectLink>
+              Live <span>&#8250;</span>
+            </ProjectLink>
+          </a>
+          <a href={repository}>
+            <ProjectLink>
+              Code <span>&#8250;</span>
+            </ProjectLink>
+          </a>
+        </LinkRow>
+        <p>{description}</p>
+        <ul>
+          {tags.map((tag: string) => (
+            <li key={tag}>{tag}</li>
+          ))}
+        </ul>
+        <p>Build by: Davy Hausser</p>
+      </div>
     </Layout>
   )
 }
