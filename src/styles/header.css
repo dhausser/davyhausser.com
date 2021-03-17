@@ -1,52 +1,48 @@
-header {
-  background-color: var(--bg-color);
+nav {
+  position: fixed;
   top: 0;
   height: var(--header-height);
-  left: 0rem;
-  position: relative;
-  right: 0rem;
+  background-color: var(--bg-color);
   z-index: 1;
+  width: 100%;
+  /* border-bottom: 1px solid var(--border); */
+  text-align: center;
+  opacity: 90%;
 }
 
-header::after {
-  background-color: var(--border);
-  bottom: 0rem;
-  content: '';
-  height: 1px;
-  left: 0rem;
-  position: absolute;
-  right: 0rem;
-  z-index: -1;
+.nav-wrapper {
+  margin: auto;
+  max-width: var(--tablet-min);
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
 }
 
 .header-container {
+  top: 0;
   margin: 0 auto;
   max-width: var(--tablet-min);
   align-items: center;
   display: flex;
   justify-content: space-between;
-  height: 100%;
-  margin: 0px auto;
-  position: relative;
-  width: 100%;
 }
 
-.styled-link {
-  align-items: center;
-  color: inherit;
-  display: flex;
-  flex-shrink: 0;
-  height: 1.5rem;
-  margin-right: 0.25rem;
-  text-decoration: none;
-  overflow: hidden;
-}
-
-h2 {
-  height: 1.5rem;
-  width: auto;
-  max-width: none;
-  margin: 0rem;
+.brand-logo {
+  font-weight: 600;
+  font-size: 2rem;
+  position: absolute;
+  margin: 0;
 }
 
 .styled-social-nav {

@@ -11,42 +11,46 @@ interface HeaderProps {
 
 function Header({ siteTitle }: HeaderProps) {
   return (
-    <header>
-      <div className="header-container">
-        <Link className="styled-link" to="/">
-          <h2>{siteTitle}</h2>
-        </Link>
-        <div className="styled-social-nav">
-          <a
-            href="https://github.com/dhausser"
-            title="GitHub"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <GoMarkGithub />
-          </a>
-          <a
-            href="https://www.twitter.com/davyhausser"
-            title="Twitter"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaTwitter />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/davyhausser"
-            title="Linkedin"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaLinkedin />
-          </a>
-          <div className="switch-wrapper">
-            <Switch />
+    <nav>
+      <div className="nav-wrapper">
+        <div className="left">
+          <Link to="/">
+            <div className="brand-logo">{siteTitle}</div>
+          </Link>
+        </div>
+        <div className="right">
+          <div className="styled-social-nav">
+            <a
+              href="https://github.com/dhausser"
+              title="GitHub"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GoMarkGithub />
+            </a>
+            <a
+              href="https://www.twitter.com/davyhausser"
+              title="Twitter"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaTwitter />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/davyhausser"
+              title="Linkedin"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedin />
+            </a>
+            <div className="switch-wrapper">
+              <Switch />
+            </div>
           </div>
         </div>
       </div>
-    </header>
+    </nav>
   )
 }
 
