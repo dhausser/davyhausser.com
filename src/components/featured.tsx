@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { ProjectPreview } from 'components'
-import { SubContainer, TextContent, Heading, Paragraph } from 'styles'
 import { ProjectData } from 'types'
 
 interface Props {
@@ -9,18 +8,18 @@ interface Props {
 
 function Featured({ projects }: Props) {
   return (
-    <>
-      <SubContainer>
-        <TextContent>
-          <Heading>Work</Heading>
-          <Paragraph>
+    <div className="full-height">
+      <div>
+        <div className="text-content">
+          <div className="heading">Work</div>
+          <p>
             I like to stay busy and always have a project in the works. Take a
             look at some of the applications, articles, and companies I&apos;ve
             dedicated my time to.
-          </Paragraph>
-        </TextContent>
-      </SubContainer>
-      <SubContainer>
+          </p>
+        </div>
+      </div>
+      <div>
         {projects.map(({ node: project }) => (
           <ProjectPreview
             key={`preview-${project.slug}`}
@@ -31,8 +30,8 @@ function Featured({ projects }: Props) {
             url={project.url}
           />
         ))}
-      </SubContainer>
-    </>
+      </div>
+    </div>
   )
 }
 
