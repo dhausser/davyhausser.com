@@ -252,12 +252,12 @@ select {
   max-width: 700px;
 }
 
-p > a {
+.text-content > p > a {
   border-bottom: 2px solid transparent;
   transition: 0.3s;
 }
 
-p > a:hover {
+.text-content > p > a:hover {
   border-bottom: 2px solid black;
 }
 
@@ -350,7 +350,7 @@ p > a:hover {
   }
 }
 
-@media screen and (min-width: var(--mobile-max)) {
+@media (min-width: var(--mobile-max)) {
   .heading {
     font-size: 40px;
     transform: scale(1);

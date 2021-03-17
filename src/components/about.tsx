@@ -12,11 +12,12 @@ function About() {
           <span>Software Engineer.</span>
         </div>
       </div>
-      <div className="text-content-wrap"></div>
-      <p>
-        I&apos;m an experienced product manager and engineer with a passion for
-        innovation and technology.
-      </p>
+      <div className="text-content text-content-wrap">
+        <p>
+          I&apos;m an experienced product manager and engineer with a passion
+          for innovation and technology.
+        </p>
+      </div>
     </div>
   )
 }
