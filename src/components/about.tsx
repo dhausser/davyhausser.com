@@ -1,22 +1,23 @@
 import * as React from 'react'
-import { Container, TextContentWrap, Paragraph } from 'styles'
 
 function About() {
   return (
-    <Container
-      style={{
-        alignItems: 'start',
-        margin: 0,
-        justifyContent: 'space-between',
-      }}
-    >
-      <TextContentWrap>
-        <Paragraph>
-          I&apos;m an experienced product manager and engineer with a passion
-          for innovation and technology.
-        </Paragraph>
-      </TextContentWrap>
-    </Container>
+    <div className="full-height">
+      <div className="heading-wrap-content">
+        <div className="heading-main">
+          <span>Davy Hausser.</span>
+          <br />
+          <span>Product Manager.</span>
+          <br />
+          <span>Software Engineer.</span>
+        </div>
+      </div>
+      <div className="text-content-wrap"></div>
+      <p>
+        I&apos;m an experienced product manager and engineer with a passion for
+        innovation and technology.
+      </p>
+    </div>
   )
 }
 
