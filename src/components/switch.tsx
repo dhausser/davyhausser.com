@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import * as React from 'react'
 import styled from '@emotion/styled'
 
 // kudos to our friends at narative.co
@@ -55,8 +55,8 @@ const IconWrapper = styled.button`
 `
 
 const MoonOrSun = styled.div<{ isDark: boolean }>`
-  border: ${(props) => (props.isDark ? `4px` : `2px`)} solid #888;
-  background: var(--navigation-color);
+  border: ${(props) => (props.isDark ? `4px` : `2px`)} solid var(--font-color);
+  background: var(--font-color);
   border-radius: 50%;
   height: 24px;
   overflow: ${(props) => (props.isDark ? `visible` : `hidden`)};
@@ -67,7 +67,7 @@ const MoonOrSun = styled.div<{ isDark: boolean }>`
 
   &::before {
     border-radius: 50%;
-    border: 2px solid #888;
+    border: 2px solid var(--font-color);
     content: '';
     height: 24px;
     opacity: ${(props) => (props.isDark ? 0 : 1)};
@@ -81,11 +81,10 @@ const MoonOrSun = styled.div<{ isDark: boolean }>`
 
   &::after {
     border-radius: 50%;
-    box-shadow: 0 -23px 0 var(--navigation-color),
-      0 23px 0 var(--navigation-color), 23px 0 0 var(--navigation-color),
-      -23px 0 0 var(--navigation-color), 15px 15px 0 var(--navigation-color),
-      -15px 15px 0 var(--navigation-color), 15px -15px 0 var(--navigation-color),
-      -15px -15px 0 var(--navigation-color);
+    box-shadow: 0 -23px 0 var(--font-color), 0 23px 0 var(--font-color),
+      23px 0 0 var(--font-color), -23px 0 0 var(--font-color),
+      15px 15px 0 var(--font-color), -15px 15px 0 var(--font-color),
+      15px -15px 0 var(--font-color), -15px -15px 0 var(--font-color);
     content: '';
     height: 8px;
     left: 50%;
@@ -136,7 +135,7 @@ function switchTheme(isDark: boolean) {
 }
 
 export default function Switch(): JSX.Element {
-  const [isDark, setIsDark] = useState<boolean>(() => {
+  const [isDark, setIsDark] = React.useState<boolean>(() => {
     if (typeof window === 'undefined') return false
     const theme = localStorage.getItem('theme')
     if (theme === 'dark') {
