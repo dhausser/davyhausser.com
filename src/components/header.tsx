@@ -18,7 +18,7 @@ interface NavItemProps {
 const StyledHeader = styled.header`
   background-color: var(--bg-color);
   top: 0;
-  height: 4rem;
+  height: var(--header-height);
   left: 0rem;
   position: relative;
   right: 0rem;

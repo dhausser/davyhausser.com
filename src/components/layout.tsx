@@ -12,7 +12,7 @@ interface Props {
 
 export const Wrapper = styled.div`
   min-height: 100vh;
-  margin: 0 auto;
+  margin: var(--header-height) auto;
   max-width: var(--width);
   opacity: 0;
   animation: 0.6s ease-in-out 0.3s 1 normal forwards running fade-in;

@@ -81,7 +81,6 @@ export const HeadingMain = styled.h1`
 `
 
 export const HeadingWrapCont = styled.div`
-  padding-top: 40px;
   background-position: 0 0;
   background-repeat: no-repeat;
 `

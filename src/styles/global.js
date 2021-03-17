@@ -43,6 +43,7 @@ export default css`
     --button-primary-bg: #663399;
     --button-primary-border: #663399;
     --button-primary-text: #ffffff;
+    --header-height: 4rem;
   }
 
   [data-theme='dark'] {
