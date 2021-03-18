@@ -1,4 +1,15 @@
 :root {
+  --dark-navy: #020c1b;
+  --navy: #0a192f;
+  --light-navy: #112240;
+  --lightest-navy: #233554;
+  --navy-shadow: rgba(2, 12, 27, 0.7);
+  --slate: #8892b0;
+  --light-slate: #a8b2d1;
+  --lightest-slate: #ccd6f6;
+  --white: #e6f1ff;
+  --green: #64ffda;
+  --green-tint: rgba(100, 255, 218, 0.1);
   --primary-color: #302ae6;
   --secondary-color: #536390;
   --font-color: #424242;
@@ -56,9 +67,12 @@
 [data-theme='dark'] {
   --primary-color: #9a97f3;
   --secondary-color: #818cab;
-  --font-color: #e1e1ff;
-  --bg-color: #161625;
-  --heading-color: #818cab;
+  --font-color: var(--slate);
+  /* --font-color: #e1e1ff; */
+  --bg-color: var(--dark-navy);
+  /* --bg-color: #161625; */
+  --heading-color: var(--lightest-slate);
+  /* --heading-color: #818cab; */
   --border: #232129;
   --themed-input-background: #232129;
   --themed-input-background-focus: #232129;
@@ -153,6 +167,7 @@ select {
   transform: translateY(30px);
   opacity: 0;
   animation: float 1s 0.2s forwards;
+  color: var(--heading-color);
 }
 
 .heading > span {
@@ -177,6 +192,7 @@ select {
   transform: translateY(30px);
   opacity: 0;
   animation: float 1s 0.2s forwards;
+  color: var(--heading-color);
 }
 
 .heading-main > span:nth-of-type(1) {
@@ -226,9 +242,9 @@ select {
   margin: 20px 0 0 0;
 }
 
-.skill-table > p > span {
-  font-size: 20px;
-  margin-right: 5px;
+p > span {
+  margin-right: 0.25rem;
+  color: var(--green);
 }
 
 .skill-content {
@@ -287,11 +303,12 @@ p > a:hover {
 }
 
 .project-link:hover {
-  border-bottom: 2px solid;
+  border-bottom: 2px solid var(--green);
 }
 
 .project-link > span {
   font-size: 20px;
+  color: var(--green);
 }
 
 .link-row {
