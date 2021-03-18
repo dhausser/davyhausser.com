@@ -19,12 +19,17 @@ function Project(props: ProjectData) {
         </div>
         <GatsbyImage image={image} alt={title} />
         <div className="link-row">
-          <a href={url}>
+          <a href={url} title="Live" target="_blank" rel="noopener noreferrer">
             <div className="project-link">
               Live <span>&#8250;</span>
             </div>
           </a>
-          <a href={repository}>
+          <a
+            href={repository}
+            title="Code"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <div className="project-link">
               Code <span>&#8250;</span>
             </div>
