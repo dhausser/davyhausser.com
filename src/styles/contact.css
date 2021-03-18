@@ -1,4 +1,4 @@
-/* const ContactContainer = styled.div`
+.contact-container {
   background: var(--bg-color);
   border: 1px solid var(--border);
   border-radius: var(--radii);
@@ -7,35 +7,39 @@
   margin-bottom: var(--space-8);
   padding: calc(var(--space-8) * 1.2);
   position: relative;
+}
 
-  @media (min-width: 1000px) {
+@media (min-width: 1000px) {
+  .contact-container {
     flex-direction: row;
     -webkit-box-pack: justify;
     justify-content: space-between;
   }
-`
+}
 
-const Title = styled.h1`
+h1 {
   font-size: var(--font-size-4);
   font-weight: var(--font-weight-heading);
   line-height: var(--line-height-dense);
   margin: 0.25rem 0px 0px;
-`
+}
 
-const StyledForm = styled.form`
+form {
   margin: 0px;
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
+}
 
-  @media (min-width: 1000px) {
+@media (min-width: 1000px) {
+  form {
     display: flex;
     flex-basis: 50%;
   }
-`
+}
 
-const StyledInput = styled.input`
+input {
   background-color: var(--themed-input-background, #232129);
   border: 0px;
   border-radius: 4px;
@@ -50,17 +54,16 @@ const StyledInput = styled.input`
   appearance: none;
   color: var(--text-color, #d9d7e0);
   overflow: hidden;
+}
 
-  :focus {
-    background-color: var(--themed-input-background-focus, black);
-    box-shadow: 0 0 0 2px
-      var(--themed-input-background-focus-box-shadow, #663399);
-    outline: 0px;
-    width: 100%;
-  }
-`
+input:focus {
+  background-color: var(--themed-input-background-focus, black);
+  box-shadow: 0 0 0 2px var(--themed-input-background-focus-box-shadow, #663399);
+  outline: 0px;
+  width: 100%;
+}
 
-const StyledButton = styled.button`
+button {
   -webkit-box-align: center;
   align-items: center;
   background-color: var(--button-primary-bg);
@@ -85,65 +88,69 @@ const StyledButton = styled.button`
   font-size: 1.125rem;
   margin-top: 0.75rem;
   width: 100%;
+}
 
-  span {
-    -webkit-box-align: center;
-    align-items: center;
-    display: flex;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    width: 100%;
-  }
+button > span {
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+}
 
-  :hover {
-    background-color: var(--button-primary-bg);
-    background-image: linear-gradient(
-      135deg,
-      rgba(0, 0, 0, 0.1) 25%,
-      transparent 25%,
-      transparent 50%,
-      rgba(0, 0, 0, 0.1) 50%,
-      rgba(0, 0, 0, 0.1) 75%,
-      transparent 75%,
-      transparent
-    );
-    color: rgb(255, 255, 255);
-    animation: stripe-animation 2.8s linear infinite;
-    border-color: var(--button-primary-bg);
-  }
+button:hover {
+  background-color: var(--button-primary-bg);
+  background-image: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.1) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0.1) 75%,
+    transparent 75%,
+    transparent
+  );
+  color: rgb(255, 255, 255);
+  animation: stripe-animation 2.8s linear infinite;
+  border-color: var(--button-primary-bg);
+}
 
-  @media (min-width: 1000px) {
+@media (min-width: 1000px) {
+  button {
     margin-left: 0.5rem;
     margin-top: 0rem;
     width: auto;
   }
+}
 
-  @keyframes stripe-animation {
-    from {
-      background-position: 0 0;
-    }
-
-    to {
-      background-position: var(--space-7) var(--space-11);
-    }
+@keyframes stripe-animation {
+  from {
+    background-position: 0 0;
   }
-`
 
-const FormHeader = styled.header`
+  to {
+    background-position: var(--space-7) var(--space-11);
+  }
+}
+
+header {
   padding-bottom: 1rem;
-  @media (min-width: 1000px) {
+}
+@media (min-width: 1000px) {
+  header {
     flex-basis: 50%;
     padding-bottom: 0;
   }
-`
+}
 
-const ErrorMessage = styled.div`
+.error-message {
   color: var(--warning-colors);
   font-family: var(--font-family);
   font-size: var(--font-size-1);
   margin: var(--space-11) 0;
-`
+}
 
-const SuccessMessage = styled.div`
+.success-message {
   font-family: var(--font-family);
-` */
+}
