@@ -7,7 +7,9 @@ interface LayoutProps {
 }
 
 function Layout({ children }: LayoutProps) {
-  document.documentElement.setAttribute('data-theme', 'dark')
+  if (typeof window !== 'undefined') {
+    document.documentElement.setAttribute('data-theme', 'dark')
+  }
   return (
     <div>
       <Header siteTitle="" />
