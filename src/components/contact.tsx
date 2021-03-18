@@ -16,8 +16,8 @@ function Form({ onSuccess, confirmMessage }: FormProps) {
   }
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    console.log(email)
     event.preventDefault()
+    alert(email)
     /**
      * TODO: Contact form submission handling
      */
@@ -72,10 +72,10 @@ function Contact() {
   )
 
   return (
-    <div className="contact-container">
-      <header>
+    <div className="container">
+      <div className="header">
         <h1>Need an app or website? Get in touch!</h1>
-      </header>
+      </div>
       {successMessage ? (
         <div
           className="success-message"

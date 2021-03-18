@@ -6,10 +6,10 @@ import { DataType } from 'types'
 export default function HomePage({ data }: PageProps<DataType>) {
   return (
     <Layout>
-      <SEO title="Portfolio" description={data.site.siteMetadata.description} />
+      {/* <SEO title="Portfolio" description={data.site.siteMetadata.description} />
       <About />
       <Skills />
-      <Featured projects={data.allProjectsJson.edges} />
+      <Featured projects={data.allProjectsJson.edges} /> */}
       <Contact />
     </Layout>
   )

@@ -1,4 +1,4 @@
-.contact-container {
+.container {
   background: var(--bg-color);
   border: 1px solid var(--border);
   border-radius: var(--radii);
@@ -10,7 +10,7 @@
 }
 
 @media (min-width: 1000px) {
-  .contact-container {
+  .container {
     flex-direction: row;
     -webkit-box-pack: justify;
     justify-content: space-between;
@@ -134,11 +134,12 @@ button:hover {
   }
 }
 
-header {
+.header {
   padding-bottom: 1rem;
 }
+
 @media (min-width: 1000px) {
-  header {
+  .header {
     flex-basis: 50%;
     padding-bottom: 0;
   }
