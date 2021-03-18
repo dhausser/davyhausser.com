@@ -63,7 +63,7 @@ a {
 }
 
 a:hover {
-  color: var(--lightest-slate);
+  color: var(--green);
 }
 
 .switch-wrapper {
