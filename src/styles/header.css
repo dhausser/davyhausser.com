@@ -2,10 +2,10 @@ nav {
   position: fixed;
   top: 0;
   height: var(--header-height);
-  background-color: var(--bg-color);
   z-index: 1;
   width: 100%;
   text-align: center;
+  background-color: var(--bg-color);
 }
 
 .nav-wrapper {
@@ -105,111 +105,3 @@ a {
     line-height: 4rem;
   }
 }
-
-/* const StyledHeader = styled.header`
-  background-color: var(--bg-color);
-  top: 0;
-  height: var(--header-height);
-  left: 0rem;
-  position: relative;
-  right: 0rem;
-  z-index: 1;
-
-  ::after {
-    background-color: var(--border);
-    bottom: 0rem;
-    content: '';
-    height: 1px;
-    left: 0rem;
-    position: absolute;
-    right: 0rem;
-    z-index: -1;
-  }
-
-  @media (min-width: 42rem) {
-    position: fixed;
-  }
-`
-
-const HeaderContainer = styled.div`
-  margin: 0 auto;
-  max-width: var(--tablet-min);
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  height: 100%;
-  margin: 0px auto;
-  position: relative;
-  width: 100%;
-`
-
-const StyledLink = styled(Link)`
-  align-items: center;
-  color: inherit;
-  display: flex;
-  flex-shrink: 0;
-  height: 1.5rem;
-  margin-right: 0.25rem;
-  text-decoration: none;
-  overflow: hidden;
-
-  @media screen and (min-width: 550px) {
-    margin-right: 0.75rem;
-    overflow: visible;
-  }
-`
-
-const StyledTitled = styled.h2`
-  height: 1.5rem;
-  width: auto;
-  max-width: none;
-  margin: 0rem;
-`
-
-const StyledSocialNav = styled.div`
-  display: flex;
-  align-self: flex-end;
-`
-
-const StyledSocialNavItem = styled.a`
-  border-bottom: 2px solid transparent;
-  color: var(--navigation-color);
-  display: block;
-  font-size: 1.125rem;
-  line-height: 4rem;
-  position: relative;
-  text-decoration: none;
-  z-index: 1;
-  transform: translate(0px, 4px);
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-
-  @media (min-width: 750px) {
-    line-height: 4rem;
-  }
-
-  @media screen and (min-width: 550px) {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-`
-
-const SwitchWrapper = styled.div`
-  border-bottom: 2px solid transparent;
-  color: var(--navigation-color #78757a);
-  display: block;
-  font-size: 1.125rem;
-  line-height: 4rem;
-  position: relative;
-  text-decoration: none;
-  z-index: 1;
-  margin-left: 0.25rem;
-
-  @media (min-width: 750px) {
-    line-height: 4rem;
-  }
-
-  @media screen and (min-width: 550px) {
-    margin-left: 0.5rem;
-  }
-` */

@@ -15,7 +15,7 @@
   --font-color: #424242;
   --bg-color: #fff;
   --heading-color: #292922;
-  --navigation-color: #78757a;
+  --navigation-color: var(--green);
   --border: #f0f0f2;
   --radii: 4px;
   --font-size-1: 0.875rem;
@@ -139,7 +139,6 @@ h2 {
 }
 
 a {
-  color: var(--font-color);
   text-decoration: none;
 }
 
