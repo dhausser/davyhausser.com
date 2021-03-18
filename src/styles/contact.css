@@ -58,7 +58,8 @@ input {
 
 input:focus {
   background-color: var(--themed-input-background-focus, black);
-  box-shadow: 0 0 0 2px var(--themed-input-background-focus-box-shadow, #663399);
+  box-shadow: 0 0 0 2px
+    var(--themed-input-background-focus-box-shadow, var(--green));
   outline: 0px;
   width: 100%;
 }
@@ -111,9 +112,9 @@ button:hover {
     transparent 75%,
     transparent
   );
-  color: rgb(255, 255, 255);
   animation: stripe-animation 2.8s linear infinite;
   border-color: var(--button-primary-bg);
+  color: var(--lightest-navy);
 }
 
 @media (min-width: 1000px) {
@@ -130,7 +131,7 @@ button:hover {
   }
 
   to {
-    background-position: var(--space-7) var(--space-11);
+    background-position: 2rem 4rem;
   }
 }
 
