@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image'
-import { Layout, SEO } from 'components'
+import { Layout, SEO, Contact } from 'components'
 import { ProjectData } from 'types'
 
 function Project(props: ProjectData) {
@@ -38,6 +38,7 @@ function Project(props: ProjectData) {
         </ul>
         <p>Build by: Davy Hausser</p>
       </div>
+      <Contact />
     </Layout>
   )
 }

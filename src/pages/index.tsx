@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { graphql, PageProps } from 'gatsby'
-import { Layout, SEO, About, Skills, Featured } from 'components'
+import { Layout, SEO, About, Skills, Featured, Contact } from 'components'
 import { DataType } from 'types'
 
 export default function HomePage({ data }: PageProps<DataType>) {
@@ -10,6 +10,7 @@ export default function HomePage({ data }: PageProps<DataType>) {
       <About />
       <Skills />
       <Featured projects={data.allProjectsJson.edges} />
+      <Contact />
     </Layout>
   )
 }
