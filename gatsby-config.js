@@ -23,7 +23,6 @@ module.exports = {
         path: `${__dirname}/src/images/`,
       },
     },
-    'gatsby-plugin-emotion',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

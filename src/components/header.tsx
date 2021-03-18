@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Link } from 'gatsby'
 import { GoMarkGithub } from 'react-icons/go'
 import { FaTwitter, FaLinkedin } from 'react-icons/fa'
-import { Switch } from 'components'
+// import { Switch } from 'components'
 import 'styles/header.css'
 
 interface HeaderProps {
@@ -44,9 +44,9 @@ function Header({ siteTitle }: HeaderProps) {
             >
               <FaLinkedin />
             </a>
-            <div className="switch-wrapper">
+            {/* <div className="switch-wrapper">
               <Switch />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
