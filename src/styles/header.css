@@ -62,6 +62,10 @@ a {
   padding-right: 0.25rem;
 }
 
+a:hover {
+  color: var(--lightest-slate);
+}
+
 .switch-wrapper {
   border-bottom: 2px solid transparent;
   color: var(--navigation-color #78757a);
