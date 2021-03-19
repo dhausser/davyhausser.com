@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { MdSend } from 'react-icons/md'
-import 'styles/contact.css'
 
 interface FormProps {
   onSuccess: React.Dispatch<React.SetStateAction<string>>
@@ -72,7 +71,7 @@ function Contact() {
   )
 
   return (
-    <div className="container">
+    <div className="contact-container">
       <div className="header">
         <h1>Need an app or website? Get in touch!</h1>
       </div>

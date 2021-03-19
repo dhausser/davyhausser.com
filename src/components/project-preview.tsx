@@ -2,7 +2,6 @@ import * as React from 'react'
 import { Link } from 'gatsby'
 import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image'
 import { ProjectData } from 'types'
-import 'styles/project.css'
 
 function ProjectPreview(props: Omit<ProjectData, 'tags' | 'repository'>) {
   const { title, description, slug } = props
