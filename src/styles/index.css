@@ -355,88 +355,6 @@ p > a:hover {
   background: lime; /* Just to visualize the extent */
 }
 
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes float {
-  from {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes stripe-animation {
-  from {
-    background-position: 0 0;
-  }
-
-  to {
-    background-position: 2rem 4rem;
-  }
-}
-
-@media screen and (min-width: 60rem) {
-  .heading {
-    font-size: 40px;
-    transform: scale(1);
-  }
-
-  .heading-main {
-    font-size: 3.75rem;
-    margin-bottom: 0;
-  }
-
-  .container,
-  .sub-container,
-  .skill-table {
-    flex-wrap: nowrap;
-  }
-
-  .skill-table > p {
-    min-width: unset;
-    margin: 30px 0;
-  }
-
-  .text-content-wrap {
-    width: 45%;
-  }
-
-  /* Contact */ 
-  form {
-    display: flex;
-    flex-basis: 50%;
-  }
-
-  .contact-container {
-    flex-direction: row;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-  }
-
-  button {
-    margin-left: 0.5rem;
-    margin-top: 0rem;
-    width: auto;
-  }
-
-  .header {
-    flex-basis: 50%;
-    padding-bottom: 0;
-  }
-}
-
 /* Contact */ 
 .contact-container {
   background: var(--bg-color);
@@ -654,18 +572,8 @@ a:hover {
 }
 
 /* Media queries */
-@media (min-width: var(--mobile-max)) {
-  .project-paragraph {
-    max-width: 70%;
-  }
-}
 
-@media (min-width: 42rem) {
-  header {
-    position: fixed;
-  }
-}
-
+/* Mobile */
 @media screen and (min-width: 550px) {
   a {
     margin-right: 0.75rem;
@@ -680,8 +588,13 @@ a:hover {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
   }
+
+  .project-paragraph {
+    max-width: 70%;
+  }
 }
 
+/* Tablet */
 @media (min-width: 750px) {
   .switch-wrapper {
     line-height: 4rem;
@@ -689,5 +602,93 @@ a:hover {
 
   .styled-social-nav-item {
     line-height: 4rem;
+  }
+
+  header {
+    position: fixed;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 60rem) {
+  .heading {
+    font-size: 40px;
+    transform: scale(1);
+  }
+
+  .heading-main {
+    font-size: 3.75rem;
+    margin-bottom: 0;
+  }
+
+  .container,
+  .sub-container,
+  .skill-table {
+    flex-wrap: nowrap;
+  }
+
+  .skill-table > p {
+    min-width: unset;
+    margin: 30px 0;
+  }
+
+  .text-content-wrap {
+    width: 45%;
+  }
+
+  /* Contact */ 
+  form {
+    display: flex;
+    flex-basis: 50%;
+  }
+
+  .contact-container {
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+  }
+
+  button {
+    margin-left: 0.5rem;
+    margin-top: 0rem;
+    width: auto;
+  }
+
+  .header {
+    flex-basis: 50%;
+    padding-bottom: 0;
+  }
+}
+
+/* Keyframes */
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes stripe-animation {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 2rem 4rem;
   }
 }
