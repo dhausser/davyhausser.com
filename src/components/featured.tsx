@@ -1,12 +1,8 @@
 import * as React from 'react'
 import { ProjectPreview } from 'components'
-import { ProjectData } from 'types'
+import { FeaturedProps } from 'types'
 
-interface Props {
-  projects: Array<{ node: ProjectData }>
-}
-
-function Featured({ projects }: Props) {
+function Featured({ projects }: FeaturedProps) {
   return (
     <div className="full-height">
       <div className="text-content">

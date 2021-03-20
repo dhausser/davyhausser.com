@@ -44,3 +44,7 @@ export interface SEOProps {
     | { property: string; content: string; name?: undefined }
   >
 }
+
+export interface FeaturedProps {
+  projects: Array<{ node: ProjectData }>
+}
