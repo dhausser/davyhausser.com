@@ -3,7 +3,7 @@ import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image'
 import { ProjectData } from 'types'
 
 function Project(props: ProjectData) {
-  const { title, description, url, tags, repository } = props
+  const { title, description, url, tags, repository, author } = props
   const image = getImage(props.image) as IGatsbyImageData
   return (
     <div>
@@ -39,7 +39,7 @@ function Project(props: ProjectData) {
             <li key={tag}>{tag}</li>
           ))}
         </ul>
-        <p>Build by: Davy Hausser</p>
+        <p>Build by: {author}</p>
       </div>
     </div>
   )

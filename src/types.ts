@@ -8,11 +8,13 @@ export interface ProjectData {
   url: string
   repository: string
   tags: [string]
+  author: string
 }
 
 export interface ProjectProps {
   data: {
     projectsJson: ProjectData
+    site: { siteMetadata: Record<string, string> }
   }
 }
 

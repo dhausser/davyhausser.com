@@ -23,6 +23,7 @@ function Featured({ projects }: FeaturedProps) {
             image={project.image}
             slug={project.slug}
             url={project.url}
+            author="Davy Hausser"
           />
         ))}
       </div>
