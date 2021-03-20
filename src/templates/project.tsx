@@ -8,7 +8,6 @@ function ProjectPage({ data }: ProjectProps) {
   return (
     <Layout>
       <SEO title={project.title} description={project.description}/>
-        <Contact />
       <Project
         title={project.title}
         image={project.image}
@@ -18,6 +17,7 @@ function ProjectPage({ data }: ProjectProps) {
         url={project.url}
         repository={project.repository}
       />
+      <Contact />
     </Layout>
   )
 }
