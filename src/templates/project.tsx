@@ -1,20 +1,24 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
-import { Project } from 'components'
+import { Layout, SEO, Project, Contact } from 'components'
 import { ProjectProps } from 'types'
 
 function ProjectPage({ data }: ProjectProps) {
   const { projectsJson: project } = data
   return (
-    <Project
-      title={project.title}
-      image={project.image}
-      description={project.description}
-      tags={project.tags}
-      slug={project.slug}
-      url={project.url}
-      repository={project.repository}
-    />
+    <Layout>
+      <SEO title={project.title} description={project.description}/>
+        <Contact />
+      <Project
+        title={project.title}
+        image={project.image}
+        description={project.description}
+        tags={project.tags}
+        slug={project.slug}
+        url={project.url}
+        repository={project.repository}
+      />
+    </Layout>
   )
 }
 

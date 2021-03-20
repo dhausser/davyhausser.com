@@ -1,10 +1,7 @@
 import * as React from 'react'
 import { Header } from 'components'
-import 'styles/index.css'
-
-interface LayoutProps {
-  children: React.ReactElement | Array<React.ReactElement>
-}
+import { LayoutProps } from 'types'
+import '../index.css'
 
 function Layout({ children }: LayoutProps) {
   if (typeof window !== 'undefined') {

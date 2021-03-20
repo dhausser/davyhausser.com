@@ -1,10 +1,6 @@
 import * as React from 'react'
 import { MdSend } from 'react-icons/md'
-
-interface FormProps {
-  onSuccess: React.Dispatch<React.SetStateAction<string>>
-  confirmMessage: string
-}
+import { FormProps } from 'types'
 
 function Form({ onSuccess, confirmMessage }: FormProps) {
   const [email, setEmail] = React.useState('')
