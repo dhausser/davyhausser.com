@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image'
 import { ProjectData } from 'types'
 
-function ProjectPreview(props: Omit<ProjectData, 'tags' | 'repository'>) {
+function ProjectPreview(props: Omit<ProjectData, 'tags' | 'repository' | 'author'>) {
   const { title, description, slug } = props
   const image = getImage(props.image) as IGatsbyImageData
   return (
