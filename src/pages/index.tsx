@@ -7,7 +7,7 @@ export default function HomePage({ data }: PageProps<DataType>) {
   const { allProjectsJson, site: { siteMetadata} } = data
   return (
     <Layout>
-      <SEO title={"Portfolio"} description={siteMetadata.description} />
+      <SEO title={siteMetadata.title} description={siteMetadata.description} />
       <About />
       <Skills />
       <Featured projects={allProjectsJson.edges} />
