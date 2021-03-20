@@ -16,7 +16,6 @@ function Form({ onSuccess, confirmMessage }: FormProps) {
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    alert(email)
     /**
      * TODO: Contact form submission handling
      */
