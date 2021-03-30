@@ -1,20 +1,25 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
-import { Project } from 'components'
+import { Layout, SEO, Project, Contact } from 'components'
 import { ProjectProps } from 'types'
 
 function ProjectPage({ data }: ProjectProps) {
-  const { projectsJson: project } = data
+  const { projectsJson: project, site: { siteMetadata } } = data
   return (
-    <Project
-      title={project.title}
-      image={project.image}
-      description={project.description}
-      tags={project.tags}
-      slug={project.slug}
-      url={project.url}
-      repository={project.repository}
-    />
+    <Layout>
+      <SEO title={project.title} description={project.description}/>
+      <Project
+        title={project.title}
+        image={project.image}
+        description={project.description}
+        tags={project.tags}
+        slug={project.slug}
+        url={project.url}
+        repository={project.repository}
+        author={siteMetadata.author}
+      />
+      <Contact />
+    </Layout>
   )
 }
 
@@ -22,6 +27,13 @@ export default ProjectPage
 
 export const query = graphql`
   query($slug: String!) {
+    site {
+      siteMetadata {
+        title
+        description
+        author
+      }
+    }
     projectsJson(slug: { eq: $slug }) {
       title
       description

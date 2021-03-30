@@ -1,14 +1,12 @@
 import * as React from 'react'
 import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image'
-import { Layout, SEO, Contact } from 'components'
 import { ProjectData } from 'types'
 
 function Project(props: ProjectData) {
-  const { title, description, url, tags, repository } = props
+  const { title, description, url, tags, repository, author } = props
   const image = getImage(props.image) as IGatsbyImageData
   return (
-    <Layout>
-      <SEO title={title} description={description} />
+    <div>
       <div className="full-height">
         <div className="heading-wrap-content">
           <div className="heading-main">
@@ -41,10 +39,9 @@ function Project(props: ProjectData) {
             <li key={tag}>{tag}</li>
           ))}
         </ul>
-        <p>Build by: Davy Hausser</p>
+        <p>Build by: {author}</p>
       </div>
-      <Contact />
-    </Layout>
+    </div>
   )
 }
 

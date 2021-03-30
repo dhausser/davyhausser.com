@@ -4,12 +4,13 @@ import { Layout, SEO, About, Skills, Featured, Contact } from 'components'
 import { DataType } from 'types'
 
 export default function HomePage({ data }: PageProps<DataType>) {
+  const { allProjectsJson, site: { siteMetadata} } = data
   return (
     <Layout>
-      <SEO title="Portfolio" description={data.site.siteMetadata.description} />
+      <SEO title={siteMetadata.title} description={siteMetadata.description} />
       <About />
       <Skills />
-      <Featured projects={data.allProjectsJson.edges} />
+      <Featured projects={allProjectsJson.edges} />
       <Contact />
     </Layout>
   )
