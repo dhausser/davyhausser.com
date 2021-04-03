@@ -2,6 +2,16 @@ import * as React from 'react'
 import { MdSend } from 'react-icons/md'
 import { FormProps } from 'types'
 
+interface Target extends EventTarget {
+  getAttribute: (name: string) => string
+}
+
+function encode(data: Record<string, string>) {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
+}
+
 function Form({ onSuccess, confirmMessage }: FormProps) {
   const [email, setEmail] = React.useState('')
   const [errorMessage, setErrorMessage] = React.useState('')
@@ -10,33 +20,26 @@ function Form({ onSuccess, confirmMessage }: FormProps) {
     setEmail(event.target.value)
   }
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit(event: React.FormEvent<EventTarget>) {
     event.preventDefault()
-    /**
-     * TODO: Contact form submission handling
-     */
-    // const url = `${process.env.NETLIFY_FUNCTIONS_URL}/contact`
-    // const data = { email: emailRef.current.value, message: "sample message" }
-
-    // const response = await fetch(url, {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(data),
-    // })
-
-    // if (response.status === 200) {
-    if (email) {
-      onSuccess(confirmMessage)
-    } else {
-      // setErrorMessage(`${response.status}: ${response.statusText}`)
-      setErrorMessage('there was an error')
-    }
+    const form = event.target as Target
+    console.log(form)
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': form.getAttribute('name'),
+        email,
+      }),
+    })
+      .then(() => onSuccess(confirmMessage))
+      .catch((error) => setErrorMessage(error))
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={handleSubmit}>
+      {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+      <input type="hidden" name="form-name" value="contact" />
       <input
         id="email"
         name="email"
